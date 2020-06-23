@@ -32,8 +32,6 @@ const HowtoArticlePage = (props: HowtoArticlePageProps) => {
 
   page.seo = page.seo || {};
 
-  console.log(sectionTitles.relatedTopicsName);
-
   return (
     <Layout>
       <SEO
