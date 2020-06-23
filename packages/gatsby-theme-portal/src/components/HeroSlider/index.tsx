@@ -15,6 +15,7 @@ const HeroSlider: FunctionComponent<HeroSliderInterface> = ({
   slides,
   headline,
 }) => {
+  console.log(slides);
   const [swiper, updateSwiper] = useState(null);
   const [isLastSlide, setIsLastSlide] = useState(false);
   const [isFirstSlide, setIsFirstSlide] = useState(true);
