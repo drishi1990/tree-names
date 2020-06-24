@@ -10,6 +10,7 @@ import { TileSliderInterface } from './models';
 import { ReactComponent as Next } from '../../images/icons/next.svg';
 import { getSearchUrlWithTagsAndCategory } from '../../helpers/searchUrl';
 import useStyles from './styles';
+import { getSearchUrlWithTagsAndCategory } from '../../helpers/searchUrl';
 
 const TileSlider: FunctionComponent<TileSliderInterface> = ({
   slides,
