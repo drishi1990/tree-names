@@ -4,6 +4,7 @@ import { getFluidGatsbyImage } from 'gatsby-source-sanity';
 import BlockContent from '@sanity/block-content-to-react';
 import Video from '../components/Video';
 import Product from '../components/Product';
+import BeforeAndAfter from '../components/BeforeAndAfter';
 import classNames from 'classnames';
 import loadable from '@loadable/component';
 
