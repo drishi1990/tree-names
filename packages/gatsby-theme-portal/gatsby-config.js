@@ -96,6 +96,7 @@ module.exports = ({ themeConfig }) => {
         chunkSize: 10000,
       },
     },
+    'gatsby-plugin-sitemap',
   ];
   plugins.push(sanitySourcePlugin);
   plugins.push('gatsby-plugin-preact');
