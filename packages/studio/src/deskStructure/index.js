@@ -127,6 +127,12 @@ export default () =>
                 .child(S.documentTypeList('imageBlock').title('Image Block')),
               S.divider(),
               S.listItem()
+                .title('Before-After Image Block')
+                .icon(MdImage)
+                .schemaType('beforeAfterImageBlock')
+                .child(S.documentTypeList('beforeAfterImageBlock').title('Before-After Block Type')),
+              S.divider(),
+              S.listItem()
                 .title('Video Block')
                 .icon(MdVideocam)
                 .schemaType('videoBlock')
@@ -263,6 +269,11 @@ export default () =>
                         .schemaType('imageBlockType')
                         .child(S.documentTypeList('imageBlockType').title('Image Block Type')),
                       S.listItem()
+                        .title('Before-After Image Block Type')
+                        .icon(MdImage)
+                        .schemaType('beforeAfterImageBlockType')
+                        .child(S.documentTypeList('beforeAfterImageBlockType').title('Before-After Block Type')),
+                      S.listItem()
                         .title('Video Block Type')
                         .icon(MdVideocam)
                         .schemaType('videoBlockType')
@@ -341,7 +352,9 @@ export default () =>
             'videoBlockType',
             'newsletterBlock',
             'newsletterBlockType',
-            'beforeAfterImage'
+            'beforeAfterImage',
+            'beforeAfterImageBlock',
+            'beforeAfterImageBlockType'
           ].includes(listItem.getId())
       )
     ])

@@ -30,6 +30,8 @@ import taxonomyBlock from './documents/taxonomyBlock'
 import taxonomyBlockType from './documents/taxonomyBlockType'
 import videoBlock from './documents/videoBlock'
 import videoBlockType from './documents/videoBlockType'
+import beforeAfterImageBlock from './documents/beforeAfterImageBlock'
+import beforeAfterImageBlockType from './documents/beforeAfterImageBlockType'
 import newsletterBlock from './documents/newsletterBlock'
 import newsletterBlockType from './documents/newsletterBlockType'
 import sliderType from './documents/sliderType'
@@ -97,6 +99,8 @@ export default createSchema({
     videoBlockType,
     newsletterBlock,
     newsletterBlockType,
+    beforeAfterImageBlock,
+    beforeAfterImageBlockType,
     tag,
     textBlock,
     tool,
@@ -120,6 +124,7 @@ export default createSchema({
     landingpagesPortableText,
     youTube,
     beforeAfterImage,
+   
 
     // Old Stuff to be deleted
     siteSettings,
