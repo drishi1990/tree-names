@@ -68,7 +68,17 @@ export const blockTypeDefaultSerializers = {
           <BlockContent blocks={instructionName} />
           <BlockContent blocks={directions} />
           <figure>
-            <Img fluid={fluidProps} alt={imageName.alt} />
+            <picture>
+              <img
+                src={urlFor(imageName)
+                  .width(612)
+                  .height(448)
+                  .fit('max')
+                  .url()}
+                alt={imageName.alt}
+              />
+            </picture>
+            {/* <Img fluid={fluidProps} alt={imageName.alt} /> */}
           </figure>
         </div>
       );
