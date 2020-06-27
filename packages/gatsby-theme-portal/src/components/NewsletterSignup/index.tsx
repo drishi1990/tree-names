@@ -183,16 +183,16 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
             <div>
               <p>
                 Please read our{' '}
-                <a href="" target="_blank">
+                <a href="" target="_blank" rel="noopener noreferrer">
                   PRIVACY
                 </a>{' '}
                 and{' '}
-                <a href="" target="_blank">
+                <a href="" target="_blank" rel="noopener noreferrer">
                   COOKIE
                 </a>{' '}
                 notices to understand how we use your personal data. By clicking
                 the below button you agree to our{' '}
-                <a href="" target="_blank">
+                <a href="" target="_blank" rel="noopener noreferrer">
                   TERMS AND CONDITIONS
                 </a>
                 .
