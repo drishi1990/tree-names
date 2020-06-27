@@ -4,7 +4,6 @@ export default makeStyles(({ spacing }: Theme) =>
   createStyles({
     wrapper: {
       width: '100%',
-      height: 505,
       maxWidth: 700,
       margin: 'auto',
       marginTop: spacing(6),
@@ -21,6 +20,9 @@ export default makeStyles(({ spacing }: Theme) =>
           transform: 'translateX(-50%) translateY(-50%)',
           borderRadius: '50%',
         },
+      },
+      '& [data-rcs="clip-item"], & [data-rcs="image-root"]': {
+        marginBottom: 0,
       },
     },
   })
