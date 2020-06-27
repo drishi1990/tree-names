@@ -7,6 +7,9 @@ export default makeStyles(({ spacing }: Theme) =>
       maxWidth: 700,
       margin: 'auto',
       marginTop: spacing(6),
+      '& div': {
+        marginBottom: 0,
+      },
       '& [data-rcs="main-handle-container"] > div': {
         '&:before': {
           content: '""',
@@ -20,9 +23,6 @@ export default makeStyles(({ spacing }: Theme) =>
           transform: 'translateX(-50%) translateY(-50%)',
           borderRadius: '50%',
         },
-      },
-      '& [data-rcs="clip-item"], & [data-rcs="image-root"]': {
-        marginBottom: 0,
       },
     },
   })
