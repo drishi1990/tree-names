@@ -30,6 +30,11 @@ const Footer: FunctionComponent = () => {
 
   const classes = useStyles();
 
+  const externalLinkAttributes = {
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  };
+
   return (
     <footer className={classes.footer} role="contentinfo" aria-label="footer">
       <SocialMenu links={data.brandInfo} />
@@ -51,6 +56,9 @@ const Footer: FunctionComponent = () => {
                     `/${navItem.navL1.name}`
                   }
                   className={classes.navigationLink}
+                  {...(navItem.navL1.externalLink
+                    ? externalLinkAttributes
+                    : null)}
                 >
                   {navItem.navL1.name}
                   {navItem.navL1.externalLink && <NewWindow />}

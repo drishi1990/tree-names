@@ -4,10 +4,12 @@ export default makeStyles(({ spacing }: Theme) =>
   createStyles({
     wrapper: {
       width: '100%',
-      height: 505,
       maxWidth: 700,
       margin: 'auto',
       marginTop: spacing(6),
+      '& div': {
+        marginBottom: 0,
+      },
       '& [data-rcs="main-handle-container"] > div': {
         '&:before': {
           content: '""',
