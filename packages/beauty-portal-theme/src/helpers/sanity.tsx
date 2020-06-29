@@ -57,28 +57,34 @@ export const blockTypeDefaultSerializers = {
     step: ({
       node: { directions, imageName, instructionName, stepNumber },
     }) => {
-      const fluidProps = getFluidGatsbyImage(
-        imageName.asset._id,
-        { maxWidth: 540 },
-        sanityConfig
-      );
-
       return (
         <div className={classNames(stepNumber ? 'c-step__reset' : 'c-step')}>
           <BlockContent blocks={instructionName} />
           <BlockContent blocks={directions} />
           <figure>
             <picture>
+              <source
+                media="screen and (min-width: 1025px)"
+                srcSet={`${urlFor(imageName)
+                  .width(612)
+                  .fit('max')
+                  .url()
+                  .toString()} 1x, ${urlFor(imageName)
+                  .width(612)
+                  .fit('max')
+                  .url()
+                  .toString()}&dpr=2 2x`}
+              />
               <img
                 src={urlFor(imageName)
-                  .width(612)
-                  .height(448)
+                  .width(484)
                   .fit('max')
                   .url()}
                 alt={imageName.alt}
+                width="484"
+                height="621"
               />
             </picture>
-            {/* <Img fluid={fluidProps} alt={imageName.alt} /> */}
           </figure>
         </div>
       );

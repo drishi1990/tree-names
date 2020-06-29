@@ -158,6 +158,13 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
           },
         },
       },
+      '& .c-step, & .c-step__reset': {
+        '& img': {
+          display: 'block',
+          height: 'auto',
+          width: '100%',
+        },
+      },
     },
   })
 );
