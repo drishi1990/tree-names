@@ -23,6 +23,7 @@ const BeforeAndAfter: FunctionComponent = ({ images }) => {
             alt={afterImage.alt}
           />
         }
+        position={90}
       />
     </div>
   );
