@@ -28,6 +28,11 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
           marginTop: spacing(0.5),
         },
       },
+      '& img': {
+        display: 'block',
+        height: 'auto',
+        maxWidth: '100%',
+      },
       '& h2': {
         fontSize: '1.875rem',
         fontWeight: 700,
@@ -156,13 +161,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
           [breakpoints.up('md')]: {
             fontSize: '6.25rem',
           },
-        },
-      },
-      '& .c-step, & .c-step__reset': {
-        '& img': {
-          display: 'block',
-          height: 'auto',
-          width: '100%',
         },
       },
     },
