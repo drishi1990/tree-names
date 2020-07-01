@@ -29,24 +29,28 @@ export const blockTypeDefaultSerializers = {
       return <BeforeAndAfter images={node} />;
     },
     figure: ({ node }) => {
-      const fluidProps = getFluidGatsbyImage(
-        node.asset._id,
-        { maxWidth: 720, maxHeight: 800 },
-        sanityConfig
-      );
-
       return (
         <div className={'c-image'}>
-          <Img
-            fluid={fluidProps}
-            alt={node.alt}
-            style={{ maxWidth: '720px', maxHeight: '800px' }}
-            imgStyle={{
-              width: 'auto',
-              height: 'auto',
-              maxWidth: '100%',
-            }}
-          />
+          <figure>
+            <picture>
+              <source
+                media="screen and (min-width: 1025px)"
+                srcSet={`${urlFor(node)
+                  .width(712)
+                  .fit('max')
+                  .url()
+                  .toString()}`}
+              />
+              <img
+                src={urlFor(node)
+                  .width(562)
+                  .fit('max')
+                  .url()}
+                alt={node.alt}
+                width="562"
+              />
+            </picture>
+          </figure>
           <div className={'c-image__credit'}>
             <span>{node.imageCaption}</span>
             <span>{node.imageCredit}</span>
@@ -64,24 +68,28 @@ export const blockTypeDefaultSerializers = {
           <figure>
             <picture>
               <source
+                media="screen and (max-width: 1024px)"
+                srcSet={`${urlFor(imageName)
+                  .width(484)
+                  .fit('max')
+                  .url()
+                  .toString()} 1x`}
+              />
+              <source
                 media="screen and (min-width: 1025px)"
                 srcSet={`${urlFor(imageName)
                   .width(612)
                   .fit('max')
                   .url()
-                  .toString()} 1x, ${urlFor(imageName)
-                  .width(612)
-                  .fit('max')
-                  .url()
-                  .toString()}&dpr=2 2x`}
+                  .toString()} 1x`}
               />
               <img
                 src={urlFor(imageName)
-                  .width(484)
+                  .width(612)
                   .fit('max')
                   .url()}
                 alt={imageName.alt}
-                width="484"
+                width="612"
                 height="621"
               />
             </picture>
