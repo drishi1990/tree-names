@@ -18,7 +18,9 @@ const extractSteps = (pageHref, richTextBlocks) => {
       const directions = stepBlock.directions
         .map(dblock => ({
           '@type': 'HowToDirection',
-          text: removeHtmlTags(extractText(dblock)),
+          text: removeHtmlTags(
+            extractText(typeof dblock === 'object' ? [dblock] : dblock)
+          ),
         }))
         .filter(block => block.text);
 
