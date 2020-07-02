@@ -23,16 +23,34 @@ export const blockTypeDefaultSerializers = {
           <figure>
             <picture>
               <source
-                media="screen and (min-width: 1025px)"
+                media="screen and (min-width: 1280px)"
                 srcSet={`${urlFor(node)
                   .width(712)
                   .fit('max')
                   .url()
                   .toString()}`}
               />
+              <source
+                media="screen and (min-width: 560px)"
+                srcSet={`${urlFor(image)
+                  .width(528)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()} 536w`}
+              />
+              <source
+                media="screen and (min-width: 320px)"
+                srcSet={`${urlFor(image)
+                  .width(382)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()} 412w`}
+              />
               <img
                 src={urlFor(node)
-                  .width(562)
+                  .width(712)
                   .fit('max')
                   .url()}
                 alt={node.alt}
@@ -56,17 +74,26 @@ export const blockTypeDefaultSerializers = {
           <figure>
             <picture>
               <source
-                media="screen and (max-width: 1024px)"
+                media="screen and (min-width: 1280px)"
                 srcSet={`${urlFor(imageName)
-                  .width(484)
+                  .width(612)
                   .fit('max')
                   .url()
                   .toString()} 1x`}
               />
               <source
-                media="screen and (min-width: 1025px)"
+                media="screen and (min-width: 560px)"
+                srcSet={`${urlFor(image)
+                  .width(484)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()} 536w`}
+              />
+              <source
+                media="screen and (min-width: 320px)"
                 srcSet={`${urlFor(imageName)
-                  .width(612)
+                  .width(342)
                   .fit('max')
                   .url()
                   .toString()} 1x`}
