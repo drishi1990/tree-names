@@ -1,27 +1,11 @@
 import React from 'react';
-import Img from 'gatsby-image';
 import { getFluidGatsbyImage } from 'gatsby-source-sanity';
 import BlockContent from '@sanity/block-content-to-react';
-import imageUrlBuilder from '@sanity/image-url';
 import Video from '../components/Video';
 import Product from '../components/Product';
 import classNames from 'classnames';
-import loadable from '@loadable/component';
-
-const BeforeAndAfter = loadable(() => import('../components/BeforeAndAfter'), {
-  fallback: <div style={{ height: 500 }}>loading...</div>,
-});
-
-const sanityConfig = {
-  projectId: process.env['sanityId'],
-  dataset: process.env['sanityDataset'],
-};
-
-const builder = imageUrlBuilder(sanityConfig);
-
-function urlFor(source) {
-  return builder.image(source);
-}
+import { urlFor } from '../helpers/imageUrl';
+import { sanityConfig } from '../helpers/sanityConfig';
 
 export const blockTypeDefaultSerializers = {
   types: {

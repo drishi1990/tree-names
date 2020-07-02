@@ -42,6 +42,7 @@ module.exports = ({ themeConfig }) => {
     options: {
       projectId: siteMetadata.sanityId,
       dataset: siteMetadata.sanityDataset,
+      watchMode: true,
     },
   };
 
