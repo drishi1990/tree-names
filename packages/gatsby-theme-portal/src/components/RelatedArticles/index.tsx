@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { useInView } from 'react-intersection-observer';
 import classNames from 'classnames';
 import { urlFor } from '../../helpers/imageUrl';
 
@@ -10,8 +10,11 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
   articles,
   title,
 }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: '200px 0px',
+  });
   const classes = useStyles();
-
   const firstArticle = articles.shift();
   const lastArticle = articles.pop();
 
@@ -171,24 +174,33 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
 
   return (
     <>
-      <div className={classes.teaserWrapper}>
+      <div className={classes.teaserWrapper} ref={ref} data-inview={inView}>
         <h4 className={classes.title}>{title}</h4>
-        {firstArticle && (
-          <div className={classNames('c-article__first', classes.teaserFirst)}>
-            {renderListItem(firstArticle, 'first')}
+        {inView ? (
+          <div>
+            {firstArticle && (
+              <div
+                className={classNames('c-article__first', classes.teaserFirst)}
+              >
+                {renderListItem(firstArticle, 'first')}
+              </div>
+            )}
+            <div className={classes.scrollArea}>
+              {articles &&
+                articles.slice(0, 8).map((article: any) => {
+                  return renderListItem(article);
+                })}
+            </div>
+
+            {lastArticle && (
+              <div
+                className={classNames('c-article__last', classes.teaserLast)}
+              >
+                {renderListItem(lastArticle, 'last')}
+              </div>
+            )}
           </div>
-        )}
-        <div className={classes.scrollArea}>
-          {articles &&
-            articles.slice(0, 8).map((article: any) => {
-              return renderListItem(article);
-            })}
-        </div>
-        {lastArticle && (
-          <div className={classNames('c-article__last', classes.teaserLast)}>
-            {renderListItem(lastArticle, 'last')}
-          </div>
-        )}
+        ) : null}
       </div>
     </>
   );
