@@ -71,5 +71,10 @@ export default makeStyles(({ palette, spacing }: Theme) =>
         },
       },
     },
+    gridItemLink: {
+      '& img': {
+        margin: 'auto',
+      },
+    },
   })
 );

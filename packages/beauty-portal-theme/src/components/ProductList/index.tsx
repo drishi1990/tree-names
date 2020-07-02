@@ -3,6 +3,7 @@ import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import Grid from '@material-ui/core/Grid';
 import useStyles from './styles';
+import { urlFor } from '../../helpers/imageUrl';
 
 const ProductList: FunctionComponent<ProductListInterface> = ({
   data,
@@ -15,13 +16,50 @@ const ProductList: FunctionComponent<ProductListInterface> = ({
       <Grid className={classes.gridContainer} container spacing={2}>
         {data.map(product => (
           <Grid className={classes.gridItem} item xs={4} key={product.name}>
-            <Link to={product.path}>
+            <Link
+              className={classes.gridItemLink}
+              to={product.path || product.slug.current}
+            >
               {product.image && (
-                <Img
-                  className={classes.image}
-                  fluid={product.image.asset.fluid}
-                  alt={product.image.alt}
-                />
+                <figure>
+                  <picture>
+                    <source
+                      media="screen and (min-width: 1280px)"
+                      srcSet={`${urlFor(product.image)
+                        .width(140)
+                        .fit('max')
+                        .url()
+                        .toString()}, ${urlFor(product.image)
+                        .width(280)
+                        .fit('max')
+                        .url()
+                        .toString()} 2x`}
+                    />
+                    <source
+                      media="screen and (min-width: 768px)"
+                      srcSet={`${urlFor(product.image)
+                        .width(127)
+                        .fit('max')
+                        .url()
+                        .toString()}`}
+                    />
+                    <source
+                      media="screen and (min-width: 320px)"
+                      srcSet={`${urlFor(product.image)
+                        .width(116)
+                        .fit('max')
+                        .url()
+                        .toString()}`}
+                    />
+                    <img
+                      src={urlFor(product.image)
+                        .width(116)
+                        .fit('max')
+                        .url()}
+                      alt={product.image.alt}
+                    />
+                  </picture>
+                </figure>
               )}
               <h3 className={classes.productTitle}>
                 <span>{product.name}</span>

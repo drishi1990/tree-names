@@ -60,6 +60,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
             media="screen and (min-width: 1025px)"
             srcSet={`${urlFor(image)
               .width(712)
+              .height(399)
               .fit('max')
               .auto('format')
               .url()
@@ -68,7 +69,8 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
           <source
             media="screen and (min-width: 560px)"
             srcSet={`${urlFor(image)
-              .width(536)
+              .width(528)
+              .height(296)
               .fit('max')
               .auto('format')
               .url()
@@ -78,6 +80,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
             media="screen and (min-width: 320px)"
             srcSet={`${urlFor(image)
               .width(414)
+              .height(230)
               .fit('max')
               .auto('format')
               .url()
@@ -86,6 +89,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
           <img
             src={urlFor(image)
               .width(712)
+              .height(399)
               .fit('max')
               .auto('format')
               .url()}

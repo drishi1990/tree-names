@@ -31,7 +31,6 @@ const HowtoArticlePage = (props: HowtoArticlePageProps) => {
   const relatedArticles = [...galleryNodes, ...featureNodes, ...howToNodes];
 
   page.seo = page.seo || {};
-
   return (
     <Layout>
       <SEO
@@ -68,7 +67,7 @@ const HowtoArticlePage = (props: HowtoArticlePageProps) => {
             )}
             {page.productList && (
               <ProductList
-                data={page.productList}
+                data={page._rawProductList}
                 title={sectionTitles.productName}
               />
             )}

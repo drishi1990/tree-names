@@ -179,6 +179,7 @@ export const query2 = graphql`
       current
     }
     id
+    _rawHeroImage(resolveReferences: { maxDepth: 10 })
     heroImage {
       alt
       asset {
