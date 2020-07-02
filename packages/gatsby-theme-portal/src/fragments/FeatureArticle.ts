@@ -4,6 +4,8 @@ export const query1 = graphql`
   fragment FeatureFieldsFull on SanityFeatureArticle {
     _type
     _rawFeatureBody(resolveReferences: { maxDepth: 10 })
+    _rawHeroImage(resolveReferences: { maxDepth: 10 })
+    _rawHeroVideo(resolveReferences: { maxDepth: 10 })
     subheading
     path
     slug {
