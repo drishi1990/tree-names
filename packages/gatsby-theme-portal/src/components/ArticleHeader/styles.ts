@@ -66,8 +66,15 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     heroImage: {
       marginTop: spacing(1.25),
       position: 'relative',
+      '& img': {
+        position: 'absolute',
+        top: 0,
+      },
       '& iframe': {
-        height: 263,
+        height: 214,
+        [breakpoints.up('sm')]: {
+          height: 232,
+        },
         [breakpoints.up('md')]: {
           height: 399,
         },

@@ -44,3 +44,11 @@ a:focus {
 figure {
   margin: 0;
 }
+figure picture {
+  display: block;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

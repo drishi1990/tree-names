@@ -16,6 +16,22 @@ export const query1 = graphql`
     }
     id
     heroImage {
+      crop {
+        _type
+        bottom
+        left
+        right
+        top
+        _key
+      }
+      hotspot {
+        _key
+        _type
+        height
+        width
+        x
+        y
+      }
       alt
       asset {
         label
@@ -35,13 +51,6 @@ export const query1 = graphql`
           srcSet
           srcSetWebp
           srcWebp
-        }
-        localFile {
-          childImageSharp {
-            fluid(toFormat: JPG, jpegProgressive: true, jpegQuality: 70) {
-              src
-            }
-          }
         }
       }
     }
@@ -67,6 +76,8 @@ export const query1 = graphql`
         }
       }
     }
+    _rawHeroImage(resolveReferences: { maxDepth: 10 })
+    _rawHeroVideo(resolveReferences: { maxDepth: 10 })
     _rawHowTobody(resolveReferences: { maxDepth: 10 })
     productList {
       buyNow
@@ -142,7 +153,7 @@ export const query1 = graphql`
         heroImage {
           alt
           asset {
-            fluid(maxWidth: 350, maxHeight: 212) {
+            fluid {
               aspectRatio
               base64
               sizes
@@ -164,7 +175,7 @@ export const query1 = graphql`
         heroImage {
           alt
           asset {
-            fluid(maxWidth: 350, maxHeight: 212) {
+            fluid {
               aspectRatio
               base64
               sizes
@@ -186,7 +197,7 @@ export const query1 = graphql`
         heroImage {
           alt
           asset {
-            fluid(maxWidth: 350, maxHeight: 212) {
+            fluid {
               aspectRatio
               base64
               sizes
@@ -236,13 +247,32 @@ export const query2 = graphql`
         }
       }
     }
+    _rawHeroImage(resolveReferences: { maxDepth: 10 })
     heroImage {
+      crop {
+        bottom
+        left
+        right
+        top
+      }
+      hotspot {
+        height
+        width
+        x
+        y
+      }
       alt
       asset {
+        _type
+        size
+        path
+        originalFilename
+        mimeType
+        assetId
         label
         title
         url
-        fluid(maxWidth: 175, maxHeight: 175) {
+        fluid {
           aspectRatio
           base64
           sizes
