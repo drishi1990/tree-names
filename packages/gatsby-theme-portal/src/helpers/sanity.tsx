@@ -32,21 +32,21 @@ export const blockTypeDefaultSerializers = {
               />
               <source
                 media="screen and (min-width: 560px)"
-                srcSet={`${urlFor(image)
+                srcSet={`${urlFor(node)
                   .width(528)
                   .fit('max')
                   .auto('format')
                   .url()
-                  .toString()} 536w`}
+                  .toString()}`}
               />
               <source
                 media="screen and (min-width: 320px)"
-                srcSet={`${urlFor(image)
+                srcSet={`${urlFor(node)
                   .width(382)
                   .fit('max')
                   .auto('format')
                   .url()
-                  .toString()} 412w`}
+                  .toString()}`}
               />
               <img
                 src={urlFor(node)
@@ -79,16 +79,16 @@ export const blockTypeDefaultSerializers = {
                   .width(612)
                   .fit('max')
                   .url()
-                  .toString()} 1x`}
+                  .toString()}`}
               />
               <source
                 media="screen and (min-width: 560px)"
-                srcSet={`${urlFor(image)
+                srcSet={`${urlFor(imageName)
                   .width(484)
                   .fit('max')
                   .auto('format')
                   .url()
-                  .toString()} 536w`}
+                  .toString()}`}
               />
               <source
                 media="screen and (min-width: 320px)"
@@ -96,7 +96,7 @@ export const blockTypeDefaultSerializers = {
                   .width(342)
                   .fit('max')
                   .url()
-                  .toString()} 1x`}
+                  .toString()}`}
               />
               <img
                 src={urlFor(imageName)

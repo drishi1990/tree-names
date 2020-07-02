@@ -72,7 +72,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
               .fit('max')
               .auto('format')
               .url()
-              .toString()} 536w`}
+              .toString()}`}
           />
           <source
             media="screen and (min-width: 320px)"
@@ -81,7 +81,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
               .fit('max')
               .auto('format')
               .url()
-              .toString()} 412w`}
+              .toString()}`}
           />
           <img
             src={urlFor(image)
