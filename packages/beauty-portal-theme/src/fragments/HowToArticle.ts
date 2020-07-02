@@ -78,6 +78,7 @@ export const query1 = graphql`
     }
     _rawHeroImage(resolveReferences: { maxDepth: 10 })
     _rawHeroVideo(resolveReferences: { maxDepth: 10 })
+    _rawProductList(resolveReferences: { maxDepth: 10 })
     _rawHowTobody(resolveReferences: { maxDepth: 10 })
     productList {
       buyNow
