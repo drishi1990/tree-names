@@ -117,12 +117,7 @@ export const blockTypeDefaultSerializers = {
         return null;
       }
 
-      const fluidProps = getFluidGatsbyImage(
-        node.product.image.asset._id,
-        { maxWidth: 250 },
-        sanityConfig
-      );
-      return <Product image={fluidProps} metadata={node.product} />;
+      return <Product data={node.product} metadata={node.product} />;
     },
     // eslint-disable-next-line react/display-name
     youTube: props => {

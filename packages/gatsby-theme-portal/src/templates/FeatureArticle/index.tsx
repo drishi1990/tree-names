@@ -68,7 +68,7 @@ const FeatureArticle = (props: FeatureArticleProps) => {
             )}
             {page.productList && (
               <ProductList
-                data={page.productList}
+                data={page._rawProductList}
                 title={sectionTitles.productName}
               />
             )}
