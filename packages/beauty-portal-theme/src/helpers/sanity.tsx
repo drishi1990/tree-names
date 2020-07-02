@@ -6,6 +6,11 @@ import Product from '../components/Product';
 import classNames from 'classnames';
 import { urlFor } from '../helpers/imageUrl';
 import { sanityConfig } from '../helpers/sanityConfig';
+import loadable from '@loadable/component';
+
+const BeforeAndAfter = loadable(() => import('../components/BeforeAndAfter'), {
+  fallback: <div style={{ height: 500 }}>loading...</div>,
+});
 
 export const blockTypeDefaultSerializers = {
   types: {
@@ -31,7 +36,6 @@ export const blockTypeDefaultSerializers = {
                   .fit('max')
                   .url()}
                 alt={node.alt}
-                width="562"
               />
             </picture>
           </figure>
@@ -73,8 +77,6 @@ export const blockTypeDefaultSerializers = {
                   .fit('max')
                   .url()}
                 alt={imageName.alt}
-                width="612"
-                height="621"
               />
             </picture>
           </figure>
