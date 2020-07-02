@@ -171,5 +171,18 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         paddingTop: spacing(0.625),
       },
     },
+    picture: {
+      position: 'relative',
+      paddingTop: `${(171 / 382) * 100}%`,
+      [breakpoints.up('md')]: {
+        paddingTop: `${(206 / 400) * 100}%`,
+      },
+    },
+    image: {
+      position: 'absolute',
+      width: '100%',
+      height: 'auto',
+      top: 0,
+    },
   })
 );

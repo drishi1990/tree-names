@@ -53,7 +53,7 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
   const fullThumbSize = article => {
     return (
       <figure>
-        <picture>
+        <picture className={classes.picture}>
           <source
             media="screen and (min-width: 1280px)"
             srcSet={`${urlFor(article._rawHeroImage)
@@ -83,6 +83,7 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
               .toString()} 2x`}
           />
           <img
+            className={classes.image}
             src={urlFor(article._rawHeroImage)
               .width(400)
               .height(206)
