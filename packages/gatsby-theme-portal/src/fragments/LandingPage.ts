@@ -28,6 +28,7 @@ export const query = graphql`
             id
             headline
             subheading
+            _rawHeroImage(resolveReferences: { maxDepth: 10 })
             heroImage {
               asset {
                 url
@@ -67,6 +68,7 @@ export const query = graphql`
             _type
             id
             headline
+            _rawHeroImage(resolveReferences: { maxDepth: 10 })
             heroImage {
               asset {
                 url
@@ -102,6 +104,7 @@ export const query = graphql`
             _type
             id
             headline
+            _rawHeroImage(resolveReferences: { maxDepth: 10 })
             heroImage {
               asset {
                 url
@@ -176,6 +179,7 @@ export const query = graphql`
         slides {
           _type
           name
+          _rawImage(resolveReferences: { maxDepth: 10 })
           image {
             asset {
               source {

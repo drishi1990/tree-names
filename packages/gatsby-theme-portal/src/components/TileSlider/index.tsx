@@ -2,7 +2,8 @@ import React, { FunctionComponent, useState } from 'react';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
-
+import { useInView } from 'react-intersection-observer';
+import { urlFor } from '../../helpers/imageUrl';
 import { Typography } from '@material-ui/core';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.min.css';
@@ -17,7 +18,10 @@ const TileSlider: FunctionComponent<TileSliderInterface> = ({
   searchCtaLabel,
   searchTags,
 }) => {
-  console.log(searchCtaLabel);
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: '200px 0px',
+  });
   const [swiper, updateSwiper] = useState(null);
   const [isLastSlide, setIsLastSlide] = useState(false);
   const [isFirstSlide, setIsFirstSlide] = useState(true);
@@ -48,7 +52,52 @@ const TileSlider: FunctionComponent<TileSliderInterface> = ({
         <div>
           <Link className={classes.sliderLink} to={slide.path}>
             {slide.image && (
-              <Img fluid={slide.image.asset.fluid} alt={slide.image.alt} />
+              <figure>
+                {inView ? (
+                  <picture>
+                    <source
+                      media="screen and (min-width: 560px)"
+                      srcSet={`${urlFor(slide._rawImage)
+                        .width(280)
+                        .height(280)
+                        .fit('max')
+                        .auto('format')
+                        .url()
+                        .toString()} 1x, ${urlFor(slide._rawImage)
+                        .width(560)
+                        .height(560)
+                        .fit('max')
+                        .auto('format')
+                        .url()
+                        .toString()} 2x`}
+                    />
+                    <source
+                      media="screen and (min-width: 320px)"
+                      srcSet={`${urlFor(slide._rawImage)
+                        .width(160)
+                        .height(160)
+                        .fit('max')
+                        .auto('format')
+                        .url()
+                        .toString()} 1x, ${urlFor(slide._rawImage)
+                        .width(320)
+                        .height(320)
+                        .fit('max')
+                        .auto('format')
+                        .url()
+                        .toString()} 2x`}
+                    />
+                    <img
+                      src={urlFor(slide._rawImage)
+                        .width(280)
+                        .height(280)
+                        .fit('max')
+                        .url()}
+                      alt={slide.image.alt}
+                    />
+                  </picture>
+                ) : null}
+              </figure>
             )}
             <h3 className={classes.sliderItemCaption}>
               <span>{slide.name}</span>
@@ -80,7 +129,7 @@ const TileSlider: FunctionComponent<TileSliderInterface> = ({
   };
 
   return (
-    <div className={classes.slider}>
+    <div className={classes.slider} ref={ref} data-inview={inView}>
       <div className={classes.sectionTitle}>
         <Typography variant="h2" className={classes.sliderTitle}>
           {headline}

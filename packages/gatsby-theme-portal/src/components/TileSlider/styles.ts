@@ -36,6 +36,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       position: 'relative',
       '& picture img': {
         transition: 'all 1.2s ease 0s !important',
+        margin: 'auto',
       },
     },
     iconPlay: {
