@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
 import classNames from 'classnames';
 import Container from '@material-ui/core/Container';
 import { useInView } from 'react-intersection-observer';
