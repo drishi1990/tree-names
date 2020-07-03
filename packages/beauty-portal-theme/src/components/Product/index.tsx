@@ -28,10 +28,12 @@ const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
                 srcSet={`${urlFor(image)
                   .width(250)
                   .fit('max')
+                  .auto('format')
                   .url()
                   .toString()}, ${urlFor(image)
                   .width(500)
                   .fit('max')
+                  .auto('format')
                   .url()
                   .toString()} 2x`}
               />
@@ -39,6 +41,7 @@ const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
                 src={urlFor(image)
                   .width(250)
                   .fit('max')
+                  .auto('format')
                   .url()}
                 alt={alt}
               />

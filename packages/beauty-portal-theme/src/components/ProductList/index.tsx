@@ -28,9 +28,11 @@ const ProductList: FunctionComponent<ProductListInterface> = ({
                       srcSet={`${urlFor(product.image)
                         .width(140)
                         .fit('max')
+                        .auto('format')
                         .url()
                         .toString()}, ${urlFor(product.image)
                         .width(280)
+                        .auto('format')
                         .fit('max')
                         .url()
                         .toString()} 2x`}
@@ -40,6 +42,7 @@ const ProductList: FunctionComponent<ProductListInterface> = ({
                       srcSet={`${urlFor(product.image)
                         .width(127)
                         .fit('max')
+                        .auto('format')
                         .url()
                         .toString()}`}
                     />
@@ -47,6 +50,7 @@ const ProductList: FunctionComponent<ProductListInterface> = ({
                       media="screen and (min-width: 320px)"
                       srcSet={`${urlFor(product.image)
                         .width(116)
+                        .auto('format')
                         .fit('max')
                         .url()
                         .toString()}`}
@@ -54,6 +58,7 @@ const ProductList: FunctionComponent<ProductListInterface> = ({
                     <img
                       src={urlFor(product.image)
                         .width(116)
+                        .auto('format')
                         .fit('max')
                         .url()}
                       alt={product.image.alt}
