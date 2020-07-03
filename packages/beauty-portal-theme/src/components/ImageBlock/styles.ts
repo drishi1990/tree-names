@@ -58,16 +58,15 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     imageWrapper: {
       marginLeft: -16,
       marginRight: -16,
-      height: 220,
+      // height: 220,
       overflow: 'hidden',
       '& img': {
-        height: '100% !important',
         transition: 'all 500ms ease 0s !important',
       },
       [breakpoints.up('md')]: {
         order: 2,
-        width: 752,
-        height: 400,
+        // width: 752,
+        // height: 400,
       },
     },
     copyText: {
