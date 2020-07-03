@@ -228,6 +228,7 @@ export const query = graphql`
       ... on SanityImageBlock {
         id
         name
+        _rawImage(resolveReferences: { maxDepth: 10 })
         image {
           asset {
             fluid {

@@ -144,6 +144,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       border: 'none',
     },
     navigationButton: {
+      display: 'none',
       position: 'absolute',
       top: '30%',
       transform: 'translateY(-50%)',
@@ -158,7 +159,8 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       '& svg': {
         transition: 'all .3s ease-in',
       },
-      [breakpoints.up('md')]: {
+      [breakpoints.up('sm')]: {
+        display: 'block',
         top: '45%',
         height: 80,
         width: 45,
