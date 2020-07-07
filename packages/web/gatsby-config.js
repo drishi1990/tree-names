@@ -1,7 +1,7 @@
 const path = require('path');
 
 require('dotenv').config({
-  path: path.resolve(process.cwd(), '.env.tl-ph')
+  path: path.resolve(process.cwd(), '.env.production')
 });
 require('dotenv').config({
   path: path.resolve(process.cwd(), '.env.development')
@@ -12,7 +12,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-theme-portal`,
+      resolve: `beauty-portal-theme`,
       options: {
         themeConfig: {
           meta_host: process.env['app_local_host'],

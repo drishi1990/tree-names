@@ -2,13 +2,13 @@ const path = require('path');
 const { getPagePath } = require('../utils');
 const component = path.resolve(
   process.cwd(),
-  `../gatsby-theme-portal/src/templates/FeatureArticle/index.tsx`
+  `../beauty-portal-theme/src/templates/HowtoArticle/index.tsx`
 );
 
 module.exports = async ({ graphql, createPage }) => {
   const result = await graphql(`
     {
-      items: allSanityFeatureArticle {
+      articles: allSanityHowToArticle {
         nodes {
           headline
           slug {
@@ -27,9 +27,9 @@ module.exports = async ({ graphql, createPage }) => {
       }
     }
   `);
-  const items = result.data.items.nodes;
+  const articles = result.data.articles.nodes;
 
-  items
+  articles
     .filter(node => node.slug)
     .forEach(node => {
       createPage({

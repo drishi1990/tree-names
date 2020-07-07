@@ -77,7 +77,7 @@ const SearchResults: FunctionComponent = () => {
   };
   return (
     <Layout>
-      <SEO lang={'tl-ph'} title="" description="" keywords="" />
+      <SEO lang={'en-us'} title="" description="" keywords="" />
       <Container maxWidth="lg">
         <InstantSearch
           searchClient={searchClient}
