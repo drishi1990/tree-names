@@ -54,6 +54,8 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
         <picture
           style={{
             paddingTop: `calc(100% / ${image.asset.metadata.dimensions.aspectRatio})`,
+            background: `url(${image.asset.metadata.lqip})`,
+            backgroundSize: 'cover',
           }}
         >
           <source
