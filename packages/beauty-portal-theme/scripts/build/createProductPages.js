@@ -2,13 +2,13 @@ const path = require('path');
 const { getPagePath } = require('../utils');
 const component = path.resolve(
   process.cwd(),
-  `../gatsby-theme-portal/src/templates/LandingPage/index.tsx`
+  `../beauty-portal-theme/src/templates/Product/index.tsx`
 );
 
 module.exports = async ({ graphql, createPage }) => {
   const result = await graphql(`
     {
-      allSanityLandingPage {
+      items: allSanityProduct {
         nodes {
           id
           name
@@ -19,15 +19,15 @@ module.exports = async ({ graphql, createPage }) => {
       }
     }
   `);
+  const items = result.data.items.nodes;
 
-  result.data.allSanityLandingPage.nodes.forEach(node => {
+  items.forEach(node => {
     createPage({
       path: getPagePath(node),
       component,
       context: {
         title: node.name,
-        slug: node.slug.current,
-        id: node.id,
+        slug: node.id,
       },
     });
   });

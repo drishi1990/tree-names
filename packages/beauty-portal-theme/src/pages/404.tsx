@@ -58,7 +58,7 @@ const NotFound = ({ data: { site } }: NotFoundProps) => {
   return (
     <Layout>
       <SEO
-        lang={'tl-ph'}
+        lang={'en-us'}
         title={site.title}
         description={site.description}
         keywords={site.keywords}

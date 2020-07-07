@@ -1,11 +1,11 @@
 {
   "private": true,
-  "name": "platform-liberty-studio",
+  "name": "studio",
   "version": "1.0.7",
   "main": "package.json",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
-    "dev": "sanity start",
+    "develop": "sanity start",
     "deploy": "sanity deploy",
     "format": "prettier-eslint --write \"**/*.js\" \"!node_modules/**\"",
     "build": "sanity build",

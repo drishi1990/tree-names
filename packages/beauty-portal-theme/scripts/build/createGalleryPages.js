@@ -2,13 +2,13 @@ const path = require('path');
 const { getPagePath } = require('../utils');
 const component = path.resolve(
   process.cwd(),
-  `../gatsby-theme-portal/src/templates/HowtoArticle/index.tsx`
+  `../beauty-portal-theme/src/templates/GalleryArticle/index.tsx`
 );
 
 module.exports = async ({ graphql, createPage }) => {
   const result = await graphql(`
     {
-      articles: allSanityHowToArticle {
+      articles: allSanityGalleryArticle {
         nodes {
           headline
           slug {

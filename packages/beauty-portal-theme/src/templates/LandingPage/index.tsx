@@ -28,7 +28,7 @@ const LandingPage = (props: LandingPageProps) => {
   return (
     <Layout className={getLayoutClassName(page.name)}>
       <SEO
-        lang={'tl-ph'}
+        lang={'en-us'}
         title={page.name}
         description={site.description}
         keywords={site.keywords}

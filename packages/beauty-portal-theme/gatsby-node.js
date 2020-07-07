@@ -13,7 +13,7 @@ const express = require(`express`);
 
 exports.onCreateDevServer = ({ app }) => {
   app.use(
-    express.static(path.resolve(process.cwd(), `../gatsby-theme-portal/static`))
+    express.static(path.resolve(process.cwd(), `../beauty-portal-theme/static`))
   );
 };
 

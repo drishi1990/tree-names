@@ -35,7 +35,7 @@ const HowtoArticlePage = (props: HowtoArticlePageProps) => {
   return (
     <Layout>
       <SEO
-        lang={'tl-ph'}
+        lang={'en-us'}
         title={page.seo.metaTitle}
         description={page.seo.metaDescription}
         keywords={page.seo.metaKeywords}
