@@ -29,13 +29,6 @@ export const query1 = graphql`
           srcSetWebp
           srcWebp
         }
-        localFile {
-          childImageSharp {
-            fluid {
-              src
-            }
-          }
-        }
       }
     }
     name

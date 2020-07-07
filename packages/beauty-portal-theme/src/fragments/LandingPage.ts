@@ -41,17 +41,6 @@ export const query = graphql`
                   srcSetWebp
                   srcWebp
                 }
-                localFile {
-                  childImageSharp {
-                    fluid(
-                      toFormat: JPG
-                      jpegProgressive: true
-                      jpegQuality: 70
-                    ) {
-                      src
-                    }
-                  }
-                }
               }
               alt
             }
@@ -81,17 +70,6 @@ export const query = graphql`
                   srcSetWebp
                   srcWebp
                 }
-                localFile {
-                  childImageSharp {
-                    fluid(
-                      toFormat: JPG
-                      jpegProgressive: true
-                      jpegQuality: 70
-                    ) {
-                      src
-                    }
-                  }
-                }
               }
               alt
             }
@@ -116,17 +94,6 @@ export const query = graphql`
                   srcSet
                   srcSetWebp
                   srcWebp
-                }
-                localFile {
-                  childImageSharp {
-                    fluid(
-                      toFormat: JPG
-                      jpegProgressive: true
-                      jpegQuality: 70
-                    ) {
-                      src
-                    }
-                  }
                 }
               }
               alt
@@ -243,20 +210,6 @@ export const query = graphql`
               srcSet
               srcSetWebp
               srcWebp
-            }
-            localFile {
-              childImageSharp {
-                fluid(
-                  maxWidth: 380
-                  toFormat: JPG
-                  jpegProgressive: true
-                  jpegQuality: 70
-                  srcSetBreakpoints: [300, 400, 600, 800]
-                ) {
-                  src
-                  srcSet
-                }
-              }
             }
           }
           alt

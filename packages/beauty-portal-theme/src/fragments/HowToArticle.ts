@@ -59,21 +59,6 @@ export const query1 = graphql`
       youTubeCaption
       heroImage {
         alt
-        asset {
-          localFile {
-            childImageSharp {
-              fluid(
-                toFormat: JPG
-                jpegProgressive: true
-                jpegQuality: 70
-                maxHeight: 400
-                maxWidth: 712
-              ) {
-                src
-              }
-            }
-          }
-        }
       }
     }
     _rawHeroImage(resolveReferences: { maxDepth: 10 })
@@ -231,21 +216,6 @@ export const query2 = graphql`
       youTubeCaption
       heroImage {
         alt
-        asset {
-          localFile {
-            childImageSharp {
-              fluid(
-                toFormat: JPG
-                jpegProgressive: true
-                jpegQuality: 70
-                maxHeight: 400
-                maxWidth: 712
-              ) {
-                src
-              }
-            }
-          }
-        }
       }
     }
     _rawHeroImage(resolveReferences: { maxDepth: 10 })

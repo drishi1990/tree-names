@@ -56,13 +56,6 @@ export const query1 = graphql`
           srcSetWebp
           srcWebp
         }
-        localFile {
-          childImageSharp {
-            fluid(toFormat: JPG, jpegProgressive: true, jpegQuality: 70) {
-              src
-            }
-          }
-        }
       }
     }
     imageGallery {
