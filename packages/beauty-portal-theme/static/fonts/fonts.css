@@ -1,0 +1,14 @@
+@font-face {
+  font-family: Proxima Nova Alt;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('ProximaNovaAltRegular.woff2') format('woff2');
+}
+@font-face {
+  font-family: Proxima Nova Alt;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('ProximaNovaAltBold.woff2') format('woff2');
+}
