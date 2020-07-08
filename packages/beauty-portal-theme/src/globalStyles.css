@@ -2,7 +2,26 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
-h3 {
+@font-face {
+  font-family: Proxima Nova Alt;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/ProximaNovaAltRegular.woff2') format('woff2');
+}
+@font-face {
+  font-family: Proxima Nova Alt;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('/fonts/ProximaNovaAltBold.woff2') format('woff2');
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.1;
 }
 iframe {
