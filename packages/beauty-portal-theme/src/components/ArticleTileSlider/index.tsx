@@ -56,7 +56,14 @@ const ArticleTileSlider: FunctionComponent<ArticleTileSliderInterface> = ({
               <div className={classes.heroImage}>
                 <figure>
                   {inView ? (
-                    <picture>
+                    <picture
+                      className="bp-image__placeholder"
+                      style={{
+                        paddingTop: '100%',
+                        background: `url(${slide._rawHeroImage.asset.metadata.lqip})`,
+                        backgroundSize: 'cover',
+                      }}
+                    >
                       <source
                         media="screen and (min-width: 560px)"
                         srcSet={`${urlFor(slide._rawHeroImage)
@@ -148,7 +155,7 @@ const ArticleTileSlider: FunctionComponent<ArticleTileSliderInterface> = ({
           disabled={isLastSlide}
         >
           <Next />
-          <span className={classes.srOnly}>Next</span>
+          <span className="srOnly">Next</span>
         </button>
       )}
       <Swiper {...params} getSwiper={updateSwiper}>
@@ -162,7 +169,7 @@ const ArticleTileSlider: FunctionComponent<ArticleTileSliderInterface> = ({
           disabled={isFirstSlide}
         >
           <Next />
-          <span className={classes.srOnly}>Prev</span>
+          <span className="srOnly">Prev</span>
         </button>
       )}
     </div>

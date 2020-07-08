@@ -10,7 +10,7 @@ const Fieldset: FunctionComponent<FieldsetInterface> = ({
 
   return (
     <fieldset className={classNames('c-form__fielset', classes.fieldset)}>
-      <legend className={classes.srOnly}>{legend}</legend>
+      <legend className="srOnly">{legend}</legend>
       {children}
     </fieldset>
   );

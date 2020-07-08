@@ -16,9 +16,11 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       [breakpoints.up('md')]: {
         margin: 0,
       },
+      '& figure': {
+        maxWidth: 752,
+      },
       '& picture': {
         display: 'block',
-        maxWidth: 752,
       },
       '& .swiper-pagination': {
         display: 'flex',
@@ -43,15 +45,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
 
       '& .swiper-pagination-bullet-active': {
         backgroundColor: palette.common.black,
-      },
-
-      '& figure': {
-        margin: 0,
-      },
-
-      '& picture img': {
-        width: '100%',
-        height: '100%',
       },
     },
     copy: {
@@ -197,18 +190,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       [breakpoints.up('md')]: {
         left: -60,
       },
-    },
-    srOnly: {
-      border: 0,
-      clip: 'rect(0 0 0 0)',
-      clipPath: 'polygon(0 0,0 0,0 0)',
-      height: '.0625rem',
-      margin: '-.0625rem',
-      overflow: 'hidden',
-      padding: 0,
-      position: 'absolute',
-      width: '.0625rem',
-      whiteSpace: 'nowrap',
     },
   })
 );

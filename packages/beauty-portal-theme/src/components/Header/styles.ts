@@ -223,17 +223,5 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     label: {
       display: 'none',
     },
-    srOnly: {
-      border: 0,
-      clip: 'rect(0 0 0 0)',
-      clipPath: 'polygon(0 0,0 0,0 0)',
-      height: '.0625rem',
-      margin: '-.0625rem',
-      overflow: 'hidden',
-      padding: 0,
-      position: 'absolute',
-      width: '.0625rem',
-      whiteSpace: 'nowrap',
-    },
   })
 );

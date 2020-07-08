@@ -165,7 +165,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
                 data-url={heroVideo.url}
               >
                 <Youtube />
-                <span className={classes.srOnly}>{playLabel}</span>
+                <span className="srOnly">{playLabel}</span>
               </button>
             </>
           )}

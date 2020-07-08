@@ -54,7 +54,14 @@ const TileSlider: FunctionComponent<TileSliderInterface> = ({
             {slide.image && (
               <figure>
                 {inView ? (
-                  <picture>
+                  <picture
+                    className="bp-image__placeholder"
+                    style={{
+                      paddingTop: '100%',
+                      background: `url(${slide._rawImage.asset.metadata.lqip})`,
+                      backgroundSize: 'cover',
+                    }}
+                  >
                     <source
                       media="screen and (min-width: 560px)"
                       srcSet={`${urlFor(slide._rawImage)
@@ -150,7 +157,7 @@ const TileSlider: FunctionComponent<TileSliderInterface> = ({
         disabled={isLastSlide}
       >
         <Next />
-        <span className={classes.srOnly}>Next</span>
+        <span className="srOnly">Next</span>
       </button>
       <Swiper {...params} getSwiper={updateSwiper}>
         {slides.map(slide => renderer(slide))}
@@ -162,7 +169,7 @@ const TileSlider: FunctionComponent<TileSliderInterface> = ({
         disabled={isFirstSlide}
       >
         <Next />
-        <span className={classes.srOnly}>Prev</span>
+        <span className="srOnly">Prev</span>
       </button>
     </div>
   );

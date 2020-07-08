@@ -9,20 +9,21 @@ headComponents.push(
     rel="preload"
     href="https://cdn.sanity.io/images/8azq2eb8/production/2b6b4d1fc5552b58670056e3f4394d3af452ef39-782x439.jpg?rect=0,2,782,434&w=414&h=230&fit=max&auto=format"
     as="image"
+    crossOrigin="true"
   />,
   <link
     rel="preload"
     href="/fonts/ProximaNovaAltRegular.woff2"
     as="font"
     type="font/woff2"
-    crossOrigin
+    crossOrigin="true"
   />,
   <link
     rel="preload"
     href="/fonts/ProximaNovaAltBold.woff2"
     as="font"
     type="font/woff2"
-    crossOrigin
+    crossOrigin="true"
   />,
   <link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;," />,
   <script
