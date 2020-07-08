@@ -4,15 +4,14 @@ import S from '@sanity/desk-tool/structure-builder'
 import {
   MdSettings,
   MdPerson,
-  MdDescription,
   MdVideocam,
   MdImage,
   MdTextFields,
   MdViewCompact,
   MdEmail
 } from 'react-icons/md'
-import {FaSitemap, FaTag, FaTags, FaBuffer, FaSlidersH, FaBoxes, FaGlobe} from 'react-icons/fa'
-import {GiSpray, GiCherish, GiHairStrands, GiStopSign} from 'react-icons/gi'
+import { FaSitemap, FaTag, FaTags, FaBuffer, FaSlidersH, FaBoxes, FaGlobe } from 'react-icons/fa'
+import { GiSpray, GiCherish, GiHairStrands, GiStopSign } from 'react-icons/gi'
 // ran npm install react
 // ran npm install font-awesome
 
@@ -32,14 +31,14 @@ export const getDefaultDocumentNode = props => {
    * you can set up that logic in here too.
    * https://www.sanity.io/docs/structure-builder-reference#getdefaultdocumentnode-97e44ce262c9
    */
-  const {schemaType} = props
+  const { schemaType } = props
   if (schemaType === 'post') {
     return S.document().views([
       S.view.form(),
       S.view
         .component(IframePreview)
         .title('Web preview')
-        .options({previewURL})
+        .options({ previewURL })
     ])
   }
   return S.document().views([S.view.form()])
@@ -130,7 +129,9 @@ export default () =>
                 .title('Before-After Image Block')
                 .icon(MdImage)
                 .schemaType('beforeAfterImageBlock')
-                .child(S.documentTypeList('beforeAfterImageBlock').title('Before-After Block Type')),
+                .child(
+                  S.documentTypeList('beforeAfterImageBlock').title('Before-After Block Type')
+                ),
               S.divider(),
               S.listItem()
                 .title('Video Block')
@@ -175,7 +176,7 @@ export default () =>
                 .title('Navigation')
                 .icon(FaSitemap)
                 .schemaType('navBar')
-                .child(S.documentTypeList('navBar').title('Navigation V2 - Improved'))
+                .child(S.documentTypeList('navBar').title('Navigation'))
             ])
         ),
       S.listItem()
@@ -272,7 +273,11 @@ export default () =>
                         .title('Before-After Image Block Type')
                         .icon(MdImage)
                         .schemaType('beforeAfterImageBlockType')
-                        .child(S.documentTypeList('beforeAfterImageBlockType').title('Before-After Block Type')),
+                        .child(
+                          S.documentTypeList('beforeAfterImageBlockType').title(
+                            'Before-After Block Type'
+                          )
+                        ),
                       S.listItem()
                         .title('Video Block Type')
                         .icon(MdVideocam)
@@ -293,16 +298,6 @@ export default () =>
 
       S.divider(),
       S.listItem()
-        .title('Blog Posts')
-        .icon(MdDescription)
-        .schemaType('post')
-        .child(S.documentTypeList('post').title('Blog posts')),
-      S.listItem()
-        .title('Blog Author')
-        .icon(MdPerson)
-        .schemaType('blogAuthor')
-        .child(S.documentTypeList('blogAuthor').title('Blog Authors')),
-      S.listItem()
         .title('Blog Settings')
         .icon(MdSettings)
         .child(
@@ -310,10 +305,12 @@ export default () =>
             .id('siteSettings')
             .schemaType('siteSettings')
             .documentId('siteSettings')
-        ),
+        )
       // `S.documentTypeListItems()` returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above.
+
+      /* Explicit Naming of Documents will be displayed
       ...S.documentTypeListItems().filter(
         listItem =>
           ![
@@ -338,9 +335,7 @@ export default () =>
             'tag',
             'tagCategory',
             'author',
-            'post',
             'writer',
-            'blogAuthor',
             'siteSettings',
             'textBlock',
             'textBlockType',
@@ -357,4 +352,5 @@ export default () =>
             'beforeAfterImageBlockType'
           ].includes(listItem.getId())
       )
+      */
     ])
