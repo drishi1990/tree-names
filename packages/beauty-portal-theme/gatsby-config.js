@@ -98,15 +98,6 @@ module.exports = ({ themeConfig }) => {
       },
     },
     'gatsby-plugin-sitemap',
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        custom: {
-          families: ['Proxima Nova Alt'],
-          urls: ['/fonts/fonts.css'],
-        },
-      },
-    },
   ];
   plugins.push(sanitySourcePlugin);
   plugins.push('gatsby-plugin-preact');
