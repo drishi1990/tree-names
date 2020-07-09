@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import BlockContent from '@sanity/block-content-to-react';
-import Container from '@material-ui/core/Container';
 import SEO from '../../components/Seo';
 import Layout from '../../components/Layout';
 import LandingSectionRenderer from '../../components/LandingSectionRenderer';
@@ -43,7 +42,7 @@ const LandingPage = (props: LandingPageProps) => {
       <OGTags type={'page'} slug={page.path} data={page} />
       {page.path !== '/' && <Breadcrumb pageTitle={page.name} />}
       {(page.headline || page._rawIntroduction) && (
-        <Container maxWidth="lg">
+        <div className="container">
           <div className={classes.pageContext}>
             {page.headline && (
               <h1 className={classes.headline}>{page.headline}</h1>
@@ -55,7 +54,7 @@ const LandingPage = (props: LandingPageProps) => {
               />
             )}
           </div>
-        </Container>
+        </div>
       )}
       {page.landingSections.map((section, index) => (
         <LandingSectionRenderer

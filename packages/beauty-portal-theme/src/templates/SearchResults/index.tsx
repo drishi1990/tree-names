@@ -16,7 +16,6 @@ import {
 import algoliasearch from 'algoliasearch/lite';
 import qs from 'qs';
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
 import * as hitComps from '../../components/HitComp';
 import classNames from 'classnames';
 import { ReactComponent as IconList } from '../../images/icons/list.svg';
@@ -78,7 +77,7 @@ const SearchResults: FunctionComponent = () => {
   return (
     <Layout>
       <SEO lang={'en-us'} title="" description="" keywords="" />
-      <Container maxWidth="lg">
+      <div className="container">
         <InstantSearch
           searchClient={searchClient}
           indexName={indices[0].name}
@@ -234,7 +233,7 @@ const SearchResults: FunctionComponent = () => {
             </Grid>
           </Grid>
         </InstantSearch>
-      </Container>
+      </div>
     </Layout>
   );
 };

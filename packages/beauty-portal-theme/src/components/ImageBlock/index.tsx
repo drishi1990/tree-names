@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
-import Container from '@material-ui/core/Container';
 import { useInView } from 'react-intersection-observer';
 import { urlFor } from '../../helpers/imageUrl';
 import BlockContent from '@sanity/block-content-to-react';
@@ -76,7 +75,7 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
         getComponentvariant(imageBlockType.name)
       )}
     >
-      <Container>
+      <div className="container">
         <Link to={url || '/'} className={classes.link}>
           <div className={classes.content}>
             <div
@@ -97,7 +96,7 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
             </div>
           </div>
         </Link>
-      </Container>
+      </div>
     </section>
   );
 };

@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
-import Container from '@material-ui/core/Container';
 import { getSearchUrl } from '../../helpers/searchUrl';
 import useStyles from './styles';
 
@@ -14,7 +13,7 @@ const Breadcrumb: FunctionComponent<BreadcrumbInterface> = ({
 
   return (
     <section className={classes.wrapper}>
-      <Container maxWidth="lg">
+      <div className="container">
         <div className="">
           <ul className={classes.items}>
             <li className={classes.item}>
@@ -60,7 +59,7 @@ const Breadcrumb: FunctionComponent<BreadcrumbInterface> = ({
             </li>
           </ul>
         </div>
-      </Container>
+      </div>
     </section>
   );
 };
