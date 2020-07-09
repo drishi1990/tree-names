@@ -29,7 +29,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
 }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    rootMargin: '200px 0px',
+    rootMargin: '5px 0px',
   });
   const classes = useStyles();
   const [swiper, updateSwiper] = useState(null);
