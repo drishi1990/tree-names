@@ -20,12 +20,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         marginBottom: spacing(1.875),
       },
     },
-    headingSecondary: {
-      fontSize: '2.5rem',
-      fontWeight: 600,
-      margin: 0,
-      marginBottom: spacing(2.5),
-    },
     textSecondary: {
       paddingBottom: spacing(1.25),
       fontSize: '.875rem',
@@ -47,8 +41,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         marginBottom: 0,
       },
     },
-    articleAuthor: {},
-    articleDate: {},
     divider: {
       margin: 0,
       marginLeft: spacing(1.25),
@@ -67,7 +59,10 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       marginTop: spacing(1.25),
       position: 'relative',
       '& iframe': {
-        height: 263,
+        height: 214,
+        [breakpoints.up('sm')]: {
+          height: 232,
+        },
         [breakpoints.up('md')]: {
           height: 399,
         },
@@ -190,20 +185,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         },
       },
     },
-    flex: {
-      display: 'flex',
-      alignItems: 'center',
-      '& span': {
-        marginLeft: spacing(2.5),
-      },
-      '& svg': {
-        marginRight: spacing(1.25),
-        opacity: 0.2,
-        '&.active': {
-          opacity: 1,
-        },
-      },
-    },
     authorInfo: {
       display: 'flex',
       '& .gatsby-image-wrapper': {
@@ -218,18 +199,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         height: '25px !important',
         objectFit: 'contain !important',
       },
-    },
-    srOnly: {
-      border: 0,
-      clip: 'rect(0 0 0 0)',
-      clipPath: 'polygon(0 0,0 0,0 0)',
-      height: '.0625rem',
-      margin: '-.0625rem',
-      overflow: 'hidden',
-      padding: 0,
-      position: 'absolute',
-      width: '.0625rem',
-      whiteSpace: 'nowrap',
     },
   })
 );

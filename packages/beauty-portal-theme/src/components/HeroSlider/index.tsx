@@ -1,9 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
 import classNames from 'classnames';
-
-import { Typography } from '@material-ui/core';
+import { urlFor } from '../../helpers/imageUrl';
 import { HeroSliderInterface } from './models';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.min.css';
@@ -60,41 +58,57 @@ const HeroSlider: FunctionComponent<HeroSliderInterface> = ({
         disabled={isLastSlide}
       >
         <Next />
-        <span className={classes.srOnly}>Next</span>
+        <span className="srOnly">Next</span>
       </button>
       <Swiper {...params} getSwiper={updateSwiper}>
         {slides.map((slide: any, index: number) => (
           <div key={slide.path}>
-            {slide.heroImage &&
-              (index ? (
-                <Img
-                  fluid={slide.heroImage.asset.fluid}
-                  alt={slide.heroImage.alt}
-                  style={{ maxWidth: 752 }}
-                  imgStyle={{ objectPosition: 'top center' }}
-                />
-              ) : (
-                <figure>
-                  <picture>
-                    <source
-                      srcSet={`${slide.heroImage.asset.url}?w=752&h=421&auto=format 1x, ${slide.heroImage.asset.url}?w=752&h=421&auto=format&dpr=2 2x`}
-                      media="screen and (min-width: 767px)"
-                    />
-                    <img
-                      src={`${slide.heroImage.asset.url}?w=700&h=392&auto=format`}
-                      alt={slide.heroImage.alt}
-                      width="752"
-                      height="421"
-                    />
-                  </picture>
-                </figure>
-              ))}
+            {slide.heroImage && (
+              <figure>
+                <picture
+                  className="bp-image__placeholder"
+                  style={{
+                    paddingTop: '56.25%',
+                    background: `url(${slide._rawHeroImage.asset.metadata.lqip})`,
+                    backgroundSize: 'cover',
+                  }}
+                >
+                  <source
+                    media="screen and (min-width: 752px)"
+                    srcSet={`${urlFor(slide._rawHeroImage)
+                      .width(752)
+                      .height(423)
+                      .fit('max')
+                      .auto('format')
+                      .url()
+                      .toString()}`}
+                  />
+                  <source
+                    media="screen and (min-width: 320px)"
+                    srcSet={`${urlFor(slide._rawHeroImage)
+                      .width(414)
+                      .height(232)
+                      .fit('max')
+                      .auto('format')
+                      .url()
+                      .toString()}`}
+                  />
+                  <img
+                    src={urlFor(slide._rawHeroImage)
+                      .width(712)
+                      .height(399)
+                      .fit('max')
+                      .auto('format')
+                      .url()}
+                    alt={slide.heroImage.alt}
+                  />
+                </picture>
+              </figure>
+            )}
             <div className={classes.copy}>
               <div className={classes.copyInner}>
                 <div className={classes.slideType}>{slide._type}</div>
-                <Typography variant="h2" className={classes.heading}>
-                  {slide.headline}
-                </Typography>
+                <h2 className={classes.heading}>{slide.headline}</h2>
                 <Link className={classes.callToAction} to={slide.path}>
                   Go to Article
                 </Link>
@@ -110,7 +124,7 @@ const HeroSlider: FunctionComponent<HeroSliderInterface> = ({
         disabled={isFirstSlide}
       >
         <Next />
-        <span className={classes.srOnly}>Prev</span>
+        <span className="srOnly">Prev</span>
       </button>
     </div>
   );

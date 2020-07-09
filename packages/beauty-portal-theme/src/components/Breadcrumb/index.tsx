@@ -24,6 +24,9 @@ const Breadcrumb: FunctionComponent<BreadcrumbInterface> = ({
             </li>
             {tag && (
               <>
+                <li className={classes.divider} aria-hidden="true">
+                  /
+                </li>
                 <li className={classes.item}>
                   <Link
                     to={getSearchUrl(
@@ -36,6 +39,9 @@ const Breadcrumb: FunctionComponent<BreadcrumbInterface> = ({
                     {tag.tagCategory.name}
                   </Link>
                 </li>
+                <li className={classes.divider} aria-hidden="true">
+                  /
+                </li>
                 <li className={classes.item}>
                   <Link
                     to={getSearchUrl(searchResultPath, tag.name, 'tags.name')}
@@ -43,6 +49,9 @@ const Breadcrumb: FunctionComponent<BreadcrumbInterface> = ({
                   >
                     {tag.name}
                   </Link>
+                </li>
+                <li className={classes.divider} aria-hidden="true">
+                  /
                 </li>
               </>
             )}

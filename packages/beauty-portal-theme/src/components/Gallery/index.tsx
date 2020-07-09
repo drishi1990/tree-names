@@ -83,7 +83,7 @@ const Gallery: FunctionComponent<GalleryInterface> = ({
           aria-label={`Selected: ${label} ${index + 1}`}
           title={`Selected: ${label} ${index + 1}`}
         >
-          <span className={classes.srOnly}>{`${label} ${index + 1}`}</span>
+          <span className="srOnly">{`${label} ${index + 1}`}</span>
         </li>
       );
     }
@@ -98,7 +98,7 @@ const Gallery: FunctionComponent<GalleryInterface> = ({
         title={`${label} ${index + 1}`}
         aria-label={`${label} ${index + 1}`}
       >
-        <span className={classes.srOnly}>{`${label} ${index + 1}`}</span>
+        <span className="srOnly">{`${label} ${index + 1}`}</span>
       </li>
     );
   };

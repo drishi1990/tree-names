@@ -1,12 +1,13 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import { urlFor } from '../../helpers/imageUrl';
 
 import { ReactComponent as IconBuy } from '../../images/icons/buy.svg';
 
 import useStyles from './styles';
 
-const Product: FunctionComponent<ProductInterface> = ({ metadata, image }) => {
+const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
   const {
     slug,
     image: { alt },
@@ -14,14 +15,37 @@ const Product: FunctionComponent<ProductInterface> = ({ metadata, image }) => {
     tagLine,
     name,
   } = metadata;
+  const { image } = data;
   const classes = useStyles();
-
   return (
     <div className={classes.wrapper}>
       <Link className={classes.link} to={(slug && slug.current) || '/'}>
         <div className={classes.image}>
           <figure>
-            <Img fluid={image} alt={alt} />
+            <picture>
+              <source
+                media="screen and (min-width: 1280px)"
+                srcSet={`${urlFor(image)
+                  .width(250)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}, ${urlFor(image)
+                  .width(500)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()} 2x`}
+              />
+              <img
+                src={urlFor(image)
+                  .width(250)
+                  .fit('max')
+                  .auto('format')
+                  .url()}
+                alt={alt}
+              />
+            </picture>
           </figure>
         </div>
         {tagLine && (
@@ -54,6 +78,6 @@ const Product: FunctionComponent<ProductInterface> = ({ metadata, image }) => {
 
 interface ProductInterface {
   metadata: any;
-  image: any;
+  data: any;
 }
 export default Product;

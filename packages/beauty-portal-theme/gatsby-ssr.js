@@ -4,6 +4,21 @@ const headComponents = [];
 
 headComponents.push(
   <link rel="preconnect" href="https://cdn.sanity.io" />,
+  <link rel="dns-prefetch" href="https://cdn.sanity.io" />,
+  <link
+    rel="preload"
+    href="/fonts/ProximaNovaAltRegular.woff2"
+    as="font"
+    type="font/woff2"
+    crossOrigin="true"
+  />,
+  <link
+    rel="preload"
+    href="/fonts/ProximaNovaAltBold.woff2"
+    as="font"
+    type="font/woff2"
+    crossOrigin="true"
+  />,
   <link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;," />,
   <script
     type="text/javascript"

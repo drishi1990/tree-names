@@ -20,16 +20,17 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       textAlign: 'left',
       color: palette.text.secondary,
       position: 'relative',
-      '& .gatsby-image-wrapper': {
-        width: 80,
+      '& figure': {
+        marginRight: spacing(1.85),
       },
     },
     teaserFirst: {
       marginBottom: spacing(3),
-      '& .gatsby-image-wrapper': {
-        width: '100%',
-        height: 206,
+      '& figure': {
         marginRight: 0,
+        [breakpoints.up('md')]: {
+          marginRight: spacing(1.85),
+        },
       },
       '& a > div': {
         flexDirection: 'column',
@@ -68,8 +69,8 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       [breakpoints.up('md')]: {
         marginTop: spacing(6),
       },
-      '& .gatsby-image-wrapper': {
-        width: 175,
+      '& figure': {
+        marginRight: spacing(1.85),
       },
       '& .c-teaser__copy': {
         flex: '1',
@@ -169,6 +170,19 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         fontSize: '1.875rem',
         paddingTop: spacing(0.625),
       },
+    },
+    picture: {
+      position: 'relative',
+      paddingTop: `${(171 / 382) * 100}%`,
+      [breakpoints.up('md')]: {
+        paddingTop: `${(206 / 400) * 100}%`,
+      },
+    },
+    image: {
+      position: 'absolute',
+      width: '100%',
+      height: 'auto',
+      top: 0,
     },
   })
 );

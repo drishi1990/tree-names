@@ -18,27 +18,23 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     item: {
       fontSize: '.75rem',
-      paddingLeft: spacing(1),
       whiteSpace: 'nowrap',
-      '&::before': {
-        display: 'inline-block',
-        paddingRight: spacing(1),
-        color: palette.grey[50],
-        content: "'/'",
-      },
       '&:first-child': {
-        paddingLeft: spacing(0.5),
         display: 'block',
         '&:before': {
           display: 'none',
         },
       },
-      '& + li + li + li': {
+      '&:last-child': {
         display: 'none',
         [breakpoints.up('md')]: {
           display: 'block',
         },
       },
+    },
+    divider: {
+      padding: '0 8px',
+      fontSize: '.75rem',
     },
     link: {
       color: palette.common.black,

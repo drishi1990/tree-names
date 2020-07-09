@@ -4,11 +4,10 @@ import { Link } from 'gatsby';
 import classNames from 'classnames';
 import SocialMenu from '../SocialMenu';
 import { getYouTubeId } from '../../helpers/youtube';
+import { urlFor } from '../../helpers/imageUrl';
 import { ReactComponent as Skill } from '../../images/icons/skill.svg';
 import { ReactComponent as Youtube } from '../../images/icons/youtube.svg';
 import { ReactComponent as IconTime } from '../../images/icons/time.svg';
-
-import { Typography } from '@material-ui/core';
 import useStyles from './styles';
 
 const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
@@ -30,8 +29,9 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
     author,
     skillLevel,
     time,
+    _rawHeroImage,
+    _rawHeroVideo,
   } = article;
-
   const playVideo = (event: any) => {
     setVideoLoading(true);
     setVideoSourceUrl(
@@ -46,21 +46,71 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
     setVideoLoading(false);
   };
 
-  const renderVideoThumbnail = (src, alt) => {
-    return <img className="img-responsive" src={src} alt={alt} />;
+  const renderVideoThumbnail = (image, alt) => {
+    return (
+      <figure>
+        <picture
+          className="bp-image__placeholder"
+          style={{
+            paddingTop: `calc(100% / ${image.asset.metadata.dimensions.aspectRatio})`,
+            background: `url(${image.asset.metadata.lqip})`,
+            backgroundSize: 'cover',
+          }}
+        >
+          <source
+            media="screen and (min-width: 1025px)"
+            srcSet={`${urlFor(image)
+              .width(712)
+              .height(399)
+              .fit('max')
+              .auto('format')
+              .url()
+              .toString()}`}
+          />
+          <source
+            media="screen and (min-width: 560px)"
+            srcSet={`${urlFor(image)
+              .width(528)
+              .height(296)
+              .fit('max')
+              .auto('format')
+              .url()
+              .toString()}`}
+          />
+          <source
+            media="screen and (min-width: 320px)"
+            srcSet={`${urlFor(image)
+              .width(414)
+              .height(230)
+              .fit('max')
+              .auto('format')
+              .url()
+              .toString()}`}
+          />
+          <img
+            src={urlFor(image)
+              .width(712)
+              .height(399)
+              .fit('max')
+              .auto('format')
+              .url()}
+            alt={alt}
+          />
+        </picture>
+      </figure>
+    );
   };
 
   return (
     <div className={classes.header}>
-      <Typography
-        variant="h1"
+      <h1
         className={classNames(
           classes.headingPrimary,
           type === 'gallery' ? classes.textCenter : null
         )}
       >
         {headline}
-      </Typography>
+      </h1>
       <p
         className={classNames(
           classes.textSecondary,
@@ -84,34 +134,26 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
             </div>
           )}
           {(article.publishedAt || article._updatedAt) && (
-            <span className={classes.articleDate}>
-              {article.publishedAt || article._updatedAt}
-            </span>
+            <span>{article.publishedAt || article._updatedAt}</span>
           )}
         </div>
         <SocialMenu links={socialLinks} />
       </div>
       {/* TODO: Use generic `Video` component for hero video to avoid duplicate code  */}
+      {/* {renderHeroImage(_rawHeroImage, heroImage.alt)} */}
       {!imageGallery && (
         <div className={classes.heroImage}>
           {!showVideo &&
             !heroVideo &&
-            renderVideoThumbnail(
-              heroImage.asset.localFile.childImageSharp.fluid.src,
-              heroImage.alt
-            )}
+            renderVideoThumbnail(_rawHeroImage, heroImage.alt)}
           {!showVideo && heroVideo && !videoLoading && (
             <>
               {heroVideo.heroImage
                 ? renderVideoThumbnail(
-                    heroVideo.heroImage.asset.localFile.childImageSharp.fluid
-                      .src,
+                    _rawHeroVideo.heroImage,
                     heroVideo.heroImage.alt
                   )
-                : renderVideoThumbnail(
-                    heroImage.asset.localFile.childImageSharp.fluid.src,
-                    heroImage.alt
-                  )}
+                : renderVideoThumbnail(_rawHeroImage, heroImage.alt)}
               <button
                 type="button"
                 className={classes.iconVideo}
@@ -119,7 +161,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
                 data-url={heroVideo.url}
               >
                 <Youtube />
-                <span className={classes.srOnly}>{playLabel}</span>
+                <span className="srOnly">{playLabel}</span>
               </button>
             </>
           )}

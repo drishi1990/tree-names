@@ -4,6 +4,8 @@ export const query1 = graphql`
   fragment FeatureFieldsFull on SanityFeatureArticle {
     _type
     _rawFeatureBody(resolveReferences: { maxDepth: 10 })
+    _rawHeroImage(resolveReferences: { maxDepth: 10 })
+    _rawHeroVideo(resolveReferences: { maxDepth: 10 })
     subheading
     path
     slug {
@@ -14,21 +16,6 @@ export const query1 = graphql`
       youTubeCaption
       heroImage {
         alt
-        asset {
-          localFile {
-            childImageSharp {
-              fluid(
-                toFormat: JPG
-                jpegProgressive: true
-                jpegQuality: 70
-                maxHeight: 400
-                maxWidth: 712
-              ) {
-                src
-              }
-            }
-          }
-        }
       }
     }
     heroImage {
@@ -51,13 +38,6 @@ export const query1 = graphql`
           srcSet
           srcSetWebp
           srcWebp
-        }
-        localFile {
-          childImageSharp {
-            fluid(toFormat: JPG, jpegProgressive: true, jpegQuality: 70) {
-              src
-            }
-          }
         }
       }
     }
@@ -181,25 +161,11 @@ export const query2 = graphql`
       youTubeCaption
       heroImage {
         alt
-        asset {
-          localFile {
-            childImageSharp {
-              fluid(
-                toFormat: JPG
-                jpegProgressive: true
-                jpegQuality: 70
-                maxHeight: 400
-                maxWidth: 712
-              ) {
-                src
-              }
-            }
-          }
-        }
       }
     }
     _type
     id
+    _rawHeroImage(resolveReferences: { maxDepth: 10 })
     heroImage {
       alt
       asset {

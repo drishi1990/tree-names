@@ -34,6 +34,7 @@ export const query1 = graphql`
     }
     _type
     _rawBody(resolveReferences: { maxDepth: 10 })
+    _rawHeroImage(resolveReferences: { maxDepth: 10 })
     heroImage {
       alt
       asset {
@@ -54,13 +55,6 @@ export const query1 = graphql`
           srcSet
           srcSetWebp
           srcWebp
-        }
-        localFile {
-          childImageSharp {
-            fluid(toFormat: JPG, jpegProgressive: true, jpegQuality: 70) {
-              src
-            }
-          }
         }
       }
     }
@@ -178,6 +172,7 @@ export const query2 = graphql`
       current
     }
     id
+    _rawHeroImage(resolveReferences: { maxDepth: 10 })
     heroImage {
       alt
       asset {

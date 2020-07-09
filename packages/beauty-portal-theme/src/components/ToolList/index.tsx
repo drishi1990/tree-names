@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
-import { Link } from 'gatsby';
+import { useInView } from 'react-intersection-observer';
 import Img from 'gatsby-image';
-
+import classNames from 'classnames';
 import Grid from '@material-ui/core/Grid';
 
 import { ReactComponent as Comb } from '../../images/icons/comb.svg';
@@ -15,9 +15,13 @@ import { ReactComponent as Pins } from '../../images/icons/pins.svg';
 import useStyles from './styles';
 
 const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: '-150px 0px',
+  });
   const classes = useStyles();
   return (
-    <section className={classes.section}>
+    <section className={classes.section} ref={ref}>
       <h2 className={classes.sectionTitle}>{title}</h2>
       <Grid container spacing={2}>
         {data.map(tool => (
@@ -27,7 +31,9 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
                 <Img fluid={tool.image.asset.fluid} alt={tool.image.alt} />
               </div>
             ) : (
-              <div className={classes.icon}>
+              <div
+                className={classNames(classes.icon, inView ? 'in-view' : null)}
+              >
                 {/* TODO: Dynamically call component based on toolname */}
                 {tool.name.indexOf('Comb') >= 0 && <Comb />}
                 {tool.name.indexOf('Clip') >= 0 && <Clip />}

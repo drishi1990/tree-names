@@ -29,6 +29,18 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       flexDirection: 'column',
       alignItems: 'center',
       marginBottom: spacing(2.5),
+      '&:nth-child(1) svg': {
+        transitionDelay: '0s',
+      },
+      '&:nth-child(2) svg': {
+        transitionDelay: '.1s',
+      },
+      '&:nth-child(3) svg': {
+        transitionDelay: '.25s',
+      },
+      '&:nth-child(4) svg': {
+        transitionDelay: '.33s',
+      },
     },
     icon: {
       backgroundColor: palette.secondary.main,
@@ -41,6 +53,14 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       '& svg': {
         width: 20,
         height: 20,
+        position: 'relative',
+        opacity: 0,
+        left: -30,
+        transition: 'all .4s ease-in',
+      },
+      '&.in-view svg': {
+        opacity: 1,
+        left: 0,
       },
       [breakpoints.up('md')]: {
         width: 120,

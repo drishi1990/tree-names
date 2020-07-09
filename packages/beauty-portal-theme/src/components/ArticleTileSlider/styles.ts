@@ -10,12 +10,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         paddingTop: spacing(5),
         paddingBottom: spacing(5),
       },
-      '& .gatsby-image-wrapper': {
-        height: 180,
-        [breakpoints.up('md')]: {
-          height: 270,
-        },
-      },
       '& a': {
         textDecoration: 'none',
       },
@@ -122,8 +116,9 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     heroImage: {
       position: 'relative',
+      overflow: 'hidden',
       '& picture img': {
-        transition: 'all 1.2s ease 0s !important',
+        transition: 'all .8s ease-out 0s !important',
       },
     },
     iconPlay: {
@@ -180,7 +175,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
           transform: 'scaleX(1)',
         },
         '& picture img': {
-          transform: 'scale(1.2)',
+          transform: 'scale(1.1)',
         },
       },
     },
@@ -273,18 +268,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
           marginLeft: -20,
         },
       },
-    },
-    srOnly: {
-      border: 0,
-      clip: 'rect(0 0 0 0)',
-      clipPath: 'polygon(0 0,0 0,0 0)',
-      height: '.0625rem',
-      margin: '-.0625rem',
-      overflow: 'hidden',
-      padding: 0,
-      position: 'absolute',
-      width: '.0625rem',
-      whiteSpace: 'nowrap',
     },
   })
 );

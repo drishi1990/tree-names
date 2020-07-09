@@ -28,6 +28,7 @@ export const query = graphql`
             id
             headline
             subheading
+            _rawHeroImage(resolveReferences: { maxDepth: 10 })
             heroImage {
               asset {
                 url
@@ -39,17 +40,6 @@ export const query = graphql`
                   srcSet
                   srcSetWebp
                   srcWebp
-                }
-                localFile {
-                  childImageSharp {
-                    fluid(
-                      toFormat: JPG
-                      jpegProgressive: true
-                      jpegQuality: 70
-                    ) {
-                      src
-                    }
-                  }
                 }
               }
               alt
@@ -67,6 +57,7 @@ export const query = graphql`
             _type
             id
             headline
+            _rawHeroImage(resolveReferences: { maxDepth: 10 })
             heroImage {
               asset {
                 url
@@ -78,17 +69,6 @@ export const query = graphql`
                   srcSet
                   srcSetWebp
                   srcWebp
-                }
-                localFile {
-                  childImageSharp {
-                    fluid(
-                      toFormat: JPG
-                      jpegProgressive: true
-                      jpegQuality: 70
-                    ) {
-                      src
-                    }
-                  }
                 }
               }
               alt
@@ -102,6 +82,7 @@ export const query = graphql`
             _type
             id
             headline
+            _rawHeroImage(resolveReferences: { maxDepth: 10 })
             heroImage {
               asset {
                 url
@@ -113,17 +94,6 @@ export const query = graphql`
                   srcSet
                   srcSetWebp
                   srcWebp
-                }
-                localFile {
-                  childImageSharp {
-                    fluid(
-                      toFormat: JPG
-                      jpegProgressive: true
-                      jpegQuality: 70
-                    ) {
-                      src
-                    }
-                  }
                 }
               }
               alt
@@ -176,6 +146,7 @@ export const query = graphql`
         slides {
           _type
           name
+          _rawImage(resolveReferences: { maxDepth: 10 })
           image {
             asset {
               source {
@@ -228,6 +199,7 @@ export const query = graphql`
       ... on SanityImageBlock {
         id
         name
+        _rawImage(resolveReferences: { maxDepth: 10 })
         image {
           asset {
             fluid {
@@ -238,20 +210,6 @@ export const query = graphql`
               srcSet
               srcSetWebp
               srcWebp
-            }
-            localFile {
-              childImageSharp {
-                fluid(
-                  maxWidth: 380
-                  toFormat: JPG
-                  jpegProgressive: true
-                  jpegQuality: 70
-                  srcSetBreakpoints: [300, 400, 600, 800]
-                ) {
-                  src
-                  srcSet
-                }
-              }
             }
           }
           alt
