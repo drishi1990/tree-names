@@ -234,7 +234,14 @@ const Slider: FunctionComponent<SliderInterface> = ({
   );
   return (
     <>
-      <div className={classes.sliderWrapper} ref={ref} data-inview={inView}>
+      <div
+        className={classNames(
+          classes.sliderWrapper,
+          type === 'hero' ? classes.pb20 : null
+        )}
+        ref={ref}
+        data-inview={inView}
+      >
         <button
           className={classNames(classes.navigationButton, classes.nextButton)}
           type="button"

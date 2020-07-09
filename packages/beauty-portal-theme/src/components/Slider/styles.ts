@@ -10,8 +10,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       marginRight: spacing(3),
     },
     sliderWrapper: {
-      marginLeft: spacing(-2),
-      marginRight: spacing(-2),
       position: 'relative',
       [breakpoints.up('md')]: {
         margin: 0,
@@ -304,6 +302,12 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     textCenter: {
       textAlign: 'center',
+    },
+    pb20: {
+      paddingBottom: spacing(2.5),
+      [breakpoints.up('md')]: {
+        paddingBottom: 0,
+      },
     },
   })
 );

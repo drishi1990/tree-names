@@ -6,6 +6,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       paddingTop: spacing(2.5),
       paddingBottom: spacing(2.5),
       position: 'relative',
+      marginLeft: spacing(2),
       [breakpoints.up('md')]: {
         paddingTop: spacing(5),
         paddingBottom: spacing(5),
