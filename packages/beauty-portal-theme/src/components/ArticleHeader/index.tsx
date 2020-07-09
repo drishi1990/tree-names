@@ -52,6 +52,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
     return (
       <figure>
         <picture
+          className="bp-image__placeholder"
           style={{
             paddingTop: `calc(100% / ${image.asset.metadata.dimensions.aspectRatio})`,
             background: `url(${image.asset.metadata.lqip})`,
@@ -136,9 +137,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
             </div>
           )}
           {(article.publishedAt || article._updatedAt) && (
-            <span className={classes.articleDate}>
-              {article.publishedAt || article._updatedAt}
-            </span>
+            <span>{article.publishedAt || article._updatedAt}</span>
           )}
         </div>
         <SocialMenu links={socialLinks} />

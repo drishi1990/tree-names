@@ -20,12 +20,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         marginBottom: spacing(1.875),
       },
     },
-    headingSecondary: {
-      fontSize: '2.5rem',
-      fontWeight: 600,
-      margin: 0,
-      marginBottom: spacing(2.5),
-    },
     textSecondary: {
       paddingBottom: spacing(1.25),
       fontSize: '.875rem',
@@ -47,8 +41,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         marginBottom: 0,
       },
     },
-    articleAuthor: {},
-    articleDate: {},
     divider: {
       margin: 0,
       marginLeft: spacing(1.25),
@@ -66,10 +58,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     heroImage: {
       marginTop: spacing(1.25),
       position: 'relative',
-      '& img': {
-        position: 'absolute',
-        top: 0,
-      },
       '& iframe': {
         height: 214,
         [breakpoints.up('sm')]: {
@@ -194,20 +182,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
           width: 44,
           height: 44,
           marginLeft: 10,
-        },
-      },
-    },
-    flex: {
-      display: 'flex',
-      alignItems: 'center',
-      '& span': {
-        marginLeft: spacing(2.5),
-      },
-      '& svg': {
-        marginRight: spacing(1.25),
-        opacity: 0.2,
-        '&.active': {
-          opacity: 1,
         },
       },
     },
