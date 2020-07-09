@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
-import { Typography } from '@material-ui/core';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.min.css';
 import { useInView } from 'react-intersection-observer';
@@ -135,9 +134,7 @@ const ArticleTileSlider: FunctionComponent<ArticleTileSliderInterface> = ({
   return (
     <div className={classes.slider} ref={ref} data-inview={inView}>
       <div className={classes.sectionTitle}>
-        <Typography variant="h2" className={classes.sliderTitle}>
-          {headline}
-        </Typography>
+        <h2 className={classes.sliderTitle}>{headline}</h2>
         {searchCtaLabel && (
           <Link
             className={classes.sectionLink}

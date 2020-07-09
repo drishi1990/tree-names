@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import Container from '@material-ui/core/Container';
-import { Typography } from '@material-ui/core';
-
 import BlockContent from '@sanity/block-content-to-react';
 import { SanityVideoBlockInterface } from './models';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
@@ -30,9 +28,7 @@ const SanityVideoBlock: FunctionComponent<SanityVideoBlockInterface> = ({
             allowFullScreen
           ></iframe>
           <div className={classes.copyText}>
-            <Typography variant="h2" className={classes.sectionTitle}>
-              {videoBlockName}
-            </Typography>
+            <h2 className={classes.sectionTitle}>{videoBlockName}</h2>
             {_rawTextBlockBody && (
               <BlockContent
                 serializers={blockTypeDefaultSerializers}

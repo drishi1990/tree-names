@@ -3,7 +3,6 @@ import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 
 import Grid from '@material-ui/core/Grid';
-import { Typography } from '@material-ui/core';
 import { TileStackerInterface } from './models';
 import { ReactComponent as PlayVideo } from '../../images/icons/play.svg';
 import useStyles from './styles';
@@ -51,9 +50,7 @@ const TileStacker: FunctionComponent<TileStackerInterface> = ({
   return (
     <div className={classes.root}>
       <div className={classes.sectionTitle}>
-        <Typography variant="h2" className={classes.sliderTitle}>
-          {headline}
-        </Typography>
+        <h2 className={classes.sliderTitle}>{headline}</h2>
       </div>
       <Grid container spacing={3}>
         {slides.map(slide => renderer(slide))}

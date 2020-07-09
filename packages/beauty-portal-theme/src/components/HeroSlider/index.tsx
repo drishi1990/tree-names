@@ -2,7 +2,6 @@ import React, { FunctionComponent, useState } from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
 import { urlFor } from '../../helpers/imageUrl';
-import { Typography } from '@material-ui/core';
 import { HeroSliderInterface } from './models';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.min.css';
@@ -109,9 +108,7 @@ const HeroSlider: FunctionComponent<HeroSliderInterface> = ({
             <div className={classes.copy}>
               <div className={classes.copyInner}>
                 <div className={classes.slideType}>{slide._type}</div>
-                <Typography variant="h2" className={classes.heading}>
-                  {slide.headline}
-                </Typography>
+                <h2 className={classes.heading}>{slide.headline}</h2>
                 <Link className={classes.callToAction} to={slide.path}>
                   Go to Article
                 </Link>

@@ -8,8 +8,6 @@ import { urlFor } from '../../helpers/imageUrl';
 import { ReactComponent as Skill } from '../../images/icons/skill.svg';
 import { ReactComponent as Youtube } from '../../images/icons/youtube.svg';
 import { ReactComponent as IconTime } from '../../images/icons/time.svg';
-
-import { Typography } from '@material-ui/core';
 import useStyles from './styles';
 
 const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
@@ -105,15 +103,14 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
 
   return (
     <div className={classes.header}>
-      <Typography
-        variant="h1"
+      <h1
         className={classNames(
           classes.headingPrimary,
           type === 'gallery' ? classes.textCenter : null
         )}
       >
         {headline}
-      </Typography>
+      </h1>
       <p
         className={classNames(
           classes.textSecondary,

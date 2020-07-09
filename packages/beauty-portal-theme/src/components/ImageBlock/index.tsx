@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import Container from '@material-ui/core/Container';
 import { useInView } from 'react-intersection-observer';
 import { urlFor } from '../../helpers/imageUrl';
-import { Typography } from '@material-ui/core';
 import BlockContent from '@sanity/block-content-to-react';
 import { ImageBlockInterface } from './models';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
@@ -86,9 +85,9 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
               {Image}
             </div>
             <div className={classNames('c-image_text', classes.copyText)}>
-              <Typography variant="h2" className={classes.sectionTitle}>
+              <h2 className={classes.sectionTitle}>
                 <span>{name}</span>
-              </Typography>
+              </h2>
               {_rawTextBlockBody && (
                 <BlockContent
                   serializers={blockTypeDefaultSerializers}
