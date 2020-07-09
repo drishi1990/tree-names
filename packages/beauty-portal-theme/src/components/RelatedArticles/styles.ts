@@ -106,7 +106,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     teaserLink: {
       fontSize: '1rem',
-      textDecoration: 'none',
+
       color: palette.common.black,
       margin: 0,
       display: 'block',

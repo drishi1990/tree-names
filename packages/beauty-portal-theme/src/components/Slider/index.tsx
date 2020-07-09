@@ -25,6 +25,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
   preloadImages,
   freeMode,
   watchSlidesVisibility,
+  breakpoints,
 }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -55,12 +56,14 @@ const Slider: FunctionComponent<SliderInterface> = ({
     }
   };
 
-  const renderTileSlides = slide => (
-    <SwiperSlide key={slide.headline}>
-      <div>
-        <span className={classes.tileSlideType}>{slide._type}</span>
-        <Link className={classes.sliderLink} to={slide.path}>
-          {slide.heroImage && (
+  const renderTileSlides = slide => {
+    return (
+      <SwiperSlide key={slide.headline}>
+        <div>
+          {slide._type && (
+            <span className={classes.tileSlideType}>{slide._type}</span>
+          )}
+          <Link className={classes.sliderLink} to={slide.path}>
             <div className={classes.heroImage}>
               <figure>
                 {inView ? (
@@ -110,14 +113,74 @@ const Slider: FunctionComponent<SliderInterface> = ({
                 </span>
               )}
             </div>
-          )}
-          <h3 className={classes.sliderItemCaption}>
-            <span>{slide.headline}</span>
-          </h3>
-        </Link>
-      </div>
-    </SwiperSlide>
-  );
+            <h3 className={classes.sliderItemCaption}>
+              <span>{slide.headline}</span>
+            </h3>
+          </Link>
+        </div>
+      </SwiperSlide>
+    );
+  };
+
+  const renderProductSlides = slide => {
+    return (
+      <SwiperSlide key={slide.headline}>
+        <div>
+          <Link
+            className={classNames(classes.sliderLink, classes.textCenter)}
+            to={slide.path}
+          >
+            <div className={classes.heroImage}>
+              <figure>
+                {inView ? (
+                  <picture
+                    className="bp-image__placeholder"
+                    style={{
+                      paddingTop: '100%',
+                      background: `url(${slide._rawImage.asset.metadata.lqip})`,
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                    <source
+                      media="screen and (min-width: 560px)"
+                      srcSet={`${urlFor(slide._rawImage)
+                        .width(280)
+                        .height(280)
+                        .fit('max')
+                        .auto('format')
+                        .url()
+                        .toString()}`}
+                    />
+                    <source
+                      media="screen and (min-width: 320px)"
+                      srcSet={`${urlFor(slide._rawImage)
+                        .width(160)
+                        .height(160)
+                        .fit('max')
+                        .auto('format')
+                        .url()
+                        .toString()}`}
+                    />
+                    <img
+                      src={urlFor(slide._rawImage)
+                        .width(280)
+                        .height(280)
+                        .fit('max')
+                        .url()}
+                      alt={slide.image.alt}
+                    />
+                  </picture>
+                ) : null}
+              </figure>
+            </div>
+            <h3 className={classes.sliderItemCaption}>
+              <span>{slide.name}</span>
+            </h3>
+          </Link>
+        </div>
+      </SwiperSlide>
+    );
+  };
 
   const renderHeroSlides = slide => (
     <SwiperSlide key={slide.path}>
@@ -169,7 +232,6 @@ const Slider: FunctionComponent<SliderInterface> = ({
       )}
     </SwiperSlide>
   );
-
   return (
     <>
       <div className={classes.sliderWrapper} ref={ref} data-inview={inView}>
@@ -192,11 +254,14 @@ const Slider: FunctionComponent<SliderInterface> = ({
           preloadImages={preloadImages}
           freeMode={freeMode}
           watchSlidesVisibility={watchSlidesVisibility}
+          {...breakpoints}
         >
           {slides.map((slide: any) => {
             return type === 'hero'
               ? renderHeroSlides(slide)
-              : renderTileSlides(slide);
+              : type === 'tile'
+              ? renderTileSlides(slide)
+              : renderProductSlides(slide);
           })}
         </Swiper>
         <button

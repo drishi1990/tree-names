@@ -55,7 +55,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     readNextLink: {
       color: palette.common.black,
       display: 'block',
-      textDecoration: 'none',
+
       fontSize: '1.875rem',
       fontWeight: 600,
       paddingTop: spacing(1.25),

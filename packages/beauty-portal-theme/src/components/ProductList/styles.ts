@@ -59,7 +59,7 @@ export default makeStyles(({ palette, spacing }: Theme) =>
       },
       '& a': {
         color: palette.common.black,
-        textDecoration: 'none',
+
         '&:hover img': {
           transform: 'scale(1.05)',
         },

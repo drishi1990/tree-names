@@ -10,9 +10,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         paddingTop: spacing(5),
         paddingBottom: spacing(5),
       },
-      '& a': {
-        textDecoration: 'none',
-      },
       '& .swiper-container': {
         paddingBottom: spacing(2.5),
       },
@@ -45,7 +42,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     sectionLink: {
       color: palette.common.black,
-      textDecoration: 'none',
       fontSize: '.875rem',
       fontWeight: 700,
       alignSelf: 'flex-start',

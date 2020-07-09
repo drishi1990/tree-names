@@ -225,7 +225,7 @@ export default makeStyles(({ palette, spacing, breakpoints }: Theme) =>
         color: palette.common.black,
         display: 'flex',
         padding: spacing(1.5),
-        textDecoration: 'none',
+
         [breakpoints.up('md')]: {
           padding: spacing(2.5),
         },
@@ -244,7 +244,6 @@ export default makeStyles(({ palette, spacing, breakpoints }: Theme) =>
           lineHeight: 1.1,
           [breakpoints.up('md')]: {
             fontSize: '1.5rem',
-            textDecoration: 'none',
           },
         },
       },
@@ -272,7 +271,7 @@ export default makeStyles(({ palette, spacing, breakpoints }: Theme) =>
         paddingBottom: spacing(1.25),
         paddingLeft: spacing(2),
         paddingRight: spacing(2),
-        textDecoration: 'none',
+
         position: 'relative',
         display: 'flex',
         margin: 'auto',

@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import { useInView } from 'react-intersection-observer';
 import Slider from '../Slider';
 import { ArticleTileSliderInterface } from './models';
 import { getSearchUrlWithTagsAndCategory } from '../../helpers/searchUrl';
@@ -12,12 +11,8 @@ const ArticleTileSlider: FunctionComponent<ArticleTileSliderInterface> = ({
   searchCtaLabel,
   searchTags,
 }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    rootMargin: '200px 0px',
-  });
   const classes = useStyles();
-  const params = {
+  const breakpoints = {
     breakpoints: {
       768: {
         slidesPerView: 4,
@@ -54,6 +49,7 @@ const ArticleTileSlider: FunctionComponent<ArticleTileSliderInterface> = ({
         preloadImages={false}
         freeMode={true}
         watchSlidesVisibility={true}
+        breakpoints={breakpoints}
       />
     </div>
   );

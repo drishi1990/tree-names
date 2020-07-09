@@ -119,7 +119,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       paddingLeft: spacing(2),
       paddingRight: spacing(2),
       display: 'block',
-      textDecoration: 'none',
       position: 'relative',
       textAlign: 'center',
       transform: 'perspective(1px) translateZ(0)',

@@ -100,7 +100,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       paddingLeft: spacing(2),
       paddingRight: spacing(2),
       display: 'inline-block',
-      textDecoration: 'none',
+
       position: 'relative',
       transition: 'all .3s ease-out',
       transform: 'perspective(1px) translateZ(0)',
@@ -301,6 +301,9 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         fontSize: '.75rem',
         padding: spacing(0.75),
       },
+    },
+    textCenter: {
+      textAlign: 'center',
     },
   })
 );

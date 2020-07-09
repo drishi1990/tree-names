@@ -9,7 +9,7 @@ export default makeStyles(({ spacing, breakpoints, palette }: Theme) =>
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100% .1875rem',
         backgroundPosition: '0 100%',
-        textDecoration: 'none',
+
         display: 'inline-block',
         transition: 'all .3s ease-out',
         '&:hover': {

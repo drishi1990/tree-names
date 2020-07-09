@@ -88,7 +88,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       '& a': {
         color: palette.common.black,
         position: 'relative',
-        textDecoration: 'none',
+
         display: 'inline-block',
         '&:before': {
           content: '""',

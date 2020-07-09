@@ -9,4 +9,5 @@ export interface SliderInterface {
   preloadImages: boolean;
   freeMode: boolean;
   watchSlidesVisibility: boolean;
+  breakpoints?: any;
 }

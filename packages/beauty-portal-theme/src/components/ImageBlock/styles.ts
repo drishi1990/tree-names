@@ -34,7 +34,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       },
     },
     link: {
-      textDecoration: 'none',
       display: 'block',
       '&:hover': {
         '& h2 span': {
