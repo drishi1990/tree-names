@@ -1,11 +1,9 @@
 import React, { FunctionComponent, useState } from 'react';
-import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 import { urlFor } from '../../helpers/imageUrl';
 import Swiper from 'react-id-swiper';
-import 'swiper/css/swiper.min.css';
 import { TileSliderInterface } from './models';
 import { ReactComponent as Next } from '../../images/icons/next.svg';
 import { getSearchUrlWithTagsAndCategory } from '../../helpers/searchUrl';

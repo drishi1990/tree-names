@@ -2,7 +2,6 @@ import React, { FunctionComponent, useState } from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
 import Swiper from 'react-id-swiper';
-import 'swiper/css/swiper.min.css';
 import { useInView } from 'react-intersection-observer';
 import { urlFor } from '../../helpers/imageUrl';
 

@@ -16,6 +16,13 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       [breakpoints.up('md')]: {
         margin: 0,
       },
+      '& .swiper-lazy': {
+        opacity: 0,
+        transition: 'all .3s ease-out',
+        '&.swiper-lazy-loaded': {
+          opacity: 1,
+        },
+      },
       '& figure': {
         maxWidth: 752,
       },
