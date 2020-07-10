@@ -3,121 +3,56 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
   createStyles({
     galleryWrapper: {
-      textAlign: 'center',
       padding: 0,
       paddingBottom: spacing(2.5),
       marginBottom: spacing(2.5),
-      '& .carousel-root': {
-        display: 'flex',
-        flexDirection: 'column',
-      },
-      '& .carousel': {
-        order: 2,
-        maxWidth: 750,
-        maxHeight: 500,
+      '& figure': {
+        maxWidth: 500,
         margin: 'auto',
-        '&.carousel-slider': {
-          overflow: 'visible',
-        },
-        '& .slide': {
-          background: '#f4f4f4',
-        },
-        '& .thumbs-wrapper': {
-          display: 'none',
-          [breakpoints.up('md')]: {
-            maxWidth: 750,
-            margin: 'auto',
-            display: 'block',
-          },
-          '& .control-arrow': {
-            display: 'none',
+      },
+      '& .swiper-container': {
+        maxWidth: 752,
+        margin: 'auto',
+        '& .swiper-wrapper': {
+          paddingTop: 40,
+          [breakpoints.up('sm')]: {
+            paddingTop: 0,
           },
         },
-        '& .thumb': {
-          transition: 'all .6s ease 0s',
-          cursor: 'pointer',
-          opacity: 0.2,
-          marginRight: 0,
-          '&:hover': {
-            borderColor: palette.primary.main,
-          },
-          '&.selected': {
-            borderColor: palette.primary.main,
+        '& .swiper-slide': {
+          backgroundColor: '#f4f4f4',
+        },
+      },
+      '& .swiper-container-thumbs': {
+        marginBottom: spacing(3),
+        '& .swiper-slide': {
+          width: 80,
+          opacity: 0.4,
+          '&.swiper-slide-thumb-active': {
             opacity: 1,
           },
         },
-        '& .thumbs': {
-          padding: 0,
-          textAlign: 'left',
-          margin: 0,
+      },
+      '& .swiper-container-horizontal > .swiper-pagination-bullets': {
+        top: 10,
+        bottom: 'auto',
+      },
+      '& .swiper-button-prev, & .swiper-button-next, & .swiper-container-thumbs': {
+        display: 'none',
+        [breakpoints.up('sm')]: {
+          display: 'block',
         },
       },
-      '& .control-dots': {
-        padding: 0,
-        '& .dot': {
-          boxShadow: 'none',
-          backgroundColor: palette.common.black,
-          opacity: 0.5,
-          width: 14,
-          height: 14,
-          '&.selected': {
-            backgroundColor: palette.primary.main,
-          },
-        },
-        [breakpoints.up('md')]: {
+      '& .swiper-pagination': {
+        [breakpoints.up('sm')]: {
           display: 'none',
         },
       },
-      '& .carousel-status': {
-        background: palette.common.black,
-        color: palette.common.white,
-        textShadow: 'none',
-        left: 0,
-        right: 'auto',
-        margin: 0,
-        paddingLeft: spacing(1.875),
-        paddingRight: spacing(1.875),
-        fontSize: '1rem',
-        fontWeight: 700,
-        '& span': {
-          fontWeight: 500,
-        },
+      '& .swiper-button-next:after, & .swiper-button-prev:after': {
+        color: palette.primary.main,
       },
-      '& .carousel + .carousel': {
-        order: 1,
-      },
-    },
-    carouselArrow: {
-      display: 'none',
-      [breakpoints.up('md')]: {
-        position: 'absolute',
-        zIndex: 2,
-        top: 'calc(50% - 50px)',
-        width: 77,
-        height: 77,
-        cursor: 'pointer',
-        backgroundColor: 'transparent',
-        border: 'none',
-        display: 'block',
-        right: -90,
-        transition: 'all .4s ease 0s !important',
-        '& svg': {
-          transition: 'all .4s ease 0s !important',
-        },
-        '&:hover': {
-          right: -100,
-          '& svg': {
-            fill: palette.primary.main,
-          },
-        },
-      },
-    },
-    carouselArrowPrev: {
-      left: -90,
-      transform: 'rotate(180deg)',
-      right: 'auto',
-      '&:hover': {
-        left: -100,
+      '& .swiper-pagination-bullet-active': {
+        background: palette.primary.main,
       },
     },
   })

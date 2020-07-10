@@ -26,7 +26,6 @@ const GalleryArticlePage = (props: GalleryArticlePageProps) => {
   } = props;
 
   const relatedArticles = [...galleryNodes, ...featureNodes, ...howToNodes];
-
   return (
     <Layout>
       <SEO
@@ -56,7 +55,7 @@ const GalleryArticlePage = (props: GalleryArticlePageProps) => {
           socialLinks={brandInfo}
         />
         <Gallery
-          data={page.imageGallery.picture}
+          data={page._rawImageGallery}
           name={page.headline}
           authorName={page.author.name}
           slug={page.path}
