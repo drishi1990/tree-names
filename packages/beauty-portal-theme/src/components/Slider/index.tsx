@@ -202,7 +202,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
                 .auto('format')
                 .quality(80)
                 .url()
-                .toString()} 1024w,
+                .toString()} 752w,
                       ${urlFor(slide._rawHeroImage)
                         .width(752)
                         .height(423)
@@ -210,7 +210,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
                         .fit('max')
                         .auto('format')
                         .url()
-                        .toString()} 1980w`}
+                        .toString()} 1024w`}
               alt={slide.heroImage.alt}
               className="swiper-lazy"
             />
