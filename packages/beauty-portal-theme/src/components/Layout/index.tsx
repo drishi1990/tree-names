@@ -5,15 +5,13 @@ import classNames from 'classnames';
 import Header from '../Header';
 import Footer from '../Footer';
 import PageSchema from '../PageSchema';
-
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const Layout = ({ className, children }: LayoutProps) => {
-  // const classes = useStyles();
   return (
     <React.Fragment>
       {/* <ThemeProvider theme={theme}> */}
-      <a href="#main" className={'classes.skipLink'}>
+      <a href="#main" className={styles.skipLink}>
         <span>Skip to content</span>
       </a>
       <Header />
@@ -22,7 +20,10 @@ const Layout = ({ className, children }: LayoutProps) => {
         id="main"
         role="main"
         aria-label="Main Content"
-        className={classNames('classes.mainContentWrapper', className)}
+        className={classNames(
+          styles.mainContentWrapper,
+          className === 'home' ? 'pad0' : null
+        )}
       >
         {children}
       </main>
