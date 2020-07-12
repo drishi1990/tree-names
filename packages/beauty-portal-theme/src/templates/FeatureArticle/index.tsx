@@ -54,8 +54,8 @@ const FeatureArticle = (props: FeatureArticleProps) => {
       <OGTags type={'article'} slug={page.path} data={page} />
       <Breadcrumb tag={page.tags[0]} pageTitle={page.headline} />
       <div className="container">
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={7}>
+        <div className="col-container">
+          <div className="col col-7">
             <ArticleHeader
               article={page}
               type={'feature'}
@@ -75,17 +75,17 @@ const FeatureArticle = (props: FeatureArticleProps) => {
             {page.readnext && (
               <ReadNext data={page} title={sectionTitles.nextRead} />
             )}
-          </Grid>
-          <Grid item xs={12} sm={1}></Grid>
-          <Grid item xs={12} sm={4}>
+          </div>
+          <div className="col col-1"></div>
+          <div className="col col-4">
             {relatedArticles.length !== 0 && (
               <RelatedArticles
                 articles={relatedArticles}
                 title={sectionTitles.relatedArticlesName}
               />
             )}
-          </Grid>
-        </Grid>
+          </div>
+        </div>
         <Tags data={page.tags} title={sectionTitles.relatedTopicsName} />
       </div>
     </Layout>

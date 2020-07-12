@@ -15,7 +15,6 @@ import {
 } from 'react-instantsearch-dom';
 import algoliasearch from 'algoliasearch/lite';
 import qs from 'qs';
-import Grid from '@material-ui/core/Grid';
 import * as hitComps from '../../components/HitComp';
 import classNames from 'classnames';
 import { ReactComponent as IconList } from '../../images/icons/list.svg';
@@ -86,11 +85,11 @@ const SearchResults: FunctionComponent = () => {
           createURL={createURL}
           root={{ props: { ref } }}
         >
-          <Grid container spacing={2}>
-            <Grid className={classes.searchControlWrapper} item sm={12}>
+          <div className="col-container">
+            <div className={classNames('col', classes.searchControlWrapper)}>
               <SearchBox searchAsYouType={true} />
-            </Grid>
-            <Grid className={classes.searchControlWrapper} item sm={12}>
+            </div>
+            <div className={classNames('col', classes.searchControlWrapper)}>
               <div className={classes.resultsInfo}>
                 <span className={classes.searchQuery}>
                   {searchState.query
@@ -110,8 +109,8 @@ const SearchResults: FunctionComponent = () => {
               <div className={classes.currentRefinements}>
                 <CurrentRefinements clearsQuery />
               </div>
-            </Grid>
-            <Grid className={classes.filters} item sm={3}>
+            </div>
+            <div className={classNames('col col-3', classes.filters)}>
               <div className={classes.filterHeader}>
                 <span>Filter by</span>
                 <ClearRefinements clearsQuery />
@@ -175,9 +174,9 @@ const SearchResults: FunctionComponent = () => {
                   </div>
                 </div>
               </div>
-            </Grid>
-            <Grid container item xs={12} sm={9}>
-              <Grid item xs={12}>
+            </div>
+            <div className="col-contianer col col-9">
+              <div className="col-xs-12">
                 <div className={classes.actions}>
                   <SortBy
                     defaultRefinement="howtoArticle_publishedAt_Dsc"
@@ -229,9 +228,9 @@ const SearchResults: FunctionComponent = () => {
                     </Index>
                   ))}
                 </div>
-              </Grid>
-            </Grid>
-          </Grid>
+              </div>
+            </div>
+          </div>
         </InstantSearch>
       </div>
     </Layout>

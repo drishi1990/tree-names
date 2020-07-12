@@ -229,7 +229,7 @@ interface ArticleHeaderInterface {
   article: any;
   type: any;
   socialLinks: any;
-  playLabel: string;
+  playLabel?: string;
 }
 
 export default ArticleHeader;
