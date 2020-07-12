@@ -6,13 +6,13 @@ import BlockContent from '@sanity/block-content-to-react';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
 import quote from '../../images/icons/quote-left.svg';
 
-import useStyles from './styles';
+// import useStyles from './styles';
 
 const SanityTextBlock: FunctionComponent<SanityTextBlockInterface> = ({
   _rawTextBlockBody,
   textBlockType,
 }) => {
-  const classes = useStyles({ icon: quote });
+  // const classes = useStyles({ icon: quote });
   const getComponentvariant = type => {
     return type
       .replace(/\s/g, '')
@@ -22,12 +22,12 @@ const SanityTextBlock: FunctionComponent<SanityTextBlockInterface> = ({
   return (
     <section
       className={classNames(
-        classes.section,
+        'classes.section',
         getComponentvariant(textBlockType.name)
       )}
     >
       <div className="container">
-        <div className={classes.sectionDescription}>
+        <div className={'classes.sectionDescription'}>
           <BlockContent
             serializers={blockTypeDefaultSerializers}
             blocks={_rawTextBlockBody}

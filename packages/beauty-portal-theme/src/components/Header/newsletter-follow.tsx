@@ -3,23 +3,23 @@ import { Link } from 'gatsby';
 import { ReactComponent as Follow } from '../../images/icons/follow.svg';
 import SocialMenu from '../SocialMenu';
 
-import useStyles from './styles';
+// import useStyles from './styles';
 
 const NewsletterFollow: FunctionComponent<NewsletterFollowInterface> = ({
   links,
   label,
 }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   return (
-    <div className={classes.follow}>
-      <div className={classes.followButton}>
+    <div className={'classes.follow'}>
+      <div className={'classes.followButton'}>
         <Follow />
-        <div className={classes.followPopup}>
-          <div className={classes.pad20}>
+        <div className={'classes.followPopup'}>
+          <div className={'classes.pad20'}>
             <SocialMenu links={links} />
-            <div className={classes.newsletter}>
-              <a className={classes.newsletterSubscribeButton} href="/">
+            <div className={'classes.newsletter'}>
+              <a className={'classes.newsletterSubscribeButton'} href="/">
                 {label}
               </a>
             </div>
