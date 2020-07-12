@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Grid from '@material-ui/core/Grid';
 import Layout from '../../components/Layout';
 import SEO from '../../components/Seo';
 import Gallery from '../../components/Gallery';

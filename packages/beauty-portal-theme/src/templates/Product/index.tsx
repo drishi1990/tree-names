@@ -1,8 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import SEO from '../../components/Seo';
 import Layout from '../../components/Layout';
 import useStyles from './styles';
