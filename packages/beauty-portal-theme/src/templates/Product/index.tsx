@@ -26,22 +26,23 @@ const ProductPage = (props: ProductPageProps) => {
         description={page.description}
         keywords={page.keywords}
       />
-      <Grid container spacing={2}>
-        <Grid item xs={9}>
+      <div className="col-container">
+        <div className="col col-7">
           <h2>{page.name}</h2>
           <section>
             <div>{page.subheading}</div>
             <Img fluid={page.image.asset.fluid} alt={page.image.alt} />
           </section>
-        </Grid>
-        <Grid item xs={3}>
+        </div>
+        <div className="col col-1"></div>
+        <div className="col col-4">
           {productNodes.map(item => (
             <Paper className={classes.paper} key={item.name + item.id}>
               <Link to={item.path}>{item.name}</Link>
             </Paper>
           ))}
-        </Grid>
-      </Grid>
+        </div>
+      </div>
     </Layout>
   );
 };

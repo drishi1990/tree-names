@@ -42,11 +42,7 @@ const Video: FunctionComponent<VideoInterface> = ({
       <h2 className={classes.title}>{videoMetaData.node.youTubeCaption}</h2>
       <div className={classes.heroImage}>
         {!showVideo && (
-          <Img
-            className="img-responsive"
-            fluid={fluidProps}
-            alt={videoMetaData.node.heroImage.alt}
-          />
+          <Img fluid={fluidProps} alt={videoMetaData.node.heroImage.alt} />
         )}
         {!showVideo && !videoLoading && (
           <button
