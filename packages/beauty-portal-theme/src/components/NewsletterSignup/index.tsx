@@ -11,7 +11,7 @@ import {
   InputCheckbox,
 } from '../../components/FormElements';
 import { ReactComponent as Bell } from '../../images/icons/bell.svg';
-import useStyles from './styles';
+// import useStyles from './styles';
 
 const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
   _rawBody,
@@ -19,7 +19,7 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
   onFormSubmission,
   isFormSubmitted,
 }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -89,16 +89,18 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
   };
 
   return (
-    <div className={classes.wrapper}>
-      <div className={classes.banner}>
-        <div className={classNames(classes.imageWrapper, classes.container)}>
+    <div className={'classes.wrapper'}>
+      <div className={'classes.banner'}>
+        <div
+          className={classNames('classes.imageWrapper', 'classes.container')}
+        >
           {image && <Img fluid={image.asset.fluid} />}
         </div>
       </div>
-      <div className={classNames(classes.heading, classes.container)}>
-        <h1 className={classes.pageTitle}>Subscribe for Email Updates</h1>
+      <div className={classNames('classes.heading', 'classes.container')}>
+        <h1 className={'classes.pageTitle'}>Subscribe for Email Updates</h1>
         {_rawBody && (
-          <h2 className={classes.pageDescription}>
+          <h2 className={'classes.pageDescription'}>
             <BlockContent
               serializers={blockTypeDefaultSerializers}
               blocks={_rawBody}
@@ -106,9 +108,9 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
           </h2>
         )}
       </div>
-      <div className={classNames(classes.imageWrapper, classes.container)}>
+      <div className={classNames('classes.imageWrapper', 'classes.container')}>
         {isFormSubmitted ? (
-          <div className={classes.thankyou}>
+          <div className={'classes.thankyou'}>
             <Bell />
             <h2>Thankyou for signing up!</h2>
             <p>
@@ -203,7 +205,7 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
               name="submit"
               value="Subscribe"
               onClick={handleFormSubmit}
-              className={classes.button}
+              className={'classes.button'}
             />
             {/* TODO: Add hidden fields for hard coded values to be passed in payload */}
           </Form>

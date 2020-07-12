@@ -51,7 +51,6 @@ module.exports = ({ themeConfig }) => {
   }
 
   const plugins = [
-    'gatsby-plugin-material-ui',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {

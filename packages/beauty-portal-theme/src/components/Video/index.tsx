@@ -6,13 +6,13 @@ import { Preloader, Oval } from 'react-preloader-icon';
 import { getYouTubeId } from '../../helpers/youtube';
 import { ReactComponent as IconYoutube } from '../../images/icons/youtube.svg';
 
-import useStyles from './styles';
+// import useStyles from './styles';
 
 const Video: FunctionComponent<VideoInterface> = ({
   videoMetaData,
   sanityConfig,
 }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
   const [showVideo, setShowVideo] = useState(false);
   const [videoSourceUrl, setVideoSourceUrl] = useState('');
   const [videoLoading, setVideoLoading] = useState(false);
@@ -38,16 +38,16 @@ const Video: FunctionComponent<VideoInterface> = ({
   };
 
   return (
-    <section className={classes.wrapper}>
-      <h2 className={classes.title}>{videoMetaData.node.youTubeCaption}</h2>
-      <div className={classes.heroImage}>
+    <section className={'classes.wrapper'}>
+      <h3 className={'classes.title'}>{'videoMetaData.node.youTubeCaption'}</h3>
+      <div className={'classes.heroImage'}>
         {!showVideo && (
           <Img fluid={fluidProps} alt={videoMetaData.node.heroImage.alt} />
         )}
         {!showVideo && !videoLoading && (
           <button
             type="button"
-            className={classes.iconVideo}
+            className={'classes.iconVideo'}
             onClick={playVideo}
             data-url={videoMetaData.node.url}
           >

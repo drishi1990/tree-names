@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import classNames from 'classnames';
-import useStyles from '../styles';
+// import useStyles from '../styles';
 
 const InputText: FunctionComponent<InputTextInterface> = ({
   type,
@@ -12,14 +12,14 @@ const InputText: FunctionComponent<InputTextInterface> = ({
   valid,
   validate,
 }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
     <div
       className={classNames(
         'c-form__field',
-        classes.field,
-        classes.textField,
-        valid ? 'valid' : validate ? classes.error : null
+        'classes.field',
+        'classes.textField',
+        valid ? 'valid' : validate ? 'classes.error' : null
       )}
     >
       <input

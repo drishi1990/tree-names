@@ -10,22 +10,22 @@ import { ReactComponent as Dryer } from '../../images/icons/dryer.svg';
 import { ReactComponent as Ironer } from '../../images/icons/ironer.svg';
 import { ReactComponent as Pins } from '../../images/icons/pins.svg';
 
-import useStyles from './styles';
+// import useStyles from './styles';
 
 const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     rootMargin: '-150px 0px',
   });
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
-    <section className={classes.section} ref={ref}>
-      <h2 className={classes.sectionTitle}>{title}</h2>
+    <section className={'classes.section'} ref={ref}>
+      <h2 className={'classes.sectionTitle'}>{title}</h2>
       <div className="col-container">
         {data &&
           data.map(tool => (
             <div
-              className={classNames('col col-3', classes.gridItem)}
+              className={classNames('col col-3', 'classes.gridItem')}
               key={tool.name}
             >
               {tool.image ? (
@@ -35,7 +35,7 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
               ) : (
                 <div
                   className={classNames(
-                    classes.icon,
+                    'classes.icon',
                     inView ? 'in-view' : null
                   )}
                 >
@@ -49,7 +49,7 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
                   {tool.name.indexOf('Wand') >= 0 && <Wand />}
                 </div>
               )}
-              <h3 className={classes.gridItemCaption}>{tool.name}</h3>
+              <h3 className={'classes.gridItemCaption'}>{'tool.name'}</h3>
             </div>
           ))}
       </div>
