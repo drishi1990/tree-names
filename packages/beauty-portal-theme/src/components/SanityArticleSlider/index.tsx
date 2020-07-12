@@ -5,7 +5,7 @@ import ArticleTileSlider from '../ArticleTileSlider';
 import HeroSlider from '../HeroSlider';
 import TileStacker from '../TileStacker';
 
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const componentMap = {
   tile: ArticleTileSlider,
@@ -22,8 +22,6 @@ const SanityArticleSlider: FunctionComponent<SanityArticleSliderInterface> = ({
   searchCtaLabel,
   searchTags,
 }) => {
-  // const classes = useStyles();
-
   // @todo we should take presentationType from props;
   const getComponentName = (sliderType: string) => {
     sliderType = slideType.name.toLowerCase();
@@ -37,7 +35,7 @@ const SanityArticleSlider: FunctionComponent<SanityArticleSliderInterface> = ({
   const Component = componentMap[componentName];
 
   return (
-    <section className={classNames('classes.section', componentName)}>
+    <section className={classNames(styles.section, componentName)}>
       <div className={classNames('container', 'pad0')}>
         <Component
           {...{ name, slides, headline, searchCtaLabel, searchTags }}

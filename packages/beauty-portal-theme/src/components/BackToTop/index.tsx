@@ -1,10 +1,9 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { ReactComponent as ArrowUp } from '../../images/icons/up.svg';
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const BackToTop: FunctionComponent = () => {
-  // const classes = useStyles();
   const [isHidden, setIsHidden] = useState(true);
 
   const onScroll = () => {
@@ -31,8 +30,8 @@ const BackToTop: FunctionComponent = () => {
     <a
       href="#top"
       className={classNames(
-        'classes.element',
-        isHidden ? 'classes.isHidden' : 'classes.isActive'
+        styles.element,
+        isHidden ? styles.isHidden : styles.isActive
       )}
       onClick={handleClick}
     >

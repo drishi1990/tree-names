@@ -6,9 +6,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { useInView } from 'react-intersection-observer';
 import { SliderInterface } from './models';
 import { urlFor } from '../../helpers/imageUrl';
-// import useStyles from './styles';
 import { ReactComponent as Next } from '../../images/icons/next.svg';
 import { ReactComponent as PlayVideo } from '../../images/icons/play.svg';
+import styles from './styles.module.scss';
 import './slider.scss';
 
 SwiperCore.use([Lazy]);
@@ -30,7 +30,6 @@ const Slider: FunctionComponent<SliderInterface> = ({
     triggerOnce: true,
     rootMargin: '5px 0px',
   });
-  // const classes = useStyles();
   const [swiper, updateSwiper] = useState(null);
   const [isLastSlide, setIsLastSlide] = useState(false);
   const [isFirstSlide, setIsFirstSlide] = useState(true);
@@ -60,10 +59,10 @@ const Slider: FunctionComponent<SliderInterface> = ({
       <SwiperSlide key={slide.headline}>
         <div>
           {slide._type && (
-            <span className={'classes.tileSlideType'}>{'slide._type'}</span>
+            <span className={styles.tileSlideType}>{slide._type}</span>
           )}
-          <Link className={'classes.sliderLink'} to={slide.path}>
-            <div className={'classes.heroImage'}>
+          <Link className={styles.sliderLink} to={slide.path}>
+            <div className={styles.heroImage}>
               <figure>
                 {inView ? (
                   <picture
@@ -106,13 +105,13 @@ const Slider: FunctionComponent<SliderInterface> = ({
                 ) : null}
               </figure>
               {slide.heroVideo && (
-                <span className={`icon ${'classes.iconPlay'}`}>
+                <span className={`icon ${styles.iconPlay}`}>
                   <PlayVideo />
                   <span hidden>Play Video</span>
                 </span>
               )}
             </div>
-            <h3 className={'classes.sliderItemCaption'}>
+            <h3 className={styles.sliderItemCaption}>
               <span>{slide.headline}</span>
             </h3>
           </Link>
@@ -126,10 +125,10 @@ const Slider: FunctionComponent<SliderInterface> = ({
       <SwiperSlide key={slide.headline}>
         <div>
           <Link
-            className={classNames('classes.sliderLink', 'classes.textCenter')}
+            className={classNames(styles.sliderLink, styles.textCenter)}
             to={slide.path}
           >
-            <div className={'classes.heroImage'}>
+            <div className={styles.heroImage}>
               <figure>
                 {inView ? (
                   <picture
@@ -172,7 +171,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
                 ) : null}
               </figure>
             </div>
-            <h3 className={'classes.sliderItemCaption'}>
+            <h3 className={styles.sliderItemCaption}>
               <span>{slide.name}</span>
             </h3>
           </Link>
@@ -232,11 +231,11 @@ const Slider: FunctionComponent<SliderInterface> = ({
         </figure>
       )}
       {type === 'hero' && (
-        <div className={'classes.copy'}>
-          <div className={'classes.copyInner'}>
-            <div className={'classes.slideType'}>{'slide._type'}</div>
-            <h2 className={'classes.heading'}>{'slide.headline'}</h2>
-            <Link className={'classes.callToAction'} to={slide.path}>
+        <div className={styles.copy}>
+          <div className={styles.copyInner}>
+            <div className={styles.slideType}>{slide._type}</div>
+            <h2 className={styles.heading}>{slide.headline}</h2>
+            <Link className={styles.callToAction} to={slide.path}>
               Go to Article
             </Link>
           </div>
@@ -248,17 +247,14 @@ const Slider: FunctionComponent<SliderInterface> = ({
     <>
       <div
         className={classNames(
-          'classes.sliderWrapper',
-          type === 'hero' ? 'classes.pb20' : null
+          styles.sliderWrapper,
+          type === 'hero' ? styles.pb20 : null
         )}
         ref={ref}
         data-inview={inView}
       >
         <button
-          className={classNames(
-            'classes.navigationButton',
-            'classes.nextButton'
-          )}
+          className={classNames(styles.navigationButton, styles.nextButton)}
           type="button"
           onClick={swiperNext}
           disabled={isLastSlide}
@@ -287,10 +283,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
           })}
         </Swiper>
         <button
-          className={classNames(
-            'classes.navigationButton',
-            'classes.prevButton'
-          )}
+          className={classNames(styles.navigationButton, styles.prevButton)}
           type="button"
           onClick={swiperPrev}
           disabled={isFirstSlide}

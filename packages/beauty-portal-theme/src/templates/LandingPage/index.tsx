@@ -8,13 +8,11 @@ import PageSchema from '../../components/PageSchema';
 import OGTags from '../../components/OGTags';
 import Breadcrumb from '../../components/Breadcrumb';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
-// import useStyles from './styles';
 
 const LandingPage = (props: LandingPageProps) => {
   const {
     data: { page },
   } = props;
-  // const classes = useStyles();
 
   page.seo = page.seo || {};
 
