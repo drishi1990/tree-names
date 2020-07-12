@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import './slider.scss';
 import { urlFor } from '../../helpers/imageUrl';
 import PageSchema from '../PageSchema';
-import useStyles from './styles';
+// import useStyles from './styles';
 
 SwiperCore.use([Thumbs, Navigation, Pagination, Lazy]);
 
@@ -15,11 +15,11 @@ const Gallery: FunctionComponent<GalleryInterface> = ({
   authorName,
 }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
     <>
       <PageSchema type={'ImageGallery'} {...{ name, slug, data, authorName }} />
-      <div className={classes.galleryWrapper}>
+      <div className={'classes.galleryWrapper'}>
         <Swiper
           spaceBetween={10}
           slidesPerView={8}

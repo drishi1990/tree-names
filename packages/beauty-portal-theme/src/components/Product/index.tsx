@@ -5,7 +5,7 @@ import { urlFor } from '../../helpers/imageUrl';
 
 import { ReactComponent as IconBuy } from '../../images/icons/buy.svg';
 
-import useStyles from './styles';
+// import useStyles from './styles';
 
 const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
   const {
@@ -16,11 +16,11 @@ const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
     name,
   } = metadata;
   const { image } = data;
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
-    <div className={classes.wrapper}>
-      <Link className={classes.link} to={(slug && slug.current) || '/'}>
-        <div className={classes.image}>
+    <div className={'classes.wrapper'}>
+      <Link className={'classes.link'} to={(slug && slug.current) || '/'}>
+        <div className={'classes.image'}>
           <figure>
             <picture>
               <source
@@ -49,24 +49,24 @@ const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
           </figure>
         </div>
         {tagLine && (
-          <p className={classes.tagline}>
+          <p className={'classes.tagline'}>
             <span>{tagLine}</span>
           </p>
         )}
         {name && (
-          <h3 className={classes.name}>
+          <h3 className={'classes.name'}>
             <span>{name}</span>
           </h3>
         )}
       </Link>
       {buyNow && (
         <a
-          className={classes.buynow}
+          className={'classes.buynow'}
           href={buyNow}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className={classes.animateIcon}>
+          <span className={'classes.animateIcon'}>
             <IconBuy />
             <span>Buy Now</span>
           </span>

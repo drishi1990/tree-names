@@ -2,14 +2,14 @@ import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 
 import { getSearchUrl } from '../../helpers/searchUrl';
-import useStyles from './styles';
+// import useStyles from './styles';
 
 const Tags: FunctionComponent<TagsInterface> = ({
   data,
   searchResultPath,
   title,
 }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const uniqueValues = (array: [], filter: string) => {
     return array.reduce((tag: any, current: any) => {
@@ -27,13 +27,13 @@ const Tags: FunctionComponent<TagsInterface> = ({
   };
 
   return (
-    <section className={classes.tags}>
-      <h3 className={classes.tagsTitle}>{title}</h3>
-      <ul className={classes.tagList}>
+    <section className={'classes.tags'}>
+      <h3 className={'classes.tagsTitle'}>{title}</h3>
+      <ul className={'classes.tagList'}>
         {uniqueValues(data, 'category').map((tag: any) => (
-          <li className={classes.tagListItem} key={tag.tagCategory.name}>
+          <li className={'classes.tagListItem'} key={tag.tagCategory.name}>
             <Link
-              className={classes.tagsListLink}
+              className={'classes.tagsListLink'}
               to={getSearchUrl(
                 searchResultPath,
                 tag.tagCategory.name,
@@ -45,9 +45,9 @@ const Tags: FunctionComponent<TagsInterface> = ({
           </li>
         ))}
         {uniqueValues(data, 'tag').map((tag: any) => (
-          <li className={classes.tagListItem} key={tag.name}>
+          <li className={'classes.tagListItem'} key={tag.name}>
             <Link
-              className={classes.tagsListLink}
+              className={'classes.tagsListLink'}
               to={getSearchUrl(searchResultPath, tag.name, 'tags.name')}
             >
               {tag.name}

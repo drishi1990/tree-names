@@ -3,24 +3,24 @@ import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import { TileStackerInterface } from './models';
 import { ReactComponent as PlayVideo } from '../../images/icons/play.svg';
-import useStyles from './styles';
+// import useStyles from './styles';
 
 const TileStacker: FunctionComponent<TileStackerInterface> = ({
   slides,
   headline,
 }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const renderer = slide => {
     return (
       <div className="col-container">
         <div className="col col-4">
           <div key={slide.headline}>
-            <div className={classes.tile}>
-              <span className={classes.slideType}>{slide._type}</span>
-              <Link className={classes.sliderLink} to={slide.path}>
+            <div className={'classes.tile'}>
+              <span className={'classes.slideType'}>{'slide._type'}</span>
+              <Link className={'classes.sliderLink'} to={slide.path}>
                 {slide.heroImage && (
-                  <div className={classes.heroImage}>
+                  <div className={'classes.heroImage'}>
                     <Img
                       fluid={slide.heroImage.asset.fluid}
                       alt={slide.heroImage.alt}
@@ -28,14 +28,14 @@ const TileStacker: FunctionComponent<TileStackerInterface> = ({
                       imgStyle={{ objectPosition: 'top center' }}
                     />
                     {slide.heroVideo && (
-                      <span className={`icon ${classes.iconPlay}`}>
+                      <span className={`icon ${'classes.iconPlay'}`}>
                         <PlayVideo />
                         <span hidden>Play Video</span>
                       </span>
                     )}
                   </div>
                 )}
-                <h3 className={classes.sliderItemCaption}>
+                <h3 className={'classes.sliderItemCaption'}>
                   <span>{slide.headline}</span>
                 </h3>
               </Link>
@@ -47,9 +47,9 @@ const TileStacker: FunctionComponent<TileStackerInterface> = ({
   };
 
   return (
-    <div className={classes.root}>
-      <div className={classes.sectionTitle}>
-        <h2 className={classes.sliderTitle}>{headline}</h2>
+    <div className={'classes.root'}>
+      <div className={'classes.sectionTitle'}>
+        <h2 className={'classes.sliderTitle'}>{headline}</h2>
       </div>
       <div className="col col-3">{slides.map(slide => renderer(slide))}</div>
     </div>

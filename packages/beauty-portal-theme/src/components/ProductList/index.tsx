@@ -1,26 +1,26 @@
 import React, { FunctionComponent } from 'react';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
-import useStyles from './styles';
+// import useStyles from './styles';
 import { urlFor } from '../../helpers/imageUrl';
 
 const ProductList: FunctionComponent<ProductListInterface> = ({
   data,
   title,
 }) => {
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
-    <section className={classes.section}>
-      <h2 className={classes.sectionTitle}>{title}</h2>
-      <div className={classNames('col-container', classes.gridContainer)}>
+    <section className={'classes.section'}>
+      <h2 className={'classes.sectionTitle'}>{title}</h2>
+      <div className={classNames('col-container', 'classes.gridContainer')}>
         {data &&
           data.map(product => (
             <div
-              className={classNames('col-xs-4', classes.gridItem)}
+              className={classNames('col-xs-4', 'classes.gridItem')}
               key={product.name}
             >
               <Link
-                className={classes.gridItemLink}
+                className={'classes.gridItemLink'}
                 to={product.path || product.slug.current}
               >
                 {product.image && (
@@ -69,7 +69,7 @@ const ProductList: FunctionComponent<ProductListInterface> = ({
                     </picture>
                   </figure>
                 )}
-                <h3 className={classes.productTitle}>
+                <h3 className={'classes.productTitle'}>
                   <span>{product.name}</span>
                 </h3>
               </Link>
