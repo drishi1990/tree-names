@@ -1,6 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-// import { Carousel } from 'react-responsive-carousel';
-// import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import SwiperCore, { Thumbs, Navigation, Pagination, Lazy } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './slider.scss';
@@ -24,7 +22,7 @@ const Gallery: FunctionComponent<GalleryInterface> = ({
       <div className={classes.galleryWrapper}>
         <Swiper
           spaceBetween={10}
-          slidesPerView={8.5}
+          slidesPerView={8}
           freeMode={true}
           watchSlidesVisibility={true}
           watchSlidesProgress={true}
