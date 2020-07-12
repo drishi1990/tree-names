@@ -37,44 +37,12 @@ export const query1 = graphql`
     _rawHeroImage(resolveReferences: { maxDepth: 10 })
     _rawImageGallery(resolveReferences: { maxDepth: 10 })
     heroImage {
-      alt
       asset {
-        label
-        title
         url
         metadata {
           dimensions {
             height
             width
-          }
-        }
-        fluid {
-          aspectRatio
-          base64
-          sizes
-          src
-          srcSet
-          srcSetWebp
-          srcWebp
-        }
-      }
-    }
-    imageGallery {
-      picture {
-        alt
-        asset {
-          _id
-          label
-          title
-          url
-          fluid(maxWidth: 500, maxHeight: 500) {
-            aspectRatio
-            base64
-            sizes
-            src
-            srcSet
-            srcSetWebp
-            srcWebp
           }
         }
       }
