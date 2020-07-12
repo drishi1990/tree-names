@@ -1,8 +1,31 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-// import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import styled from 'styled-components';
 import SEO from '../components/Seo';
 import Layout from '../components/Layout';
+
+const Wrapper = styled.div`
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Title = styled.p`
+  font-size: 20rem;
+  line-height: 1;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 16px;
+`;
+const SubTitle = styled.p`
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 16px;
+`;
 
 // const useStyles = makeStyles((theme: Theme) =>
 //   createStyles({
@@ -63,14 +86,14 @@ const NotFound = ({ data: { site } }: NotFoundProps) => {
         keywords={site.keywords}
       />
       <div className="container">
-        <div className={'classes.wrapper'}>
-          <p className={'classes.title'}>404</p>
-          <p className={'classes.subTitle'}>That’s an error!</p>
+        <Wrapper>
+          <Title>404</Title>
+          <SubTitle>That’s an error!</SubTitle>
           <p>
             404 Unfortunately, there is no such page on the site. Let us know
             what you are looking for and we will answer.
           </p>
-        </div>
+        </Wrapper>
       </div>
     </Layout>
   );
