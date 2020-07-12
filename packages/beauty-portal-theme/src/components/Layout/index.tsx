@@ -1,8 +1,6 @@
 import React, { ReactNode } from 'react';
 import classNames from 'classnames';
 import { ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
 import theme from '../theme';
 import Header from '../Header';
 import Footer from '../Footer';
@@ -15,7 +13,6 @@ const Layout = ({ className, children }: LayoutProps) => {
   return (
     <React.Fragment>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
         <a href="#main" className={classes.skipLink}>
           <span>Skip to content</span>
         </a>
@@ -27,7 +24,7 @@ const Layout = ({ className, children }: LayoutProps) => {
           aria-label="Main Content"
           className={classNames(classes.mainContentWrapper, className)}
         >
-          <Grid>{children}</Grid>
+          {children}
         </main>
         <Footer />
       </ThemeProvider>

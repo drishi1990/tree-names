@@ -2,8 +2,6 @@ import React, { FunctionComponent } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Img from 'gatsby-image';
 import classNames from 'classnames';
-import Grid from '@material-ui/core/Grid';
-
 import { ReactComponent as Comb } from '../../images/icons/comb.svg';
 import { ReactComponent as Clip } from '../../images/icons/clip.svg';
 import { ReactComponent as Wand } from '../../images/icons/wand.svg';
@@ -23,10 +21,13 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
   return (
     <section className={classes.section} ref={ref}>
       <h2 className={classes.sectionTitle}>{title}</h2>
-      <Grid container spacing={2}>
+      <div className="col-container">
         {data &&
           data.map(tool => (
-            <Grid className={classes.gridItem} item xs={3} key={tool.name}>
+            <div
+              className={classNames('col col-3', classes.gridItem)}
+              key={tool.name}
+            >
               {tool.image ? (
                 <div>
                   <Img fluid={tool.image.asset.fluid} alt={tool.image.alt} />
@@ -49,9 +50,9 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
                 </div>
               )}
               <h3 className={classes.gridItemCaption}>{tool.name}</h3>
-            </Grid>
+            </div>
           ))}
-      </Grid>
+      </div>
     </section>
   );
 };

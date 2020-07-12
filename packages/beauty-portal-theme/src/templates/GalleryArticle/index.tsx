@@ -63,23 +63,23 @@ const GalleryArticlePage = (props: GalleryArticlePageProps) => {
       </div>
 
       <div className="container">
-        <Grid container spacing={2}>
-          <Grid xs={12} item sm={7}>
+        <div className="col-container">
+          <div className="col col-7">
             <RichText data={page._rawBody} />
             {page.readnext && (
               <ReadNext data={page} title={sectionTitles.nextRead} />
             )}
-          </Grid>
-          <Grid item xs={12} sm={1}></Grid>
-          <Grid item xs={12} sm={4} style={{ position: 'relative' }}>
+          </div>
+          <div className="col col-1"></div>
+          <div className="col col-4" style={{ position: 'relative' }}>
             {relatedArticles.length !== 0 && (
               <RelatedArticles
                 articles={relatedArticles}
                 title={sectionTitles.relatedArticlesName}
               />
             )}
-          </Grid>
-        </Grid>
+          </div>
+        </div>
         <Tags data={page.tags} title={sectionTitles.relatedTopicsName} />
       </div>
     </Layout>
