@@ -1,7 +1,8 @@
 const extractor = (pageHref: string, data: any, brandInfo: any) => {
   const resp = {};
+
   data &&
-    (resp.associatedMedia = data.map(item => ({
+    (resp.associatedMedia = data.picture.map(item => ({
       '@type': 'ImageObject',
       contentUrl: item.asset.url,
     })));
