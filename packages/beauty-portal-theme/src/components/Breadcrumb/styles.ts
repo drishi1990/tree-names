@@ -38,7 +38,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     link: {
       color: palette.common.black,
-      textDecoration: 'none',
     },
     active: {
       color: palette.grey[100],

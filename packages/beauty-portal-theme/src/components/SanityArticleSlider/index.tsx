@@ -1,8 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import classNames from 'classnames';
 import { SanityArticleSliderInterface } from './models';
-
-import Container from '@material-ui/core/Container';
 import ArticleTileSlider from '../ArticleTileSlider';
 import HeroSlider from '../HeroSlider';
 import TileStacker from '../TileStacker';
@@ -40,11 +38,11 @@ const SanityArticleSlider: FunctionComponent<SanityArticleSliderInterface> = ({
 
   return (
     <section className={classNames(classes.section, componentName)}>
-      <Container maxWidth="lg">
+      <div className={classNames('container', 'pad0')}>
         <Component
           {...{ name, slides, headline, searchCtaLabel, searchTags }}
         />
-      </Container>
+      </div>
     </section>
   );
 };

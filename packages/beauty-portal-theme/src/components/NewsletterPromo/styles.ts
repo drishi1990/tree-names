@@ -42,7 +42,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      textDecoration: 'none',
+
       margin: 'auto',
       '&:before': {
         content: '""',

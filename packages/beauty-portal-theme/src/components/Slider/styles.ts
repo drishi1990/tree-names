@@ -10,11 +10,16 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       marginRight: spacing(3),
     },
     sliderWrapper: {
-      marginLeft: spacing(-2),
-      marginRight: spacing(-2),
       position: 'relative',
       [breakpoints.up('md')]: {
         margin: 0,
+      },
+      '& .swiper-lazy': {
+        opacity: 0,
+        transition: 'all .3s ease-out',
+        '&.swiper-lazy-loaded': {
+          opacity: 1,
+        },
       },
       '& figure': {
         maxWidth: 752,
@@ -93,7 +98,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       paddingLeft: spacing(2),
       paddingRight: spacing(2),
       display: 'inline-block',
-      textDecoration: 'none',
+
       position: 'relative',
       transition: 'all .3s ease-out',
       transform: 'perspective(1px) translateZ(0)',
@@ -189,6 +194,119 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       },
       [breakpoints.up('md')]: {
         left: -60,
+      },
+    },
+    // Tile Slider
+    sliderLink: {
+      display: 'block',
+      '&:hover': {
+        '& p > span': {
+          backgroundImage: `linear-gradient(120deg,${palette.secondary.main} 0%,${palette.secondary.main} 100%)`,
+        },
+        '& .icon:before': {
+          transform: 'scaleX(1)',
+        },
+        '& picture img': {
+          transform: 'scale(1.1)',
+        },
+      },
+    },
+    heroImage: {
+      position: 'relative',
+      overflow: 'hidden',
+      '& picture img': {
+        transition: 'all .8s ease-out 0s !important',
+      },
+    },
+    iconPlay: {
+      width: '2.5rem',
+      height: '2.5rem',
+      bottom: '.5rem',
+      left: '.5rem',
+      backgroundColor: palette.primary.main,
+      position: 'absolute',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      transition: 'all 1.2s ease 0s !important',
+      transform: 'perspective(1px) translateZ(0)',
+      '&:before': {
+        content: '""',
+        position: 'absolute',
+        zIndex: -1,
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: palette.common.black,
+        transform: 'scaleX(0)',
+        transformOrigin: '0 50%',
+        transitionProperty: 'transform',
+        transitionDuration: '0.3s',
+        transitionTimingFunction: 'ease-out',
+      },
+      '& svg': {
+        width: '1.5rem',
+        height: '1.5rem',
+        fill: palette.common.white,
+        [breakpoints.up('md')]: {
+          width: '2rem',
+          height: '2rem',
+        },
+      },
+      [breakpoints.up('md')]: {
+        width: '3.25rem',
+        height: '3.25rem',
+        bottom: '.6875rem',
+        left: '.6875rem',
+      },
+    },
+    sliderItemCaption: {
+      fontSize: '.875rem',
+      fontWeight: 600,
+      color: palette.common.black,
+      marginTop: spacing(0.625),
+      marginBottom: spacing(0.625),
+      [breakpoints.up('md')]: {
+        fontSize: '1.125rem',
+      },
+      '& span': {
+        transition: 'all .15s',
+        backgroundImage:
+          'linear-gradient(120deg,rgba(184,240,192,0) 0%,rgba(184,240,192,0) 100%)',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '100% .1875rem',
+        backgroundPosition: '0 100%',
+      },
+    },
+    tileSlideType: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      backgroundColor: palette.common.white,
+      fontSize: '.625rem',
+      fontWeight: 600,
+      lineHeight: 1.1,
+      color: palette.quinary.main,
+      paddingTop: spacing(0.375),
+      paddingBottom: spacing(0.375),
+      paddingLeft: spacing(0.625),
+      paddingRight: spacing(0.625),
+      zIndex: 1,
+      textTransform: 'uppercase',
+      letterSpacing: 1,
+      [breakpoints.up('md')]: {
+        fontSize: '.75rem',
+        padding: spacing(0.75),
+      },
+    },
+    textCenter: {
+      textAlign: 'center',
+    },
+    pb20: {
+      paddingBottom: spacing(2.5),
+      [breakpoints.up('md')]: {
+        paddingBottom: 0,
       },
     },
   })

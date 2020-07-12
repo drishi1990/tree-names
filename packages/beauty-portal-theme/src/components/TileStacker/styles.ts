@@ -27,7 +27,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     sectionLink: {
       color: palette.common.black,
-      textDecoration: 'none',
+
       fontSize: '.875rem',
       fontWeight: 700,
       alignSelf: 'flex-start',
@@ -97,7 +97,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
 
     sliderLink: {
       display: 'block',
-      textDecoration: 'none',
+
       '&:hover': {
         '& h3 > span': {
           backgroundImage: `linear-gradient(120deg,${palette.secondary.main} 0%,${palette.secondary.main} 100%)`,

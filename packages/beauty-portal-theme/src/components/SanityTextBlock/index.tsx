@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import Container from '@material-ui/core/Container';
 import classNames from 'classnames';
 import { SanityTextBlockInterface } from './models';
 
@@ -28,14 +27,14 @@ const SanityTextBlock: FunctionComponent<SanityTextBlockInterface> = ({
         getComponentvariant(textBlockType.name)
       )}
     >
-      <Container>
+      <div className="container">
         <div className={classes.sectionDescription}>
           <BlockContent
             serializers={blockTypeDefaultSerializers}
             blocks={_rawTextBlockBody}
           />
         </div>
-      </Container>
+      </div>
     </section>
   );
 };

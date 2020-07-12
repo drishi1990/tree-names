@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { SanityProductSliderInterface } from './models';
-
-import Container from '@material-ui/core/Container';
 import TileSlider from '../TileSlider';
 
 import useStyles from './styles';
@@ -15,9 +13,9 @@ const SanityProductSlider: FunctionComponent<SanityProductSliderInterface> = ({
 
   return (
     <section className={classes.section}>
-      <Container>
+      <div className="container">
         <TileSlider name={name} slides={slides} headline={headline} />
-      </Container>
+      </div>
     </section>
   );
 };

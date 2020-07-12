@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import Container from '@material-ui/core/Container';
 import BlockContent from '@sanity/block-content-to-react';
 import { SanityVideoBlockInterface } from './models';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
@@ -15,7 +14,7 @@ const SanityVideoBlock: FunctionComponent<SanityVideoBlockInterface> = ({
 
   return (
     <section className={classes.section}>
-      <Container>
+      <div className="container">
         <div className={classes.content}>
           <iframe
             width="560"
@@ -37,7 +36,7 @@ const SanityVideoBlock: FunctionComponent<SanityVideoBlockInterface> = ({
             )}
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 };

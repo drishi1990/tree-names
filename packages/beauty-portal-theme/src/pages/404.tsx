@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import SEO from '../components/Seo';
 import Layout from '../components/Layout';
-import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -63,7 +62,7 @@ const NotFound = ({ data: { site } }: NotFoundProps) => {
         description={site.description}
         keywords={site.keywords}
       />
-      <Container>
+      <div className="container">
         <div className={classes.wrapper}>
           <p className={classes.title}>404</p>
           <p className={classes.subTitle}>That’s an error!</p>
@@ -72,7 +71,7 @@ const NotFound = ({ data: { site } }: NotFoundProps) => {
             what you are looking for and we will answer.
           </p>
         </div>
-      </Container>
+      </div>
     </Layout>
   );
 };

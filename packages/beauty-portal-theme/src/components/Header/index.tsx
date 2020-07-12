@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import Container from '@material-ui/core/Container';
-
 import SiteNavigation from '../Navigation';
 import SiteSearch from './search';
 import NewsletterFollow from './newsletter-follow';
@@ -24,7 +22,7 @@ const Header: FunctionComponent = () => {
 
   return (
     <header className={classes.header} role="banner" aria-label="header">
-      <Container maxWidth="lg">
+      <div className="container">
         <div className={classes.headerContentWrapper}>
           <div className={classes.logo}>
             <Link to="/">
@@ -38,7 +36,7 @@ const Header: FunctionComponent = () => {
           />
           <SiteSearch />
         </div>
-      </Container>
+      </div>
     </header>
   );
 };

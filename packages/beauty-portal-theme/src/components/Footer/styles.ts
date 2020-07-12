@@ -42,7 +42,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     navigationLink: {
       color: palette.common.white,
-      textDecoration: 'none',
       display: 'flex',
       alignItems: 'center',
       fontSize: '.875rem',

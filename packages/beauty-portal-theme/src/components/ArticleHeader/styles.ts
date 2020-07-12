@@ -114,7 +114,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       backgroundPosition: '0 100%',
       color: palette.common.black,
       lineHeight: 1.75,
-      textDecoration: 'none',
       display: 'flex',
     },
     tutorialInfo: {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
 import SEO from '../../components/Seo';
 import Layout from '../../components/Layout';
 import RelatedArticles from '../../components/RelatedArticles';
@@ -53,7 +52,7 @@ const HowtoArticlePage = (props: HowtoArticlePageProps) => {
         data={page}
       />
       <OGTags type={'article'} slug={page.path} data={page} />
-      <Container maxWidth="lg">
+      <div className="container">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={7}>
             <ArticleHeader
@@ -87,7 +86,7 @@ const HowtoArticlePage = (props: HowtoArticlePageProps) => {
           </Grid>
         </Grid>
         <Tags data={page.tags} title={sectionTitles.relatedTopicsName} />
-      </Container>
+      </div>
     </Layout>
   );
 };

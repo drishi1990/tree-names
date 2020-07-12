@@ -47,7 +47,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     tagsListLink: {
       color: palette.common.black,
       display: 'inline-block',
-      textDecoration: 'none',
+
       fontSize: '.875rem',
       fontWeight: 700,
       lineHeight: 1.1,
