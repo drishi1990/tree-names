@@ -35,9 +35,9 @@ const ProductPage = (props: ProductPageProps) => {
         <div className="col col-1"></div>
         <div className="col col-4">
           {productNodes.map(item => (
-            <Paper className={classes.paper} key={item.name + item.id}>
+            <div className={classes.paper} key={item.name + item.id}>
               <Link to={item.path}>{item.name}</Link>
-            </Paper>
+            </div>
           ))}
         </div>
       </div>

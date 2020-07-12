@@ -73,7 +73,6 @@ module.exports = ({ themeConfig }) => {
     `gatsby-plugin-sass`,
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
-    'gatsby-transformer-remark',
     'gatsby-source-sanity-transform-images',
     {
       resolve: 'gatsby-plugin-root-import',
