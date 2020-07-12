@@ -7,7 +7,7 @@ import BlockContent from '@sanity/block-content-to-react';
 import { ImageBlockInterface } from './models';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
 
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
   name,
@@ -16,13 +16,11 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
   _rawImage,
   url,
   imageBlockType,
-  preferPerformance = false,
 }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     rootMargin: '200px 0px',
   });
-  // const classes = useStyles();
   const getComponentvariant = type => {
     return type
       .replace(/\s/g, '')
@@ -71,20 +69,18 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
   return (
     <section
       className={classNames(
-        'classes.section',
-        getComponentvariant(imageBlockType.name)
+        styles.section,
+        getComponentvariant(imageBlockType.name) === 'imageblocktypeb'
+          ? styles.imageblocktypeb
+          : null
       )}
     >
       <div className="container">
-        <Link to={url || '/'} className={'classes.link'}>
-          <div className={'classes.content'}>
-            <div
-              className={classNames('c-image_wrapper', 'classes.imageWrapper')}
-            >
-              {Image}
-            </div>
-            <div className={classNames('c-image_text', 'classes.copyText')}>
-              <h2 className={'classes.sectionTitle'}>
+        <Link to={url || '/'} className={styles.link}>
+          <div className={styles.content}>
+            <div className={classNames(styles.imageWrapper)}>{Image}</div>
+            <div className={classNames(styles.copyText)}>
+              <h2 className={styles.sectionTitle}>
                 <span>{name}</span>
               </h2>
               {_rawTextBlockBody && (

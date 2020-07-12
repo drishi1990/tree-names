@@ -39,9 +39,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         color: palette.secondary.main,
       },
     },
-    pad20: {
-      padding: spacing(2.5),
-    },
     follow: {
       position: 'absolute',
       right: 120,

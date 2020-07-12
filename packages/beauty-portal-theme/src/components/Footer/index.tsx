@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import UnileverLogo from '../../images/unilever-logo.png';
 import SocialMenu from '../SocialMenu';
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 import BackToTop from '../BackToTop';
 import { ReactComponent as NewWindow } from '../../images/icons/launch.svg';
 
@@ -28,34 +28,32 @@ const Footer: FunctionComponent = () => {
     }
   `);
 
-  // const classes = useStyles();
-
   const externalLinkAttributes = {
     target: '_blank',
     rel: 'noopener noreferrer',
   };
 
   return (
-    <footer className={'classes.footer'} role="contentinfo" aria-label="footer">
+    <footer className={styles.footer} role="contentinfo" aria-label="footer">
       <SocialMenu links={data.brandInfo} />
       <nav
-        className={'classes.wrapper'}
+        className={styles.wrapper}
         role="navigation"
         aria-label="Footer Navigation"
       >
-        <ul className={'classes.navigationItems'}>
+        <ul className={styles.navigationItems}>
           {data.sanityNavBar.navItems.map(
             (navItem: {
               navL1: { name: string; path: string; externalLink: string };
             }) => (
-              <li className={'classes.navigationItem'} key={navItem.navL1.name}>
+              <li className={styles.navigationItem} key={navItem.navL1.name}>
                 <a
                   href={
                     navItem.navL1.externalLink ||
                     navItem.navL1.path ||
                     `/${navItem.navL1.name}`
                   }
-                  className={'classes.navigationLink'}
+                  className={styles.navigationLink}
                   {...(navItem.navL1.externalLink
                     ? externalLinkAttributes
                     : null)}
@@ -68,7 +66,7 @@ const Footer: FunctionComponent = () => {
           )}
         </ul>
       </nav>
-      <div className={'classes.footerSecondary'}>
+      <div className={styles.footerSecondary}>
         <img src={UnileverLogo} role="presentation" width="36" />
         <p>Copyright &copy; {new Date().getFullYear()} Unilever.</p>
       </div>
