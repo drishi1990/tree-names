@@ -1,7 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
-import { Typography } from '@material-ui/core';
 import SwiperCore, { Lazy } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useInView } from 'react-intersection-observer';
