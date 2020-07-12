@@ -3,8 +3,6 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import SiteNavigation from '../Navigation';
 import SiteSearch from './search';
 import NewsletterFollow from './newsletter-follow';
-// import useStyles from './styles';
-
 import styles from './header.module.scss';
 
 const Header: FunctionComponent = () => {
