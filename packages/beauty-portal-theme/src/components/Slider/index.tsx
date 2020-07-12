@@ -236,9 +236,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
         <div className={classes.copy}>
           <div className={classes.copyInner}>
             <div className={classes.slideType}>{slide._type}</div>
-            <Typography variant="h2" className={classes.heading}>
-              {slide.headline}
-            </Typography>
+            <h2 className={classes.heading}>{slide.headline}</h2>
             <Link className={classes.callToAction} to={slide.path}>
               Go to Article
             </Link>
