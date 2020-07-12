@@ -33,9 +33,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         alignItems: 'center',
       },
     },
-    pad20: {
-      padding: spacing(2.5),
-    },
     follow: {
       position: 'absolute',
       right: 120,

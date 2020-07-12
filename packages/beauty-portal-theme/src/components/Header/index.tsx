@@ -3,8 +3,9 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import SiteNavigation from '../Navigation';
 import SiteSearch from './search';
 import NewsletterFollow from './newsletter-follow';
-// import useStyles from './styles';
 import { ReactComponent as Logo } from '../../images/logo.svg';
+
+import styles from './header.module.scss';
 
 const Header: FunctionComponent = () => {
   const data = useStaticQuery(graphql`
@@ -18,13 +19,12 @@ const Header: FunctionComponent = () => {
       }
     }
   `);
-  // const classes = useStyles();
 
   return (
-    <header className={'classes.header'} role="banner" aria-label="header">
+    <header className={styles.header} role="banner" aria-label="header">
       <div className="container">
-        <div className={'classes.headerContentWrapper'}>
-          <div className={'classes.logo'}>
+        <div className={styles.headerContentWrapper}>
+          <div className={styles.logo}>
             <Link to="/">
               <Logo />
             </Link>

@@ -7,10 +7,9 @@ import { ReactComponent as Youtube } from '../../images/icons/youtube.svg';
 import { ReactComponent as Facebook } from '../../images/icons/facebook.svg';
 import { ReactComponent as Share } from '../../images/icons/facebook.svg';
 
-// import useStyles from './styles';
+import styles from './style.module.scss';
 
 const SocialMenu: FunctionComponent<SocialMenuInterface> = ({ links }) => {
-  // const classes = useStyles();
   const socialIcons: { [char: string]: any } = {
     facebook: Facebook,
     insta: Instagram,
@@ -37,7 +36,7 @@ const SocialMenu: FunctionComponent<SocialMenuInterface> = ({ links }) => {
   if (!links) return null;
 
   return (
-    <div className={`c-social ${'classes.social'}`}>
+    <div className={`c-social ${styles.social}`}>
       <ul>{renderItems()}</ul>
     </div>
   );
