@@ -9,7 +9,6 @@ import quote from '../../images/icons/quote-left.svg';
 import useStyles from './styles';
 
 const SanityTextBlock: FunctionComponent<SanityTextBlockInterface> = ({
-  name,
   _rawTextBlockBody,
   textBlockType,
 }) => {
