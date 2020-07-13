@@ -39,7 +39,7 @@ const Video: FunctionComponent<VideoInterface> = ({
 
   return (
     <section className={classes.wrapper}>
-      <h3 className={classes.title}>{videoMetaData.node.youTubeCaption}</h3>
+      <h2 className={classes.title}>{videoMetaData.node.youTubeCaption}</h2>
       <div className={classes.heroImage}>
         {!showVideo && (
           <Img
