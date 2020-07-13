@@ -5,7 +5,7 @@ import createBreakpoints from '@material-ui/core/styles/createBreakpoints';
 const breakpoints = createBreakpoints({});
 
 const color = {
-  primary: '#ff3366',
+  primary: '#FF5C85',
   secondary: '#b8f0c0',
   tertiary: '#fed760',
   quaternary: '#f8e6de',

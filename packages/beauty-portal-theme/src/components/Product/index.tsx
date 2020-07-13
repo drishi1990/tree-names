@@ -1,6 +1,5 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
 import { urlFor } from '../../helpers/imageUrl';
 
 import { ReactComponent as IconBuy } from '../../images/icons/buy.svg';

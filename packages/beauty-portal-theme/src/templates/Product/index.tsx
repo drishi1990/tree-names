@@ -22,9 +22,9 @@ const ProductPage = (props: ProductPageProps) => {
     <Layout>
       <SEO
         lang={'en-us'}
-        title={page.seo.metaTitle}
-        description={page.seo.metaDescription}
-        keywords={page.seo.metaKeywords}
+        title={page.name}
+        description={page.description}
+        keywords={page.keywords}
       />
       <Grid container spacing={2}>
         <Grid item xs={9}>

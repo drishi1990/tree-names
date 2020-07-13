@@ -76,7 +76,7 @@ const SearchResults: FunctionComponent = () => {
   };
   return (
     <Layout>
-      <SEO lang={'en-us'} title="" description="" keywords="" />
+      <SEO lang={'en-us'} title="Search" description="" keywords="" />
       <div className="container">
         <InstantSearch
           searchClient={searchClient}
@@ -88,7 +88,11 @@ const SearchResults: FunctionComponent = () => {
         >
           <Grid container spacing={2}>
             <Grid className={classes.searchControlWrapper} item sm={12}>
-              <SearchBox searchAsYouType={true} />
+              <SearchBox
+                searchAsYouType={true}
+                autoFocus
+                showLoadingIndicator
+              />
             </Grid>
             <Grid className={classes.searchControlWrapper} item sm={12}>
               <div className={classes.resultsInfo}>

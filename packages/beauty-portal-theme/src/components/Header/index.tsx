@@ -4,7 +4,6 @@ import SiteNavigation from '../Navigation';
 import SiteSearch from './search';
 import NewsletterFollow from './newsletter-follow';
 import useStyles from './styles';
-import { ReactComponent as Logo } from '../../images/logo.svg';
 
 const Header: FunctionComponent = () => {
   const data = useStaticQuery(graphql`
@@ -25,8 +24,8 @@ const Header: FunctionComponent = () => {
       <div className="container">
         <div className={classes.headerContentWrapper}>
           <div className={classes.logo}>
-            <Link to="/">
-              <Logo />
+            <Link className={classes.logoLink} to="/">
+              Beauty <span>Portal</span>
             </Link>
           </div>
           <SiteNavigation />

@@ -28,7 +28,7 @@ const ArticleTileSlider: FunctionComponent<ArticleTileSliderInterface> = ({
   return (
     <div className={classes.slider}>
       <div className={classes.sectionTitle}>
-        <h2 className={classes.sliderTitle}>{headline}</h2>
+        {headline && <h2 className={classes.sliderTitle}>{headline}</h2>}
         {searchCtaLabel && (
           <Link
             className={classes.sectionLink}

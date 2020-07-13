@@ -51,12 +51,12 @@ export default makeStyles(({ palette, spacing }: Theme) =>
     },
     '@keyframes splash': {
       '40%': {
-        background: '#ff3366',
+        background: '#FF5C85',
         boxShadow:
-          '0 -18px 0 -8px #ff3366, 16px -8px 0 -8px #ff3366, 16px 8px 0 -8px #ff3366, 0 18px 0 -8px #ff3366, -16px 8px 0 -8px #ff3366, -16px -8px 0 -8px #ff3366',
+          '0 -18px 0 -8px #FF5C85, 16px -8px 0 -8px #FF5C85, 16px 8px 0 -8px #FF5C85, 0 18px 0 -8px #FF5C85, -16px 8px 0 -8px #FF5C85, -16px -8px 0 -8px #FF5C85',
       },
       '100%': {
-        background: '#ff3366',
+        background: '#FF5C85',
         boxShadow:
           '0 -36px 0 -10px transparent, 32px -16px 0 -10px transparent, 32px 16px 0 -10px transparent, 0 36px 0 -10px transparent, -32px 16px 0 -10px transparent, -32px -16px 0 -10px transparent',
       },
