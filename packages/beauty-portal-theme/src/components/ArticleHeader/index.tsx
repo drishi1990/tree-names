@@ -143,7 +143,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
       {/* TODO: Use generic `Video` component for hero video to avoid duplicate code  */}
       {/* {renderHeroImage(_rawHeroImage, heroImage.alt)} */}
       {!(_type === 'galleryArticle') && (
-        <div className={classes.heroImage}>
+        <div className={'classes.heroImage'}>
           {!showVideo &&
             !heroVideo &&
             renderVideoThumbnail(_rawHeroImage, heroImage.alt)}
