@@ -13,7 +13,7 @@ const ReadNext: FunctionComponent<ReadNextInterface> = ({ data, title }) => {
   const classes = useStyles();
   return (
     <section className={classes.readNext}>
-      <h3 className={classes.readNextTitle}>{title}</h3>
+      <h2 className={classes.readNextTitle}>{title}</h2>
       <div className={classes.readNextContent}>
         <Link className={classes.readNextLink} to={data.readnext.path}>
           <div className={classes.readNextImage} ref={ref} data-inview={inView}>
