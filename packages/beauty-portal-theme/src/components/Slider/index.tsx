@@ -184,6 +184,18 @@ const Slider: FunctionComponent<SliderInterface> = ({
     <SwiperSlide key={slide.path}>
       {slide.heroImage && (
         <figure>
+          <link
+            rel="preload"
+            as="image"
+            href={`${urlFor(slide._rawHeroImage)
+              .width(752)
+              .height(423)
+              .quality(80)
+              .fit('max')
+              .auto('format')
+              .url()
+              .toString()}`}
+          />
           <picture
             className="bp-image__placeholder"
             style={{
