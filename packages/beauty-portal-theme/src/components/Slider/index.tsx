@@ -204,7 +204,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
               paddingTop: '56.25%',
               background:
                 index === 0
-                  ? `url(${slide.heroImage.asset.localFile.childImageSharp.fixed.base64})`
+                  ? `url(${slide._rawHeroImage.asset.metadata.lqip})`
                   : `url(${slide._rawHeroImage.asset.metadata.lqip})`,
               backgroundSize: 'cover',
             }}
