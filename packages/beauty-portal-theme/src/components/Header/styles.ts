@@ -28,9 +28,15 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         marginRight: spacing(3.75),
         marginBottom: spacing(-0.25),
       },
-      '& a': {
-        display: 'flex',
-        alignItems: 'center',
+    },
+    logoLink: {
+      display: 'flex',
+      alignItems: 'center',
+      fontSize: '1.6rem',
+      fontWeight: 500,
+      color: palette.primary.main,
+      '& span': {
+        color: palette.secondary.main,
       },
     },
     pad20: {
@@ -113,7 +119,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       fontSize: '.875rem',
       fontWeight: 700,
       backgroundColor: palette.primary.main,
-      color: palette.common.white,
+      color: palette.common.black,
       paddingTop: spacing(1.25),
       paddingBottom: spacing(1.25),
       paddingLeft: spacing(2),
@@ -137,8 +143,11 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         transitionDuration: '0.3s',
         transitionTimingFunction: 'ease-out',
       },
-      '&:hover:before': {
-        transform: 'scaleX(1)',
+      '&:hover': {
+        color: palette.common.white,
+        '&:before': {
+          transform: 'scaleX(1)',
+        },
       },
       [breakpoints.up('md')]: {
         fontSize: '1.125rem',

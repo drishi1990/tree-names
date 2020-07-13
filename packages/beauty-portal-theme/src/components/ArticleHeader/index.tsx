@@ -23,7 +23,6 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
   const {
     headline,
     subheading,
-    imageGallery,
     heroImage,
     heroVideo,
     author,
@@ -31,7 +30,9 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
     time,
     _rawHeroImage,
     _rawHeroVideo,
+    _type,
   } = article;
+  console.log(article);
   const playVideo = (event: any) => {
     setVideoLoading(true);
     setVideoSourceUrl(
@@ -141,7 +142,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
       </div>
       {/* TODO: Use generic `Video` component for hero video to avoid duplicate code  */}
       {/* {renderHeroImage(_rawHeroImage, heroImage.alt)} */}
-      {!imageGallery && (
+      {!(_type === 'galleryArticle') && (
         <div className={classes.heroImage}>
           {!showVideo &&
             !heroVideo &&
@@ -229,7 +230,7 @@ interface ArticleHeaderInterface {
   article: any;
   type: any;
   socialLinks: any;
-  playLabel: string;
+  playLabel?: string;
 }
 
 export default ArticleHeader;

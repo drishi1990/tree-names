@@ -58,7 +58,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     footerSecondary: {
       textAlign: 'center',
       backgroundColor: palette.grey[50],
-      color: palette.grey[200],
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -67,6 +66,9 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       [breakpoints.up('md')]: {
         paddingTop: spacing(4),
         paddingBottom: spacing(5),
+      },
+      '& p': {
+        color: palette.common.white,
       },
       '& img': {
         marginRight: spacing(1.25),

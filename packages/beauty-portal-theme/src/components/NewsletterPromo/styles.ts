@@ -36,7 +36,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       cursor: 'pointer',
       backgroundColor: palette.primary.main,
       border: `1px solid ${palette.primary.main}`,
-      color: palette.common.white,
+      color: palette.common.black,
       position: 'relative',
       transform: 'perspective(1px) translateZ(0)',
       display: 'flex',

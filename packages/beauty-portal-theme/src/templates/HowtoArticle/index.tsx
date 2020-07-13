@@ -30,6 +30,7 @@ const HowtoArticlePage = (props: HowtoArticlePageProps) => {
   const relatedArticles = [...galleryNodes, ...featureNodes, ...howToNodes];
 
   page.seo = page.seo || {};
+
   return (
     <Layout>
       <SEO
