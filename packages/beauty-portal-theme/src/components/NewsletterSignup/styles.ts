@@ -63,7 +63,7 @@ export default makeStyles(({ spacing, breakpoints, palette }: Theme) =>
       cursor: 'pointer',
       backgroundColor: palette.primary.main,
       border: `1px solid ${palette.primary.main}`,
-      color: palette.common.white,
+      color: palette.common.black,
       position: 'relative',
       transition: 'all .3s ease-out',
       marginTop: spacing(3),

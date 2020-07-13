@@ -56,7 +56,7 @@ const Video: FunctionComponent<VideoInterface> = ({
             data-url={videoMetaData.node.url}
           >
             <IconYoutube />
-            <span hidden>Play Video</span>
+            <span className="srOnly">Play Video</span>
           </button>
         )}
         {videoLoading && (
