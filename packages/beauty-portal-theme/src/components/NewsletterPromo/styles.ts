@@ -60,7 +60,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         transitionTimingFunction: 'ease-out',
       },
       '&:hover': {
-        borderColor: palette.common.white,
+        color: palette.common.white,
         '&:before': {
           transform: 'scaleX(1)',
         },
