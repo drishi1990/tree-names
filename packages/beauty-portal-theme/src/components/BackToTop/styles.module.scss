@@ -1,5 +1,5 @@
 .element {
-  background-color: #ff5c85;
+  background-color: var(--primary-color, #ff5c85);
   border: none;
   color: black;
   position: fixed;

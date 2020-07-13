@@ -103,7 +103,7 @@
       transform: translateX(-50%);
       width: 200px;
       height: 2px;
-      background-color: #ff5c85;
+      background-color: var(--primary-color, #ff5c85);
       z-index: 0;
     }
   }

@@ -128,7 +128,7 @@
   position: relative;
 
   &:hover>a &:focus-within {
-    background-color: #ff5c85;
+    background-color: var(--primary-color, #ff5c85);
   }
 
   &:hover>div {
@@ -164,7 +164,7 @@
 
     &:hover,
     &:focus {
-      background-color: #ff5c85;
+      background-color: var(--primary-color, #ff5c85);
     }
 
     &:focus+div {
@@ -219,7 +219,7 @@
   @media (min-width: 768px) {
     padding-top: 10px;
     padding-bottom: 10px;
-    border-top: 4px solid #ff5c85;
+    border-top: 4px solid var(--primary-color, #ff5c85);
   }
 }
 
