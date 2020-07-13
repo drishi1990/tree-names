@@ -59,7 +59,6 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
           '& span': {
             '&:last-child': {
               fontSize: '1rem',
-              opacity: 0.5,
               color: palette.common.black,
             },
           },
