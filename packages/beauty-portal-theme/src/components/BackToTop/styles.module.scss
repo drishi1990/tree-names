@@ -1,5 +1,5 @@
 .element {
-  background-color: #ff5c85;
+  background-color: var(--primary-color, #ff5c85);
   border: none;
   color: black;
   position: fixed;
@@ -37,9 +37,7 @@
     }
 
     svg {
-      <<<<<<< HEAD fill: #ff5c85;
-      =======fill: #ff3366;
-      >>>>>>>a6d2825ef06dc2625b3fd7e86a1c8794fb68a1e6
+      fill: var(--primary-color, #ff5c85);
     }
   }
 

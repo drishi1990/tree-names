@@ -1,3 +1,5 @@
+@import '../../styles/theme.scss';
+
 .header {
   position: fixed;
   top: 0;
@@ -7,9 +9,8 @@
   height: 60px;
   display: flex;
   align-items: center;
-  <<<<<<< HEAD border-bottom: 1px solid #ff5c85;
-  =======border-bottom: 1px solid #ff3366;
-  >>>>>>>a6d2825ef06dc2625b3fd7e86a1c8794fb68a1e6 background-color: black;
+  border-bottom: 1px solid var(--primary-color, #ff5c85);
+  background-color: var(--black-color, black);
 }
 
 .headerContentWrapper {
@@ -32,7 +33,7 @@
     align-items: center;
     font-size: 1.6rem;
     font-weight: 500;
-    color: #ff5c85;
+    color: var(--primary-color, #ff5c85);
 
     & span {
       color: #b8f0c0,
@@ -50,7 +51,7 @@
 }
 
 .follow:focus-within button {
-  background-color: #ff5c85;
+  background-color: var(--primary-color, #ff5c85);
 }
 
 .follow svg {
@@ -69,7 +70,7 @@
   position: relative;
 
   &:hover {
-    background-color: #ff5c85;
+    background-color: var(--primary-color, #ff5c85);
 
     &>div {
       height: auto;
@@ -98,7 +99,7 @@
     left: 0;
     top: 0;
     height: 4px;
-    background-color: #ff5c85;
+    background-color: var(--primary-color, #ff5c85);
   }
 
   @media (min-width: 768px) {
@@ -130,7 +131,7 @@
 .newsletterSubscribeButton {
   font-size: 0.875rem;
   font-weight: 700;
-  background-color: #ff5c85;
+  background-color: var(--primary-color, #ff5c85);
   color: white;
   padding: 10px 16px;
 
@@ -188,7 +189,7 @@
     justify-content: center;
 
     &:hover {
-      background-color: #ff5c85;
+      background-color: var(--primary-color, #ff5c85);
     }
   }
 }
