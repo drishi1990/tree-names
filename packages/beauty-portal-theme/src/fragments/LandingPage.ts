@@ -41,6 +41,13 @@ export const query = graphql`
                   srcSetWebp
                   srcWebp
                 }
+                localFile {
+                  childImageSharp {
+                    fixed(base64Width: 752, toFormatBase64: NO_CHANGE) {
+                      base64
+                    }
+                  }
+                }
               }
               alt
             }
@@ -70,6 +77,13 @@ export const query = graphql`
                   srcSetWebp
                   srcWebp
                 }
+                localFile {
+                  childImageSharp {
+                    fixed(base64Width: 752, toFormatBase64: NO_CHANGE) {
+                      base64
+                    }
+                  }
+                }
               }
               alt
             }
@@ -94,6 +108,13 @@ export const query = graphql`
                   srcSet
                   srcSetWebp
                   srcWebp
+                }
+                localFile {
+                  childImageSharp {
+                    fixed(base64Width: 752, toFormatBase64: NO_CHANGE) {
+                      base64
+                    }
+                  }
                 }
               }
               alt

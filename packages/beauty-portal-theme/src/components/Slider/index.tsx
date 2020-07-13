@@ -188,7 +188,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
             className="bp-image__placeholder"
             style={{
               paddingTop: '56.25%',
-              background: `url(${slide._rawHeroImage.asset.metadata.lqip})`,
+              background: `url(${slide.heroImage.asset.localFile.childImageSharp.fixed.base64})`,
               backgroundSize: 'cover',
             }}
           >
