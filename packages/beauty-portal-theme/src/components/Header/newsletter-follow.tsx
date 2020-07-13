@@ -13,7 +13,7 @@ const NewsletterFollow: FunctionComponent<NewsletterFollowInterface> = ({
 
   return (
     <div className={classes.follow}>
-      <Link className={classes.followButton} to={'/subscribe'}>
+      <div className={classes.followButton}>
         <Follow />
         <div className={classes.followPopup}>
           <div className={classes.pad20}>
@@ -25,7 +25,8 @@ const NewsletterFollow: FunctionComponent<NewsletterFollowInterface> = ({
             </div>
           </div>
         </div>
-      </Link>
+        <span className="srOnly">Follow &amp; Subscribe</span>
+      </div>
     </div>
   );
 };
