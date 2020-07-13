@@ -176,7 +176,7 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
   return (
     <>
       <div className={classes.teaserWrapper} ref={ref} data-inview={inView}>
-        <h4 className={classes.title}>{title}</h4>
+        <p className={classes.title}>{title}</p>
         {inView ? (
           <div>
             {firstArticle && (
