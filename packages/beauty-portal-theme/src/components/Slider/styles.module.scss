@@ -98,7 +98,7 @@
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #ff3366;
+  color: #ff5c85;
   font-size: .75rem;
   font-weight: 700;
 }
@@ -106,7 +106,7 @@
 .callToAction {
   font-size: .875rem;
   font-weight: 700;
-  background-color: #ff3366;
+  background-color: #ff5c85;
   color: black;
   padding: 10px 16px;
   display: inline-block;
@@ -195,7 +195,7 @@
 
   &:not(:disabled):hover {
     svg: {
-      fill: #ff3366;
+      fill: #ff5c85;
     }
   }
 
@@ -213,7 +213,7 @@
 
   &:not(:disabled):hover {
     svg {
-      fill: #ff3366;
+      fill: #ff5c85;
     }
   }
 
@@ -228,7 +228,7 @@
 
   &:hover {
     p>span {
-      background-image: linear-gradient(120deg, #ff3366 0%, #b8f0c0 100%);
+      background-image: linear-gradient(120deg, #ff5c85 0%, #b8f0c0 100%);
     }
 
     .icon:before {
@@ -255,7 +255,7 @@
   height: 2.5rem;
   bottom: .5rem;
   left: .5rem;
-  background-color: #ff3366;
+  background-color: #ff5c85;
   position: absolute;
   display: flex;
   align-items: center;
@@ -326,7 +326,7 @@
   font-size: .625rem;
   font-weight: 600;
   line-height: 1.1;
-  color: #ff3366;
+  color: #ff5c85;
   padding: 3px 5px;
   z-index: 1;
   text-transform: uppercase;
