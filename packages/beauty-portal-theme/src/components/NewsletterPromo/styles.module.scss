@@ -65,7 +65,7 @@
   &:hover {
     border-color: black;
 
-    &:before {
+    &::before {
       transform: scaleX(1);
     }
   }

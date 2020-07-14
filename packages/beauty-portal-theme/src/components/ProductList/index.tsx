@@ -9,17 +9,17 @@ const ProductList: FunctionComponent<ProductListInterface> = ({
   title,
 }) => {
   return (
-    <section className={'classes.section'}>
-      <h2 className={'classes.sectionTitle'}>{title}</h2>
-      <div className={classNames('col-container', 'classes.gridContainer')}>
+    <section className={styles.section}>
+      <h2 className={styles.sectionTitle}>{title}</h2>
+      <div className={classNames('col-container', styles.gridContainer)}>
         {data &&
           data.map(product => (
             <div
-              className={classNames('col-xs-4', 'classes.gridItem')}
+              className={classNames('col-xs-4', styles.gridItem)}
               key={product.name}
             >
               <Link
-                className={'classes.gridItemLink'}
+                className={styles.gridItemLink}
                 to={product.path || product.slug.current}
               >
                 {product.image && (
@@ -68,7 +68,7 @@ const ProductList: FunctionComponent<ProductListInterface> = ({
                     </picture>
                   </figure>
                 )}
-                <h3 className={'classes.productTitle'}>
+                <h3 className={styles.productTitle}>
                   <span>{product.name}</span>
                 </h3>
               </Link>

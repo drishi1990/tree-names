@@ -85,17 +85,17 @@ const SearchResults: FunctionComponent = () => {
           root={{ props: { ref } }}
         >
           <div className="col-container">
-            <div className={classNames('col', 'classes.searchControlWrapper')}>
+            <div className={classNames('col', styles.searchControlWrapper)}>
               <SearchBox searchAsYouType={true} />
             </div>
-            <div className={classNames('col', 'classes.searchControlWrapper')}>
-              <div className={'classes.resultsInfo'}>
-                <span className={'classes.searchQuery'}>
+            <div className={classNames('col', styles.searchControlWrapper)}>
+              <div className={styles.resultsInfo}>
+                <span className={styles.searchQuery}>
                   {searchState.query
                     ? `Results for ${searchState.query}`
                     : 'All Results'}
                 </span>
-                <span className={'classes.resultsStats'}>
+                <span className={styles.resultsStats}>
                   <Stats
                     translations={{
                       stats(nbHits) {
@@ -105,12 +105,12 @@ const SearchResults: FunctionComponent = () => {
                   />
                 </span>
               </div>
-              <div className={'classes.currentRefinements'}>
+              <div className={styles.currentRefinements}>
                 <CurrentRefinements clearsQuery />
               </div>
             </div>
-            <div className={classNames('col col-3', 'classes.filters')}>
-              <div className={'classes.filterHeader'}>
+            <div className={classNames('col col-3', styles.filters)}>
+              <div className={styles.filterHeader}>
                 <span>Filter by</span>
                 <ClearRefinements clearsQuery />
               </div>
@@ -176,7 +176,7 @@ const SearchResults: FunctionComponent = () => {
             </div>
             <div className="col-contianer col col-9">
               <div className="col-xs-12">
-                <div className={'classes.actions'}>
+                <div className={styles.actions}>
                   <SortBy
                     defaultRefinement="howtoArticle_publishedAt_Dsc"
                     items={[
@@ -190,8 +190,8 @@ const SearchResults: FunctionComponent = () => {
                   <button
                     type="button"
                     className={classNames(
-                      'classes.icon',
-                      viewType === 'list' ? 'classes.iconActive' : null
+                      styles.icon,
+                      viewType === 'list' ? styles.iconActive : null
                     )}
                     data-view="list"
                     onClick={handleViewType}
@@ -201,8 +201,8 @@ const SearchResults: FunctionComponent = () => {
                   <button
                     type="button"
                     className={classNames(
-                      'classes.icon',
-                      viewType === 'grid' ? 'classes.iconActive' : null
+                      styles.icon,
+                      viewType === 'grid' ? styles.iconActive : null
                     )}
                     data-view="grid"
                     onClick={handleViewType}
@@ -211,7 +211,7 @@ const SearchResults: FunctionComponent = () => {
                   </button>
                 </div>
                 <div
-                  className={classNames('classes.searhResultWrapper', viewType)}
+                  className={classNames(styles.searhResultWrapper, viewType)}
                   show="true"
                 >
                   {indices.map(({ name, hitComp }) => (

@@ -19,7 +19,7 @@ const Gallery: FunctionComponent<GalleryInterface> = ({
   return (
     <>
       <PageSchema type={'ImageGallery'} {...{ name, slug, data, authorName }} />
-      <div className={'classes.galleryWrapper'}>
+      <div className={styles.galleryWrapper}>
         <Swiper
           spaceBetween={10}
           slidesPerView={8}

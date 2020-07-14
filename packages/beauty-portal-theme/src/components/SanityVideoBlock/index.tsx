@@ -6,14 +6,13 @@ import { getYouTubeId } from '../../helpers/youtube';
 import styles from './styles.module.scss';
 
 const SanityVideoBlock: FunctionComponent<SanityVideoBlockInterface> = ({
-  name,
   videoBlock,
   _rawTextBlockBody,
 }) => {
   return (
-    <section className={'classes.section'}>
+    <section className={styles.section}>
       <div className="container">
-        <div className={'classes.content'}>
+        <div className={styles.content}>
           <iframe
             width="560"
             height="315"
@@ -24,8 +23,8 @@ const SanityVideoBlock: FunctionComponent<SanityVideoBlockInterface> = ({
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <div className={'classes.copyText'}>
-            <h2 className={'classes.sectionTitle'}>{videoBlockName}</h2>
+          <div className={styles.copyText}>
+            <h2 className={styles.sectionTitle}>{videoBlockName}</h2>
             {_rawTextBlockBody && (
               <BlockContent
                 serializers={blockTypeDefaultSerializers}

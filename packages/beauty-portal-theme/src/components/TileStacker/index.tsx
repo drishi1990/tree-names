@@ -14,11 +14,11 @@ const TileStacker: FunctionComponent<TileStackerInterface> = ({
       <div className="col-container">
         <div className="col col-4">
           <div key={slide.headline}>
-            <div className={'classes.tile'}>
-              <span className={'classes.slideType'}>{'slide._type'}</span>
-              <Link className={'classes.sliderLink'} to={slide.path}>
+            <div className={styles.tile}>
+              <span className={styles.slideType}>{slide._type}</span>
+              <Link className={styles.sliderLink} to={slide.path}>
                 {slide.heroImage && (
-                  <div className={'classes.heroImage'}>
+                  <div className={styles.heroImage}>
                     <Img
                       fluid={slide.heroImage.asset.fluid}
                       alt={slide.heroImage.alt}
@@ -26,14 +26,14 @@ const TileStacker: FunctionComponent<TileStackerInterface> = ({
                       imgStyle={{ objectPosition: 'top center' }}
                     />
                     {slide.heroVideo && (
-                      <span className={`icon ${'classes.iconPlay'}`}>
+                      <span className={`icon ${styles.iconPlay}`}>
                         <PlayVideo />
                         <span hidden>Play Video</span>
                       </span>
                     )}
                   </div>
                 )}
-                <h3 className={'classes.sliderItemCaption'}>
+                <h3 className={styles.sliderItemCaption}>
                   <span>{slide.headline}</span>
                 </h3>
               </Link>
@@ -45,9 +45,9 @@ const TileStacker: FunctionComponent<TileStackerInterface> = ({
   };
 
   return (
-    <div className={'classes.root'}>
-      <div className={'classes.sectionTitle'}>
-        <h2 className={'classes.sliderTitle'}>{headline}</h2>
+    <div className={styles.root}>
+      <div className={styles.sectionTitle}>
+        <h2 className={styles.sliderTitle}>{headline}</h2>
       </div>
       <div className="col col-3">{slides.map(slide => renderer(slide))}</div>
     </div>
