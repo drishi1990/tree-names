@@ -88,18 +88,16 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
   };
 
   return (
-    <div className={'classes.wrapper'}>
-      <div className={'classes.banner'}>
-        <div
-          className={classNames('classes.imageWrapper', 'classes.container')}
-        >
+    <div className={styles.wrapper}>
+      <div className={styles.banner}>
+        <div className={classNames(styles.imageWrapper, styles.container)}>
           {image && <Img fluid={image.asset.fluid} />}
         </div>
       </div>
-      <div className={classNames('classes.heading', 'classes.container')}>
-        <h1 className={'classes.pageTitle'}>Subscribe for Email Updates</h1>
+      <div className={classNames(styles.heading, styles.container)}>
+        <h1 className={styles.pageTitle}>Subscribe for Email Updates</h1>
         {_rawBody && (
-          <h2 className={'classes.pageDescription'}>
+          <h2 className={styles.pageDescription}>
             <BlockContent
               serializers={blockTypeDefaultSerializers}
               blocks={_rawBody}
@@ -107,9 +105,9 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
           </h2>
         )}
       </div>
-      <div className={classNames('classes.imageWrapper', 'classes.container')}>
+      <div className={classNames(styles.imageWrapper, styles.container)}>
         {isFormSubmitted ? (
-          <div className={'classes.thankyou'}>
+          <div className={styles.thankyou}>
             <Bell />
             <h2>Thankyou for signing up!</h2>
             <p>
@@ -204,7 +202,7 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
               name="submit"
               value="Subscribe"
               onClick={handleFormSubmit}
-              className={'classes.button'}
+              className={styles.button}
             />
             {/* TODO: Add hidden fields for hard coded values to be passed in payload */}
           </Form>

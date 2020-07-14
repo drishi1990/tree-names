@@ -1,59 +1,70 @@
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+.galleryWrapper {
+  padding: 0;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 
-export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
-  createStyles({
-    galleryWrapper: {
-      padding: 0,
-      padding-bottom: 20px,
-      margin-bottom: 20px,
-      '& figure': {
-        max-width: 500,
-        margin: 'auto',
-      },
-      '& .swiper-container': {
-        max-width: 752,
-        margin: 'auto',
-        '& .swiper-wrapper': {
-          padding-top: 40,
-          [breakpoints.up('sm')]: {
-            padding-top: 0,
-          },
-        },
-        '& .swiper-slide': {
-          background-color: '#f4f4f4',
-        },
-      },
-      '& .swiper-container-thumbs': {
-        margin-bottom: 24px,
-        '& .swiper-slide': {
-          width: 80,
-          opacity: 0.4,
-          '&.swiper-slide-thumb-active': {
-            opacity: 1,
-          },
-        },
-      },
-      '& .swiper-container-horizontal > .swiper-pagination-bullets': {
-        top: 10,
-        bottom: 'auto',
-      },
-      '& .swiper-button-prev, & .swiper-button-next, & .swiper-container-thumbs': {
-        display: 'none',
-        [breakpoints.up('sm')]: {
-          display: 'block',
-        },
-      },
-      '& .swiper-pagination': {
-        [breakpoints.up('sm')]: {
-          display: 'none',
-        },
-      },
-      '& .swiper-button-next:after, & .swiper-button-prev:after': {
-        color: var(--primary-color),
-      },
-      '& .swiper-pagination-bullet-active': {
-        background: var(--primary-color),
-      },
-    },
-  })
-);
+  figure {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .swiper-container {
+    max-width: 752px;
+    margin: auto;
+
+    .swiper-wrapper {
+      padding-top: 40px;
+
+      @media (min-width: 768px) {
+        padding-top: 0;
+      }
+    }
+
+    .swiper-slide {
+      background-color: #f4f4f4;
+    }
+  }
+
+  .swiper-container-thumbs {
+    margin-bottom: 24px;
+
+    .swiper-slide {
+      width: 80px;
+      opacity: 0.4;
+
+      &.swiper-slide-thumb-active {
+        opacity: 1;
+      }
+    }
+  }
+
+  .swiper-container-horizontal>.swiper-pagination-bullets {
+    top: 10px;
+    bottom: auto;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next,
+  .swiper-container-thumbs {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  .swiper-pagination {
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    color: var(--primary-color);
+  }
+
+  .swiper-pagination-bullet-active {
+    background: var(--primary-color);
+  }
+}

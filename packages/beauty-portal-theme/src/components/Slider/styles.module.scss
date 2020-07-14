@@ -133,7 +133,7 @@
   &:hover {
     color: white;
 
-    &:before {
+    &::before {
       transform: scaleX(1);
     }
   }

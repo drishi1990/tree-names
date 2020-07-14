@@ -1,9 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { urlFor } from '../../helpers/imageUrl';
-
 import { ReactComponent as IconBuy } from '../../images/icons/buy.svg';
-
 import styles from './styles.module.scss';
 
 const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
@@ -17,9 +15,9 @@ const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
   const { image } = data;
 
   return (
-    <div className={'classes.wrapper'}>
-      <Link className={'classes.link'} to={(slug && slug.current) || '/'}>
-        <div className={'classes.image'}>
+    <div className={styles.wrapper}>
+      <Link className={styles.link} to={(slug && slug.current) || '/'}>
+        <div className={styles.image}>
           <figure>
             <picture>
               <source
@@ -48,24 +46,24 @@ const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
           </figure>
         </div>
         {tagLine && (
-          <p className={'classes.tagline'}>
+          <p className={styles.tagline}>
             <span>{tagLine}</span>
           </p>
         )}
         {name && (
-          <h3 className={'classes.name'}>
+          <h3 className={styles.name}>
             <span>{name}</span>
           </h3>
         )}
       </Link>
       {buyNow && (
         <a
-          className={'classes.buynow'}
+          className={styles.buynow}
           href={buyNow}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className={'classes.animateIcon'}>
+          <span className={styles.animateIcon}>
             <IconBuy />
             <span>Buy Now</span>
           </span>

@@ -1,49 +1,51 @@
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+.section {
+  background-color: #fed760;
+  padding-top: 0;
+  padding-bottom: 16px;
 
-export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
-  createStyles({
-    section: {
-      background-color: palette.tertiary.main,
-      padding-top: 0,
-      padding-bottom: 16px,
-      [breakpoints.up('md')]: {
-        padding-top: 0,
-        padding-bottom: 0,
-      },
-    },
-    sectionTitle: {
-      [breakpoints.up('md')]: {
-        margin-bottom: 20px,
-      },
-    },
-    content: {
-      display: 'flex',
-      flex-direction: 'column',
-      [breakpoints.up('md')]: {
-        flex-direction: 'row',
-      },
-      '& iframe': {
-        [breakpoints.up('md')]: {
-          order: 2,
-          height: 380,
-        },
-      },
-    },
-    copyText: {
-      padding: spacing(2.25),
-      background: white,
-      order: 2,
-      [breakpoints.up('md')]: {
-        order: 1,
-        alignSelf: 'center',
-        padding: 24px,
-        position: 'relative',
-        right: -20,
-      },
-      '& p': {
-        margin: 0,
-        font-size: '1.125rem',
-      },
-    },
-  })
-);
+  @media (min-width: 768px) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.sectionTitle {
+  @media (min-width: 768px) {
+    margin-bottom: 20px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  & iframe {
+    @media (min-width: 768px) {
+      order: 2;
+      height: 380px;
+    }
+  }
+}
+
+.copyText {
+  padding: 18px;
+  background: white;
+  order: 2;
+
+  @media (min-width: 768px) {
+    order: 1;
+    align-self: center;
+    padding: 24px;
+    position: relative;
+    right: -20px;
+  }
+
+  & p {
+    margin: 0;
+    font-size: 1.125rem;
+  }
+}

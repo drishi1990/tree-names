@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 const Form: FunctionComponent<FormProps> = ({ children, onsubmit }) => {
   return (
     <form
-      className={classNames('c-form', 'classes.formWrapper')}
+      className={classNames('c-form', styles.formWrapper)}
       action="/subscribe"
       method="post"
       id="subscribe"
