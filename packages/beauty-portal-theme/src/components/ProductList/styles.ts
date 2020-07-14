@@ -3,8 +3,8 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ palette, spacing }: Theme) =>
   createStyles({
     section: {
-      margin-top: spacing(3.75),
-      marginBottom: spacing(3.75),
+      margin-top: 30px,
+      margin-bottom: 30px,
       position: 'relative',
       '&:before': {
         content: '""',
@@ -23,7 +23,7 @@ export default makeStyles(({ palette, spacing }: Theme) =>
       line-height: 1.1,
       position: 'relative',
       margin: 0,
-      marginBottom: spacing(3.75),
+      margin-bottom: 30px,
       '&:before': {
         content: '""',
         background: palette.quaternary.main,
@@ -44,16 +44,16 @@ export default makeStyles(({ palette, spacing }: Theme) =>
       text-align: 'center',
     },
     image: {
-      maxWidth: 140,
+      max-width: 140,
       maxHeight: 140,
       margin: 'auto',
     },
     gridContainer: {
-      padding-bottom: spacing(1.25),
+      padding-bottom: 10px,
     },
     gridItem: {
       padding: 0,
-      marginBottom: 20px,
+      margin-bottom: 20px,
       '& img': {
         transition: 'all 500ms !important',
       },

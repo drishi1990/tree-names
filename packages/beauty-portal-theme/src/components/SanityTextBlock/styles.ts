@@ -15,7 +15,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         font-weight: 600,
         line-height: 1.1,
         margin-top: 0,
-        marginBottom: 10,
+        margin-bottom: 10,
         [breakpoints.up('md')]: {
           font-size: '2.875rem',
         },
@@ -86,7 +86,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
           transform: 'translateX(-50%)',
           width: 200,
           height: 2,
-          background-color: palette.primary.main,
+          background-color: var(--primary-color),
           z-index: 0,
         },
       },

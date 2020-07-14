@@ -1,0 +1,62 @@
+.wrapper {
+  .preloader-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.title {
+  margin: 0;
+}
+
+.heroImage {
+  margin-top: 10px;
+  position: relative;
+
+  iframe {
+    height: 263;
+
+    @media (min-width: 768px) {
+      height: 399;
+    }
+  }
+}
+
+.iconVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+
+  svg {
+    transition: all .5s;
+    fill: white;
+    width: 60;
+    height: 60;
+    cursor: pointer;
+  }
+
+  &:hover {
+    svg {
+      fill: var(--primary-color);
+      transform: scale(1.2);
+    }
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

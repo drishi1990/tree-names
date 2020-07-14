@@ -3,10 +3,10 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
   createStyles({
     tags: {
-      margin-top: spacing(3.75),
-      marginBottom: 20px,
+      margin-top: 30px,
+      margin-bottom: 20px,
       [breakpoints.up('md')]: {
-        marginBottom: spacing(3.75),
+        margin-bottom: 30px,
       },
     },
     tagsTitle: {
@@ -15,7 +15,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       font-weight: 600,
       position: 'relative',
       margin: 0,
-      marginBottom: 16px,
+      margin-bottom: 16px,
       padding-top: 8px,
       '&:before': {
         content: '""',
@@ -30,7 +30,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       [breakpoints.up('md')]: {
         font-size: '2.5rem',
         padding-top: 5px,
-        marginBottom: spacing(3.75),
+        margin-bottom: 30px,
       },
     },
     tagList: {
@@ -41,8 +41,8 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       flex-wrap: 'wrap',
     },
     tagListItem: {
-      margin-right: spacing(1.25),
-      marginBottom: spacing(1.25),
+      margin-right: 10px,
+      margin-bottom: 10px,
     },
     tagsListLink: {
       color: black,

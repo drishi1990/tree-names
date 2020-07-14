@@ -5,7 +5,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     richText: {
       counterReset: 'step',
       padding-top: spacing(5),
-      marginBottom: 32px,
+      margin-bottom: 32px,
       position: 'relative',
       '&:before': {
         content: '""',
@@ -18,9 +18,9 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         z-index: -1,
       },
       '& .c-image': {
-        marginBottom: 16px,
+        margin-bottom: 16px,
         '&>div': {
-          marginBottom: 0,
+          margin-bottom: 0,
         },
         '&__credit': {
           font-size: '.75rem',
@@ -31,15 +31,15 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       '& img': {
         display: 'block',
         height: 'auto',
-        maxWidth: '100%',
+        max-width: '100%',
       },
       '& h2': {
         font-size: '1.875rem',
         font-weight: 700,
         line-height: 1.1,
         margin-top: spacing(6.25),
-        marginBottom: 20px,
-        marginLeft: 0,
+        margin-bottom: 20px,
+        margin-left: 0,
         margin-right: 20px,
         position: 'relative',
         background: white,
@@ -65,7 +65,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         font-size: '1.5rem',
         font-weight: 600,
         margin-top: 0,
-        marginBottom: 8px,
+        margin-bottom: 8px,
         [breakpoints.up('md')]: {
           font-size: '1.875rem',
         },
@@ -73,14 +73,14 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       '& p': {
         font-size: '.875rem',
         margin-top: 0,
-        marginBottom: 16px,
+        margin-bottom: 16px,
         [breakpoints.up('md')]: {
           font-size: '1.125rem',
         },
       },
       '& div': {
         margin-top: 0,
-        marginBottom: 16px,
+        margin-bottom: 16px,
       },
       '& figure': {
         margin: 0,
@@ -97,7 +97,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
           right: 0,
           bottom: 0,
           height: 2,
-          background-color: palette.primary.main,
+          background-color: var(--primary-color),
           transition: 'all 0.3s ease-in-out',
         },
         '&:after': {

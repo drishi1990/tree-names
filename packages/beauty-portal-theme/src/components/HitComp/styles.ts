@@ -42,7 +42,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         '& svg': {
           width: 28,
           height: 28,
-          fill: palette.primary.main,
+          fill: var(--primary-color),
           transition: 'all .3s ease-in',
         },
         '& .ais-SearchBox-loadingIndicator': {
@@ -57,7 +57,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       font-size: '1.125rem',
       line-height: 1.1,
       font-weight: 400,
-      marginBottom: 8px,
+      margin-bottom: 8px,
       display: 'flex',
       align-items: 'flex-end',
       [breakpoints.up('md')]: {
@@ -77,10 +77,10 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         font-weight: 600,
         line-height: 1.1,
         margin-right: 8px,
-        color: palette.primary.main,
+        color: var(--primary-color),
         [breakpoints.up('md')]: {
           font-size: '1.5rem',
-          marginBottom: spacing(0.5),
+          margin-bottom: spacing(0.5),
         },
       },
     },
@@ -91,7 +91,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       },
       '& .ais-CurrentRefinements-list': {
         margin-top: 0,
-        marginBottom: 0,
+        margin-bottom: 0,
         padding: 0,
         padding-top: 16px,
         minHeight: 47,
@@ -105,7 +105,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         font-size: '.875rem',
         background-color: #b8f0c0,
         color: black,
-        marginBottom: spacing(1.25),
+        margin-bottom: 10px,
         display: 'inline-block',
       },
       '& .ais-CurrentRefinements-label': {
@@ -116,7 +116,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       '& .ais-CurrentRefinements-delete': {
         background-color: white,
         border: 0,
-        marginLeft: spacing(0.5),
+        margin-left: spacing(0.5),
         padding: spacing(0.25),
         padding-top: spacing(0),
         padding-bottom: spacing(0),
@@ -138,10 +138,10 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       '&.list': {
         '& .image-wrapper': {
           '&  .gatsby-image-wrapper': {
-            maxWidth: 80,
+            max-width: 80,
             maxHeight: 80,
             [breakpoints.up('md')]: {
-              maxWidth: 140,
+              max-width: 140,
               maxHeight: 140,
             },
           },
@@ -155,19 +155,19 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
           display: 'flex',
           flex-direction: 'row',
           flex-wrap: 'wrap',
-          justifyContent: 'flex-start',
+          justify-content: 'flex-start',
           alignContent: 'stretch',
         },
         '& .ais-InfiniteHits-item': {
-          justifyContent: 'space-between',
+          justify-content: 'space-between',
           flex: '0 0 auto',
           width: 'calc(100%/2.19)',
           margin: '0 10px',
-          marginBottom: 10,
+          margin-bottom: 10,
           [breakpoints.up('md')]: {
             width: 'calc(100%/4.52)',
             margin: '0 15px',
-            marginBottom: 30,
+            margin-bottom: 30,
           },
           '&:hover': {
             background-color: 'transparent',
@@ -206,10 +206,10 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
           display: 'none',
         },
         '&  .gatsby-image-wrapper': {
-          maxWidth: '100%',
+          max-width: '100%',
           maxHeight: 240,
           [breakpoints.up('md')]: {
-            maxWidth: 210,
+            max-width: 210,
             maxHeight: 210,
           },
         },
@@ -232,13 +232,13 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         borderBottom: `1px solid #f4f4f4`,
         color: black,
         display: 'flex',
-        padding: spacing(1.5),
+        padding: 12px,
         [breakpoints.up('md')]: {
           padding: 20px,
         },
         '& h4': {
           margin-top: 0,
-          marginBottom: 8,
+          margin-bottom: 8,
           display: 'inline-block',
           font-size: '.875rem',
           line-height: 1.1,
@@ -256,7 +256,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       '& .ais-InfiniteHits-item__desc': {
         font-size: '0.75rem',
         margin-top: 0,
-        marginBottom: 0,
+        margin-bottom: 0,
         '& + p': {
           margin: 0,
         },
@@ -267,17 +267,17 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       '& .ais-InfiniteHits-loadMore': {
         font-size: '.875rem',
         font-weight: 700,
-        background-color: palette.primary.main,
+        background-color: var(--primary-color),
         color: black,
-        padding-top: spacing(1.25),
-        padding-bottom: spacing(1.25),
+        padding-top: 10px,
+        padding-bottom: 10px,
         padding-left: 16px,
         padding-right: 16px,
         position: 'relative',
         display: 'flex',
         margin: 'auto',
         margin-top: 32px,
-        marginBottom: 32px,
+        margin-bottom: 32px,
         border: 'none',
         cursor: 'pointer',
         transition: 'all .3s',
@@ -324,7 +324,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       flex: 1,
       [breakpoints.up('md')]: {
         padding-left: 48px,
-        marginBottom: 48px,
+        margin-bottom: 48px,
       },
     },
     filters: {
@@ -335,7 +335,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       },
       '& .ais-Panel': {
         margin-top: 16px,
-        marginBottom: 16px,
+        margin-bottom: 16px,
       },
       '& .ais-Panel-header': {
         font-size: '.875rem',
@@ -363,7 +363,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       '& .filter-category': {
         display: 'flex',
         align-items: 'center',
-        justifyContent: 'space-between',
+        justify-content: 'space-between',
 
         '& svg': {
           width: 16,
@@ -376,10 +376,10 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         listStyleType: 'none',
         padding: 0,
         margin-top: 0,
-        marginBottom: 0,
+        margin-bottom: 0,
         '& li': {
           margin-right: 8px,
-          marginBottom: 8px,
+          margin-bottom: 8px,
         },
         '& label': {
           display: 'flex',
@@ -390,7 +390,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
           userSelect: 'none',
         },
         '& .ais-RefinementList-labelText, & .ais-RefinementList-count': {
-          marginLeft: 5,
+          margin-left: 5,
           display: 'inline-block',
         },
         '& input': {
@@ -399,10 +399,10 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         '& .ais-RefinementList-count': {
           background-color: 'rgba(197,201,224,.2)',
           padding: '1px 8px',
-          borderRadius: 2,
+          border-radius: 2,
           display: 'inline-block',
           font-size: '.650rem',
-          marginLeft: '5px',
+          margin-left: '5px',
           color: '#333',
         },
       },
@@ -422,7 +422,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         font-size: '.75rem',
         '&:hover': {
           outline: 0,
-          background-image: `linear-gradient(120deg,${palette.primary.main} 0%,${palette.primary.main} 100%)`,
+          background-image: `linear-gradient(120deg,${var(--primary-color)} 0%,${var(--primary-color)} 100%)`,
         },
         '&:focus': {
           outline: 0,
@@ -431,10 +431,10 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     filterHeader: {
       display: 'flex',
-      justifyContent: 'space-between',
+      justify-content: 'space-between',
       align-items: 'center',
       borderBottom: '1px solid #ddd',
-      padding-bottom: spacing(1.25),
+      padding-bottom: 10px,
       '& > span': {
         font-size: '1.125rem',
         font-weight: 600,
@@ -486,11 +486,11 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       display: 'none',
 
       [breakpoints.up('md')]: {
-        justifyContent: 'flex-end',
+        justify-content: 'flex-end',
         display: 'flex',
         align-items: 'center',
         padding-bottom: 16px,
-        marginBottom: 16px,
+        margin-bottom: 16px,
         width: '100%',
         alignSelf: 'flex-start',
       },
@@ -503,7 +503,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         font-size: '1rem',
         color: palette.grey[100],
         background-color: '#f4f4f4',
-        borderRadius: 4,
+        border-radius: 4,
       },
     },
     icon: {
@@ -513,7 +513,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       display: 'flex',
       align-items: 'center',
       '&:focus': {
-        outline: `1px dashed ${palette.primary.main}`,
+        outline: `1px dashed ${var(--primary-color)}`,
       },
       '& svg': {
         width: 28,
@@ -523,7 +523,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     iconActive: {
       '& svg': {
-        fill: palette.primary.main,
+        fill: var(--primary-color),
       },
     },
   })

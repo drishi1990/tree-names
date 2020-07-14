@@ -4,11 +4,11 @@ export default makeStyles(({ spacing }: Theme) =>
   createStyles({
     wrapper: {
       width: '100%',
-      maxWidth: 700,
+      max-width: 700,
       margin: 'auto',
       margin-top: 48px,
       '& div': {
-        marginBottom: 0,
+        margin-bottom: 0,
       },
       '& [data-rcs="main-handle-container"] > div': {
         '&:before': {
@@ -21,7 +21,7 @@ export default makeStyles(({ spacing }: Theme) =>
           top: '50%',
           left: '50%',
           transform: 'translateX(-50%) translateY(-50%)',
-          borderRadius: '50%',
+          border-radius: '50%',
         },
       },
     },

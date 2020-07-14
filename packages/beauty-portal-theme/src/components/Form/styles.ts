@@ -4,7 +4,7 @@ export default makeStyles(({ spacing }: Theme) =>
   createStyles({
     formWrapper: {
       margin: 16px,
-      marginBottom: 48px,
+      margin-bottom: 48px,
     },
   })
 );

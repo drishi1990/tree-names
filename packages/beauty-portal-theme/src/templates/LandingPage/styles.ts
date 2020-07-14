@@ -19,7 +19,7 @@ export default makeStyles(({ spacing, breakpoints }: Theme) =>
       font-weight: 700,
       line-height: 1.1,
       margin: 0,
-      marginBottom: spacing(1.25),
+      margin-bottom: 10px,
       [breakpoints.up('md')]: {
         font-size: '2.875rem',
       },

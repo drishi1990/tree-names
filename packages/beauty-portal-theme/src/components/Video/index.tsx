@@ -1,18 +1,15 @@
 import React, { FunctionComponent, useState } from 'react';
 import { getFluidGatsbyImage } from 'gatsby-source-sanity';
 import Img from 'gatsby-image';
-
 import { Preloader, Oval } from 'react-preloader-icon';
 import { getYouTubeId } from '../../helpers/youtube';
 import { ReactComponent as IconYoutube } from '../../images/icons/youtube.svg';
-
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const Video: FunctionComponent<VideoInterface> = ({
   videoMetaData,
   sanityConfig,
 }) => {
-  // const classes = useStyles();
   const [showVideo, setShowVideo] = useState(false);
   const [videoSourceUrl, setVideoSourceUrl] = useState('');
   const [videoLoading, setVideoLoading] = useState(false);
@@ -38,16 +35,16 @@ const Video: FunctionComponent<VideoInterface> = ({
   };
 
   return (
-    <section className={'classes.wrapper'}>
-      <h3 className={'classes.title'}>{'videoMetaData.node.youTubeCaption'}</h3>
-      <div className={'classes.heroImage'}>
+    <section className={styles.wrapper}>
+      <h3 className={styles.title}>{videoMetaData.node.youTubeCaption}</h3>
+      <div className={styles.heroImage}>
         {!showVideo && (
           <Img fluid={fluidProps} alt={videoMetaData.node.heroImage.alt} />
         )}
         {!showVideo && !videoLoading && (
           <button
             type="button"
-            className={'classes.iconVideo'}
+            className={styles.iconVideo}
             onClick={playVideo}
             data-url={videoMetaData.node.url}
           >

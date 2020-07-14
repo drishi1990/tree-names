@@ -5,13 +5,13 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     galleryWrapper: {
       padding: 0,
       padding-bottom: 20px,
-      marginBottom: 20px,
+      margin-bottom: 20px,
       '& figure': {
-        maxWidth: 500,
+        max-width: 500,
         margin: 'auto',
       },
       '& .swiper-container': {
-        maxWidth: 752,
+        max-width: 752,
         margin: 'auto',
         '& .swiper-wrapper': {
           padding-top: 40,
@@ -24,7 +24,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         },
       },
       '& .swiper-container-thumbs': {
-        marginBottom: 24px,
+        margin-bottom: 24px,
         '& .swiper-slide': {
           width: 80,
           opacity: 0.4,
@@ -49,10 +49,10 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         },
       },
       '& .swiper-button-next:after, & .swiper-button-prev:after': {
-        color: palette.primary.main,
+        color: var(--primary-color),
       },
       '& .swiper-pagination-bullet-active': {
-        background: palette.primary.main,
+        background: var(--primary-color),
       },
     },
   })

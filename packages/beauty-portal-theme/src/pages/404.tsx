@@ -32,7 +32,7 @@ const SubTitle = styled.p`
 //     wrapper: {
 //       padding: theme.spacing(8),
 //       display: 'flex',
-//       justifyContent: 'center',
+//       justify-content: 'center',
 //       flex-direction: 'column',
 //       align-items: 'center',
 //     },
@@ -49,7 +49,7 @@ const SubTitle = styled.p`
 //       line-height: 1,
 //       font-weight: 600,
 //       margin: 0,
-//       marginBottom: theme.16px,
+//       margin-bottom: theme.16px,
 //       background-image: 'url(/textclip.jpg)',
 //       '-webkitBackgroundClip': () => `${'text'}`,
 //       textFillColor: 'transparent',
@@ -60,7 +60,7 @@ const SubTitle = styled.p`
 //       line-height: 1,
 //       font-weight: 600,
 //       margin: 0,
-//       marginBottom: theme.16px,
+//       margin-bottom: theme.16px,
 //     },
 //   })
 // );
