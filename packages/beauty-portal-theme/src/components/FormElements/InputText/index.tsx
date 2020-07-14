@@ -12,7 +12,6 @@ const InputText: FunctionComponent<InputTextInterface> = ({
   valid,
   validate,
 }) => {
-  // const classes = useStyles();
   return (
     <div
       className={classNames(

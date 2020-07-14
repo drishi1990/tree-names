@@ -1,10 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import classNames from 'classnames';
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const Form: FunctionComponent<FormProps> = ({ children, onsubmit }) => {
-  // const classes = useStyles();
-
   return (
     <form
       className={classNames('c-form', 'classes.formWrapper')}

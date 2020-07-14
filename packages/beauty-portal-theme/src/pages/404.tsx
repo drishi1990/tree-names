@@ -76,7 +76,6 @@ export const query = graphql`
 `;
 
 const NotFound = ({ data: { site } }: NotFoundProps) => {
-  // const classes = useStyles();
   return (
     <Layout>
       <SEO

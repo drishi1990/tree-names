@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import SEO from '../../components/Seo';
 import Layout from '../../components/Layout';
-// // import useStyles from './styles';
+// import styles from './styles.module.scss';
 
 const ProductPage = (props: ProductPageProps) => {
   const {
@@ -13,7 +13,7 @@ const ProductPage = (props: ProductPageProps) => {
     },
   } = props;
 
-  // // const classes = useStyles();
+  //
   page.seo = page.seo || {};
 
   return (

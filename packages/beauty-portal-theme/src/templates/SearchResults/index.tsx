@@ -19,13 +19,12 @@ import * as hitComps from '../../components/HitComp';
 import classNames from 'classnames';
 import { ReactComponent as IconList } from '../../images/icons/list.svg';
 import { ReactComponent as IconGrid } from '../../images/icons/grid.svg';
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const indices = [
   { name: `howtoArticle`, title: `howtoArticle`, hitComp: `PostHit` },
 ];
 const SearchResults: FunctionComponent = () => {
-  // const classes = useStyles();
   const ref = createRef();
   const [focus, setFocus] = useState(false);
   const [viewType, setViewType] = useState('list');

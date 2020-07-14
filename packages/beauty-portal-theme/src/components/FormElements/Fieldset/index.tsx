@@ -6,8 +6,6 @@ const Fieldset: FunctionComponent<FieldsetInterface> = ({
   children,
   legend,
 }) => {
-  // const classes = useStyles();
-
   return (
     <fieldset className={classNames('c-form__fielset', 'classes.fieldset')}>
       <legend className="srOnly">{legend}</legend>

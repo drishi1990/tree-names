@@ -10,8 +10,6 @@ const InputCheckbox: FunctionComponent<InputCheckboxInterface> = ({
   onChange,
   checked,
 }) => {
-  // const classes = useStyles();
-
   return (
     <div
       className={classNames(

@@ -4,7 +4,7 @@ import { urlFor } from '../../helpers/imageUrl';
 
 import { ReactComponent as IconBuy } from '../../images/icons/buy.svg';
 
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
   const {
@@ -15,7 +15,7 @@ const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
     name,
   } = metadata;
   const { image } = data;
-  // const classes = useStyles();
+
   return (
     <div className={'classes.wrapper'}>
       <Link className={'classes.link'} to={(slug && slug.current) || '/'}>

@@ -1,14 +1,13 @@
 import React, { FunctionComponent } from 'react';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 import { urlFor } from '../../helpers/imageUrl';
 
 const ProductList: FunctionComponent<ProductListInterface> = ({
   data,
   title,
 }) => {
-  // const classes = useStyles();
   return (
     <section className={'classes.section'}>
       <h2 className={'classes.sectionTitle'}>{title}</h2>

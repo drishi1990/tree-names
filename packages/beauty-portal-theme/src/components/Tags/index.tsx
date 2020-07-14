@@ -2,15 +2,13 @@ import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 
 import { getSearchUrl } from '../../helpers/searchUrl';
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const Tags: FunctionComponent<TagsInterface> = ({
   data,
   searchResultPath,
   title,
 }) => {
-  // const classes = useStyles();
-
   const uniqueValues = (array: [], filter: string) => {
     return array.reduce((tag: any, current: any) => {
       const category = tag.find((item: any) =>

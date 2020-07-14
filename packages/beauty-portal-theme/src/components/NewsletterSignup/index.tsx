@@ -11,7 +11,7 @@ import {
   InputCheckbox,
 } from '../../components/FormElements';
 import { ReactComponent as Bell } from '../../images/icons/bell.svg';
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
   _rawBody,
@@ -19,7 +19,6 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
   onFormSubmission,
   isFormSubmitted,
 }) => {
-  // const classes = useStyles();
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
