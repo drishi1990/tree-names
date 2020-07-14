@@ -16,10 +16,10 @@
   position: relative;
 
   iframe {
-    height: 263;
+    height: 263px;
 
     @media (min-width: 768px) {
-      height: 399;
+      height: 399px;
     }
   }
 }
@@ -38,8 +38,8 @@
   svg {
     transition: all .5s;
     fill: white;
-    width: 60;
-    height: 60;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
   }
 
