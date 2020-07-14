@@ -16,7 +16,7 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
     triggerOnce: true,
     rootMargin: '-150px 0px',
   });
-  // const classes = useStyles();
+
   return (
     <section className={styles.section} ref={ref}>
       <h2 className={styles.sectionTitle}>{title}</h2>

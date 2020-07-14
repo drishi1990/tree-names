@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import Slider from '../Slider';
 import { TileSliderInterface } from './models';
 import { getSearchUrlWithTagsAndCategory } from '../../helpers/searchUrl';
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const TileSlider: FunctionComponent<TileSliderInterface> = ({
   slides,
@@ -11,7 +11,6 @@ const TileSlider: FunctionComponent<TileSliderInterface> = ({
   searchCtaLabel,
   searchTags,
 }) => {
-  // const classes = useStyles();
   const breakpoints = {
     breakpoints: {
       768: {

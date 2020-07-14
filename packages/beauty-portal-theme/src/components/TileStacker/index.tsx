@@ -3,14 +3,12 @@ import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import { TileStackerInterface } from './models';
 import { ReactComponent as PlayVideo } from '../../images/icons/play.svg';
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const TileStacker: FunctionComponent<TileStackerInterface> = ({
   slides,
   headline,
 }) => {
-  // const classes = useStyles();
-
   const renderer = slide => {
     return (
       <div className="col-container">
