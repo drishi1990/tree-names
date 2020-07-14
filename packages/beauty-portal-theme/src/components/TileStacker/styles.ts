@@ -15,9 +15,9 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     sectionTitle: {
       display: 'flex',
       flex-direction: 'column',
-      marginBottom: 14px,
+      margin-bottom: 14px,
       [breakpoints.up('md')]: {
-        marginBottom: 16px,
+        margin-bottom: 16px,
         flex-direction: 'row',
         align-items: 'center',
       },
@@ -31,14 +31,14 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       font-size: '.875rem',
       font-weight: 700,
       alignSelf: 'flex-start',
-      background-image: `linear-gradient(120deg,${palette.primary.main} 0%,${palette.primary.main} 100%)`,
+      background-image: `linear-gradient(120deg,${var(--primary-color)} 0%,${var(--primary-color)} 100%)`,
       background-repeat: 'no-repeat',
       background-size: '100% .1875rem',
       background-position: '0 100%',
       [breakpoints.up('md')]: {
         font-size: '1.125rem',
-        marginLeft: 24px,
-        marginBottom: 8px,
+        margin-left: 24px,
+        margin-bottom: 8px,
         alignSelf: 'center',
       },
       '&:hover, &:focus': {
@@ -56,11 +56,11 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       height: '2.5rem',
       bottom: '.5rem',
       left: '.5rem',
-      background-color: palette.primary.main,
+      background-color: var(--primary-color),
       position: 'absolute',
       display: 'flex',
       align-items: 'center',
-      justifyContent: 'center',
+      justify-content: 'center',
       transition: 'all 1.2s ease 0s !important',
       transform: 'perspective(1px) translateZ(0)',
       '&:before': {

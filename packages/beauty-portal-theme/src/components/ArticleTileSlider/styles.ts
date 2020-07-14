@@ -6,7 +6,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       padding-top: 20px,
       padding-bottom: 20px,
       position: 'relative',
-      marginLeft: 16px,
+      margin-left: 16px,
       [breakpoints.up('md')]: {
         padding-top: spacing(5),
         padding-bottom: spacing(5),
@@ -34,9 +34,9 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     sectionTitle: {
       display: 'flex',
       flex-direction: 'column',
-      marginBottom: 14px,
+      margin-bottom: 14px,
       [breakpoints.up('md')]: {
-        marginBottom: 16px,
+        margin-bottom: 16px,
         flex-direction: 'row',
         align-items: 'center',
       },
@@ -46,14 +46,14 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       font-size: '.875rem',
       font-weight: 700,
       alignSelf: 'flex-start',
-      background-image: `linear-gradient(120deg,${palette.primary.main} 0%,${palette.primary.main} 100%)`,
+      background-image: `linear-gradient(120deg,${var(--primary-color)} 0%,${var(--primary-color)} 100%)`,
       background-repeat: 'no-repeat',
       background-size: '100% .1875rem',
       background-position: '0 100%',
       [breakpoints.up('md')]: {
         font-size: '1.125rem',
-        marginLeft: 24px,
-        marginBottom: 8px,
+        margin-left: 24px,
+        margin-bottom: 8px,
         alignSelf: 'center',
       },
       '&:hover, &:focus': {
@@ -66,7 +66,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       line-height: 1.1,
       letter-spacing: 0,
       margin: 0,
-      marginBottom: 8px,
+      margin-bottom: 8px,
       [breakpoints.up('md')]: {
         font-size: '2.25rem',
       },

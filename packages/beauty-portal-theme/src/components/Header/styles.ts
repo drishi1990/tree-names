@@ -11,22 +11,22 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       height: '60px',
       display: 'flex',
       align-items: 'center',
-      borderBottom: `1px solid ${palette.primary.main}`,
+      borderBottom: `1px solid ${var(--primary-color)}`,
       background-color: black,
     },
     headerContentWrapper: {
       display: 'flex',
       align-items: 'center',
-      justifyContent: 'space-between',
+      justify-content: 'space-between',
       [breakpoints.up('md')]: {
-        justifyContent: 'flex-start',
+        justify-content: 'flex-start',
       },
     },
     logo: {
       [breakpoints.up('md')]: {
         margin: 0,
-        margin-right: spacing(3.75),
-        marginBottom: spacing(-0.25),
+        margin-right: 30px,
+        margin-bottom: spacing(-0.25),
       },
     },
     logoLink: {
@@ -34,7 +34,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       align-items: 'center',
       font-size: '1.6rem',
       font-weight: 500,
-      color: palette.primary.main,
+      color: var(--primary-color),
       '& span': {
         color: #b8f0c0,
       },
@@ -49,7 +49,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         fill: white,
       },
       '&:focus-within button': {
-        background-color: palette.primary.main,
+        background-color: var(--primary-color),
       },
     },
     followButton: {
@@ -60,10 +60,10 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       width: 60,
       display: 'flex',
       align-items: 'center',
-      justifyContent: 'center',
+      justify-content: 'center',
       position: 'relative',
       '&:hover': {
-        background-color: palette.primary.main,
+        background-color: var(--primary-color),
       },
       '&:hover > div, &:focus > div': {
         height: 'auto',
@@ -80,7 +80,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       transition: 'height 0.3s ease-in-out',
       overflow: 'hidden',
       display: 'flex',
-      justifyContent: 'center',
+      justify-content: 'center',
       flex-direction: 'column',
       [breakpoints.up('md')]: {
         position: 'absolute',
@@ -98,11 +98,11 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         left: 0,
         top: 0,
         height: 4,
-        background-color: palette.primary.main,
+        background-color: var(--primary-color),
       },
       '& .c-social': {
         '& ul': {
-          justifyContent: 'center',
+          justify-content: 'center',
         },
         '& svg': {
           fill: black,
@@ -115,10 +115,10 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     newsletterSubscribeButton: {
       font-size: '.875rem',
       font-weight: 700,
-      background-color: palette.primary.main,
+      background-color: var(--primary-color),
       color: black,
-      padding-top: spacing(1.25),
-      padding-bottom: spacing(1.25),
+      padding-top: 10px,
+      padding-bottom: 10px,
       padding-left: 16px,
       padding-right: 16px,
       display: 'block',
@@ -172,9 +172,9 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       width: 60,
       display: 'flex',
       align-items: 'center',
-      justifyContent: 'center',
+      justify-content: 'center',
       '&:hover': {
-        background-color: palette.primary.main,
+        background-color: var(--primary-color),
       },
     },
   })

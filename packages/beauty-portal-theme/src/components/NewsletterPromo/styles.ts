@@ -11,7 +11,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     newsletterContent: {
       position: 'relative',
       z-index: 1,
-      maxWidth: 760,
+      max-width: 760,
       margin: 'auto',
       padding-left: 20px,
       padding-right: 20px,
@@ -22,7 +22,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       margin: 0,
       [breakpoints.up('md')]: {
         font-size: '1.875rem',
-        marginBottom: spacing(3.75),
+        margin-bottom: 30px,
       },
       '& p': {
         margin: 0,
@@ -34,14 +34,14 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       width: 160,
       height: 50,
       cursor: 'pointer',
-      background-color: palette.primary.main,
-      border: `1px solid ${palette.primary.main}`,
+      background-color: var(--primary-color),
+      border: `1px solid ${var(--primary-color)}`,
       color: black,
       position: 'relative',
       transform: 'perspective(1px) translateZ(0)',
       display: 'flex',
       align-items: 'center',
-      justifyContent: 'center',
+      justify-content: 'center',
 
       margin: 'auto',
       '&:before': {

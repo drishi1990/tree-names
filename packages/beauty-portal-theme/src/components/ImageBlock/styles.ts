@@ -18,8 +18,8 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     sectionTitle: {
       color: black,
-      margin-top: spacing(1.25),
-      marginBottom: 5px,
+      margin-top: 10px,
+      margin-bottom: 5px,
       line-height: 1.2,
       '& span': {
         transition: '.15s',
@@ -30,7 +30,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         background-position: '0 100%',
       },
       [breakpoints.up('md')]: {
-        marginBottom: 20px,
+        margin-bottom: 20px,
       },
     },
     link: {
@@ -55,7 +55,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       },
     },
     imageWrapper: {
-      marginLeft: -16,
+      margin-left: -16,
       margin-right: -16,
       overflow: 'hidden',
       '& img': {
@@ -79,7 +79,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         padding: 24px,
         right: -20,
         top: 0,
-        maxWidth: 500,
+        max-width: 500,
       },
       '& p': {
         margin: 0,

@@ -20,7 +20,7 @@ const howToArticleQuery = `{
         subtitle:subheading
         image: heroImage{asset {
         url
-        fluid(maxWidth: 140, maxHeight: 140) {
+        fluid(max-width: 140, maxHeight: 140) {
           aspectRatio
           base64
           sizes
@@ -29,7 +29,7 @@ const howToArticleQuery = `{
           srcSetWebp
           srcWebp
         }
-      }    
+      }
           alt
           imageCaption
           imageTabID
@@ -62,7 +62,7 @@ const galleryArticleQuery = `{
         subtitle:subheading
         image: heroImage{asset {
         url
-        fluid(maxWidth: 140, maxHeight: 140) {
+        fluid(max-width: 140, maxHeight: 140) {
           aspectRatio
           base64
           sizes
@@ -71,7 +71,7 @@ const galleryArticleQuery = `{
           srcSetWebp
           srcWebp
         }
-      }    
+      }
           alt
           imageCaption
           imageTabID
@@ -99,7 +99,7 @@ const featureArticleQuery = `{
         subtitle:subheading
         image: heroImage{asset {
         url
-        fluid(maxWidth: 140, maxHeight: 140) {
+        fluid(max-width: 140, maxHeight: 140) {
           aspectRatio
           base64
           sizes
@@ -108,7 +108,7 @@ const featureArticleQuery = `{
           srcSetWebp
           srcWebp
         }
-      }    
+      }
           alt
           imageCaption
           imageTabID
@@ -124,7 +124,7 @@ const featureArticleQuery = `{
 }
 }`;
 const productQuery = `{
-  allSanityProduct(filter: {slug: {current: {ne: null}}}) 
+  allSanityProduct(filter: {slug: {current: {ne: null}}})
     {
     edges
     {
@@ -138,7 +138,7 @@ const productQuery = `{
         image: image{
       asset {
         url
-        fluid(maxWidth: 140, maxHeight: 140) {
+        fluid(max-width: 140, maxHeight: 140) {
           aspectRatio
           base64
           sizes
@@ -147,7 +147,7 @@ const productQuery = `{
           srcSetWebp
           srcWebp
         }
-      }    
+      }
           alt
           imageCaption
           imageTabID

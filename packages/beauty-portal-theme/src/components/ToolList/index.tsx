@@ -9,8 +9,7 @@ import { ReactComponent as Elastic } from '../../images/icons/elastic.svg';
 import { ReactComponent as Dryer } from '../../images/icons/dryer.svg';
 import { ReactComponent as Ironer } from '../../images/icons/ironer.svg';
 import { ReactComponent as Pins } from '../../images/icons/pins.svg';
-
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
   const [ref, inView] = useInView({
@@ -19,13 +18,13 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
   });
   // const classes = useStyles();
   return (
-    <section className={'classes.section'} ref={ref}>
-      <h2 className={'classes.sectionTitle'}>{title}</h2>
+    <section className={styles.section} ref={ref}>
+      <h2 className={styles.sectionTitle}>{title}</h2>
       <div className="col-container">
         {data &&
           data.map(tool => (
             <div
-              className={classNames('col col-3', 'classes.gridItem')}
+              className={classNames('col col-3', styles.gridItem)}
               key={tool.name}
             >
               {tool.image ? (
@@ -34,10 +33,7 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
                 </div>
               ) : (
                 <div
-                  className={classNames(
-                    'classes.icon',
-                    inView ? 'in-view' : null
-                  )}
+                  className={classNames(styles.icon, inView ? 'in-view' : null)}
                 >
                   {/* TODO: Dynamically call component based on toolname */}
                   {tool.name.indexOf('Comb') >= 0 && <Comb />}
@@ -49,7 +45,7 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
                   {tool.name.indexOf('Wand') >= 0 && <Wand />}
                 </div>
               )}
-              <h3 className={'classes.gridItemCaption'}>{'tool.name'}</h3>
+              <h3 className={styles.gridItemCaption}>{tool.name}</h3>
             </div>
           ))}
       </div>

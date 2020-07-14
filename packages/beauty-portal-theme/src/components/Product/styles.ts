@@ -3,15 +3,15 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
   createStyles({
     wrapper: {
-      marginBottom: spacing(3.75),
-      margin-top: spacing(3.75),
+      margin-bottom: 30px,
+      margin-top: 30px,
       text-align: 'center',
       position: 'relative',
     },
     name: {
       font-size: '.875rem',
       font-weight: 700,
-      maxWidth: '80%',
+      max-width: '80%',
       margin: 'auto',
       padding-bottom: 3px,
       '& span': {
@@ -25,7 +25,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       },
     },
     tagline: {
-      marginBottom: spacing(1.25),
+      margin-bottom: 10px,
       '& span': {
         font-size: '1.125rem',
         font-weight: 700,
@@ -45,13 +45,13 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       },
     },
     buynow: {
-      background-color: palette.primary.main,
+      background-color: var(--primary-color),
       color: white,
       font-size: '.875rem',
       font-weight: 700,
       overflow: 'hidden',
       transform: 'perspective(1px) translateZ(0)',
-      borderRadius: 3,
+      border-radius: 3,
       transition: 'all .5s',
       margin-top: 16px,
       display: 'inline-block',
@@ -76,7 +76,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       },
       '& svg': {
         margin-right: 16px,
-        marginLeft: 16px,
+        margin-left: 16px,
         transition: 'all .5s',
       },
       '&:hover': {
@@ -94,8 +94,8 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       '& span': {
         background-color: #b8f0c0,
         display: 'block',
-        padding-top: spacing(1.25),
-        padding-bottom: spacing(1.25),
+        padding-top: 10px,
+        padding-bottom: 10px,
         padding-left: 16px,
         padding-right: 16px,
         color: black,

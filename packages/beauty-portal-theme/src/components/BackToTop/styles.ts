@@ -3,7 +3,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ palette }: Theme) =>
   createStyles({
     element: {
-      background-color: palette.primary.main,
+      background-color: var(--primary-color),
       border: 'none',
       color: black,
       position: 'fixed',
@@ -11,7 +11,7 @@ export default makeStyles(({ palette }: Theme) =>
       height: 45,
       display: 'flex',
       align-items: 'center',
-      justifyContent: 'center',
+      justify-content: 'center',
       right: 15,
       bottom: 20,
       z-index: 2,
@@ -38,7 +38,7 @@ export default makeStyles(({ palette }: Theme) =>
           transform: 'scaleY(1)',
         },
         '& svg': {
-          fill: palette.primary.main,
+          fill: var(--primary-color),
         },
       },
       '& svg': {

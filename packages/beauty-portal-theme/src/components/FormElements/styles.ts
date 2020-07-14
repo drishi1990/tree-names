@@ -3,7 +3,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ palette, spacing }: Theme) =>
   createStyles({
     field: {
-      marginBottom: 16px,
+      margin-bottom: 16px,
       position: 'relative',
       display: 'flex',
     },
@@ -30,7 +30,7 @@ export default makeStyles(({ palette, spacing }: Theme) =>
         display: 'flex',
         font-size: '1.125rem',
         color: black,
-        borderRadius: 4,
+        border-radius: 4,
         borderWidth: 1,
         borderStyle: 'solid',
         background-color: white,
@@ -38,7 +38,7 @@ export default makeStyles(({ palette, spacing }: Theme) =>
         '&:focus': {
           outline: `#8c96a9 auto 1px`,
           '&+label': {
-            color: palette.primary.main,
+            color: var(--primary-color),
             transform: 'scale(.85) translateY(-33px)',
           },
         },
@@ -72,7 +72,7 @@ export default makeStyles(({ palette, spacing }: Theme) =>
         width: 24,
         height: 24,
         border: '2px solid #bfbfc0',
-        borderRadius: '50%',
+        border-radius: '50%',
         '&:focus': {
           outline: 0,
         },
@@ -90,7 +90,7 @@ export default makeStyles(({ palette, spacing }: Theme) =>
         width: 24,
         height: 24,
         background: 'none',
-        borderRadius: '50%',
+        border-radius: '50%',
         position: 'absolute',
         top: 0,
         left: 0,
@@ -112,7 +112,7 @@ export default makeStyles(({ palette, spacing }: Theme) =>
           strokeDasharray: 19,
           strokeDashoffset: 19,
           transition: 'stroke-dashoffset 0.3s ease',
-          transitionDelay: '0.2s',
+          transition-delay: '0.2s',
         },
       },
     },
@@ -120,7 +120,7 @@ export default makeStyles(({ palette, spacing }: Theme) =>
       padding: 0,
       margin: 0,
       border: 0,
-      marginBottom: 16px,
+      margin-bottom: 16px,
     },
     error: {
       '& input': {

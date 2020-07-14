@@ -22,12 +22,12 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
             '&:nth-child(3)': {
               transform: 'rotate(-45deg)',
               width: '120%',
-              marginLeft: '-10%',
+              margin-left: '-10%',
             },
             '&:nth-child(2)': {
               transform: 'rotate(45deg)',
               width: '120%',
-              marginLeft: '-10%',
+              margin-left: '-10%',
             },
           },
         },
@@ -112,8 +112,8 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       display: 'flex',
       flex-direction: 'column',
       padding: 0,
-      padding-top: spacing(1.25),
-      padding-bottom: spacing(1.25),
+      padding-top: 10px,
+      padding-bottom: 10px,
       listStyleType: 'none',
       margin: 0,
 
@@ -127,7 +127,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     navigationListItem: {
       position: 'relative',
       '&:hover > a, &:focus-within': {
-        background-color: palette.primary.main,
+        background-color: var(--primary-color),
       },
       '&:hover > div': {
         height: 'auto',
@@ -141,7 +141,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       text-align: 'left',
       position: 'relative',
       display: 'flex',
-      justifyContent: 'space-between',
+      justify-content: 'space-between',
       border: 'none',
       background-color: 'transparent',
       cursor: 'pointer',
@@ -152,15 +152,15 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
 
       [breakpoints.up('md')]: {
         padding: 0,
-        padding-left: spacing(1.25),
-        padding-right: spacing(1.25),
+        padding-left: 10px,
+        padding-right: 10px,
         font-weight: '700',
         width: 'auto',
         display: 'flex',
         align-items: 'center',
         height: '59px',
         '&:hover, &:focus': {
-          background-color: palette.primary.main,
+          background-color: var(--primary-color),
         },
         '&:focus + div': {
           height: 'auto',
@@ -176,7 +176,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     dropdownMenuIcon: {
       [breakpoints.up('md')]: {
         position: 'static',
-        marginLeft: spacing(1.25),
+        margin-left: 10px,
       },
     },
     dropdownMenuIconSVG: {
@@ -207,9 +207,9 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       listStyleType: 'none',
       padding: 0,
       [breakpoints.up('md')]: {
-        padding-top: spacing(1.25),
-        padding-bottom: spacing(1.25),
-        borderTop: `4px solid ${palette.primary.main}`,
+        padding-top: 10px,
+        padding-bottom: 10px,
+        borderTop: `4px solid ${var(--primary-color)}`,
       },
     },
     subNavigationListItem: {},

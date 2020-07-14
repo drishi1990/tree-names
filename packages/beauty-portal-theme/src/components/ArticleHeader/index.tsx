@@ -8,7 +8,7 @@ import { urlFor } from '../../helpers/imageUrl';
 import { ReactComponent as Skill } from '../../images/icons/skill.svg';
 import { ReactComponent as Youtube } from '../../images/icons/youtube.svg';
 import { ReactComponent as IconTime } from '../../images/icons/time.svg';
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
   article,
@@ -16,7 +16,6 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
   socialLinks,
   playLabel,
 }) => {
-  // const classes = useStyles();
   const [showVideo, setShowVideo] = useState(false);
   const [videoSourceUrl, setVideoSourceUrl] = useState('');
   const [videoLoading, setVideoLoading] = useState(false);
@@ -52,7 +51,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
         <picture
           className="bp-image__placeholder"
           style={{
-            paddingTop: `calc(100% / ${image.asset.metadata.dimensions.aspectRatio})`,
+            paddingTop: `56.25%`,
             background: `url(${image.asset.metadata.lqip})`,
             backgroundSize: 'cover',
           }}
@@ -102,35 +101,35 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
   };
 
   return (
-    <div className={'classes.header'}>
+    <div className={styles.header}>
       <h1
         className={classNames(
-          'classes.headingPrimary',
-          type === 'gallery' ? 'classes.textCenter' : null
+          styles.headingPrimary,
+          type === 'gallery' ? styles.textCenter : null
         )}
       >
         {headline}
       </h1>
       <p
         className={classNames(
-          'classes.textSecondary',
-          type === 'gallery' ? 'classes.textCenter' : null
+          styles.textSecondary,
+          type === 'gallery' ? styles.textCenter : null
         )}
       >
         {subheading}
       </p>
-      <div className={'classes.articleInfoWrapper'}>
-        <div className={'classes.articleInfo'}>
+      <div className={styles.articleInfoWrapper}>
+        <div className={styles.articleInfo}>
           {author && author.name && (
-            <div className={'classes.authorInfo'}>
+            <div className={styles.authorInfo}>
               <Link
-                className={'classes.link'}
+                className={styles.link}
                 to={author.slug ? `/${author.slug.current}` : `/${author.name}`}
               >
                 <span>{author.name}</span>
               </Link>
 
-              <span className={'classes.divider'}>|</span>
+              <span className={styles.divider}>|</span>
             </div>
           )}
           {(article.publishedAt || article._updatedAt) && (
@@ -142,7 +141,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
       {/* TODO: Use generic `Video` component for hero video to avoid duplicate code  */}
       {/* {renderHeroImage(_rawHeroImage, heroImage.alt)} */}
       {!(_type === 'galleryArticle') && (
-        <div className={'classes.heroImage'}>
+        <div className={styles.heroImage}>
           {!showVideo &&
             !heroVideo &&
             renderVideoThumbnail(_rawHeroImage, heroImage.alt)}
@@ -156,7 +155,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
                 : renderVideoThumbnail(_rawHeroImage, heroImage.alt)}
               <button
                 type="button"
-                className={'classes.iconVideo'}
+                className={styles.iconVideo}
                 onClick={playVideo}
                 data-url={heroVideo.url}
               >
@@ -188,25 +187,25 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
         </div>
       )}
       {(skillLevel || time) && (
-        <div className={'classes.tutorialInfo'}>
+        <div className={styles.tutorialInfo}>
           {time && (
-            <div className={'classes.tutorialInfoBlock'}>
+            <div className={styles.tutorialInfoBlock}>
               <div>
                 <strong>Time</strong>
                 <span>{time} mins</span>
               </div>
-              <div className={'classes.icon'}>
+              <div className={styles.icon}>
                 <IconTime className={'active'} />
               </div>
             </div>
           )}
           {skillLevel && (
-            <div className={'classes.tutorialInfoBlock'}>
+            <div className={styles.tutorialInfoBlock}>
               <div>
                 <strong>Skill</strong>
                 <span>{skillLevel}</span>
               </div>
-              <div className={classNames('b-skill', 'classes.icon')}>
+              <div className={classNames('b-skill', styles.icon)}>
                 <Skill
                   className={classNames(skillLevel === 'easy' && 'active')}
                 />

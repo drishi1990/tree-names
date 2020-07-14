@@ -22,7 +22,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       },
 
       '& a:hover svg': {
-        fill: palette.primary.main,
+        fill: var(--primary-color),
       },
 
       '& svg': {

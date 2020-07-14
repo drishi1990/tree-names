@@ -1,0 +1,222 @@
+.header {
+  margin: auto;
+  max-width: 750px;
+
+  @media (min-width: 768px) {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  svg: {
+    width: 28px;
+    height: 28px;
+    fill: black;
+  }
+}
+
+.headingPrimary {
+  @media (min-width: 768px) {
+    margin-bottom: 14px;
+  }
+}
+
+.textSecondary {
+  padding-bottom: 10px;
+  font-size: .875rem;
+  margin: 0;
+  margin-bottom: 10px;
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+    margin-bottom: 16px;
+  }
+}
+
+.articleInfo {
+  font-size: .875rem;
+  font-weight: 400;
+  max-width: 750px;
+  margin-bottom: 14px;
+  display: flex;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
+}
+
+.divider {
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.articleInfoWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.heroImage {
+  margin-top: 10px;
+  position: relative;
+
+  iframe {
+    height: 214px;
+
+    @media (min-width: 768px) {
+      height: 232px;
+    }
+
+    @media (min-width: 991px) {
+      height: 399px;
+    }
+  }
+
+  .preloader-icon {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    svg {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
+.iconVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+
+  svg {
+    transition: all .5s;
+    fill: white;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
+
+
+  &:hover {
+    svg {
+      fill: var(--primary-color);
+      transform: scale(1.2);
+    }
+  }
+}
+
+.textCenter {
+  @media (min-width: 768px) {
+    text-align: center;
+  }
+}
+
+.link {
+  background-image: linear-gradient(120deg, var(--primary-color) 0%, var(--primary-color) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 3px;
+  background-position: 0 100%;
+  color: black;
+  line-height: 1.75;
+  display: flex;
+}
+
+.tutorialInfo {
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.tutorialInfoBlock {
+  background-color: #b8f0c0;
+  padding: 8px;
+  font-size: .625rem;
+  line-height: 1.1;
+  letter-spacing: 1;
+  margin-right: 12px;
+  flex: 1 50%;
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-right: 20px;
+    font-size: .75rem;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  & strong {
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  & span {
+    text-transform: capitalize;
+  }
+}
+
+.icon {
+  width: 100%;
+  flex: 1;
+  text-align: right;
+
+  &.b-skill {
+    & svg {
+
+      width: 24px;
+      margin-left: 5;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      @media (min-width: 768px) {
+        width: 44px;
+        height: 44px;
+        margin-left: 10;
+      }
+    }
+  }
+
+  svg {
+    opacity: 0.2;
+    margin-left: 10px;
+
+    &.active {
+      opacity: 1;
+    }
+
+    @media (min-width: 768px) {
+      width: 44px;
+      height: 44px;
+      margin-left: 10px;
+    }
+  }
+}
+
+.authorInfo {
+  display: flex;
+}

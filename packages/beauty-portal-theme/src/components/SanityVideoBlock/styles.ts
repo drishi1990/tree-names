@@ -13,7 +13,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     sectionTitle: {
       [breakpoints.up('md')]: {
-        marginBottom: 20px,
+        margin-bottom: 20px,
       },
     },
     content: {
