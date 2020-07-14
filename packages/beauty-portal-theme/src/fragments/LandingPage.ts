@@ -32,15 +32,6 @@ export const query = graphql`
             heroImage {
               asset {
                 url
-                fluid(maxWidth: 752, maxHeight: 421) {
-                  aspectRatio
-                  base64
-                  sizes
-                  src
-                  srcSet
-                  srcSetWebp
-                  srcWebp
-                }
               }
               alt
             }
@@ -61,15 +52,6 @@ export const query = graphql`
             heroImage {
               asset {
                 url
-                fluid(maxWidth: 752, maxHeight: 421) {
-                  aspectRatio
-                  base64
-                  sizes
-                  src
-                  srcSet
-                  srcSetWebp
-                  srcWebp
-                }
               }
               alt
             }
@@ -86,15 +68,6 @@ export const query = graphql`
             heroImage {
               asset {
                 url
-                fluid(maxWidth: 752, maxHeight: 421) {
-                  aspectRatio
-                  base64
-                  sizes
-                  src
-                  srcSet
-                  srcSetWebp
-                  srcWebp
-                }
               }
               alt
             }
@@ -201,17 +174,6 @@ export const query = graphql`
         name
         _rawImage(resolveReferences: { maxDepth: 10 })
         image {
-          asset {
-            fluid {
-              aspectRatio
-              base64
-              sizes
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
-            }
-          }
           alt
         }
         _rawTextBlockBody(resolveReferences: { maxDepth: 10 })
