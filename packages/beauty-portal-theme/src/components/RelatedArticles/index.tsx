@@ -3,8 +3,7 @@ import { Link } from 'gatsby';
 import { useInView } from 'react-intersection-observer';
 import classNames from 'classnames';
 import { urlFor } from '../../helpers/imageUrl';
-
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
   articles,
@@ -14,14 +13,19 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
     triggerOnce: true,
     rootMargin: '200px 0px',
   });
-  // const classes = useStyles();
+
   const firstArticle = articles.shift();
   const lastArticle = articles.pop();
 
   const normalThumbSize = article => {
     return (
       <figure>
-        <picture>
+        <picture
+          className="bp-image__placeholder"
+          style={{
+            paddingTop: '100%',
+          }}
+        >
           <source
             media="screen and (min-width: 320px)"
             srcSet={`${urlFor(article._rawHeroImage)
@@ -43,8 +47,6 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
               .fit('crop')
               .url()}
             alt={article._rawHeroImage.alt}
-            width="80"
-            height="80"
           />
         </picture>
       </figure>
@@ -53,7 +55,12 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
   const fullThumbSize = article => {
     return (
       <figure>
-        <picture className={'classes.picture'}>
+        <picture
+          className="bp-image__placeholder"
+          style={{
+            paddingTop: '56.25%',
+          }}
+        >
           <source
             media="screen and (min-width: 1280px)"
             srcSet={`${urlFor(article._rawHeroImage)
@@ -83,7 +90,7 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
               .toString()} 2x`}
           />
           <img
-            className={'classes.image'}
+            className={styles.image}
             src={urlFor(article._rawHeroImage)
               .width(400)
               .height(206)
@@ -98,7 +105,12 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
   const halfThumbSize = article => {
     return (
       <figure>
-        <picture>
+        <picture
+          className="bp-image__placeholder"
+          style={{
+            paddingTop: '100%',
+          }}
+        >
           <source
             media="screen and (min-width: 1280px)"
             srcSet={`${urlFor(article._rawHeroImage)
@@ -146,24 +158,29 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
     }
     return (
       <article
-        className={classNames('c-teaser__item', 'classes.teaser')}
+        className={classNames('c-teaser__item', styles.teaser)}
         key={article.id}
       >
         <Link
           to={article.path}
-          className={'classes.teaserLink'}
+          className={styles.teaserLink}
           aria-label={article.headline}
         >
-          <div className={'classes.flexBox'}>
-            <div className={'c-teaser__image'}>
+          <div className={styles.flexBox}>
+            <div
+              className={classNames(
+                position === 'normal' ? styles.thumbnail : null,
+                position === 'last' ? styles.thumbnailMedium : null
+              )}
+            >
               {position === 'normal' && normalThumbSize(article)}
               {position === 'first' && fullThumbSize(article)}
               {position === 'last' && halfThumbSize(article)}
             </div>
 
-            <div className={classNames('c-teaser__copy', 'classes.teaserCopy')}>
-              <span className={'classes.teaserType'}>{'article._type'}</span>
-              <h3 className={'classes.teaserTitle'}>
+            <div className={classNames('c-teaser__copy', styles.teaserCopy)}>
+              <span className={styles.teaserType}>{article._type}</span>
+              <h3 className={styles.teaserTitle}>
                 <span>{article.headline}</span>
               </h3>
             </div>
@@ -175,21 +192,18 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
 
   return (
     <>
-      <div className={'classes.teaserWrapper'} ref={ref} data-inview={inView}>
-        <h4 className={'classes.title'}>{title}</h4>
+      <div className={styles.teaserWrapper} ref={ref} data-inview={inView}>
+        <h4 className={styles.title}>{title}</h4>
         {inView ? (
           <div>
             {firstArticle && (
               <div
-                className={classNames(
-                  'c-article__first',
-                  'classes.teaserFirst'
-                )}
+                className={classNames('c-article__first', styles.teaserFirst)}
               >
                 {renderListItem(firstArticle, 'first')}
               </div>
             )}
-            <div className={'classes.scrollArea'}>
+            <div className={styles.scrollArea}>
               {articles &&
                 articles.slice(0, 8).map((article: any) => {
                   return renderListItem(article);
@@ -197,9 +211,7 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
             </div>
 
             {lastArticle && (
-              <div
-                className={classNames('c-article__last', 'classes.teaserLast')}
-              >
+              <div className={classNames('c-article__last', styles.teaserLast)}>
                 {renderListItem(lastArticle, 'last')}
               </div>
             )}

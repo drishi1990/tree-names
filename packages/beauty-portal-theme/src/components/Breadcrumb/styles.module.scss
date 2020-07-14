@@ -1,0 +1,51 @@
+.wrapper {
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  @media (min-width: 768px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .item {
+
+    font-size: .75rem;
+    white-space: nowrap;
+
+    &:first-child {
+      display: block;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+  }
+
+  .divider {
+    padding: 0 8px;
+    font-size: .75rem;
+  }
+
+  .link {
+    color: black;
+  }
+
+  .active {
+    color: #999;
+  }
+}

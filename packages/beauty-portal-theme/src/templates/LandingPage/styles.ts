@@ -3,25 +3,25 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ spacing, breakpoints }: Theme) =>
   createStyles({
     pageContext: {
-      textAlign: 'center',
+      text-align: 'center',
       margin: 'auto',
-      paddingBottom: spacing(2),
-      fontSize: '.875rem',
+      padding-bottom: 16px,
+      font-size: '.875rem',
       [breakpoints.up('md')]: {
-        fontSize: '1.125rem',
+        font-size: '1.125rem',
       },
       '& p': {
         margin: 0,
       },
     },
     headline: {
-      fontSize: '1.875rem',
-      fontWeight: 700,
-      lineHeight: 1.1,
+      font-size: '1.875rem',
+      font-weight: 700,
+      line-height: 1.1,
       margin: 0,
       marginBottom: spacing(1.25),
       [breakpoints.up('md')]: {
-        fontSize: '2.875rem',
+        font-size: '2.875rem',
       },
     },
   })

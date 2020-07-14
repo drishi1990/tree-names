@@ -14,7 +14,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       margin: 0,
     },
     heroImage: {
-      marginTop: spacing(1.25),
+      margin-top: spacing(1.25),
       position: 'relative',
       '& iframe': {
         height: 263,
@@ -32,10 +32,10 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       width: '100%',
       border: 0,
       cursor: 'pointer',
-      backgroundColor: 'transparent',
+      background-color: 'transparent',
       '& svg': {
         transition: 'all .5s',
-        fill: palette.common.white,
+        fill: white,
         width: 60,
         height: 60,
         cursor: 'pointer',
@@ -53,7 +53,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       left: '50%',
       transform: 'translate(-50% -50%)',
       display: 'flex',
-      alignItems: 'center',
+      align-items: 'center',
       justifyContent: 'center',
     },
   })

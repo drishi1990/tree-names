@@ -3,22 +3,22 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ palette, spacing }: Theme) =>
   createStyles({
     field: {
-      marginBottom: spacing(2),
+      marginBottom: 16px,
       position: 'relative',
       display: 'flex',
     },
     textField: {
       '& label': {
-        backgroundColor: palette.common.white,
+        background-color: white,
         color: palette.grey[100],
         display: 'block',
-        fontWeight: 400,
-        fontSize: '1.125rem',
+        font-weight: 400,
+        font-size: '1.125rem',
         position: 'absolute',
         bottom: 14,
         left: 10,
-        paddingLeft: spacing(0.75),
-        paddingRight: spacing(0.75),
+        padding-left: 6px,
+        padding-right: 6px,
         transition:
           'transform 150ms cubic-bezier(0.4,0,0.2,1),opacity 150ms cubic-bezier(0.4,0,0.2,1)',
         transitionProperty: 'color, bottom, transform',
@@ -26,14 +26,14 @@ export default makeStyles(({ palette, spacing }: Theme) =>
       },
       '& input': {
         width: '100%',
-        padding: spacing(2),
+        padding: 16px,
         display: 'flex',
-        fontSize: '1.125rem',
-        color: palette.common.black,
+        font-size: '1.125rem',
+        color: black,
         borderRadius: 4,
         borderWidth: 1,
         borderStyle: 'solid',
-        backgroundColor: palette.common.white,
+        background-color: white,
         appearance: 'none',
         '&:focus': {
           outline: `#8c96a9 auto 1px`,
@@ -84,7 +84,7 @@ export default makeStyles(({ palette, spacing }: Theme) =>
         },
       },
       '& label': {
-        paddingLeft: 35,
+        padding-left: 35,
       },
       '& span': {
         width: 24,
@@ -102,7 +102,7 @@ export default makeStyles(({ palette, spacing }: Theme) =>
         position: 'absolute',
         top: 5,
         left: 4,
-        zIndex: 1,
+        z-index: 1,
         pointerEvents: 'none',
         '& path': {
           stroke: '#fff',
@@ -120,7 +120,7 @@ export default makeStyles(({ palette, spacing }: Theme) =>
       padding: 0,
       margin: 0,
       border: 0,
-      marginBottom: spacing(2),
+      marginBottom: 16px,
     },
     error: {
       '& input': {
