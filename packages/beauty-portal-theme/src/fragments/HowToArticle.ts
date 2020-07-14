@@ -77,7 +77,7 @@ export const query1 = graphql`
       image {
         asset {
           url
-          fluid(maxWidth: 140, max-height: 140) {
+          fluid(maxWidth: 140, maxHeight: 140) {
             aspectRatio
             base64
             sizes
