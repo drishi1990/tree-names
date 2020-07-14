@@ -8,6 +8,7 @@ import PageSchema from '../../components/PageSchema';
 import OGTags from '../../components/OGTags';
 import Breadcrumb from '../../components/Breadcrumb';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
+import styles from './styles.module.scss';
 
 const LandingPage = (props: LandingPageProps) => {
   const {
@@ -41,9 +42,9 @@ const LandingPage = (props: LandingPageProps) => {
       {page.path !== '/' && <Breadcrumb pageTitle={page.name} />}
       {(page.headline || page._rawIntroduction) && (
         <div className="container">
-          <div className={'classes.pageContext'}>
+          <div className={styles.pageContext}>
             {page.headline && (
-              <h1 className={'classes.headline'}>{'page.headline'}</h1>
+              <h1 className={styles.headline}>{page.headline}</h1>
             )}
             {page._rawIntroduction && (
               <BlockContent
