@@ -3,8 +3,8 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
   createStyles({
     section: {
-      backgroundColor: palette.tertiary.main,
-      paddingTop: 0,
+      background-color: palette.tertiary.main,
+      padding-top: 0,
       '&.imageblocktypeb': {
         '& .c-image_wrapper': {
           [breakpoints.up('md')]: {
@@ -17,30 +17,30 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       },
     },
     sectionTitle: {
-      color: palette.common.black,
-      marginTop: spacing(1.25),
-      marginBottom: spacing(0.625),
-      lineHeight: 1.2,
+      color: black,
+      margin-top: spacing(1.25),
+      marginBottom: 5px,
+      line-height: 1.2,
       '& span': {
         transition: '.15s',
         display: 'inline',
-        backgroundImage: `linear-gradient(120deg,rgba(184,240,192,0) 0%,rgba(184,240,192,0) 100%)`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: '100% .1875rem',
-        backgroundPosition: '0 100%',
+        background-image: `linear-gradient(120deg,rgba(184,240,192,0) 0%,rgba(184,240,192,0) 100%)`,
+        background-repeat: 'no-repeat',
+        background-size: '100% .1875rem',
+        background-position: '0 100%',
       },
       [breakpoints.up('md')]: {
-        marginBottom: spacing(2.5),
+        marginBottom: 20px,
       },
     },
     link: {
       display: 'block',
       '&:hover': {
         '& h2 span': {
-          backgroundImage: `linear-gradient(120deg,${palette.secondary.main} 0%,${palette.secondary.main} 100%)`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: '100% .1875rem',
-          backgroundPosition: '0 100%',
+          background-image: `linear-gradient(120deg,${#b8f0c0} 0%,${#b8f0c0} 100%)`,
+          background-repeat: 'no-repeat',
+          background-size: '100% .1875rem',
+          background-position: '0 100%',
         },
         '& img': {
           transform: 'scale(1.1)',
@@ -49,14 +49,14 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     content: {
       display: 'flex',
-      flexDirection: 'column',
+      flex-direction: 'column',
       [breakpoints.up('md')]: {
-        flexDirection: 'row',
+        flex-direction: 'row',
       },
     },
     imageWrapper: {
       marginLeft: -16,
-      marginRight: -16,
+      margin-right: -16,
       overflow: 'hidden',
       '& img': {
         transition: 'all 500ms ease 0s !important',
@@ -67,8 +67,8 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     copyText: {
       padding: spacing(2.25),
-      background: palette.common.white,
-      color: palette.common.black,
+      background: white,
+      color: black,
       order: 2,
       top: spacing(-2.25),
       position: 'relative',
@@ -76,16 +76,16 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       [breakpoints.up('md')]: {
         order: 1,
         alignSelf: 'center',
-        padding: spacing(3),
+        padding: 24px,
         right: -20,
         top: 0,
         maxWidth: 500,
       },
       '& p': {
         margin: 0,
-        fontSize: '.875rem',
+        font-size: '.875rem',
         [breakpoints.up('md')]: {
-          fontSize: '1.125rem',
+          font-size: '1.125rem',
         },
       },
     },

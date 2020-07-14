@@ -15,9 +15,9 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       },
 
       '& li': {
-        marginRight: spacing(2.5),
+        margin-right: 20px,
         '&:last-child': {
-          marginRight: 0,
+          margin-right: 0,
         },
       },
 
@@ -28,7 +28,7 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       '& svg': {
         width: 32,
         height: 32,
-        fill: palette.common.white,
+        fill: white,
         transition: 'all .3s',
       },
     },

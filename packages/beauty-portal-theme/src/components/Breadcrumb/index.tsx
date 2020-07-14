@@ -2,59 +2,57 @@ import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
 import { getSearchUrl } from '../../helpers/searchUrl';
-// import useStyles from './styles';
+import styles from './styles.module.scss';
 
 const Breadcrumb: FunctionComponent<BreadcrumbInterface> = ({
   tag,
   pageTitle,
   searchResultPath,
 }) => {
-  // const classes = useStyles();
-
   return (
-    <section className={'classes.wrapper'}>
+    <section className={styles.wrapper}>
       <div className="container">
         <div className="">
-          <ul className={'classes.items'}>
-            <li className={'classes.item'}>
-              <Link to={'/'} className={'classes.link'}>
+          <ul className={styles.items}>
+            <li className={styles.item}>
+              <Link to={'/'} className={styles.link}>
                 Home
               </Link>
             </li>
             {tag && (
               <>
-                <li className={'classes.divider'} aria-hidden="true">
+                <li className={styles.divider} aria-hidden="true">
                   /
                 </li>
-                <li className={'classes.item'}>
+                <li className={styles.item}>
                   <Link
                     to={getSearchUrl(
                       searchResultPath,
                       tag.tagCategory.name,
                       'tags.tagCategory.name'
                     )}
-                    className={'classes.link'}
+                    className={styles.link}
                   >
                     {tag.tagCategory.name}
                   </Link>
                 </li>
-                <li className={'classes.divider'} aria-hidden="true">
+                <li className={styles.divider} aria-hidden="true">
                   /
                 </li>
-                <li className={'classes.item'}>
+                <li className={styles.item}>
                   <Link
                     to={getSearchUrl(searchResultPath, tag.name, 'tags.name')}
-                    className={'classes.link'}
+                    className={styles.link}
                   >
                     {tag.name}
                   </Link>
                 </li>
-                <li className={'classes.divider'} aria-hidden="true">
+                <li className={styles.divider} aria-hidden="true">
                   /
                 </li>
               </>
             )}
-            <li className={classNames('classes.item', 'classes.active')}>
+            <li className={classNames(styles.item, styles.active)}>
               {pageTitle}
             </li>
           </ul>

@@ -3,23 +3,23 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
   createStyles({
     slider: {
-      paddingTop: spacing(2.5),
-      paddingBottom: spacing(2.5),
+      padding-top: 20px,
+      padding-bottom: 20px,
       position: 'relative',
-      marginLeft: spacing(2),
+      marginLeft: 16px,
       [breakpoints.up('md')]: {
-        paddingTop: spacing(5),
-        paddingBottom: spacing(5),
+        padding-top: spacing(5),
+        padding-bottom: spacing(5),
       },
       '& .swiper-container': {
-        paddingBottom: spacing(2.5),
+        padding-bottom: 20px,
       },
 
       '& .swiper-scrollbar': {
-        backgroundColor: 'transparent',
+        background-color: 'transparent',
       },
       '& .swiper-scrollbar-drag': {
-        backgroundColor: palette.grey[20],
+        background-color: palette.grey[20],
       },
       '& .swiper-container-horizontal > .swiper-scrollbar': {
         width: '100%',
@@ -33,42 +33,42 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     sectionTitle: {
       display: 'flex',
-      flexDirection: 'column',
-      marginBottom: spacing(1.875),
+      flex-direction: 'column',
+      marginBottom: 14px,
       [breakpoints.up('md')]: {
-        marginBottom: spacing(2),
-        flexDirection: 'row',
-        alignItems: 'center',
+        marginBottom: 16px,
+        flex-direction: 'row',
+        align-items: 'center',
       },
     },
     sectionLink: {
-      color: palette.common.black,
-      fontSize: '.875rem',
-      fontWeight: 700,
+      color: black,
+      font-size: '.875rem',
+      font-weight: 700,
       alignSelf: 'flex-start',
-      backgroundImage: `linear-gradient(120deg,${palette.primary.main} 0%,${palette.primary.main} 100%)`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: '100% .1875rem',
-      backgroundPosition: '0 100%',
+      background-image: `linear-gradient(120deg,${palette.primary.main} 0%,${palette.primary.main} 100%)`,
+      background-repeat: 'no-repeat',
+      background-size: '100% .1875rem',
+      background-position: '0 100%',
       [breakpoints.up('md')]: {
-        fontSize: '1.125rem',
-        marginLeft: spacing(3),
-        marginBottom: spacing(1),
+        font-size: '1.125rem',
+        marginLeft: 24px,
+        marginBottom: 8px,
         alignSelf: 'center',
       },
       '&:hover, &:focus': {
-        backgroundImage: `linear-gradient(120deg,${palette.common.black} 0%,${palette.common.black} 100%)`,
+        background-image: `linear-gradient(120deg,${black} 0%,${black} 100%)`,
       },
     },
     sliderTitle: {
-      fontSize: '1.375rem',
-      fontWeight: 600,
-      lineHeight: 1.1,
-      letterSpacing: 0,
+      font-size: '1.375rem',
+      font-weight: 600,
+      line-height: 1.1,
+      letter-spacing: 0,
       margin: 0,
-      marginBottom: spacing(1),
+      marginBottom: 8px,
       [breakpoints.up('md')]: {
-        fontSize: '2.25rem',
+        font-size: '2.25rem',
       },
     },
   })

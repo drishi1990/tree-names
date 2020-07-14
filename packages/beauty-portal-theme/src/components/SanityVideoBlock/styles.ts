@@ -3,24 +3,24 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
   createStyles({
     section: {
-      backgroundColor: palette.tertiary.main,
-      paddingTop: 0,
-      paddingBottom: spacing(2),
+      background-color: palette.tertiary.main,
+      padding-top: 0,
+      padding-bottom: 16px,
       [breakpoints.up('md')]: {
-        paddingTop: 0,
-        paddingBottom: 0,
+        padding-top: 0,
+        padding-bottom: 0,
       },
     },
     sectionTitle: {
       [breakpoints.up('md')]: {
-        marginBottom: spacing(2.5),
+        marginBottom: 20px,
       },
     },
     content: {
       display: 'flex',
-      flexDirection: 'column',
+      flex-direction: 'column',
       [breakpoints.up('md')]: {
-        flexDirection: 'row',
+        flex-direction: 'row',
       },
       '& iframe': {
         [breakpoints.up('md')]: {
@@ -31,18 +31,18 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
     },
     copyText: {
       padding: spacing(2.25),
-      background: palette.common.white,
+      background: white,
       order: 2,
       [breakpoints.up('md')]: {
         order: 1,
         alignSelf: 'center',
-        padding: spacing(3),
+        padding: 24px,
         position: 'relative',
         right: -20,
       },
       '& p': {
         margin: 0,
-        fontSize: '1.125rem',
+        font-size: '1.125rem',
       },
     },
   })

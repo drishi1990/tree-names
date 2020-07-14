@@ -5,7 +5,7 @@ export default makeStyles((theme: Theme) =>
     paper: {
       padding: theme.spacing(1.25),
       margin: theme.spacing(1.25),
-      textAlign: 'left',
+      text-align: 'left',
       color: theme.palette.text.secondary,
     },
   })

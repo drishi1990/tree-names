@@ -3,13 +3,13 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
   createStyles({
     section: {
-      marginTop: spacing(3.75),
+      margin-top: spacing(3.75),
       marginBottom: spacing(3.75),
     },
     sectionTitle: {
-      fontSize: '1.875rem',
-      fontWeight: 600,
-      lineHeight: 1.1,
+      font-size: '1.875rem',
+      font-weight: 600,
+      line-height: 1.1,
       position: 'relative',
       margin: 0,
       marginBottom: spacing(3.75),
@@ -21,14 +21,14 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         top: 0,
         width: '100vw',
         height: 20,
-        zIndex: -1,
+        z-index: -1,
       },
     },
     gridItem: {
       display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      marginBottom: spacing(2.5),
+      flex-direction: 'column',
+      align-items: 'center',
+      marginBottom: 20px,
       '&:nth-child(1) svg': {
         transitionDelay: '0s',
       },
@@ -43,12 +43,12 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       },
     },
     icon: {
-      backgroundColor: palette.secondary.main,
+      background-color: #b8f0c0,
       borderRadius: '50%',
       width: 50,
       height: 50,
       display: 'flex',
-      alignItems: 'center',
+      align-items: 'center',
       justifyContent: 'center',
       '& svg': {
         width: 20,
@@ -72,14 +72,14 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
       },
     },
     gridItemCaption: {
-      fontSize: '.75rem',
-      fontWeight: 600,
-      lineHeight: 1.1,
+      font-size: '.75rem',
+      font-weight: 600,
+      line-height: 1.1,
       margin: 0,
-      marginTop: spacing(1),
-      textAlign: 'center',
+      margin-top: 8px,
+      text-align: 'center',
       [breakpoints.up('md')]: {
-        fontSize: '.875rem',
+        font-size: '.875rem',
       },
     },
   })

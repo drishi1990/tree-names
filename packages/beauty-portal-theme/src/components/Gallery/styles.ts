@@ -4,8 +4,8 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
   createStyles({
     galleryWrapper: {
       padding: 0,
-      paddingBottom: spacing(2.5),
-      marginBottom: spacing(2.5),
+      padding-bottom: 20px,
+      marginBottom: 20px,
       '& figure': {
         maxWidth: 500,
         margin: 'auto',
@@ -14,17 +14,17 @@ export default makeStyles(({ breakpoints, palette, spacing }: Theme) =>
         maxWidth: 752,
         margin: 'auto',
         '& .swiper-wrapper': {
-          paddingTop: 40,
+          padding-top: 40,
           [breakpoints.up('sm')]: {
-            paddingTop: 0,
+            padding-top: 0,
           },
         },
         '& .swiper-slide': {
-          backgroundColor: '#f4f4f4',
+          background-color: '#f4f4f4',
         },
       },
       '& .swiper-container-thumbs': {
-        marginBottom: spacing(3),
+        marginBottom: 24px,
         '& .swiper-slide': {
           width: 80,
           opacity: 0.4,

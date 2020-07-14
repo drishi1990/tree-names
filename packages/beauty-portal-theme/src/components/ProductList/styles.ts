@@ -3,7 +3,7 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ palette, spacing }: Theme) =>
   createStyles({
     section: {
-      marginTop: spacing(3.75),
+      margin-top: spacing(3.75),
       marginBottom: spacing(3.75),
       position: 'relative',
       '&:before': {
@@ -14,13 +14,13 @@ export default makeStyles(({ palette, spacing }: Theme) =>
         bottom: 0,
         width: '100vw',
         height: 10,
-        zIndex: -1,
+        z-index: -1,
       },
     },
     sectionTitle: {
-      fontSize: '1.875rem',
-      fontWeight: 600,
-      lineHeight: 1.1,
+      font-size: '1.875rem',
+      font-weight: 600,
+      line-height: 1.1,
       position: 'relative',
       margin: 0,
       marginBottom: spacing(3.75),
@@ -32,16 +32,16 @@ export default makeStyles(({ palette, spacing }: Theme) =>
         top: 0,
         width: '100vw',
         height: 20,
-        zIndex: -1,
+        z-index: -1,
       },
     },
     productTitle: {
-      fontSize: '.875rem',
-      fontWeight: 600,
-      lineHeight: 1.4,
+      font-size: '.875rem',
+      font-weight: 600,
+      line-height: 1.4,
       margin: 0,
-      marginTop: spacing(1),
-      textAlign: 'center',
+      margin-top: 8px,
+      text-align: 'center',
     },
     image: {
       maxWidth: 140,
@@ -49,25 +49,25 @@ export default makeStyles(({ palette, spacing }: Theme) =>
       margin: 'auto',
     },
     gridContainer: {
-      paddingBottom: spacing(1.25),
+      padding-bottom: spacing(1.25),
     },
     gridItem: {
       padding: 0,
-      marginBottom: spacing(2.5),
+      marginBottom: 20px,
       '& img': {
         transition: 'all 500ms !important',
       },
       '& a': {
-        color: palette.common.black,
+        color: black,
 
         '&:hover img': {
           transform: 'scale(1.05)',
         },
         '&:hover h3 span': {
-          backgroundImage: `linear-gradient(120deg,${palette.secondary.main} 0%,${palette.secondary.main} 100%)`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: '100% .1875rem',
-          backgroundPosition: '0 100%',
+          background-image: `linear-gradient(120deg,${#b8f0c0} 0%,${#b8f0c0} 100%)`,
+          background-repeat: 'no-repeat',
+          background-size: '100% .1875rem',
+          background-position: '0 100%',
         },
       },
     },

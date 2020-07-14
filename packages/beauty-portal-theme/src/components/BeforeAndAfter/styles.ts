@@ -6,7 +6,7 @@ export default makeStyles(({ spacing }: Theme) =>
       width: '100%',
       maxWidth: 700,
       margin: 'auto',
-      marginTop: spacing(6),
+      margin-top: 48px,
       '& div': {
         marginBottom: 0,
       },
@@ -17,7 +17,7 @@ export default makeStyles(({ spacing }: Theme) =>
           width: 40,
           height: 40,
           background: 'url(/images/slide.svg) no-repeat center center',
-          backgroundSize: 'contain',
+          background-size: 'contain',
           top: '50%',
           left: '50%',
           transform: 'translateX(-50%) translateY(-50%)',

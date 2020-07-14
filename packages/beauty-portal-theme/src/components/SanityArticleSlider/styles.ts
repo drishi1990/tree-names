@@ -3,9 +3,9 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 export default makeStyles(({ palette }: Theme) =>
   createStyles({
     section: {
-      backgroundColor: palette.secondary.main,
+      background-color: #b8f0c0,
       '&.stacker': {
-        backgroundColor: palette.quaternary.main,
+        background-color: palette.quaternary.main,
       },
     },
   })
