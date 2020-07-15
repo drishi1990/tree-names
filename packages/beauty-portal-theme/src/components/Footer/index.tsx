@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import UnileverLogo from '../../images/unilever-logo.png';
 import SocialMenu from '../SocialMenu';
 import styles from './styles.module.scss';
 import BackToTop from '../BackToTop';
+import { ReactComponent as UnileverLogo } from '../../images/unilever-logo.svg';
 import { ReactComponent as NewWindow } from '../../images/icons/launch.svg';
 
 const Footer: FunctionComponent = () => {
@@ -67,7 +67,7 @@ const Footer: FunctionComponent = () => {
         </ul>
       </nav>
       <div className={styles.footerSecondary}>
-        <img src={UnileverLogo} role="presentation" width="36" />
+        <UnileverLogo />
         <p>Copyright &copy; {new Date().getFullYear()} Unilever.</p>
       </div>
       <BackToTop />
