@@ -25,11 +25,13 @@
 
 
   figure {
-    max-width: 752px;
-  }
+    @media (min-width: 768px) {
+      max-width: 540px;
+    }
 
-  picture {
-    display: block;
+    @media (min-width: 991px) {
+      max-width: 752px;
+    }
   }
 
   .swiper-pagination {
@@ -64,7 +66,6 @@
 .copy {
   background-color: white;
   max-width: 96%;
-  margin-top: -14px;
   margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
@@ -72,6 +73,16 @@
   position: relative;
 
   @media (min-width: 768px) {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    z-index: 1;
+    max-width: 350px;
+    width: 350px;
+  }
+
+  @media (min-width: 992px) {
     position: absolute;
     top: 50%;
     right: 30px;
