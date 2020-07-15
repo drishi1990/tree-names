@@ -5,14 +5,18 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('/fonts/ProximaNovaAltRegular.woff2') format('woff2');
+  src: url('/fonts/ProximaNovaAltRegular.woff2') format('woff2'),
+    url('/fonts/ProximaNovaAltRegular.woff') format('woff'),
+    url('/fonts/ProximaNovaAltRegular.ttf') format('truetype');
 }
 @font-face {
   font-family: Proxima Nova Alt;
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src: url('/fonts/ProximaNovaAltBold.woff2') format('woff2');
+  src: url('/fonts/ProximaNovaAltBold.woff2') format('woff2'),
+    url('/fonts/ProximaNovaAltBold.woff') format('woff'),
+    url('/fonts/ProximaNovaAltBold.ttf') format('truetype');
 }
 
 * {
