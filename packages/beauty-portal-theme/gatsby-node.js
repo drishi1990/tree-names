@@ -82,39 +82,6 @@ exports.onCreateWebpackConfig = ({
   plugins,
 }) => {
   if (stage === 'build-javascript') {
-    actions.setWebpackConfig({
-      optimization: {
-        splitChunks: {
-          minSize: 8000,
-          cacheGroups: {
-            vendors: {
-              test: /[\\/]node_modules[\\/]/,
-              chunks: 'all',
-              priority: 1,
-            },
-            components: {
-              test: /[\\/]components[\\/]/,
-              chunks: 'all',
-              priority: 1,
-            },
-          },
-        },
-        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
-      },
-      module: {
-        rules: [
-          {
-            exclude: require.resolve(__dirname, 'node_modules'),
-            include: require.resolve(
-              __dirname,
-              'src/_[A-Za-z]+\\.scss$|[A-Za-z]+\\.css$/'
-            ),
-
-            use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-          },
-        ],
-      },
-    });
     const config = getConfig();
     const miniCssExtractPlugin = config.plugins.find(
       plugin => plugin.constructor.name === 'MiniCssExtractPlugin'
@@ -146,22 +113,6 @@ exports.onCreateWebpackConfig = ({
   });
 
   const config = getConfig();
-  config.resolve = {
-    ...config.resolve,
-    alias: { ...config.resolve.alias, lodash: 'lodash-es' },
-  };
-  const svgLoaderRule = config.module.rules.find(rule => {
-    if (
-      rule.test === /\.svg$/ && Array.isArray(rule.use)
-        ? rule.use.length === 2
-        : false
-    ) {
-      return rule;
-    }
-  });
-  svgLoaderRule &&
-    svgLoaderRule.use &&
-    (svgLoaderRule.use[0].options.classIdPrefix = true);
 
   if (stage === 'develop') {
     config.module.rules.push({
@@ -175,25 +126,6 @@ exports.onCreateWebpackConfig = ({
       test: /elasticsearch-browser/,
       use: loaders.null(),
     });
-  }
-
-  if (stage === `build-javascript`) {
-    const cssExtractIndex = config.plugins.findIndex(
-      pl => pl instanceof MiniCssExtractPlugin
-    );
-
-    config.plugins[cssExtractIndex] = new MiniCssExtractPlugin({
-      filename: `[name].css`,
-      chunkFilename: `[name].css`,
-      ignoreOrder: true,
-    });
-
-    config.output = {
-      filename: `[name].js`,
-      chunkFilename: `[name].js`,
-      path: getConfig().output.path,
-      publicPath: getConfig().output.publicPath,
-    };
   }
 
   actions.replaceWebpackConfig(config);
