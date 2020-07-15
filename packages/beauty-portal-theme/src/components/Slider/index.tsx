@@ -202,14 +202,12 @@ const Slider: FunctionComponent<SliderInterface> = ({
             className="bp-image__placeholder"
             style={{
               paddingTop: '56.25%',
-              background:
-                index === 0
-                  ? `url(${slide._rawHeroImage.asset.metadata.lqip})`
-                  : `url(${slide._rawHeroImage.asset.metadata.lqip})`,
+              background: `url(${slide._rawHeroImage.asset.metadata.lqip})`,
               backgroundSize: 'cover',
             }}
           >
             <img
+              className="swiper-lazy"
               data-srcset={`${urlFor(slide._rawHeroImage)
                 .width(414)
                 .height(232)
@@ -219,6 +217,14 @@ const Slider: FunctionComponent<SliderInterface> = ({
                 .url()
                 .toString()} 414w,
                       ${urlFor(slide._rawHeroImage)
+                        .width(540)
+                        .height(303)
+                        .quality(80)
+                        .fit('max')
+                        .auto('format')
+                        .url()
+                        .toString()} 540w,
+                      ${urlFor(slide._rawHeroImage)
                         .width(752)
                         .height(423)
                         .quality(80)
@@ -227,7 +233,6 @@ const Slider: FunctionComponent<SliderInterface> = ({
                         .url()
                         .toString()} 752w`}
               alt={slide.heroImage.alt}
-              className="swiper-lazy"
             />
           </picture>
         </figure>
