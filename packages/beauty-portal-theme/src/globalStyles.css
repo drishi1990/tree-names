@@ -70,10 +70,7 @@ a:focus {
 
 figure {
   margin: 0;
-}
-
-figure picture {
-  display: block;
+  position: relative;
 }
 
 figure img {
@@ -84,6 +81,7 @@ figure img {
 
 .bp-image__placeholder {
   position: relative;
+  display: block;
 }
 
 .bp-image__placeholder img {
