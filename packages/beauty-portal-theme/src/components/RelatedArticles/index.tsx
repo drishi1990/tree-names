@@ -19,10 +19,12 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
 
   const normalThumbSize = article => {
     return (
-      <figure>
+      <figure className={styles.figure}>
         <picture
           className="bp-image__placeholder"
           style={{
+            background: `url(${article._rawHeroImage.asset.metadata.lqip})`,
+            backgroundSize: 'cover',
             paddingTop: '100%',
           }}
         >
@@ -59,18 +61,20 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
           className="bp-image__placeholder"
           style={{
             paddingTop: '56.25%',
+            background: `url(${article._rawHeroImage.asset.metadata.lqip})`,
+            backgroundSize: 'cover',
           }}
         >
           <source
             media="screen and (min-width: 1280px)"
             srcSet={`${urlFor(article._rawHeroImage)
-              .width(400)
-              .height(206)
+              .width(380)
+              .height(213)
               .fit('crop')
               .url()
               .toString()} 1x, ${urlFor(article._rawHeroImage)
-              .width(800)
-              .height(412)
+              .width(760)
+              .height(426)
               .fit('crop')
               .url()
               .toString()} 2x`}
@@ -92,8 +96,8 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
           <img
             className={styles.image}
             src={urlFor(article._rawHeroImage)
-              .width(400)
-              .height(206)
+              .width(380)
+              .height(213)
               .fit('crop')
               .url()}
             alt={article._rawHeroImage.alt}
@@ -108,6 +112,8 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
         <picture
           className="bp-image__placeholder"
           style={{
+            background: `url(${article._rawHeroImage.asset.metadata.lqip})`,
+            backgroundSize: 'cover',
             paddingTop: '100%',
           }}
         >
@@ -158,7 +164,7 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
     }
     return (
       <article
-        className={classNames('c-teaser__item', styles.teaser)}
+        className={classNames(styles.teaserItem, styles.teaser)}
         key={article.id}
       >
         <Link
@@ -169,7 +175,8 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
           <div className={styles.flexBox}>
             <div
               className={classNames(
-                position === 'normal' ? styles.thumbnail : null,
+                styles.thumbnail,
+                position === 'normal' ? styles.thumbnailNormal : null,
                 position === 'last' ? styles.thumbnailMedium : null
               )}
             >
@@ -178,7 +185,7 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
               {position === 'last' && halfThumbSize(article)}
             </div>
 
-            <div className={classNames('c-teaser__copy', styles.teaserCopy)}>
+            <div className={classNames(styles.teaserCopy)}>
               <span className={styles.teaserType}>{article._type}</span>
               <h3 className={styles.teaserTitle}>
                 <span>{article.headline}</span>
@@ -193,13 +200,11 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
   return (
     <>
       <div className={styles.teaserWrapper} ref={ref} data-inview={inView}>
-        <h4 className={styles.title}>{title}</h4>
+        <p className={styles.title}>{title}</p>
         {inView ? (
           <div>
             {firstArticle && (
-              <div
-                className={classNames('c-article__first', styles.teaserFirst)}
-              >
+              <div className={classNames(styles.teaserFirst)}>
                 {renderListItem(firstArticle, 'first')}
               </div>
             )}
@@ -211,7 +216,7 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
             </div>
 
             {lastArticle && (
-              <div className={classNames('c-article__last', styles.teaserLast)}>
+              <div className={classNames(styles.teaserLast)}>
                 {renderListItem(lastArticle, 'last')}
               </div>
             )}
