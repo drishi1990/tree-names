@@ -53,8 +53,8 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
           rel="preload"
           as="image"
           href={`${urlFor(image)
-            .width(528)
-            .height(296)
+            .width(665)
+            .height(374)
             .quality(80)
             .fit('max')
             .auto('format')
@@ -74,8 +74,9 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
             <source
               media="screen and (min-width: 1025px)"
               srcSet={`${urlFor(image)
-                .width(712)
-                .height(399)
+                .width(665)
+                .height(374)
+                .quality(80)
                 .fit('max')
                 .auto('format')
                 .url()
@@ -84,8 +85,9 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
             <source
               media="screen and (min-width: 560px)"
               srcSet={`${urlFor(image)
-                .width(528)
-                .height(296)
+                .width(436)
+                .height(245)
+                .quality(80)
                 .fit('max')
                 .auto('format')
                 .url()
@@ -95,7 +97,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
               media="screen and (min-width: 320px)"
               srcSet={`${urlFor(image)
                 .width(414)
-                .height(230)
+                .height(232)
                 .fit('max')
                 .auto('format')
                 .url()
@@ -103,8 +105,9 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
             />
             <img
               src={urlFor(image)
-                .width(712)
-                .height(399)
+                .width(436)
+                .height(245)
+                .quality(80)
                 .fit('max')
                 .auto('format')
                 .url()}
