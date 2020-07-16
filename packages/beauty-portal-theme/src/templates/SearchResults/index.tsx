@@ -20,6 +20,7 @@ import classNames from 'classnames';
 import { ReactComponent as IconList } from '../../images/icons/list.svg';
 import { ReactComponent as IconGrid } from '../../images/icons/grid.svg';
 import styles from './styles.module.scss';
+import './algolia-styles.scss';
 
 const indices = [
   { name: `howtoArticle`, title: `howtoArticle`, hitComp: `PostHit` },
@@ -75,7 +76,7 @@ const SearchResults: FunctionComponent = () => {
   return (
     <Layout>
       <SEO lang={'en-us'} title="Search" description="" keywords="" />
-      <div className="container">
+      <div className={classNames('container', styles.wrapper)}>
         <InstantSearch
           searchClient={searchClient}
           indexName={indices[0].name}
@@ -191,7 +192,7 @@ const SearchResults: FunctionComponent = () => {
                     type="button"
                     className={classNames(
                       styles.icon,
-                      viewType === 'list' ? styles.iconActive : null
+                      viewType === styles.list ? styles.iconActive : null
                     )}
                     data-view="list"
                     onClick={handleViewType}
@@ -202,7 +203,7 @@ const SearchResults: FunctionComponent = () => {
                     type="button"
                     className={classNames(
                       styles.icon,
-                      viewType === 'grid' ? styles.iconActive : null
+                      viewType === styles.grid ? styles.iconActive : null
                     )}
                     data-view="grid"
                     onClick={handleViewType}
