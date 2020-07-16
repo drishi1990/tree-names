@@ -35,7 +35,9 @@ const Footer: FunctionComponent = () => {
 
   return (
     <footer className={styles.footer} role="contentinfo" aria-label="footer">
-      <SocialMenu links={data.brandInfo} />
+      <div className={styles.social}>
+        <SocialMenu links={data.brandInfo} />
+      </div>
       <nav
         className={styles.wrapper}
         role="navigation"

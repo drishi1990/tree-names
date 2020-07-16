@@ -12,51 +12,49 @@ const Breadcrumb: FunctionComponent<BreadcrumbInterface> = ({
   return (
     <section className={styles.wrapper}>
       <div className="container">
-        <div className="">
-          <ul className={styles.items}>
-            <li className={styles.item}>
-              <Link to={'/'} className={styles.link}>
-                Home
-              </Link>
-            </li>
-            {tag && (
-              <>
-                <li className={styles.divider} aria-hidden="true">
-                  /
-                </li>
-                <li className={styles.item}>
-                  <Link
-                    to={getSearchUrl(
-                      searchResultPath,
-                      tag.tagCategory.name,
-                      'tags.tagCategory.name'
-                    )}
-                    className={styles.link}
-                  >
-                    {tag.tagCategory.name}
-                  </Link>
-                </li>
-                <li className={styles.divider} aria-hidden="true">
-                  /
-                </li>
-                <li className={styles.item}>
-                  <Link
-                    to={getSearchUrl(searchResultPath, tag.name, 'tags.name')}
-                    className={styles.link}
-                  >
-                    {tag.name}
-                  </Link>
-                </li>
-                <li className={styles.divider} aria-hidden="true">
-                  /
-                </li>
-              </>
-            )}
-            <li className={classNames(styles.item, styles.active)}>
-              {pageTitle}
-            </li>
-          </ul>
-        </div>
+        <ul className={styles.items}>
+          <li className={styles.item}>
+            <Link to={'/'} className={styles.link}>
+              Home
+            </Link>
+          </li>
+          {tag && (
+            <>
+              <li className={styles.divider} aria-hidden="true">
+                /
+              </li>
+              <li className={styles.item}>
+                <Link
+                  to={getSearchUrl(
+                    searchResultPath,
+                    tag.tagCategory.name,
+                    'tags.tagCategory.name'
+                  )}
+                  className={styles.link}
+                >
+                  {tag.tagCategory.name}
+                </Link>
+              </li>
+              <li className={styles.divider} aria-hidden="true">
+                /
+              </li>
+              <li className={styles.item}>
+                <Link
+                  to={getSearchUrl(searchResultPath, tag.name, 'tags.name')}
+                  className={styles.link}
+                >
+                  {tag.name}
+                </Link>
+              </li>
+              <li className={styles.divider} aria-hidden="true">
+                /
+              </li>
+            </>
+          )}
+          <li className={classNames(styles.item, styles.active)}>
+            {pageTitle}
+          </li>
+        </ul>
       </div>
     </section>
   );
