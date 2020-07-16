@@ -15,7 +15,7 @@ const NewsletterFollow: FunctionComponent<NewsletterFollowInterface> = ({
           <div className="pad20">
             <SocialMenu links={links} />
             <div className={styles.newsletter}>
-              <a className={styles.newsletterSubscribeButton} href="/">
+              <a className={styles.newsletterSubscribeButton} href="/subscribe">
                 {label}
               </a>
             </div>
