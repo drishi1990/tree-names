@@ -132,7 +132,7 @@
   font-size: 0.875rem;
   font-weight: 700;
   background-color: var(--primary-color, #ff5c85);
-  color: white;
+  color: black;
   padding: 10px 16px;
 
   display: block;
@@ -156,8 +156,12 @@
     transition-timing-function: ease-out;
   }
 
-  &:hover::before {
-    transform: scaleX(1);
+  &:hover {
+    color: white;
+
+    &::before {
+      transform: scaleX(1);
+    }
   }
 
   @media (min-width: 768px) {
