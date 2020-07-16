@@ -145,6 +145,10 @@ figure img {
   max-width: 100%;
   flex-basis: 100%;
 }
+.col-xs-3 {
+  max-width: 25%;
+  flex-basis: 25%;
+}
 .col-xs-4 {
   max-width: 33.333333%;
   flex-basis: 33.333333%;

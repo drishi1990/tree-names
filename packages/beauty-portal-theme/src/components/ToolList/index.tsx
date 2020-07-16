@@ -24,7 +24,7 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
         {data &&
           data.map(tool => (
             <div
-              className={classNames('col col-3', styles.gridItem)}
+              className={classNames('col col-xs-3', styles.gridItem)}
               key={tool.name}
             >
               {tool.image ? (
@@ -33,7 +33,10 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
                 </div>
               ) : (
                 <div
-                  className={classNames(styles.icon, inView ? 'in-view' : null)}
+                  className={classNames(
+                    styles.icon,
+                    inView ? styles.inView : null
+                  )}
                 >
                   {/* TODO: Dynamically call component based on toolname */}
                   {tool.name.indexOf('Comb') >= 0 && <Comb />}

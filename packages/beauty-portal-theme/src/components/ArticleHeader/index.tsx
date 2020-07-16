@@ -216,7 +216,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
                 <span>{time} mins</span>
               </div>
               <div className={styles.icon}>
-                <IconTime className={'active'} />
+                <IconTime className={styles.active} />
               </div>
             </div>
           )}
@@ -226,15 +226,19 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
                 <strong>Skill</strong>
                 <span>{skillLevel}</span>
               </div>
-              <div className={classNames('b-skill', styles.icon)}>
+              <div className={classNames(styles.skill, styles.icon)}>
                 <Skill
-                  className={classNames(skillLevel === 'easy' && 'active')}
+                  className={classNames(skillLevel === 'easy' && styles.active)}
                 />
                 <Skill
-                  className={classNames(skillLevel === 'medium' && 'active')}
+                  className={classNames(
+                    skillLevel === 'medium' && styles.active
+                  )}
                 />
                 <Skill
-                  className={classNames(skillLevel === 'difficult' && 'active')}
+                  className={classNames(
+                    skillLevel === 'difficult' && styles.active
+                  )}
                 />
               </div>
             </div>
