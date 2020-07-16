@@ -15,7 +15,6 @@
 }
 
 .newsletterTitle {
-
   font-size: 1.125rem;
   line-height: 1.3;
   margin: 0;
@@ -48,7 +47,7 @@
   margin: auto;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     top: 0;
@@ -64,7 +63,7 @@
   }
 
   &:hover {
-    border-color: black;
+    color: white;
 
     &::before {
       transform: scaleX(1);
