@@ -19,6 +19,7 @@ headComponents.push(
     type="font/woff2"
     crossOrigin="true"
   />,
+  <link rel="preload" as="image" href="/images/icon.png" />,
   <link rel="shortcut icon" href="/images/icon.png" />,
   <meta name="theme-color" content="#b8f0c0" />,
   <link rel="apple-touch-icon" sizes="48x48" href="/images/icon-48x48.png" />,
