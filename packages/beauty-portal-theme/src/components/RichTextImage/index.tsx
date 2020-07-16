@@ -8,12 +8,18 @@ const RichTextImage: FunctionComponent = ({ node }) => {
     triggerOnce: true,
     rootMargin: '200px 0px',
   });
-
   return (
     <div className={styles.image} ref={ref} data-inview={inView}>
       <figure>
         {inView ? (
-          <picture>
+          <picture
+            className="bp-image__placeholder"
+            style={{
+              paddingTop: `calc(100% / ${node.asset.metadata.dimensions.aspectRatio})`,
+              background: `url(${node.asset.metadata.lqip})`,
+              backgroundSize: 'cover',
+            }}
+          >
             <source
               media="screen and (min-width: 1280px)"
               srcSet={`${urlFor(node)

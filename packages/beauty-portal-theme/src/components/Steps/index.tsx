@@ -11,7 +11,7 @@ const Steps: FunctionComponent = ({ node }) => {
     triggerOnce: true,
     rootMargin: '200px 0px',
   });
-
+  console.log(imageName);
   return (
     <div
       className={classNames(stepNumber ? styles.stepReset : styles.step)}
