@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
 import SwiperCore, { Thumbs, Navigation, Pagination, Lazy } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import classNames from 'classnames';
 import './slider.scss';
 import { urlFor } from '../../helpers/imageUrl';
 import PageSchema from '../PageSchema';
@@ -28,9 +29,10 @@ const Gallery: FunctionComponent<GalleryInterface> = ({
           watchSlidesProgress={true}
           onSwiper={setThumbsSwiper}
           lazy={true}
+          className={classNames('bp-gallery')}
         >
           {data.picture.map((picture: any) => (
-            <SwiperSlide key={picture.asset._id}>
+            <SwiperSlide className={styles.swiperSlide} key={picture.asset._id}>
               <figure>
                 <picture
                   className="bp-image__placeholder"
@@ -81,9 +83,10 @@ const Gallery: FunctionComponent<GalleryInterface> = ({
           navigation
           lazy={true}
           watchSlidesVisibility={false}
+          className={classNames('bp-gallery')}
         >
           {data.picture.map((picture: any) => (
-            <SwiperSlide key={picture.asset._id}>
+            <SwiperSlide className={styles.swiperSlide} key={picture.asset._id}>
               <figure>
                 <picture
                   className="bp-image__placeholder"

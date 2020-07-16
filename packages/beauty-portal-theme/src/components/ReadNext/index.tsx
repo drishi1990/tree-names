@@ -32,8 +32,8 @@ const ReadNext: FunctionComponent<ReadNextInterface> = ({ data, title }) => {
                   <source
                     media="screen and (min-width: 320px)"
                     srcSet={`${urlFor(_rawHeroImage)
-                      .width(350)
-                      .height(196)
+                      .width(436)
+                      .height(245)
                       .fit('max')
                       .auto('format')
                       .url()
@@ -41,8 +41,8 @@ const ReadNext: FunctionComponent<ReadNextInterface> = ({ data, title }) => {
                   />
                   <img
                     src={urlFor(_rawHeroImage)
-                      .width(350)
-                      .height(196)
+                      .width(436)
+                      .height(245)
                       .fit('max')
                       .url()}
                     alt={_rawHeroImage.alt}

@@ -1,18 +1,25 @@
 import React, { FunctionComponent } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { urlFor } from '../../helpers/imageUrl';
+import styles from './styles.module.scss';
 
 const RichTextImage: FunctionComponent = ({ node }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     rootMargin: '200px 0px',
   });
-
   return (
-    <div className={'c-image'} ref={ref} data-inview={inView}>
+    <div className={styles.image} ref={ref} data-inview={inView}>
       <figure>
         {inView ? (
-          <picture>
+          <picture
+            className="bp-image__placeholder"
+            style={{
+              paddingTop: `calc(100% / ${node.asset.metadata.dimensions.aspectRatio})`,
+              background: `url(${node.asset.metadata.lqip})`,
+              backgroundSize: 'cover',
+            }}
+          >
             <source
               media="screen and (min-width: 1280px)"
               srcSet={`${urlFor(node)
@@ -49,7 +56,7 @@ const RichTextImage: FunctionComponent = ({ node }) => {
           </picture>
         ) : null}
       </figure>
-      <div className={'c-image__credit'}>
+      <div className={styles.credit}>
         <span>{node.imageCaption}</span>
         <span>{node.imageCredit}</span>
       </div>

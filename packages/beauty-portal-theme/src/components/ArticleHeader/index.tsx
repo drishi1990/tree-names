@@ -31,6 +31,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
     _rawHeroVideo,
     _type,
   } = article;
+
   const playVideo = (event: any) => {
     setVideoLoading(true);
     setVideoSourceUrl(
@@ -47,56 +48,74 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
 
   const renderVideoThumbnail = (image, alt) => {
     return (
-      <figure>
-        <picture
-          className="bp-image__placeholder"
-          style={{
-            paddingTop: `56.25%`,
-            background: `url(${image.asset.metadata.lqip})`,
-            backgroundSize: 'cover',
-          }}
-        >
-          <source
-            media="screen and (min-width: 1025px)"
-            srcSet={`${urlFor(image)
-              .width(712)
-              .height(399)
-              .fit('max')
-              .auto('format')
-              .url()
-              .toString()}`}
-          />
-          <source
-            media="screen and (min-width: 560px)"
-            srcSet={`${urlFor(image)
-              .width(528)
-              .height(296)
-              .fit('max')
-              .auto('format')
-              .url()
-              .toString()}`}
-          />
-          <source
-            media="screen and (min-width: 320px)"
-            srcSet={`${urlFor(image)
-              .width(414)
-              .height(230)
-              .fit('max')
-              .auto('format')
-              .url()
-              .toString()}`}
-          />
-          <img
-            src={urlFor(image)
-              .width(712)
-              .height(399)
-              .fit('max')
-              .auto('format')
-              .url()}
-            alt={alt}
-          />
-        </picture>
-      </figure>
+      <>
+        <link
+          rel="preload"
+          as="image"
+          href={`${urlFor(image)
+            .width(665)
+            .height(374)
+            .quality(80)
+            .fit('max')
+            .auto('format')
+            .url()
+            .toString()}`}
+        />
+
+        <figure>
+          <picture
+            className="bp-image__placeholder"
+            style={{
+              paddingTop: `56.25%`,
+              background: `url(${image.asset.metadata.lqip})`,
+              backgroundSize: 'cover',
+            }}
+          >
+            <source
+              media="screen and (min-width: 1025px)"
+              srcSet={`${urlFor(image)
+                .width(665)
+                .height(374)
+                .quality(80)
+                .fit('max')
+                .auto('format')
+                .url()
+                .toString()}`}
+            />
+            <source
+              media="screen and (min-width: 560px)"
+              srcSet={`${urlFor(image)
+                .width(436)
+                .height(245)
+                .quality(80)
+                .fit('max')
+                .auto('format')
+                .url()
+                .toString()}`}
+            />
+            <source
+              media="screen and (min-width: 320px)"
+              srcSet={`${urlFor(image)
+                .width(414)
+                .height(232)
+                .fit('max')
+                .auto('format')
+                .url()
+                .toString()}`}
+            />
+            <img
+              src={urlFor(image)
+                .width(436)
+                .height(245)
+                .quality(80)
+                .fit('max')
+                .auto('format')
+                .url()}
+              alt={alt}
+            />
+          </picture>
+        </figure>
+      </>
     );
   };
 
@@ -165,13 +184,15 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
             </>
           )}
           {videoLoading && (
-            <Preloader
-              use={Oval}
-              size={60}
-              strokeWidth={11}
-              strokeColor="#000"
-              duration={500}
-            />
+            <div className={styles.preloaderIcon}>
+              <Preloader
+                use={Oval}
+                size={60}
+                strokeWidth={11}
+                strokeColor="#000"
+                duration={500}
+              />
+            </div>
           )}
           {showVideo && (
             <iframe
@@ -195,7 +216,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
                 <span>{time} mins</span>
               </div>
               <div className={styles.icon}>
-                <IconTime className={'active'} />
+                <IconTime className={styles.active} />
               </div>
             </div>
           )}
@@ -205,15 +226,19 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
                 <strong>Skill</strong>
                 <span>{skillLevel}</span>
               </div>
-              <div className={classNames('b-skill', styles.icon)}>
+              <div className={classNames(styles.skill, styles.icon)}>
                 <Skill
-                  className={classNames(skillLevel === 'easy' && 'active')}
+                  className={classNames(skillLevel === 'easy' && styles.active)}
                 />
                 <Skill
-                  className={classNames(skillLevel === 'medium' && 'active')}
+                  className={classNames(
+                    skillLevel === 'medium' && styles.active
+                  )}
                 />
                 <Skill
-                  className={classNames(skillLevel === 'difficult' && 'active')}
+                  className={classNames(
+                    skillLevel === 'difficult' && styles.active
+                  )}
                 />
               </div>
             </div>
