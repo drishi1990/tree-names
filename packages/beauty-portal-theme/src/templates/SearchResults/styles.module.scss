@@ -1,4 +1,46 @@
 .wrapper {
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    li {
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      font-size: 0.875rem;
+      user-select: none;
+    }
+
+    .ais-RefinementList-labelText,
+    .ais-RefinementList-count {
+      margin-left: 5px;
+      display: inline-block;
+    }
+
+    input {
+      margin: 0;
+    }
+
+    .ais-RefinementList-count {
+      background-color: rgba(197, 201, 224, .2);
+      padding: 1px 8px;
+      border-radius: 2;
+      display: inline-block;
+      font-size: .650rem;
+      margin-left: 5px;
+      color: #333;
+    }
+  }
+
   .searchControlWrapper {
     width: 100%;
 
