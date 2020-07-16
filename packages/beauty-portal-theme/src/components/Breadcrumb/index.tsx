@@ -18,11 +18,11 @@ const Breadcrumb: FunctionComponent<BreadcrumbInterface> = ({
               Home
             </Link>
           </li>
+          <li className={styles.divider} aria-hidden="true">
+            /
+          </li>
           {tag && (
             <>
-              <li className={styles.divider} aria-hidden="true">
-                /
-              </li>
               <li className={styles.item}>
                 <Link
                   to={getSearchUrl(
