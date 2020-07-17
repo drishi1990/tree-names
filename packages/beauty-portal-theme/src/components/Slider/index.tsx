@@ -182,10 +182,25 @@ const Slider: FunctionComponent<SliderInterface> = ({
     );
   };
 
-  const renderHeroSlides = slide => (
+  const renderHeroSlides = (slide, index) => (
     <SwiperSlide key={slide.path}>
       {slide.heroImage && (
         <figure>
+          {index === 0 && (
+            <link
+              rel="preload"
+              as="image"
+              href={`${urlFor(slide._rawHeroImage)
+                .width(752)
+                .height(423)
+                .quality(80)
+                .fit('max')
+                .auto('format')
+                .url()
+                .toString()}`}
+            />
+          )}
+
           <picture
             className="bp-image__placeholder"
             style={{
@@ -263,9 +278,9 @@ const Slider: FunctionComponent<SliderInterface> = ({
           watchSlidesVisibility={watchSlidesVisibility}
           {...breakpoints}
         >
-          {slides.map((slide: any) => {
+          {slides.map((slide: any, index: number) => {
             return type === 'hero'
-              ? renderHeroSlides(slide)
+              ? renderHeroSlides(slide, index)
               : type === 'tile'
               ? renderTileSlides(slide)
               : renderProductSlides(slide);
