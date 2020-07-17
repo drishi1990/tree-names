@@ -43,11 +43,11 @@
       }
     }
   }
+}
 
-  &.valid {
-    input+label {
-      transform: scale(.85) translateY(-33px);
-    }
+.valid {
+  input+label {
+    transform: scale(.85) translateY(-33px);
   }
 }
 

@@ -15,10 +15,9 @@ const InputText: FunctionComponent<InputTextInterface> = ({
   return (
     <div
       className={classNames(
-        'c-form__field',
         styles.field,
         styles.textField,
-        valid ? 'valid' : validate ? styles.error : null
+        valid ? styles.valid : validate ? styles.error : null
       )}
     >
       <input

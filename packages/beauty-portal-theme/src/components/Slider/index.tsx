@@ -160,6 +160,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
                         .toString()}`}
                     />
                     <img
+                      className={styles.slideImage}
                       src={urlFor(slide._rawImage)
                         .width(280)
                         .height(280)
@@ -181,7 +182,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
   };
 
   const renderHeroSlides = (slide, index) => (
-    <SwiperSlide key={slide.path}>
+    <SwiperSlide className={styles.slide} key={slide.path}>
       {slide.heroImage && (
         <figure>
           {index === 0 && (
@@ -255,7 +256,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
       <div
         className={classNames(
           styles.sliderWrapper,
-          type === 'hero' ? styles.pb20 : null
+          type === 'hero' ? '' : null
         )}
         ref={ref}
         data-inview={inView}
