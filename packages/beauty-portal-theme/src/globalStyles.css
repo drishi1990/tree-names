@@ -105,7 +105,7 @@ figure img {
 }
 
 /* Responsive Container / GRID */
-.container {
+.bp-container {
   width: 100%;
   display: block;
   box-sizing: border-box;
@@ -115,7 +115,7 @@ figure img {
   padding-right: 10px;
 }
 @media (min-width: 1200px) {
-  .container {
+  .bp-container {
     max-width: 1160px;
   }
 }

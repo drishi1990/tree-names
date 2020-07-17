@@ -36,7 +36,7 @@ const SanityArticleSlider: FunctionComponent<SanityArticleSliderInterface> = ({
 
   return (
     <section className={classNames(styles.section, componentName)}>
-      <div className={classNames('container', 'pad0')}>
+      <div className={classNames('bp-container', 'pad0')}>
         <Component
           {...{ name, slides, headline, searchCtaLabel, searchTags }}
         />

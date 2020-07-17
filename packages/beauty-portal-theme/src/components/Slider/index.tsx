@@ -1,6 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Link } from 'gatsby';
-import classNames from 'classnames';
 import SwiperCore, { Lazy } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useInView } from 'react-intersection-observer';
@@ -8,8 +7,7 @@ import { SliderInterface } from './models';
 import { urlFor } from '../../helpers/imageUrl';
 import { ReactComponent as Next } from '../../images/icons/next.svg';
 import { ReactComponent as PlayVideo } from '../../images/icons/play.svg';
-import styles from './styles.module.scss';
-import './slider.scss';
+import './styles.scss';
 
 SwiperCore.use([Lazy]);
 
@@ -58,11 +56,9 @@ const Slider: FunctionComponent<SliderInterface> = ({
     return (
       <SwiperSlide key={slide.headline}>
         <div>
-          {slide._type && (
-            <span className={styles.tileSlideType}>{slide._type}</span>
-          )}
-          <Link className={styles.sliderLink} to={slide.path}>
-            <div className={styles.heroImage}>
+          {slide._type && <span className="bp-slider_type">{slide._type}</span>}
+          <Link className="bp-slider_link" to={slide.path}>
+            <div className="bp-slider_heroImage">
               <figure>
                 {inView ? (
                   <picture
@@ -94,6 +90,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
                         .toString()}`}
                     />
                     <img
+                      className="bp-slider_image"
                       src={urlFor(slide._rawHeroImage)
                         .width(280)
                         .height(280)
@@ -105,13 +102,13 @@ const Slider: FunctionComponent<SliderInterface> = ({
                 ) : null}
               </figure>
               {slide.heroVideo && (
-                <span className={`icon ${styles.iconPlay}`}>
+                <span className="icon icon-play">
                   <PlayVideo />
                   <span hidden>Play Video</span>
                 </span>
               )}
             </div>
-            <h3 className={styles.sliderItemCaption}>
+            <h3 className="bp-slider_caption">
               <span>{slide.headline}</span>
             </h3>
           </Link>
@@ -124,11 +121,8 @@ const Slider: FunctionComponent<SliderInterface> = ({
     return (
       <SwiperSlide key={slide.headline}>
         <div>
-          <Link
-            className={classNames(styles.sliderLink, styles.textCenter)}
-            to={slide.path}
-          >
-            <div className={styles.heroImage}>
+          <Link className="bp-slider_link" to={slide.path}>
+            <div className="bp-slider_heroImage">
               <figure>
                 {inView ? (
                   <picture
@@ -160,7 +154,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
                         .toString()}`}
                     />
                     <img
-                      className={styles.slideImage}
+                      className="bp-slider_image"
                       src={urlFor(slide._rawImage)
                         .width(280)
                         .height(280)
@@ -172,7 +166,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
                 ) : null}
               </figure>
             </div>
-            <h3 className={styles.sliderItemCaption}>
+            <h3 className="bp-slider_caption">
               <span>{slide.name}</span>
             </h3>
           </Link>
@@ -182,7 +176,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
   };
 
   const renderHeroSlides = (slide, index) => (
-    <SwiperSlide className={styles.slide} key={slide.path}>
+    <SwiperSlide className="bp-slider_slide" key={slide.path}>
       {slide.heroImage && (
         <figure>
           {index === 0 && (
@@ -208,7 +202,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
             }}
           >
             <img
-              className="swiper-lazy"
+              className="bp-slider_image swiper-lazy"
               data-srcset={`${urlFor(slide._rawHeroImage)
                 .width(414)
                 .height(232)
@@ -239,11 +233,11 @@ const Slider: FunctionComponent<SliderInterface> = ({
         </figure>
       )}
       {type === 'hero' && (
-        <div className={styles.copy}>
-          <div className={styles.copyInner}>
-            <div className={styles.slideType}>{slide._type}</div>
-            <h2 className={styles.heading}>{slide.headline}</h2>
-            <Link className={styles.callToAction} to={slide.path}>
+        <div className="bp-slider_copy">
+          <div className="bp-slider_copy-content">
+            <div className="bp-slider_copy-type">{slide._type}</div>
+            <h2 className="bp-slider_copy-title">{slide.headline}</h2>
+            <Link className="bp-slider_copy-cta" to={slide.path}>
               Go to Article
             </Link>
           </div>
@@ -253,16 +247,9 @@ const Slider: FunctionComponent<SliderInterface> = ({
   );
   return (
     <>
-      <div
-        className={classNames(
-          styles.sliderWrapper,
-          type === 'hero' ? '' : null
-        )}
-        ref={ref}
-        data-inview={inView}
-      >
+      <div className="bp-slider" ref={ref} data-inview={inView}>
         <button
-          className={classNames(styles.navigationButton, styles.nextButton)}
+          className="bp-slider_nav bp-slider_nav-next"
           type="button"
           onClick={swiperNext}
           disabled={isLastSlide}
@@ -291,7 +278,7 @@ const Slider: FunctionComponent<SliderInterface> = ({
           })}
         </Swiper>
         <button
-          className={classNames(styles.navigationButton, styles.prevButton)}
+          className="bp-slider_nav bp-slider_nav-prev"
           type="button"
           onClick={swiperPrev}
           disabled={isFirstSlide}

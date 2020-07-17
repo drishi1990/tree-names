@@ -11,7 +11,7 @@ const SanityProductSlider: FunctionComponent<SanityProductSliderInterface> = ({
 }) => {
   return (
     <section className={styles.section}>
-      <div className="container">
+      <div className="bp-container">
         <TileSlider name={name} slides={slides} headline={headline} />
       </div>
     </section>

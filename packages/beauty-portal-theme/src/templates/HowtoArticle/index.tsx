@@ -52,7 +52,7 @@ const HowtoArticlePage = (props: HowtoArticlePageProps) => {
         data={page}
       />
       <OGTags type={'article'} slug={page.path} data={page} />
-      <div className="container">
+      <div className="bp-container">
         <div className="col-container">
           <div className="col col-7">
             <ArticleHeader

@@ -1,21 +1,20 @@
 import React, { FunctionComponent } from 'react';
 import { ReactComponent as Follow } from '../../images/icons/follow.svg';
 import SocialMenu from '../SocialMenu';
-import styles from './header.module.scss';
 
 const NewsletterFollow: FunctionComponent<NewsletterFollowInterface> = ({
   links,
   label,
 }) => {
   return (
-    <div className={styles.follow}>
-      <div className={styles.followButton}>
+    <div className="bp-follow">
+      <div className="bp-follow_button">
         <Follow />
-        <div className={styles.followPopup}>
+        <div className="bp-follow_popup">
           <div className="pad20">
             <SocialMenu links={links} />
-            <div className={styles.newsletter}>
-              <a className={styles.newsletterSubscribeButton} href="/subscribe">
+            <div className="bp-newsletter">
+              <a className="bp-newsletter_button" href="/subscribe">
                 {label}
               </a>
             </div>
