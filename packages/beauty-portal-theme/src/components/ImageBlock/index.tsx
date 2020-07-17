@@ -31,36 +31,52 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
     <div className={'c-image'} ref={ref} data-inview={inView}>
       <figure>
         {inView ? (
-          <picture>
-            <source
-              media="screen and (min-width: 560px)"
-              srcSet={`${urlFor(_rawImage)
-                .width(752)
-                .height(422)
-                .fit('max')
-                .auto('format')
-                .url()
-                .toString()}`}
-            />
-            <source
-              media="screen and (min-width: 320px)"
-              srcSet={`${urlFor(_rawImage)
+          <>
+            <link
+              rel="preload"
+              as="image"
+              href={`${urlFor(_rawImage)
                 .width(559)
                 .height(314)
+                .quality(80)
                 .fit('max')
                 .auto('format')
                 .url()
                 .toString()}`}
             />
-            <img
-              src={urlFor(_rawImage)
-                .width(752)
-                .height(422)
-                .fit('max')
-                .url()}
-              alt={image.alt}
-            />
-          </picture>
+            <picture>
+              <source
+                media="screen and (min-width: 560px)"
+                srcSet={`${urlFor(_rawImage)
+                  .width(752)
+                  .height(422)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <source
+                media="screen and (min-width: 320px)"
+                srcSet={`${urlFor(_rawImage)
+                  .width(559)
+                  .height(314)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <img
+                src={urlFor(_rawImage)
+                  .width(752)
+                  .height(422)
+                  .fit('max')
+                  .url()}
+                alt={image.alt}
+              />
+            </picture>
+          </>
         ) : null}
       </figure>
     </div>
