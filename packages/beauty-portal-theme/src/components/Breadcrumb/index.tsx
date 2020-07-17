@@ -11,7 +11,7 @@ const Breadcrumb: FunctionComponent<BreadcrumbInterface> = ({
 }) => {
   return (
     <section className={styles.wrapper}>
-      <div className="container">
+      <div className="bp-container">
         <ul className={styles.items}>
           <li className={styles.item}>
             <Link to={'/'} className={styles.link}>

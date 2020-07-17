@@ -23,7 +23,7 @@ const NotFound = ({ data: { site } }: NotFoundProps) => {
         description={site.description}
         keywords={site.keywords}
       />
-      <div className="container">
+      <div className="bp-container">
         <div className={styles.wrapper}>
           <p className={styles.title}>404</p>
           <p className={styles.subTitle}>That’s an error!</p>

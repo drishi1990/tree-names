@@ -47,7 +47,7 @@ const GalleryArticlePage = (props: GalleryArticlePageProps) => {
       />
       <OGTags type={'article'} slug={page.path} data={page} />
       <Breadcrumb tag={page.tags[0]} pageTitle={page.headline} />
-      <div className="container">
+      <div className="bp-container">
         <ArticleHeader
           article={page}
           type={'gallery'}
@@ -61,7 +61,7 @@ const GalleryArticlePage = (props: GalleryArticlePageProps) => {
         />
       </div>
 
-      <div className="container">
+      <div className="bp-container">
         <div className="col-container">
           <div className="col col-7">
             <RichText data={page._rawBody} />

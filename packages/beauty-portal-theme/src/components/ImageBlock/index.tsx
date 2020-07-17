@@ -91,7 +91,7 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
           : null
       )}
     >
-      <div className="container">
+      <div className="bp-container">
         <Link to={url || '/'} className={styles.link}>
           <div className={styles.content}>
             <div className={classNames(styles.imageWrapper)}>{Image}</div>

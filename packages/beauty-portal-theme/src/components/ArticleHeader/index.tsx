@@ -8,7 +8,7 @@ import { urlFor } from '../../helpers/imageUrl';
 import { ReactComponent as Skill } from '../../images/icons/skill.svg';
 import { ReactComponent as Youtube } from '../../images/icons/youtube.svg';
 import { ReactComponent as IconTime } from '../../images/icons/time.svg';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
   article,
@@ -120,35 +120,35 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
   };
 
   return (
-    <div className={styles.header}>
+    <div className="bp-article_header">
       <h1
         className={classNames(
-          styles.headingPrimary,
-          type === 'gallery' ? styles.textCenter : null
+          'bp-article_title',
+          type === 'gallery' ? 'txt-center' : null
         )}
       >
         {headline}
       </h1>
       <p
         className={classNames(
-          styles.textSecondary,
-          type === 'gallery' ? styles.textCenter : null
+          'bp-article_subTitle',
+          type === 'gallery' ? 'txt-center' : null
         )}
       >
         {subheading}
       </p>
-      <div className={styles.articleInfoWrapper}>
-        <div className={styles.articleInfo}>
+      <div className="bp-article_content">
+        <div className="bp-article_content-info">
           {author && author.name && (
-            <div className={styles.authorInfo}>
+            <div className="bp-article_author">
               <Link
-                className={styles.link}
+                className="bp-article_link"
                 to={author.slug ? `/${author.slug.current}` : `/${author.name}`}
               >
                 <span>{author.name}</span>
               </Link>
 
-              <span className={styles.divider}>|</span>
+              <span className="divider">|</span>
             </div>
           )}
           {(article.publishedAt || article._updatedAt) && (
@@ -158,9 +158,8 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
         <SocialMenu links={socialLinks} />
       </div>
       {/* TODO: Use generic `Video` component for hero video to avoid duplicate code  */}
-      {/* {renderHeroImage(_rawHeroImage, heroImage.alt)} */}
       {!(_type === 'galleryArticle') && (
-        <div className={styles.heroImage}>
+        <div className="bp-article_image">
           {!showVideo &&
             !heroVideo &&
             renderVideoThumbnail(_rawHeroImage, heroImage.alt)}
@@ -174,7 +173,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
                 : renderVideoThumbnail(_rawHeroImage, heroImage.alt)}
               <button
                 type="button"
-                className={styles.iconVideo}
+                className="icon-video"
                 onClick={playVideo}
                 data-url={heroVideo.url}
               >
@@ -184,7 +183,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
             </>
           )}
           {videoLoading && (
-            <div className={styles.preloaderIcon}>
+            <div className="preloader">
               <Preloader
                 use={Oval}
                 size={60}
@@ -208,37 +207,33 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
         </div>
       )}
       {(skillLevel || time) && (
-        <div className={styles.tutorialInfo}>
+        <div className="bp-article_tutorial">
           {time && (
-            <div className={styles.tutorialInfoBlock}>
+            <div className="bp-article_tutorial-info">
               <div>
                 <strong>Time</strong>
                 <span>{time} mins</span>
               </div>
-              <div className={styles.icon}>
-                <IconTime className={styles.active} />
+              <div className="icon">
+                <IconTime className="active" />
               </div>
             </div>
           )}
           {skillLevel && (
-            <div className={styles.tutorialInfoBlock}>
+            <div className="bp-article_tutorial-info">
               <div>
                 <strong>Skill</strong>
                 <span>{skillLevel}</span>
               </div>
-              <div className={classNames(styles.skill, styles.icon)}>
+              <div className="icon skill">
                 <Skill
-                  className={classNames(skillLevel === 'easy' && styles.active)}
+                  className={classNames(skillLevel === 'easy' && 'active')}
                 />
                 <Skill
-                  className={classNames(
-                    skillLevel === 'medium' && styles.active
-                  )}
+                  className={classNames(skillLevel === 'medium' && 'active')}
                 />
                 <Skill
-                  className={classNames(
-                    skillLevel === 'difficult' && styles.active
-                  )}
+                  className={classNames(skillLevel === 'difficult' && 'active')}
                 />
               </div>
             </div>

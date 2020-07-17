@@ -11,7 +11,7 @@ const SanityVideoBlock: FunctionComponent<SanityVideoBlockInterface> = ({
 }) => {
   return (
     <section className={styles.section}>
-      <div className="container">
+      <div className="bp-container">
         <div className={styles.content}>
           <iframe
             width="560"

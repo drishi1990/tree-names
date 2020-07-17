@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import SiteNavigation from '../Navigation';
 import SiteSearch from './search';
 import NewsletterFollow from './newsletter-follow';
-import styles from './header.module.scss';
+import './style.scss';
 
 const Header: FunctionComponent = () => {
   const data = useStaticQuery(graphql`
@@ -19,11 +19,11 @@ const Header: FunctionComponent = () => {
   `);
 
   return (
-    <header className={styles.header} role="banner" aria-label="header">
-      <div className="container">
-        <div className={styles.headerContentWrapper}>
-          <div className={styles.logo}>
-            <Link className={styles.logoLink} to="/">
+    <header className="bp-header" role="banner" aria-label="header">
+      <div className="bp-container">
+        <div className="bp-header_content">
+          <div className="bp-logo">
+            <Link className="bp-logo-link" to="/">
               Beauty <span>Portal</span>
             </Link>
           </div>

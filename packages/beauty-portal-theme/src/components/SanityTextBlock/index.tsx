@@ -25,7 +25,7 @@ const SanityTextBlock: FunctionComponent<SanityTextBlockInterface> = ({
           : null
       )}
     >
-      <div className="container">
+      <div className="bp-container">
         <div className={styles.sectionDescription}>
           <BlockContent
             serializers={blockTypeDefaultSerializers}
