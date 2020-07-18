@@ -19,6 +19,7 @@ headComponents.push(
     type="font/woff2"
     crossOrigin="true"
   />,
+  <link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;," />,
   // <link rel="preload" as="image" href="/images/icon.png" />,
   // <link rel="shortcut icon" href="/images/icon.png" />,
   // <meta name="theme-color" content="#b8f0c0" />,
