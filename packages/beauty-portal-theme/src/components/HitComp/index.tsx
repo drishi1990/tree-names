@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
 import { Highlight, Snippet } from 'react-instantsearch-dom';
 
 export const PostHit = clickHandler => ({ hit }) => {
@@ -18,9 +17,7 @@ export const PostHit = clickHandler => ({ hit }) => {
         aria-label={title}
       >
         <div className="image-wrapper">
-          <figure>
-            <Img fluid={asset.fluid} alt={alt} />
-          </figure>
+          <figure>{/* <Img fluid={asset.fluid} alt={alt} /> */}</figure>
         </div>
         <div className="ais-InfiniteHits-item__copy">
           <h4>

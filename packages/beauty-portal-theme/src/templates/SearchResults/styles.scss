@@ -318,8 +318,7 @@
       display: none;
     }
 
-    .image-wrapper,
-    .gatsby-image-wrapper {
+    .image-wrapper {
       width: auto;
       height: auto;
 
@@ -330,9 +329,7 @@
   }
 
   .list {
-
-    img,
-    .gatsby-image-wrapper {
+    img {
       width: 80px;
       height: 80px;
 

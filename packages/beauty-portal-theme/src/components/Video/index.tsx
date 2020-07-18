@@ -1,15 +1,10 @@
 import React, { FunctionComponent, useState } from 'react';
-import { getFluidGatsbyImage } from 'gatsby-source-sanity';
-import Img from 'gatsby-image';
-import { Preloader, Oval } from 'react-preloader-icon';
 import { getYouTubeId } from '../../helpers/youtube';
 import { ReactComponent as IconYoutube } from '../../images/icons/youtube.svg';
 import './styles.scss';
 
-const Video: FunctionComponent<VideoInterface> = ({
-  videoMetaData,
-  sanityConfig,
-}) => {
+const Video: FunctionComponent<VideoInterface> = ({ videoMetaData }) => {
+  console.log(videoMetaData);
   const [showVideo, setShowVideo] = useState(false);
   const [videoSourceUrl, setVideoSourceUrl] = useState('');
   const [videoLoading, setVideoLoading] = useState(false);
@@ -24,12 +19,6 @@ const Video: FunctionComponent<VideoInterface> = ({
     setShowVideo(true);
   };
 
-  const fluidProps = getFluidGatsbyImage(
-    videoMetaData.node.heroImage.asset._id,
-    { maxWidth: 800 },
-    sanityConfig
-  );
-
   const onFrameLoad = () => {
     setVideoLoading(false);
   };
@@ -39,7 +28,59 @@ const Video: FunctionComponent<VideoInterface> = ({
       <h3 className="bp-video_title">{videoMetaData.node.youTubeCaption}</h3>
       <div className="bp-video_image">
         {!showVideo && (
-          <Img fluid={fluidProps} alt={videoMetaData.node.heroImage.alt} />
+          <figure>
+            <picture
+              className="bp-image__placeholder"
+              style={{
+                paddingTop: `56.25%`,
+                background: `url(${videoMetaData.node.heroImage.asset.metadata.lqip})`,
+                backgroundSize: 'cover',
+              }}
+            >
+              <source
+                media="screen and (min-width: 1025px)"
+                srcSet={`${urlFor(videoMetaData.node.heroImage)
+                  .width(665)
+                  .height(374)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <source
+                media="screen and (min-width: 560px)"
+                srcSet={`${urlFor(videoMetaData.node.heroImage)
+                  .width(436)
+                  .height(245)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <source
+                media="screen and (min-width: 320px)"
+                srcSet={`${urlFor(videoMetaData.node.heroImage)
+                  .width(414)
+                  .height(232)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <img
+                src={urlFor(videoMetaData.node.heroImage)
+                  .width(436)
+                  .height(245)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()}
+                alt={videoMetaData.node.heroImage.alt}
+              />
+            </picture>
+          </figure>
         )}
         {!showVideo && !videoLoading && (
           <button
@@ -52,15 +93,7 @@ const Video: FunctionComponent<VideoInterface> = ({
             <span className="srOnly">Play Video</span>
           </button>
         )}
-        {videoLoading && (
-          <Preloader
-            use={Oval}
-            size={60}
-            strokeWidth={11}
-            strokeColor="#000"
-            duration={500}
-          />
-        )}
+        {videoLoading && <div>Loading...</div>}
         {showVideo && (
           <iframe
             width="560"

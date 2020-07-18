@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { useInView } from 'react-intersection-observer';
-import Img from 'gatsby-image';
 import classNames from 'classnames';
 import { ReactComponent as Comb } from '../../images/icons/comb.svg';
 import { ReactComponent as Clip } from '../../images/icons/clip.svg';
@@ -26,7 +25,7 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
             <div className="col col-xs-3 bp-toollist_item" key={tool.name}>
               {tool.image ? (
                 <div>
-                  <Img fluid={tool.image.asset.fluid} alt={tool.image.alt} />
+                  {/* <Img fluid={tool.image.asset.fluid} alt={tool.image.alt} /> */}
                 </div>
               ) : (
                 <div
