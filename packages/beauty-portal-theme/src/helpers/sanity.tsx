@@ -3,13 +3,10 @@ import BlockContent from '@sanity/block-content-to-react';
 import Video from '../components/Video';
 import Product from '../components/Product';
 import { sanityConfig } from '../helpers/sanityConfig';
-import loadable from '@loadable/component';
 import RichTextImage from '../components/RichTextImage';
 import Steps from '../components/Steps';
 
-const BeforeAndAfter = loadable(() => import('../components/BeforeAndAfter'), {
-  fallback: <div style={{ height: 500 }}>loading...</div>,
-});
+import BeforeAndAfter from '../components/BeforeAndAfter';
 
 export const blockTypeDefaultSerializers = {
   types: {
