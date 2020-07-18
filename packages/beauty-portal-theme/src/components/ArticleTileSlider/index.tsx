@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import Slider from '../Slider';
 import { ArticleTileSliderInterface } from './models';
 import { getSearchUrlWithTagsAndCategory } from '../../helpers/searchUrl';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const ArticleTileSlider: FunctionComponent<ArticleTileSliderInterface> = ({
   slides,
@@ -25,12 +25,12 @@ const ArticleTileSlider: FunctionComponent<ArticleTileSliderInterface> = ({
   };
 
   return (
-    <div className={styles.slider}>
-      <div className={styles.sectionTitle}>
-        <h2 className={styles.sliderTitle}>{headline}</h2>
+    <div className="bp-slider_tile">
+      <div className="bp-slider_tile-header">
+        <h2 className="bp-slider_tile-title">{headline}</h2>
         {searchCtaLabel && (
           <Link
-            className={styles.sectionLink}
+            className="bp-slider_tile-link"
             to={getSearchUrlWithTagsAndCategory(searchTags)}
           >
             {searchCtaLabel}

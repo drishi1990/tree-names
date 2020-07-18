@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { ReactComponent as ArrowUp } from '../../images/icons/up.svg';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const BackToTop: FunctionComponent = () => {
   const [isHidden, setIsHidden] = useState(true);
@@ -30,8 +30,8 @@ const BackToTop: FunctionComponent = () => {
     <a
       href="#top"
       className={classNames(
-        styles.element,
-        isHidden ? styles.isHidden : styles.isActive
+        'bp-backToTop',
+        isHidden ? 'is-hidden' : 'is-active'
       )}
       onClick={handleClick}
     >

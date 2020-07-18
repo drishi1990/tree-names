@@ -1,4 +1,4 @@
-.element {
+.bp-backToTop {
   background-color: var(--primary-color, #ff5c85);
   border: none;
   color: black;
@@ -31,6 +31,13 @@
     transition-timing-function: ease-out;
   }
 
+  svg {
+    fill: black;
+    width: 24px;
+    height: 24px;
+    transition: all .5s;
+  }
+
   &:hover {
     &::before {
       transform: scaleY(1);
@@ -41,18 +48,11 @@
     }
   }
 
-  svg {
-    fill: black;
-    width: 24px;
-    height: 24px;
-    transition: all .5s;
+  &.is-active {
+    transform: perspective(1px) translateZ(0) translateX(0);
   }
-}
 
-.isActive {
-  transform: perspective(1px) translateZ(0) translateX(0);
-}
-
-.isHidden {
-  transform: perspective(1px) translateZ(0) translateX(100px);
+  &.is-hidden {
+    transform: perspective(1px) translateZ(0) translateX(100px);
+  }
 }

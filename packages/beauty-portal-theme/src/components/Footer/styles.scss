@@ -1,4 +1,4 @@
-.footer {
+.bp-footer {
   background: black;
   transition: color 0.25s ease-out 0s;
   font-size: 0.775rem;
@@ -7,24 +7,12 @@
   flex-direction: column;
   padding-top: 48px;
 
-  .social {
-    margin-left: 20px;
-
-    @media (min-width: 768px) {
-      margin: 0 auto;
-    }
-  }
-
-  svg {
-    fill: #fff;
-  }
-
-  .wrapper {
+  &_wrapper {
     padding-left: 20px;
     padding-right: 20px;
   }
 
-  .navigationItems {
+  &_items {
     list-style-type: none;
     columns: 2;
     padding-left: 0;
@@ -42,7 +30,7 @@
     }
   }
 
-  .navigationItem {
+  &_item {
     margin-bottom: 10px;
 
     @media (min-width: 768px) {
@@ -52,7 +40,7 @@
     }
   }
 
-  .navigationLink {
+  &_link {
     color: white;
     display: flex;
     align-items: center;
@@ -70,7 +58,7 @@
     }
   }
 
-  .footerSecondary {
+  &_secondary {
     text-align: center;
     background-color: #333;
     color: white;
@@ -90,5 +78,17 @@
       width: 36px;
       height: 40px;
     }
+  }
+
+  .c-social {
+    margin-left: 20px;
+
+    @media (min-width: 768px) {
+      margin: 0 auto;
+    }
+  }
+
+  svg {
+    fill: #fff;
   }
 }
