@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import { getYouTubeId } from '../../helpers/youtube';
+import { urlFor } from '../../helpers/imageUrl';
 import { ReactComponent as IconYoutube } from '../../images/icons/youtube.svg';
 import './styles.scss';
 
