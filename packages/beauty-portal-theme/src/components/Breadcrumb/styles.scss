@@ -1,4 +1,4 @@
-.wrapper {
+.bp-breadcrumb {
   padding-top: 12px;
   padding-bottom: 12px;
 
@@ -7,14 +7,14 @@
     padding-bottom: 20px;
   }
 
-  .items {
+  &-items {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
   }
 
-  .item {
+  &-item {
     font-size: .75rem;
     white-space: nowrap;
 
@@ -33,6 +33,10 @@
         display: block;
       }
     }
+
+    &.is-active {
+      color: #333;
+    }
   }
 
   .divider {
@@ -40,11 +44,7 @@
     font-size: .75rem;
   }
 
-  .link {
+  &-link {
     color: black;
-  }
-
-  .active {
-    color: #333;
   }
 }

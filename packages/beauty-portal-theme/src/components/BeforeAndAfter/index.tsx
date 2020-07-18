@@ -3,12 +3,12 @@ import {
   ReactCompareSlider,
   ReactCompareSliderImage,
 } from 'react-compare-slider';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const BeforeAndAfter: FunctionComponent = ({ images }) => {
   const { beforeImage, afterImage, alt } = images;
   return (
-    <div className={styles.wrapper}>
+    <div className="bp-diff">
       <ReactCompareSlider
         itemOne={
           <ReactCompareSliderImage
