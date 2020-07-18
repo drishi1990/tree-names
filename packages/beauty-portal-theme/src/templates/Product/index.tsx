@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
 import SEO from '../../components/Seo';
 import Layout from '../../components/Layout';
 
@@ -27,7 +26,7 @@ const ProductPage = (props: ProductPageProps) => {
           <h2>{page.name}</h2>
           <section>
             <div>{page.subheading}</div>
-            <Img fluid={page.image.asset.fluid} alt={page.image.alt} />
+            {/* <Img fluid={page.image.asset.fluid} alt={page.image.alt} /> */}
           </section>
         </div>
         <div className="col col-1"></div>

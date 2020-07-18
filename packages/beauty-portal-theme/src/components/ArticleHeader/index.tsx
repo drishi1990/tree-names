@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Preloader, Oval } from 'react-preloader-icon';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
 import SocialMenu from '../SocialMenu';
@@ -182,17 +181,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
               </button>
             </>
           )}
-          {videoLoading && (
-            <div className="preloader">
-              <Preloader
-                use={Oval}
-                size={60}
-                strokeWidth={11}
-                strokeColor="#000"
-                duration={500}
-              />
-            </div>
-          )}
+          {videoLoading && <div className="preloader">Loading...</div>}
           {showVideo && (
             <iframe
               width="560"

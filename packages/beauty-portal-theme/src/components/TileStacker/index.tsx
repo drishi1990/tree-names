@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import { TileStackerInterface } from './models';
 import { ReactComponent as PlayVideo } from '../../images/icons/play.svg';
@@ -19,12 +18,12 @@ const TileStacker: FunctionComponent<TileStackerInterface> = ({
               <Link className="bp-tileStacker_link" to={slide.path}>
                 {slide.heroImage && (
                   <div className="bp-tileStacker_image">
-                    <Img
+                    {/* <Img
                       fluid={slide.heroImage.asset.fluid}
                       alt={slide.heroImage.alt}
                       style={{ height: '237px' }}
                       imgStyle={{ objectPosition: 'top center' }}
-                    />
+                    /> */}
                     {slide.heroVideo && (
                       <span className="icon-play">
                         <PlayVideo />

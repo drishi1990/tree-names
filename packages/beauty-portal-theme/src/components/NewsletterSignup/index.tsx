@@ -1,6 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-import Img from 'gatsby-image';
-import classNames from 'classnames';
 import BlockContent from '@sanity/block-content-to-react';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
 import { NewsletterSignupInterface } from './models';
@@ -91,7 +89,7 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
     <div className="bp-signup">
       <div className="bp-signup_hero">
         <div className="bp-signup_content">
-          {image && <Img fluid={image.asset.fluid} />}
+          {/* {image && <Img fluid={image.asset.fluid} />} */}
         </div>
       </div>
       <div className="bp-signup_content bp-signup_header">
