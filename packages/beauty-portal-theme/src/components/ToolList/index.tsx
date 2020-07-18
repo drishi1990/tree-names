@@ -9,7 +9,7 @@ import { ReactComponent as Elastic } from '../../images/icons/elastic.svg';
 import { ReactComponent as Dryer } from '../../images/icons/dryer.svg';
 import { ReactComponent as Ironer } from '../../images/icons/ironer.svg';
 import { ReactComponent as Pins } from '../../images/icons/pins.svg';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
   const [ref, inView] = useInView({
@@ -18,15 +18,12 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
   });
 
   return (
-    <section className={styles.section} ref={ref}>
-      <h2 className={styles.sectionTitle}>{title}</h2>
+    <section className="bp-toollist" ref={ref}>
+      <h2 className="bp-toollist_title">{title}</h2>
       <div className="col-container">
         {data &&
           data.map(tool => (
-            <div
-              className={classNames('col col-xs-3', styles.gridItem)}
-              key={tool.name}
-            >
+            <div className="col col-xs-3 bp-toollist_item" key={tool.name}>
               {tool.image ? (
                 <div>
                   <Img fluid={tool.image.asset.fluid} alt={tool.image.alt} />
@@ -34,8 +31,8 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
               ) : (
                 <div
                   className={classNames(
-                    styles.icon,
-                    inView ? styles.inView : null
+                    'bp-toollist_icon',
+                    inView ? 'in-view' : null
                   )}
                 >
                   {/* TODO: Dynamically call component based on toolname */}
@@ -48,7 +45,7 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
                   {tool.name.indexOf('Wand') >= 0 && <Wand />}
                 </div>
               )}
-              <h3 className={styles.gridItemCaption}>{tool.name}</h3>
+              <h3 className="bp-toollist_caption">{tool.name}</h3>
             </div>
           ))}
       </div>

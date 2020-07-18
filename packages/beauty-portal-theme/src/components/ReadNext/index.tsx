@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { useInView } from 'react-intersection-observer';
 import { urlFor } from '../../helpers/imageUrl';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const ReadNext: FunctionComponent<ReadNextInterface> = ({ data, title }) => {
   const [ref, inView] = useInView({
@@ -14,11 +14,11 @@ const ReadNext: FunctionComponent<ReadNextInterface> = ({ data, title }) => {
   } = data;
 
   return (
-    <section className={styles.readNext}>
-      <h3 className={styles.readNextTitle}>{title}</h3>
-      <div className={styles.readNextContent}>
-        <Link className={styles.readNextLink} to={path}>
-          <div className={styles.readNextImage} ref={ref} data-inview={inView}>
+    <section className="bp-readNext">
+      <h3 className="bp-readNext_title">{title}</h3>
+      <div className="bp-readNext_content">
+        <Link className="bp-readNext_link" to={path}>
+          <div className="bp-readNext_image" ref={ref} data-inview={inView}>
             <figure>
               {inView ? (
                 <picture
@@ -51,9 +51,9 @@ const ReadNext: FunctionComponent<ReadNextInterface> = ({ data, title }) => {
               ) : null}
             </figure>
           </div>
-          <div className={styles.readNextCopy}>
-            <span className={styles.readNextCopyType}>{_type}</span>
-            <h3 className={styles.readNextCopyTitle}>
+          <div className="bp-readNext_copy">
+            <span className="bp-readNext_type">{_type}</span>
+            <h3 className="bp-readNext_subTitle">
               <span>{headline}</span>
             </h3>
           </div>

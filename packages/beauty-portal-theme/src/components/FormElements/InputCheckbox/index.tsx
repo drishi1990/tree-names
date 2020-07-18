@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import classNames from 'classnames';
-import styles from '../styles.module.scss';
+import '../styles.scss';
 
 const InputCheckbox: FunctionComponent<InputCheckboxInterface> = ({
   label,
@@ -11,7 +10,7 @@ const InputCheckbox: FunctionComponent<InputCheckboxInterface> = ({
   checked,
 }) => {
   return (
-    <div className={classNames('c-form__field', styles.field, styles.checkbox)}>
+    <div className="c-form_field c-form_field-checkbox">
       <input
         id={id}
         type="checkbox"

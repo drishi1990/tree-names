@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { useInView } from 'react-intersection-observer';
 import classNames from 'classnames';
 import { urlFor } from '../../helpers/imageUrl';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
   articles,
@@ -163,21 +163,18 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
       position = 'normal';
     }
     return (
-      <article
-        className={classNames(styles.teaserItem, styles.teaser)}
-        key={article.id}
-      >
+      <article className="bp-related_item" key={article.id}>
         <Link
           to={article.path}
-          className={styles.teaserLink}
+          className="bp-related_link"
           aria-label={article.headline}
         >
-          <div className={styles.flexBox}>
+          <div className="bp-related_content">
             <div
               className={classNames(
-                styles.thumbnail,
-                position === 'normal' ? styles.thumbnailNormal : null,
-                position === 'last' ? styles.thumbnailMedium : null
+                'bp-related_image',
+                position === 'normal' ? 'normal' : null,
+                position === 'last' ? 'medium' : null
               )}
             >
               {position === 'normal' && normalThumbSize(article)}
@@ -185,9 +182,9 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
               {position === 'last' && halfThumbSize(article)}
             </div>
 
-            <div className={classNames(styles.teaserCopy)}>
-              <span className={styles.teaserType}>{article._type}</span>
-              <h3 className={styles.teaserTitle}>
+            <div className="bp-related_copy">
+              <span className="bp-related_type">{article._type}</span>
+              <h3 className="bp-related_titlef">
                 <span>{article.headline}</span>
               </h3>
             </div>
@@ -199,12 +196,12 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
 
   return (
     <>
-      <div className={styles.teaserWrapper} ref={ref} data-inview={inView}>
-        <p className={styles.title}>{title}</p>
+      <div className="bp-related" ref={ref} data-inview={inView}>
+        <p className="sectionTitle">{title}</p>
         {inView ? (
           <div>
             {firstArticle && (
-              <div className={classNames(styles.teaserFirst)}>
+              <div className="is-first">
                 {renderListItem(firstArticle, 'first')}
               </div>
             )}
@@ -216,7 +213,7 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
             </div>
 
             {lastArticle && (
-              <div className={classNames(styles.teaserLast)}>
+              <div className="is-last">
                 {renderListItem(lastArticle, 'last')}
               </div>
             )}

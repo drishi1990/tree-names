@@ -4,8 +4,7 @@ import { SanityArticleSliderInterface } from './models';
 import ArticleTileSlider from '../ArticleTileSlider';
 import HeroSlider from '../HeroSlider';
 import TileStacker from '../TileStacker';
-
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const componentMap = {
   tile: ArticleTileSlider,
@@ -35,7 +34,7 @@ const SanityArticleSlider: FunctionComponent<SanityArticleSliderInterface> = ({
   const Component = componentMap[componentName];
 
   return (
-    <section className={classNames(styles.section, componentName)}>
+    <section className={classNames('bp-theme_primary', componentName)}>
       <div className={classNames('bp-container', 'pad0')}>
         <Component
           {...{ name, slides, headline, searchCtaLabel, searchTags }}

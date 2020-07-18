@@ -3,24 +3,24 @@ import { Link } from 'gatsby';
 import BlockContent from '@sanity/block-content-to-react';
 import { NewsletterPromoInterface } from './models';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const NewsletterPromo: FunctionComponent<NewsletterPromoInterface> = ({
   _rawBody,
   ctaLabel,
 }) => {
   return (
-    <section className={styles.newsletter}>
-      <div className={styles.newsletterContent}>
+    <section className="bp-newsletter">
+      <div className="bp-newsletter_content">
         {_rawBody && (
-          <h3 className={styles.newsletterTitle}>
+          <h3 className="bp-newsletter_title">
             <BlockContent
               serializers={blockTypeDefaultSerializers}
               blocks={_rawBody}
             />
           </h3>
         )}
-        <Link to="/subscribe/" className={styles.subscribe}>
+        <Link to="/subscribe/" className="bp-newsletter_link">
           {ctaLabel}
         </Link>
       </div>

@@ -1,11 +1,9 @@
 import React, { FunctionComponent, useState } from 'react';
 import SwiperCore, { Thumbs, Navigation, Pagination, Lazy } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import classNames from 'classnames';
-import './slider.scss';
 import { urlFor } from '../../helpers/imageUrl';
 import PageSchema from '../PageSchema';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 SwiperCore.use([Thumbs, Navigation, Pagination, Lazy]);
 
@@ -20,7 +18,7 @@ const Gallery: FunctionComponent<GalleryInterface> = ({
   return (
     <>
       <PageSchema type={'ImageGallery'} {...{ name, slug, data, authorName }} />
-      <div className={styles.galleryWrapper}>
+      <div className="bp-gallery">
         <Swiper
           spaceBetween={10}
           slidesPerView={8}
@@ -29,10 +27,9 @@ const Gallery: FunctionComponent<GalleryInterface> = ({
           watchSlidesProgress={true}
           onSwiper={setThumbsSwiper}
           lazy={true}
-          className={classNames('bp-gallery')}
         >
           {data.picture.map((picture: any) => (
-            <SwiperSlide className={styles.swiperSlide} key={picture.asset._id}>
+            <SwiperSlide key={picture.asset._id}>
               <figure>
                 <picture
                   className="bp-image__placeholder"
@@ -83,10 +80,9 @@ const Gallery: FunctionComponent<GalleryInterface> = ({
           navigation
           lazy={true}
           watchSlidesVisibility={false}
-          className={classNames('bp-gallery')}
         >
           {data.picture.map((picture: any) => (
-            <SwiperSlide className={styles.swiperSlide} key={picture.asset._id}>
+            <SwiperSlide key={picture.asset._id}>
               <figure>
                 <picture
                   className="bp-image__placeholder"

@@ -3,7 +3,6 @@ import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import SEO from '../../components/Seo';
 import Layout from '../../components/Layout';
-import styles from './styles.module.scss';
 
 const ProductPage = (props: ProductPageProps) => {
   const {
@@ -34,7 +33,7 @@ const ProductPage = (props: ProductPageProps) => {
         <div className="col col-1"></div>
         <div className="col col-4">
           {productNodes.map(item => (
-            <div className={styles.paper} key={item.name + item.id}>
+            <div key={item.name + item.id}>
               <Link to={item.path}>{item.name}</Link>
             </div>
           ))}

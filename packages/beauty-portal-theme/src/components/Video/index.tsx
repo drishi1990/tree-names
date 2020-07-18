@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import { Preloader, Oval } from 'react-preloader-icon';
 import { getYouTubeId } from '../../helpers/youtube';
 import { ReactComponent as IconYoutube } from '../../images/icons/youtube.svg';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const Video: FunctionComponent<VideoInterface> = ({
   videoMetaData,
@@ -35,16 +35,16 @@ const Video: FunctionComponent<VideoInterface> = ({
   };
 
   return (
-    <section className={styles.wrapper}>
-      <h3 className={styles.title}>{videoMetaData.node.youTubeCaption}</h3>
-      <div className={styles.heroImage}>
+    <section className="bp-video">
+      <h3 className="bp-video_title">{videoMetaData.node.youTubeCaption}</h3>
+      <div className="bp-video_image">
         {!showVideo && (
           <Img fluid={fluidProps} alt={videoMetaData.node.heroImage.alt} />
         )}
         {!showVideo && !videoLoading && (
           <button
             type="button"
-            className={styles.iconVideo}
+            className="bp-video_icon"
             onClick={playVideo}
             data-url={videoMetaData.node.url}
           >

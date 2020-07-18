@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import { TileStackerInterface } from './models';
 import { ReactComponent as PlayVideo } from '../../images/icons/play.svg';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const TileStacker: FunctionComponent<TileStackerInterface> = ({
   slides,
@@ -14,11 +14,11 @@ const TileStacker: FunctionComponent<TileStackerInterface> = ({
       <div className="col-container">
         <div className="col col-4">
           <div key={slide.headline}>
-            <div className={styles.tile}>
-              <span className={styles.slideType}>{slide._type}</span>
-              <Link className={styles.sliderLink} to={slide.path}>
+            <div className="bp-tileStacker-item">
+              <span className="bp-tileStacker_type">{slide._type}</span>
+              <Link className="bp-tileStacker_link" to={slide.path}>
                 {slide.heroImage && (
-                  <div className={styles.heroImage}>
+                  <div className="bp-tileStacker_image">
                     <Img
                       fluid={slide.heroImage.asset.fluid}
                       alt={slide.heroImage.alt}
@@ -26,14 +26,14 @@ const TileStacker: FunctionComponent<TileStackerInterface> = ({
                       imgStyle={{ objectPosition: 'top center' }}
                     />
                     {slide.heroVideo && (
-                      <span className={`icon ${styles.iconPlay}`}>
+                      <span className="icon-play">
                         <PlayVideo />
                         <span hidden>Play Video</span>
                       </span>
                     )}
                   </div>
                 )}
-                <h3 className={styles.sliderItemCaption}>
+                <h3 className="bp-tileStacker_headline">
                   <span>{slide.headline}</span>
                 </h3>
               </Link>
@@ -45,9 +45,9 @@ const TileStacker: FunctionComponent<TileStackerInterface> = ({
   };
 
   return (
-    <div className={styles.root}>
-      <div className={styles.sectionTitle}>
-        <h2 className={styles.sliderTitle}>{headline}</h2>
+    <div className="bp-tileStacker">
+      <div className="bp-tileStacker_header">
+        <h2 className="bp-tileStacker_title">{headline}</h2>
       </div>
       <div className="col col-3">{slides.map(slide => renderer(slide))}</div>
     </div>

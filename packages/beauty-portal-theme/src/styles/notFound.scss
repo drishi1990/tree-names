@@ -1,0 +1,37 @@
+.bp-notFound {
+  padding: 64px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  &_title {
+    font-size: 20rem;
+    line-height: 1;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 16px;
+    background-image: url(/textclip.jpg);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 15s linear infinite;
+  }
+
+  &_subTitle {
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position: left 0px top 30%;
+  }
+
+  40% {
+    background-position: left 800px top 30%;
+  }
+}
