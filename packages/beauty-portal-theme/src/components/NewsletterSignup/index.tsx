@@ -11,7 +11,7 @@ import {
   InputCheckbox,
 } from '../../components/FormElements';
 import { ReactComponent as Bell } from '../../images/icons/bell.svg';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
   _rawBody,
@@ -88,16 +88,16 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
   };
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.banner}>
-        <div className={classNames(styles.imageWrapper, styles.container)}>
+    <div className="bp-signup">
+      <div className="bp-signup_hero">
+        <div className="bp-signup_content">
           {image && <Img fluid={image.asset.fluid} />}
         </div>
       </div>
-      <div className={classNames(styles.heading, styles.container)}>
-        <h1 className={styles.pageTitle}>Subscribe for Email Updates</h1>
+      <div className="bp-signup_content bp-signup_header">
+        <h1 className="bp-signup_title">Subscribe for Email Updates</h1>
         {_rawBody && (
-          <h2 className={styles.pageDescription}>
+          <h2 className="bp-signup_desc">
             <BlockContent
               serializers={blockTypeDefaultSerializers}
               blocks={_rawBody}
@@ -105,9 +105,9 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
           </h2>
         )}
       </div>
-      <div className={classNames(styles.imageWrapper, styles.container)}>
+      <div className="bp-signup_content">
         {isFormSubmitted ? (
-          <div className={styles.thankyou}>
+          <div className="bp-signup_thanks">
             <Bell />
             <h2>Thankyou for signing up!</h2>
             <p>
@@ -202,7 +202,7 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
               name="submit"
               value="Subscribe"
               onClick={handleFormSubmit}
-              className={styles.button}
+              className="bp-signup_cta"
             />
             {/* TODO: Add hidden fields for hard coded values to be passed in payload */}
           </Form>

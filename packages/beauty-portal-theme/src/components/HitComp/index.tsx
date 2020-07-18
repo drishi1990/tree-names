@@ -12,7 +12,7 @@ export const PostHit = clickHandler => ({ hit }) => {
   return (
     <article>
       <Link
-        className={'ais-InfiniteHits-item__link'}
+        className="ais-InfiniteHits-item__link"
         to={path}
         onClick={clickHandler}
         aria-label={title}
@@ -22,11 +22,11 @@ export const PostHit = clickHandler => ({ hit }) => {
             <Img fluid={asset.fluid} alt={alt} />
           </figure>
         </div>
-        <div className={'ais-InfiniteHits-item__copy'}>
+        <div className="ais-InfiniteHits-item__copy">
           <h4>
             <Highlight attribute="title" hit={hit} tagName="mark" />
           </h4>
-          <p className={'ais-InfiniteHits-item__desc'}>
+          <p className="ais-InfiniteHits-item__desc">
             <Snippet attribute="ingredientBody" hit={hit} tagName="mark" />
             <Snippet attribute="usageBody" hit={hit} tagName="mark" />
             <Snippet attribute="galleryBody" hit={hit} tagName="mark" />

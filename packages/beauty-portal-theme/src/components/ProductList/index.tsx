@@ -1,25 +1,21 @@
 import React, { FunctionComponent } from 'react';
-import classNames from 'classnames';
 import { Link } from 'gatsby';
-import styles from './styles.module.scss';
 import { urlFor } from '../../helpers/imageUrl';
+import './styles.scss';
 
 const ProductList: FunctionComponent<ProductListInterface> = ({
   data,
   title,
 }) => {
   return (
-    <section className={styles.section}>
-      <h2 className={styles.sectionTitle}>{title}</h2>
-      <div className={classNames('col-container', styles.gridContainer)}>
+    <section className="bp-productList">
+      <h2 className="bp-productList_title">{title}</h2>
+      <div className="bp-grid col-container">
         {data &&
           data.map(product => (
-            <div
-              className={classNames('col-xs-4', styles.gridItem)}
-              key={product.name}
-            >
+            <div className="col col-xs-4 bp-grid_item" key={product.name}>
               <Link
-                className={styles.gridItemLink}
+                className="bp-grid_link"
                 to={product.path || product.slug.current}
               >
                 {product.image && (
@@ -68,7 +64,7 @@ const ProductList: FunctionComponent<ProductListInterface> = ({
                     </picture>
                   </figure>
                 )}
-                <h3 className={styles.productTitle}>
+                <h3 className="bp-productList_subTitle">
                   <span>{product.name}</span>
                 </h3>
               </Link>

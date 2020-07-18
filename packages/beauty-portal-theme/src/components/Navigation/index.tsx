@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 
 import classNames from 'classnames';
 
-import styles from './navigation.module.scss';
+import './styles.scss';
 
 const SiteNavigation: FunctionComponent = () => {
   const data = useStaticQuery(graphql`
@@ -58,30 +58,23 @@ const SiteNavigation: FunctionComponent = () => {
 
   return (
     <React.Fragment>
-      <button
-        className={styles.NavigationToggleButton}
-        type="button"
-        onClick={handleNav}
-      >
+      <button className="bp-nav_toggle" type="button" onClick={handleNav}>
         <span className="srOnly">Toggle Navigation</span>
-        <div aria-hidden="true" className={styles.NavigationToggleButtonIcon}>
-          <span className={styles.NavigationToggleButtonIconBar}></span>
-          <span className={styles.NavigationToggleButtonIconBar}></span>
-          <span className={styles.NavigationToggleButtonIconBar}></span>
-          <span className={styles.NavigationToggleButtonIconBar}></span>
+        <div aria-hidden="true" className="bp-nav_toggle-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </button>
       <nav
         role="navigation"
         aria-label="Main Navigation"
-        className={classNames(
-          styles.navigation,
-          activeNav ? styles.activeNavigation : null
-        )}
+        className={classNames('bp-nav', activeNav ? 'is-active' : null)}
       >
         <span className="srOnly">Primary Navigation</span>
-        <div className={styles.navigationInnerWrapper} id="nav">
-          <ul className={styles.navigationList}>
+        <div className="bp-nav_content" id="nav">
+          <ul className="bp-nav_items">
             {data.sanityNavBar.navItems.map(
               (
                 navItem: {
@@ -90,27 +83,17 @@ const SiteNavigation: FunctionComponent = () => {
                 },
                 index: number
               ) => (
-                <li
-                  className={styles.navigationListItem}
-                  key={navItem.navL1.name}
-                >
-                  <a
-                    href={getUrl(navItem.navL1)}
-                    className={styles.navigationLink}
-                  >
+                <li className="bp-nav_item" key={navItem.navL1.name}>
+                  <a href={getUrl(navItem.navL1)} className="bp-nav_link">
                     {navItem.navL1.name}
                     {navItem.navL2.length ? (
-                      <span
-                        aria-hidden="true"
-                        className={styles.dropdownMenuIcon}
-                      >
+                      <span aria-hidden="true" className="bp-nav_icon">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 20 20"
                           svg-inline=""
                           role="presentation"
                           focusable="false"
-                          className={styles.dropdownMenuIconSVG}
                         >
                           <path d="M0 6a.5.5 0 01.853-.354l8.646 8.646 8.646-8.646a.5.5 0 01.707.707l-9 9a.5.5 0 01-.707 0l-9-9a.498.498 0 01-.146-.354z"></path>
                         </svg>
@@ -118,17 +101,14 @@ const SiteNavigation: FunctionComponent = () => {
                     ) : null}
                   </a>
                   {navItem.navL2.length ? (
-                    <div className={styles.subNavigation}>
-                      <ul className={styles.subNavigationList}>
+                    <div className="bp-nav_subnav">
+                      <ul className="bp-nav_subnav-items">
                         {navItem.navL2.map((navItem: any) => (
-                          <li
-                            className={styles.subNavigationListItem}
-                            key={navItem.name}
-                          >
+                          <li key={navItem.name}>
                             <Link
                               tabIndex="0"
                               to={getUrl(navItem)}
-                              className={styles.subNavigationLink}
+                              className="bp-nav_subnav-link"
                             >
                               {navItem.name}
                             </Link>

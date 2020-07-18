@@ -19,8 +19,7 @@ import * as hitComps from '../../components/HitComp';
 import classNames from 'classnames';
 import { ReactComponent as IconList } from '../../images/icons/list.svg';
 import { ReactComponent as IconGrid } from '../../images/icons/grid.svg';
-import styles from './styles.module.scss';
-import './algolia-styles.scss';
+import './styles.scss';
 
 const indices = [
   { name: `howtoArticle`, title: `howtoArticle`, hitComp: `PostHit` },
@@ -76,7 +75,7 @@ const SearchResults: FunctionComponent = () => {
   return (
     <Layout>
       <SEO lang={'en-us'} title="Search" description="" keywords="" />
-      <div className={classNames('container', styles.wrapper)}>
+      <div className="container bp-search">
         <InstantSearch
           searchClient={searchClient}
           indexName={indices[0].name}
@@ -86,17 +85,17 @@ const SearchResults: FunctionComponent = () => {
           root={{ props: { ref } }}
         >
           <div className="col-container">
-            <div className={classNames('col', styles.searchControlWrapper)}>
+            <div className="col bp-search_content">
               <SearchBox searchAsYouType={true} />
             </div>
-            <div className={classNames('col', styles.searchControlWrapper)}>
-              <div className={styles.resultsInfo}>
-                <span className={styles.searchQuery}>
+            <div className="col bp-search_content">
+              <div className="bp-search_results">
+                <span className="bp-search_query">
                   {searchState.query
                     ? `Results for ${searchState.query}`
                     : 'All Results'}
                 </span>
-                <span className={styles.resultsStats}>
+                <span className="bp-search_stats">
                   <Stats
                     translations={{
                       stats(nbHits) {
@@ -106,12 +105,12 @@ const SearchResults: FunctionComponent = () => {
                   />
                 </span>
               </div>
-              <div className={styles.currentRefinements}>
+              <div className="bp-search_refinements">
                 <CurrentRefinements clearsQuery />
               </div>
             </div>
-            <div className={classNames('col col-3', styles.filters)}>
-              <div className={styles.filterHeader}>
+            <div className="col col-3 bp-search_filters">
+              <div className="bp-search_filters-content">
                 <span>Filter by</span>
                 <ClearRefinements clearsQuery />
               </div>
@@ -177,7 +176,7 @@ const SearchResults: FunctionComponent = () => {
             </div>
             <div className="col-contianer col col-9">
               <div className="col-xs-12">
-                <div className={styles.actions}>
+                <div className="bp-search_actions">
                   <SortBy
                     defaultRefinement="howtoArticle_publishedAt_Dsc"
                     items={[
@@ -191,8 +190,8 @@ const SearchResults: FunctionComponent = () => {
                   <button
                     type="button"
                     className={classNames(
-                      styles.icon,
-                      viewType === styles.list ? styles.iconActive : null
+                      'bp-search_icon',
+                      viewType === 'list' ? 'is-active' : null
                     )}
                     data-view="list"
                     onClick={handleViewType}
@@ -202,8 +201,8 @@ const SearchResults: FunctionComponent = () => {
                   <button
                     type="button"
                     className={classNames(
-                      styles.icon,
-                      viewType === styles.grid ? styles.iconActive : null
+                      'bp-search_icon',
+                      viewType === 'grid' ? 'is-active' : null
                     )}
                     data-view="grid"
                     onClick={handleViewType}
@@ -212,7 +211,7 @@ const SearchResults: FunctionComponent = () => {
                   </button>
                 </div>
                 <div
-                  className={classNames(styles.searhResultWrapper, viewType)}
+                  className={classNames('bp-search_wrapper', viewType)}
                   show="true"
                 >
                   {indices.map(({ name, hitComp }) => (

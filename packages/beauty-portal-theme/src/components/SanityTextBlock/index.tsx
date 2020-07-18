@@ -1,10 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import classNames from 'classnames';
-import { SanityTextBlockInterface } from './models';
-
 import BlockContent from '@sanity/block-content-to-react';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
-import styles from './styles.module.scss';
+import { SanityTextBlockInterface } from './models';
+import './styles.scss';
 
 const SanityTextBlock: FunctionComponent<SanityTextBlockInterface> = ({
   _rawTextBlockBody,
@@ -19,14 +18,14 @@ const SanityTextBlock: FunctionComponent<SanityTextBlockInterface> = ({
   return (
     <section
       className={classNames(
-        styles.section,
+        'bp-textBlock',
         getComponentvariant(textBlockType.name) === 'textblock-type1'
-          ? styles.type1
+          ? 'typea'
           : null
       )}
     >
       <div className="bp-container">
-        <div className={styles.sectionDescription}>
+        <div className="bp-textBlock_desc">
           <BlockContent
             serializers={blockTypeDefaultSerializers}
             blocks={_rawTextBlockBody}

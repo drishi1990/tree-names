@@ -7,7 +7,7 @@ import BlockContent from '@sanity/block-content-to-react';
 import { ImageBlockInterface } from './models';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
 
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
   name,
@@ -85,18 +85,18 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
   return (
     <section
       className={classNames(
-        styles.section,
+        'bp-imageBlock',
         getComponentvariant(imageBlockType.name) === 'imageblocktypeb'
-          ? styles.imageblocktypeb
+          ? 'typeb'
           : null
       )}
     >
       <div className="bp-container">
-        <Link to={url || '/'} className={styles.link}>
-          <div className={styles.content}>
-            <div className={classNames(styles.imageWrapper)}>{Image}</div>
-            <div className={classNames(styles.copyText)}>
-              <h2 className={styles.sectionTitle}>
+        <Link to={url || '/'} className="bp-imageBlock_link">
+          <div className="bp-imageBlock_content">
+            <div className="bp-imageBlock_image">{Image}</div>
+            <div className="bp-imageBlock_copy">
+              <h2 className="bp-imageBlock_title">
                 <span>{name}</span>
               </h2>
               {_rawTextBlockBody && (

@@ -1,8 +1,25 @@
-.section {
+.bp-imageBlock {
   background-color: #fed760;
   padding-top: 0;
 
-  .sectionTitle {
+  &_link {
+    display: block;
+
+    &:hover {
+      h2 span {
+        background-image: linear-gradient(120deg, #b8f0c0 0%, #b8f0c0 100%);
+        background-repeat: no-repeat;
+        background-size: 100% .1875rem;
+        background-position: 0 100%;
+      }
+
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &_title {
     color: black;
     margin-top: 10px;
     margin-bottom: 5px;
@@ -22,24 +39,7 @@
     }
   }
 
-  .link {
-    display: block;
-
-    &:hover {
-      h2 span {
-        background-image: linear-gradient(120deg, #b8f0c0 0%, #b8f0c0 100%);
-        background-repeat: no-repeat;
-        background-size: 100% .1875rem;
-        background-position: 0 100%;
-      }
-
-      img {
-        transform: scale(1.1);
-      }
-    }
-  }
-
-  .content {
+  &_content {
     display: flex;
     flex-direction: column;
 
@@ -48,7 +48,7 @@
     }
   }
 
-  .imageWrapper {
+  &_image {
     margin-left: -16px;
     margin-right: -16px;
     overflow: hidden;
@@ -62,7 +62,7 @@
     }
   }
 
-  .copyText {
+  &_copy {
     padding: 18px;
     background: white;
     color: black;
@@ -90,7 +90,7 @@
     }
   }
 
-  &.imageblocktypeb {
+  &.typeb {
     .imageWrapper {
       @media (min-width: 768px) {
         order: 1;

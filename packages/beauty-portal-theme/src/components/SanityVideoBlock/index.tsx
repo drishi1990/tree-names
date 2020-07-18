@@ -3,16 +3,16 @@ import BlockContent from '@sanity/block-content-to-react';
 import { SanityVideoBlockInterface } from './models';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
 import { getYouTubeId } from '../../helpers/youtube';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const SanityVideoBlock: FunctionComponent<SanityVideoBlockInterface> = ({
   videoBlock,
   _rawTextBlockBody,
 }) => {
   return (
-    <section className={styles.section}>
+    <section className="bp-videoBlock">
       <div className="bp-container">
-        <div className={styles.content}>
+        <div className="bp-videoBlock_content">
           <iframe
             width="560"
             height="315"
@@ -23,8 +23,8 @@ const SanityVideoBlock: FunctionComponent<SanityVideoBlockInterface> = ({
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <div className={styles.copyText}>
-            <h2 className={styles.sectionTitle}>{videoBlockName}</h2>
+          <div className="bp-videoBlock_copy">
+            <h2 className="bp-videoBlock_name">{videoBlockName}</h2>
             {_rawTextBlockBody && (
               <BlockContent
                 serializers={blockTypeDefaultSerializers}

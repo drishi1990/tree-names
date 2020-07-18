@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { getSearchUrl } from '../../helpers/searchUrl';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const Tags: FunctionComponent<TagsInterface> = ({
   data,
@@ -24,13 +24,13 @@ const Tags: FunctionComponent<TagsInterface> = ({
   };
 
   return (
-    <section className={styles.tags}>
-      <h3 className={styles.tagsTitle}>{title}</h3>
-      <ul className={styles.tagList}>
+    <section className="bp-tags">
+      <h3 className="bp-tags_title">{title}</h3>
+      <ul className="bp-tags_items">
         {uniqueValues(data, 'category').map((tag: any) => (
-          <li className={styles.tagListItem} key={tag.tagCategory.name}>
+          <li className="bp-tags_item" key={tag.tagCategory.name}>
             <Link
-              className={styles.tagsListLink}
+              className="bp-tags_link"
               to={getSearchUrl(
                 searchResultPath,
                 tag.tagCategory.name,
@@ -42,9 +42,9 @@ const Tags: FunctionComponent<TagsInterface> = ({
           </li>
         ))}
         {uniqueValues(data, 'tag').map((tag: any) => (
-          <li className={styles.tagListItem} key={tag.name}>
+          <li className="bp-tags_item" key={tag.name}>
             <Link
-              className={styles.tagsListLink}
+              className="bp-tags_link"
               to={getSearchUrl(searchResultPath, tag.name, 'tags.name')}
             >
               {tag.name}

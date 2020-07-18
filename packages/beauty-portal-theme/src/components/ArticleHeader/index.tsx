@@ -120,10 +120,10 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
   };
 
   return (
-    <div className="bp-article_header">
+    <div className="bp-articleHeader_header">
       <h1
         className={classNames(
-          'bp-article_title',
+          'bp-articleHeader_title',
           type === 'gallery' ? 'txt-center' : null
         )}
       >
@@ -131,18 +131,18 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
       </h1>
       <p
         className={classNames(
-          'bp-article_subTitle',
+          'bp-articleHeader_subTitle',
           type === 'gallery' ? 'txt-center' : null
         )}
       >
         {subheading}
       </p>
-      <div className="bp-article_content">
-        <div className="bp-article_content-info">
+      <div className="bp-articleHeader_content">
+        <div className="bp-articleHeader_content-info">
           {author && author.name && (
-            <div className="bp-article_author">
+            <div className="bp-articleHeader_author">
               <Link
-                className="bp-article_link"
+                className="bp-articleHeader_link"
                 to={author.slug ? `/${author.slug.current}` : `/${author.name}`}
               >
                 <span>{author.name}</span>
@@ -159,7 +159,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
       </div>
       {/* TODO: Use generic `Video` component for hero video to avoid duplicate code  */}
       {!(_type === 'galleryArticle') && (
-        <div className="bp-article_image">
+        <div className="bp-articleHeader_image">
           {!showVideo &&
             !heroVideo &&
             renderVideoThumbnail(_rawHeroImage, heroImage.alt)}
@@ -207,9 +207,9 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
         </div>
       )}
       {(skillLevel || time) && (
-        <div className="bp-article_tutorial">
+        <div className="bp-articleHeader_tutorial">
           {time && (
-            <div className="bp-article_tutorial-info">
+            <div className="bp-articleHeader_tutorial-info">
               <div>
                 <strong>Time</strong>
                 <span>{time} mins</span>
@@ -220,7 +220,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
             </div>
           )}
           {skillLevel && (
-            <div className="bp-article_tutorial-info">
+            <div className="bp-articleHeader_tutorial-info">
               <div>
                 <strong>Skill</strong>
                 <span>{skillLevel}</span>

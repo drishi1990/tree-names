@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { urlFor } from '../../helpers/imageUrl';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const RichTextImage: FunctionComponent = ({ node }) => {
   const [ref, inView] = useInView({
@@ -9,7 +9,7 @@ const RichTextImage: FunctionComponent = ({ node }) => {
     rootMargin: '200px 0px',
   });
   return (
-    <div className={styles.image} ref={ref} data-inview={inView}>
+    <div className="bp-richtext_image" ref={ref} data-inview={inView}>
       <figure>
         {inView ? (
           <picture
@@ -56,7 +56,7 @@ const RichTextImage: FunctionComponent = ({ node }) => {
           </picture>
         ) : null}
       </figure>
-      <div className={styles.credit}>
+      <div className="bp-richtext_image-credit">
         <span>{node.imageCaption}</span>
         <span>{node.imageCredit}</span>
       </div>

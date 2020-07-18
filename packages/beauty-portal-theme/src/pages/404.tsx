@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../components/Seo';
 import Layout from '../components/Layout';
-import styles from '../styles/notFound.module.scss';
+import '../styles/notFound.scss';
 
 export const query = graphql`
   query NotFoundPageQuery {
@@ -24,9 +24,9 @@ const NotFound = ({ data: { site } }: NotFoundProps) => {
         keywords={site.keywords}
       />
       <div className="bp-container">
-        <div className={styles.wrapper}>
-          <p className={styles.title}>404</p>
-          <p className={styles.subTitle}>That’s an error!</p>
+        <div className="bp-notFound">
+          <p className="bp-notFound_title">404</p>
+          <p className="bp-notFound_subTitle">That’s an error!</p>
           <p>
             404 Unfortunately, there is no such page on the site. Let us know
             what you are looking for and we will answer.

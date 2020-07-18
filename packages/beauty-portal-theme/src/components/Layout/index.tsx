@@ -1,17 +1,14 @@
 import React, { ReactNode } from 'react';
 import classNames from 'classnames';
-// import { ThemeProvider } from '@material-ui/core/styles';
-// import theme from '../theme';
 import Header from '../Header';
 import Footer from '../Footer';
 import PageSchema from '../PageSchema';
-import styles from './styles.module.scss';
+import './styles.scss';
 
 const Layout = ({ className, children }: LayoutProps) => {
   return (
-    <React.Fragment>
-      {/* <ThemeProvider theme={theme}> */}
-      <a href="#main" className={styles.skipLink}>
+    <>
+      <a href="#main" className="bp-skipLink">
         <span>Skip to content</span>
       </a>
       <Header />
@@ -20,16 +17,12 @@ const Layout = ({ className, children }: LayoutProps) => {
         id="main"
         role="main"
         aria-label="Main Content"
-        className={classNames(
-          styles.mainContentWrapper,
-          className === 'home' ? 'pad0' : null
-        )}
+        className={classNames('bp-page', className === 'home' ? 'pad0' : null)}
       >
         {children}
       </main>
       <Footer />
-      {/* </ThemeProvider> */}
-    </React.Fragment>
+    </>
   );
 };
 
