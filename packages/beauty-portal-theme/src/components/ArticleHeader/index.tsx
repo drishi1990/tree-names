@@ -7,6 +7,7 @@ import { urlFor } from '../../helpers/imageUrl';
 import { ReactComponent as Skill } from '../../images/icons/skill.svg';
 import { ReactComponent as Youtube } from '../../images/icons/youtube.svg';
 import { ReactComponent as IconTime } from '../../images/icons/time.svg';
+import { ReactComponent as Loader } from '../../images/icons/loader.svg';
 import './styles.scss';
 
 const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
@@ -180,7 +181,11 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
               </button>
             </>
           )}
-          {videoLoading && <div className="preloader">Loading...</div>}
+          {videoLoading && (
+            <div className="preloader">
+              <Loader />
+            </div>
+          )}
           {showVideo && (
             <iframe
               width="560"

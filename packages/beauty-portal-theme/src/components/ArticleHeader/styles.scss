@@ -78,6 +78,22 @@
     margin-top: 20px;
     position: relative;
 
+    .preloader {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg path {
+        transform-origin: 0 0;
+        animation: spin 700ms linear infinite;
+      }
+    }
+
     .icon-video {
       position: absolute;
       top: 0;
@@ -201,29 +217,21 @@
     }
   }
 
-  .preloader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    svg {
-      width: 60px;
-      height: 60px;
-    }
-  }
-
   .txt-center {
     @media (min-width: 768px) {
       text-align: center;
     }
   }
 
-
-
   svg {
     width: 28px;
     height: 28px;
     fill: black;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
 }
