@@ -52,6 +52,8 @@
 
   &_content-info {
     display: flex;
+    margin-bottom: 10px;
+    font-size: .875rem;
 
     @media (min-width: 768px) {
       margin-bottom: 0;
