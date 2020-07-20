@@ -75,7 +75,7 @@ const SearchResults: FunctionComponent = () => {
   return (
     <Layout>
       <SEO lang={'en-us'} title="Search" description="" keywords="" />
-      <div className="container bp-search">
+      <div className="bp-container bp-search">
         <InstantSearch
           searchClient={searchClient}
           indexName={indices[0].name}

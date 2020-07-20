@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
 import BlockContent from '@sanity/block-content-to-react';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
+import { urlFor } from '../../helpers/imageUrl';
 import { NewsletterSignupInterface } from './models';
 import Form from '../../components/Form';
 import {
@@ -13,7 +14,7 @@ import './styles.scss';
 
 const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
   _rawBody,
-  image,
+  _rawImage,
   onFormSubmission,
   isFormSubmitted,
 }) => {
@@ -89,7 +90,52 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
     <div className="bp-signup">
       <div className="bp-signup_hero">
         <div className="bp-signup_content">
-          {/* {image && <Img fluid={image.asset.fluid} />} */}
+          <figure>
+            <link
+              rel="preload"
+              as="image"
+              href={`${urlFor(_rawImage)
+                .width(700)
+                .height(392)
+                .quality(80)
+                .fit('max')
+                .auto('format')
+                .url()
+                .toString()}`}
+            />
+            <picture>
+              <source
+                media="screen and (min-width: 560px)"
+                srcSet={`${urlFor(_rawImage)
+                  .width(700)
+                  .height(392)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <source
+                media="screen and (min-width: 320px)"
+                srcSet={`${urlFor(_rawImage)
+                  .width(559)
+                  .height(314)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <img
+                src={urlFor(_rawImage)
+                  .width(700)
+                  .height(392)
+                  .fit('max')
+                  .url()}
+                alt={_rawImage.alt}
+              />
+            </picture>
+          </figure>
         </div>
       </div>
       <div className="bp-signup_content bp-signup_header">
@@ -202,7 +248,6 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
               onClick={handleFormSubmit}
               className="bp-signup_cta"
             />
-            {/* TODO: Add hidden fields for hard coded values to be passed in payload */}
           </Form>
         )}
       </div>

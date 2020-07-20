@@ -265,7 +265,7 @@
     .ais-InfiniteHits-list {
       list-style-type: none;
       padding: 0;
-      margin: 0 -18px;
+      margin: 0 -10px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -276,12 +276,20 @@
     .ais-InfiniteHits-item {
       justify-content: space-between;
       flex: 0 0 auto;
-      width: calc(100%/2.30);
+      width: calc(100%/2.225);
       margin: 0 10px;
       margin-bottom: 10px;
 
       @media (min-width: 768px) {
-        width: calc(100%/3.5);
+        width: calc(100%/3.515);
+      }
+
+      @media (min-width: 991px) {
+        width: calc(100%/3.3);
+      }
+
+      @media (min-width: 1280px) {
+        width: calc(100%/3.515);
         margin: 0 20px;
         margin-bottom: 30px;
       }
@@ -329,7 +337,7 @@
   }
 
   .list {
-    img {
+    .image-wrapper {
       width: 80px;
       height: 80px;
 

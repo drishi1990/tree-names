@@ -13,8 +13,8 @@ const componentMap = {
 
 const NewsletterBlock: FunctionComponent<NewsletterBlockInterface> = ({
   _rawBody,
+  _rawImage,
   ctaLabel,
-  image,
   type,
 }) => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -56,7 +56,13 @@ const NewsletterBlock: FunctionComponent<NewsletterBlockInterface> = ({
   return Component ? (
     <section>
       <Component
-        {...{ _rawBody, ctaLabel, image, onFormSubmission, isFormSubmitted }}
+        {...{
+          _rawBody,
+          ctaLabel,
+          _rawImage,
+          onFormSubmission,
+          isFormSubmitted,
+        }}
       />
     </section>
   ) : null;

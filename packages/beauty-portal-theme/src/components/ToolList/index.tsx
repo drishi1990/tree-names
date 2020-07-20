@@ -23,27 +23,21 @@ const ToolList: FunctionComponent<ToolListInterface> = ({ data, title }) => {
         {data &&
           data.map(tool => (
             <div className="col col-xs-3 bp-toollist_item" key={tool.name}>
-              {tool.image ? (
-                <div>
-                  {/* <Img fluid={tool.image.asset.fluid} alt={tool.image.alt} /> */}
-                </div>
-              ) : (
-                <div
-                  className={classNames(
-                    'bp-toollist_icon',
-                    inView ? 'in-view' : null
-                  )}
-                >
-                  {/* TODO: Dynamically call component based on toolname */}
-                  {tool.name.indexOf('Comb') >= 0 && <Comb />}
-                  {tool.name.indexOf('Clip') >= 0 && <Clip />}
-                  {tool.name.indexOf('Elastic') >= 0 && <Elastic />}
-                  {tool.name.indexOf('Dryer') >= 0 && <Dryer />}
-                  {tool.name.indexOf('Pins') >= 0 && <Pins />}
-                  {tool.name.indexOf('Ironer') >= 0 && <Ironer />}
-                  {tool.name.indexOf('Wand') >= 0 && <Wand />}
-                </div>
-              )}
+              <div
+                className={classNames(
+                  'bp-toollist_icon',
+                  inView ? 'in-view' : null
+                )}
+              >
+                {/* TODO: Dynamically call component based on toolname */}
+                {tool.name.indexOf('Comb') >= 0 && <Comb />}
+                {tool.name.indexOf('Clip') >= 0 && <Clip />}
+                {tool.name.indexOf('Elastic') >= 0 && <Elastic />}
+                {tool.name.indexOf('Dryer') >= 0 && <Dryer />}
+                {tool.name.indexOf('Pins') >= 0 && <Pins />}
+                {tool.name.indexOf('Ironer') >= 0 && <Ironer />}
+                {tool.name.indexOf('Wand') >= 0 && <Wand />}
+              </div>
               <h3 className="bp-toollist_caption">{tool.name}</h3>
             </div>
           ))}
