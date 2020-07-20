@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from 'react';
-import { Link } from 'gatsby';
 import { ReactComponent as Follow } from '../../images/icons/follow.svg';
 import SocialMenu from '../SocialMenu';
 

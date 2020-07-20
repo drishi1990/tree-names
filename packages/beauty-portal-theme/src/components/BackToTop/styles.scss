@@ -44,7 +44,7 @@
     }
 
     svg {
-      fill: #ff5c85;
+      fill: var(--primary-color, #ff5c85);
     }
   }
 
