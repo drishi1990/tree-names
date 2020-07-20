@@ -15,7 +15,7 @@ const InputText: FunctionComponent<InputTextInterface> = ({
   return (
     <div
       className={classNames(
-        'c-form_field c-form_field-text',
+        'bp-form_field bp-form_field-text',
         valid ? 'is-valid' : validate ? 'is-error' : null
       )}
     >

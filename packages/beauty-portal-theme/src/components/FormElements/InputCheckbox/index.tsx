@@ -10,7 +10,7 @@ const InputCheckbox: FunctionComponent<InputCheckboxInterface> = ({
   checked,
 }) => {
   return (
-    <div className="c-form_field c-form_field-checkbox">
+    <div className="bp-form_field bp-form_field-checkbox">
       <input
         id={id}
         type="checkbox"
