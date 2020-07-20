@@ -17,7 +17,7 @@ const Layout = ({ className, children }: LayoutProps) => {
         id="main"
         role="main"
         aria-label="Main Content"
-        className={classNames('bp-page', className === 'home' ? 'pad0' : null)}
+        className={classNames('bp-page', className === 'home' ? 'p0' : null)}
       >
         {children}
       </main>

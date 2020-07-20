@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import SwiperCore, { Lazy } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useInView } from 'react-intersection-observer';
+import classNames from 'classnames';
 import { SliderInterface } from './models';
 import { urlFor } from '../../helpers/imageUrl';
 import { ReactComponent as Next } from '../../images/icons/next.svg';
@@ -247,7 +248,11 @@ const Slider: FunctionComponent<SliderInterface> = ({
   );
   return (
     <>
-      <div className="bp-slider" ref={ref} data-inview={inView}>
+      <div
+        className={classNames('bp-slider', type === 'hero' ? 'pbx10' : null)}
+        ref={ref}
+        data-inview={inView}
+      >
         <button
           className="bp-slider_nav bp-slider_nav-next"
           type="button"
