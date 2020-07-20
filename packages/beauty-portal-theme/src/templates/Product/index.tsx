@@ -26,7 +26,6 @@ const ProductPage = (props: ProductPageProps) => {
           <h2>{page.name}</h2>
           <section>
             <div>{page.subheading}</div>
-            {/* <Img fluid={page.image.asset.fluid} alt={page.image.alt} /> */}
           </section>
         </div>
         <div className="col col-1"></div>

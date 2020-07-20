@@ -5,7 +5,6 @@ import { ReactComponent as IconYoutube } from '../../images/icons/youtube.svg';
 import './styles.scss';
 
 const Video: FunctionComponent<VideoInterface> = ({ videoMetaData }) => {
-  console.log(videoMetaData);
   const [showVideo, setShowVideo] = useState(false);
   const [videoSourceUrl, setVideoSourceUrl] = useState('');
   const [videoLoading, setVideoLoading] = useState(false);
