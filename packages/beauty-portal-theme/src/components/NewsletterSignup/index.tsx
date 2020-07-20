@@ -103,7 +103,14 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
                 .url()
                 .toString()}`}
             />
-            <picture>
+            <picture
+              className="bp-image__placeholder"
+              style={{
+                paddingTop: `56.25%`,
+                background: `url(${_rawImage.asset.metadata.lqip})`,
+                backgroundSize: 'cover',
+              }}
+            >
               <source
                 media="screen and (min-width: 560px)"
                 srcSet={`${urlFor(_rawImage)
