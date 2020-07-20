@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState } from 'react';
 import { getYouTubeId } from '../../helpers/youtube';
 import { urlFor } from '../../helpers/imageUrl';
 import { ReactComponent as IconYoutube } from '../../images/icons/youtube.svg';
+import { ReactComponent as Loader } from '../../images/icons/loader.svg';
 import './styles.scss';
 
 const Video: FunctionComponent<VideoInterface> = ({ videoMetaData }) => {
@@ -93,7 +94,11 @@ const Video: FunctionComponent<VideoInterface> = ({ videoMetaData }) => {
             <span className="srOnly">Play Video</span>
           </button>
         )}
-        {videoLoading && <div>Loading...</div>}
+        {videoLoading && (
+          <div className="bp-preloader">
+            <Loader />
+          </div>
+        )}
         {showVideo && (
           <iframe
             width="560"

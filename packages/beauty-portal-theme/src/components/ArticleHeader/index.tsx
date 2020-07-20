@@ -182,7 +182,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
             </>
           )}
           {videoLoading && (
-            <div className="preloader">
+            <div className="bp-preloader">
               <Loader />
             </div>
           )}
