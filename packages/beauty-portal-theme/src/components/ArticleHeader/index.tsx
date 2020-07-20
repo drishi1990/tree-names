@@ -146,10 +146,9 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
               >
                 <span>{author.name}</span>
               </Link>
-
-              <span className="divider">|</span>
             </div>
           )}
+          <span className="divider">|</span>
           {(article.publishedAt || article._updatedAt) && (
             <span>{article.publishedAt || article._updatedAt}</span>
           )}
