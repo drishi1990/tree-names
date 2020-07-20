@@ -19,7 +19,7 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
 
   const normalThumbSize = article => {
     return (
-      <figure className={styles.figure}>
+      <figure>
         <picture
           className="bp-image__placeholder"
           style={{
@@ -94,7 +94,6 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
               .toString()} 2x`}
           />
           <img
-            className={styles.image}
             src={urlFor(article._rawHeroImage)
               .width(380)
               .height(213)
@@ -205,7 +204,7 @@ const RelatedArticles: FunctionComponent<RelatedArticlesInterface> = ({
                 {renderListItem(firstArticle, 'first')}
               </div>
             )}
-            <div className={styles.scrollArea}>
+            <div className="scrollArea">
               {articles &&
                 articles.slice(0, 8).map((article: any) => {
                   return renderListItem(article);
