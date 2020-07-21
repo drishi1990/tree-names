@@ -36,8 +36,8 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
               rel="preload"
               as="image"
               href={`${urlFor(_rawImage)
-                .width(752)
-                .height(422)
+                .width(559)
+                .height(314)
                 .quality(80)
                 .fit('max')
                 .auto('format')
