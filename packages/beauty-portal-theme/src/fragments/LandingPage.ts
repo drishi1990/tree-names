@@ -160,9 +160,6 @@ export const query = graphql`
         id
         name
         _rawImage(resolveReferences: { maxDepth: 10 })
-        image {
-          alt
-        }
         _rawTextBlockBody(resolveReferences: { maxDepth: 10 })
         url
         imageBlockType {
