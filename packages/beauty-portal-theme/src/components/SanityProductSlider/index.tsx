@@ -1,19 +1,16 @@
 import React, { FunctionComponent } from 'react';
 import { SanityProductSliderInterface } from './models';
 import TileSlider from '../TileSlider';
-
-import useStyles from './styles';
+import './styles.scss';
 
 const SanityProductSlider: FunctionComponent<SanityProductSliderInterface> = ({
   name,
   slides,
   headline,
 }) => {
-  const classes = useStyles();
-
   return (
-    <section className={classes.section}>
-      <div className="container">
+    <section className="bp-productSlider">
+      <div className="bp-container">
         <TileSlider name={name} slides={slides} headline={headline} />
       </div>
     </section>

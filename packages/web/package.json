@@ -12,6 +12,7 @@
   "dependencies": {
     "beauty-portal-theme": "1.0.0",
     "gatsby": "^2.21.10",
+    "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.18",
     "react": "^16.12.0",

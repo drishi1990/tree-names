@@ -1,18 +1,13 @@
 import React, { FunctionComponent } from 'react';
-import classNames from 'classnames';
-
 import BlockContent from '@sanity/block-content-to-react';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
-
-import useStyles from './styles';
+import './styles.scss';
 
 const ArticleBodyBlockContent: FunctionComponent<ArticleBodyBlockContentProps> = ({
   data,
 }) => {
-  const classes = useStyles();
-
   return (
-    <section className={classNames('c-richtext', classes.richText)}>
+    <section className="bp-richtext">
       <BlockContent
         blocks={data}
         serializers={blockTypeDefaultSerializers}

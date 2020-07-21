@@ -51,7 +51,6 @@ module.exports = ({ themeConfig }) => {
   }
 
   const plugins = [
-    'gatsby-plugin-material-ui',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -70,10 +69,9 @@ module.exports = ({ themeConfig }) => {
         },
       },
     },
-    `gatsby-plugin-sass`,
+    'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
-    'gatsby-transformer-remark',
     'gatsby-source-sanity-transform-images',
     {
       resolve: 'gatsby-plugin-root-import',

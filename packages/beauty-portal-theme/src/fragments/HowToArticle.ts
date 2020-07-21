@@ -136,19 +136,9 @@ export const query1 = graphql`
           current
         }
         _type
+        _rawHeroImage(resolveReferences: { maxDepth: 10 })
         heroImage {
           alt
-          asset {
-            fluid {
-              aspectRatio
-              base64
-              sizes
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
-            }
-          }
         }
       }
       ... on SanityFeatureArticle {
@@ -158,19 +148,9 @@ export const query1 = graphql`
           current
         }
         _type
+        _rawHeroImage(resolveReferences: { maxDepth: 10 })
         heroImage {
           alt
-          asset {
-            fluid {
-              aspectRatio
-              base64
-              sizes
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
-            }
-          }
         }
       }
       ... on SanityHowToArticle {
@@ -180,19 +160,9 @@ export const query1 = graphql`
           current
         }
         _type
+        _rawHeroImage(resolveReferences: { maxDepth: 10 })
         heroImage {
           alt
-          asset {
-            fluid {
-              aspectRatio
-              base64
-              sizes
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
-            }
-          }
         }
       }
     }
@@ -220,38 +190,9 @@ export const query2 = graphql`
     }
     _rawHeroImage(resolveReferences: { maxDepth: 10 })
     heroImage {
-      crop {
-        bottom
-        left
-        right
-        top
-      }
-      hotspot {
-        height
-        width
-        x
-        y
-      }
       alt
       asset {
-        _type
-        size
-        path
-        originalFilename
-        mimeType
-        assetId
-        label
-        title
         url
-        fluid {
-          aspectRatio
-          base64
-          sizes
-          src
-          srcSet
-          srcSetWebp
-          srcWebp
-        }
       }
     }
     _type

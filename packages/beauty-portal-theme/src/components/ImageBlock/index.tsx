@@ -7,7 +7,7 @@ import BlockContent from '@sanity/block-content-to-react';
 import { ImageBlockInterface } from './models';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
 
-import useStyles from './styles';
+import './styles.scss';
 
 const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
   name,
@@ -16,13 +16,11 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
   _rawImage,
   url,
   imageBlockType,
-  preferPerformance = false,
 }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     rootMargin: '200px 0px',
   });
-  const classes = useStyles();
   const getComponentvariant = type => {
     return type
       .replace(/\s/g, '')
@@ -33,36 +31,52 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
     <div className={'c-image'} ref={ref} data-inview={inView}>
       <figure>
         {inView ? (
-          <picture>
-            <source
-              media="screen and (min-width: 560px)"
-              srcSet={`${urlFor(_rawImage)
-                .width(752)
-                .height(422)
-                .fit('max')
-                .auto('format')
-                .url()
-                .toString()}`}
-            />
-            <source
-              media="screen and (min-width: 320px)"
-              srcSet={`${urlFor(_rawImage)
+          <>
+            <link
+              rel="preload"
+              as="image"
+              href={`${urlFor(_rawImage)
                 .width(559)
                 .height(314)
+                .quality(80)
                 .fit('max')
                 .auto('format')
                 .url()
                 .toString()}`}
             />
-            <img
-              src={urlFor(_rawImage)
-                .width(752)
-                .height(422)
-                .fit('max')
-                .url()}
-              alt={image.alt}
-            />
-          </picture>
+            <picture>
+              <source
+                media="screen and (min-width: 560px)"
+                srcSet={`${urlFor(_rawImage)
+                  .width(752)
+                  .height(422)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <source
+                media="screen and (min-width: 320px)"
+                srcSet={`${urlFor(_rawImage)
+                  .width(559)
+                  .height(314)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <img
+                src={urlFor(_rawImage)
+                  .width(752)
+                  .height(422)
+                  .fit('max')
+                  .url()}
+                alt={image.alt}
+              />
+            </picture>
+          </>
         ) : null}
       </figure>
     </div>
@@ -71,20 +85,18 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
   return (
     <section
       className={classNames(
-        classes.section,
-        getComponentvariant(imageBlockType.name)
+        'bp-imageBlock',
+        getComponentvariant(imageBlockType.name) === 'imageblocktypeb'
+          ? 'typeb'
+          : null
       )}
     >
-      <div className="container">
-        <Link to={url || '/'} className={classes.link}>
-          <div className={classes.content}>
-            <div
-              className={classNames('c-image_wrapper', classes.imageWrapper)}
-            >
-              {Image}
-            </div>
-            <div className={classNames('c-image_text', classes.copyText)}>
-              <h2 className={classes.sectionTitle}>
+      <div className="bp-container">
+        <Link to={url || '/'} className="bp-imageBlock_link">
+          <div className="bp-imageBlock_content">
+            <div className="bp-imageBlock_image">{Image}</div>
+            <div className="bp-imageBlock_copy">
+              <h2 className="bp-imageBlock_title">
                 <span>{name}</span>
               </h2>
               {_rawTextBlockBody && (

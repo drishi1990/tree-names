@@ -1,25 +1,20 @@
 import React, { FunctionComponent } from 'react';
-import { Link } from 'gatsby';
 import { ReactComponent as Follow } from '../../images/icons/follow.svg';
 import SocialMenu from '../SocialMenu';
-
-import useStyles from './styles';
 
 const NewsletterFollow: FunctionComponent<NewsletterFollowInterface> = ({
   links,
   label,
 }) => {
-  const classes = useStyles();
-
   return (
-    <div className={classes.follow}>
-      <div className={classes.followButton}>
+    <div className="bp-follow">
+      <div className="bp-follow_button">
         <Follow />
-        <div className={classes.followPopup}>
-          <div className={classes.pad20}>
+        <div className="bp-follow_popup">
+          <div className="p20">
             <SocialMenu links={links} />
-            <div className={classes.newsletter}>
-              <a className={classes.newsletterSubscribeButton} href="/">
+            <div className="bp-newsletter">
+              <a className="bp-newsletter_button" href="/subscribe">
                 {label}
               </a>
             </div>

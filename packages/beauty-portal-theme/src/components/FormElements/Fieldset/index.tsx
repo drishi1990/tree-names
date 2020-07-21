@@ -1,15 +1,12 @@
 import React, { FunctionComponent } from 'react';
-import classNames from 'classnames';
-import useStyles from '../styles';
+import '../styles.scss';
 
 const Fieldset: FunctionComponent<FieldsetInterface> = ({
   children,
   legend,
 }) => {
-  const classes = useStyles();
-
   return (
-    <fieldset className={classNames('c-form__fielset', classes.fieldset)}>
+    <fieldset className="bp-form_fieldset">
       <legend className="srOnly">{legend}</legend>
       {children}
     </fieldset>

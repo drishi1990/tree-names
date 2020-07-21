@@ -1,18 +1,11 @@
 import React, { FunctionComponent, useState } from 'react';
-import { getFluidGatsbyImage } from 'gatsby-source-sanity';
-import Img from 'gatsby-image';
-
-import { Preloader, Oval } from 'react-preloader-icon';
 import { getYouTubeId } from '../../helpers/youtube';
+import { urlFor } from '../../helpers/imageUrl';
 import { ReactComponent as IconYoutube } from '../../images/icons/youtube.svg';
+import { ReactComponent as Loader } from '../../images/icons/loader.svg';
+import './styles.scss';
 
-import useStyles from './styles';
-
-const Video: FunctionComponent<VideoInterface> = ({
-  videoMetaData,
-  sanityConfig,
-}) => {
-  const classes = useStyles();
+const Video: FunctionComponent<VideoInterface> = ({ videoMetaData }) => {
   const [showVideo, setShowVideo] = useState(false);
   const [videoSourceUrl, setVideoSourceUrl] = useState('');
   const [videoLoading, setVideoLoading] = useState(false);
@@ -27,31 +20,73 @@ const Video: FunctionComponent<VideoInterface> = ({
     setShowVideo(true);
   };
 
-  const fluidProps = getFluidGatsbyImage(
-    videoMetaData.node.heroImage.asset._id,
-    { maxWidth: 800 },
-    sanityConfig
-  );
-
   const onFrameLoad = () => {
     setVideoLoading(false);
   };
 
   return (
-    <section className={classes.wrapper}>
-      <h2 className={classes.title}>{videoMetaData.node.youTubeCaption}</h2>
-      <div className={classes.heroImage}>
+    <section className="bp-video">
+      <h3 className="bp-video_title">{videoMetaData.node.youTubeCaption}</h3>
+      <div className="bp-video_image">
         {!showVideo && (
-          <Img
-            className="img-responsive"
-            fluid={fluidProps}
-            alt={videoMetaData.node.heroImage.alt}
-          />
+          <figure>
+            <picture
+              className="bp-image__placeholder"
+              style={{
+                paddingTop: `56.25%`,
+                background: `url(${videoMetaData.node.heroImage.asset.metadata.lqip})`,
+                backgroundSize: 'cover',
+              }}
+            >
+              <source
+                media="screen and (min-width: 1025px)"
+                srcSet={`${urlFor(videoMetaData.node.heroImage)
+                  .width(665)
+                  .height(374)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <source
+                media="screen and (min-width: 560px)"
+                srcSet={`${urlFor(videoMetaData.node.heroImage)
+                  .width(436)
+                  .height(245)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <source
+                media="screen and (min-width: 320px)"
+                srcSet={`${urlFor(videoMetaData.node.heroImage)
+                  .width(414)
+                  .height(232)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <img
+                src={urlFor(videoMetaData.node.heroImage)
+                  .width(436)
+                  .height(245)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()}
+                alt={videoMetaData.node.heroImage.alt}
+              />
+            </picture>
+          </figure>
         )}
         {!showVideo && !videoLoading && (
           <button
             type="button"
-            className={classes.iconVideo}
+            className="bp-video_icon"
             onClick={playVideo}
             data-url={videoMetaData.node.url}
           >
@@ -60,13 +95,9 @@ const Video: FunctionComponent<VideoInterface> = ({
           </button>
         )}
         {videoLoading && (
-          <Preloader
-            use={Oval}
-            size={60}
-            strokeWidth={11}
-            strokeColor="#000"
-            duration={500}
-          />
+          <div className="bp-preloader">
+            <Loader />
+          </div>
         )}
         {showVideo && (
           <iframe

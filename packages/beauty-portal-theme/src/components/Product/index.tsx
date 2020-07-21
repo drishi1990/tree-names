@@ -1,10 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 import { urlFor } from '../../helpers/imageUrl';
-
 import { ReactComponent as IconBuy } from '../../images/icons/buy.svg';
-
-import useStyles from './styles';
+import './styles.scss';
 
 const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
   const {
@@ -15,11 +13,11 @@ const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
     name,
   } = metadata;
   const { image } = data;
-  const classes = useStyles();
+
   return (
-    <div className={classes.wrapper}>
-      <Link className={classes.link} to={(slug && slug.current) || '/'}>
-        <div className={classes.image}>
+    <div className="bp-product">
+      <Link className="bp-product_link" to={(slug && slug.current) || '/'}>
+        <div className="bp-product_image">
           <figure>
             <picture>
               <source
@@ -48,24 +46,24 @@ const Product: FunctionComponent<ProductInterface> = ({ metadata, data }) => {
           </figure>
         </div>
         {tagLine && (
-          <p className={classes.tagline}>
+          <p className="bp-product-tagline">
             <span>{tagLine}</span>
           </p>
         )}
         {name && (
-          <h3 className={classes.name}>
+          <h3 className="bp-product_name">
             <span>{name}</span>
           </h3>
         )}
       </Link>
       {buyNow && (
         <a
-          className={classes.buynow}
+          className="bp-product_buy"
           href={buyNow}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className={classes.animateIcon}>
+          <span className="bp-product_icon">
             <IconBuy />
             <span>Buy Now</span>
           </span>

@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Preloader, Oval } from 'react-preloader-icon';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
 import SocialMenu from '../SocialMenu';
@@ -8,7 +7,8 @@ import { urlFor } from '../../helpers/imageUrl';
 import { ReactComponent as Skill } from '../../images/icons/skill.svg';
 import { ReactComponent as Youtube } from '../../images/icons/youtube.svg';
 import { ReactComponent as IconTime } from '../../images/icons/time.svg';
-import useStyles from './styles';
+import { ReactComponent as Loader } from '../../images/icons/loader.svg';
+import './styles.scss';
 
 const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
   article,
@@ -16,7 +16,6 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
   socialLinks,
   playLabel,
 }) => {
-  const classes = useStyles();
   const [showVideo, setShowVideo] = useState(false);
   const [videoSourceUrl, setVideoSourceUrl] = useState('');
   const [videoLoading, setVideoLoading] = useState(false);
@@ -32,7 +31,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
     _rawHeroVideo,
     _type,
   } = article;
-  console.log(article);
+
   const playVideo = (event: any) => {
     setVideoLoading(true);
     setVideoSourceUrl(
@@ -49,91 +48,108 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
 
   const renderVideoThumbnail = (image, alt) => {
     return (
-      <figure>
-        <picture
-          className="bp-image__placeholder"
-          style={{
-            paddingTop: `calc(100% / ${image.asset.metadata.dimensions.aspectRatio})`,
-            background: `url(${image.asset.metadata.lqip})`,
-            backgroundSize: 'cover',
-          }}
-        >
-          <source
-            media="screen and (min-width: 1025px)"
-            srcSet={`${urlFor(image)
-              .width(712)
-              .height(399)
-              .fit('max')
-              .auto('format')
-              .url()
-              .toString()}`}
-          />
-          <source
-            media="screen and (min-width: 560px)"
-            srcSet={`${urlFor(image)
-              .width(528)
-              .height(296)
-              .fit('max')
-              .auto('format')
-              .url()
-              .toString()}`}
-          />
-          <source
-            media="screen and (min-width: 320px)"
-            srcSet={`${urlFor(image)
-              .width(414)
-              .height(230)
-              .fit('max')
-              .auto('format')
-              .url()
-              .toString()}`}
-          />
-          <img
-            src={urlFor(image)
-              .width(712)
-              .height(399)
-              .fit('max')
-              .auto('format')
-              .url()}
-            alt={alt}
-          />
-        </picture>
-      </figure>
+      <>
+        <link
+          rel="preload"
+          as="image"
+          href={`${urlFor(image)
+            .width(665)
+            .height(374)
+            .quality(80)
+            .fit('max')
+            .auto('format')
+            .url()
+            .toString()}`}
+        />
+
+        <figure>
+          <picture
+            className="bp-image__placeholder"
+            style={{
+              paddingTop: `56.25%`,
+              background: `url(${image.asset.metadata.lqip})`,
+              backgroundSize: 'cover',
+            }}
+          >
+            <source
+              media="screen and (min-width: 1025px)"
+              srcSet={`${urlFor(image)
+                .width(665)
+                .height(374)
+                .quality(80)
+                .fit('max')
+                .auto('format')
+                .url()
+                .toString()}`}
+            />
+            <source
+              media="screen and (min-width: 560px)"
+              srcSet={`${urlFor(image)
+                .width(436)
+                .height(245)
+                .quality(80)
+                .fit('max')
+                .auto('format')
+                .url()
+                .toString()}`}
+            />
+            <source
+              media="screen and (min-width: 320px)"
+              srcSet={`${urlFor(image)
+                .width(414)
+                .height(232)
+                .fit('max')
+                .auto('format')
+                .url()
+                .toString()}`}
+            />
+            <img
+              src={urlFor(image)
+                .width(436)
+                .height(245)
+                .quality(80)
+                .fit('max')
+                .auto('format')
+                .url()}
+              alt={alt}
+            />
+          </picture>
+        </figure>
+      </>
     );
   };
 
   return (
-    <div className={classes.header}>
+    <div className="bp-articleHeader_header">
       <h1
         className={classNames(
-          classes.headingPrimary,
-          type === 'gallery' ? classes.textCenter : null
+          'bp-articleHeader_title',
+          type === 'gallery' ? 'txt-center' : null
         )}
       >
         {headline}
       </h1>
       <p
         className={classNames(
-          classes.textSecondary,
-          type === 'gallery' ? classes.textCenter : null
+          'bp-articleHeader_subTitle',
+          type === 'gallery' ? 'txt-center' : null
         )}
       >
         {subheading}
       </p>
-      <div className={classes.articleInfoWrapper}>
-        <div className={classes.articleInfo}>
+      <div className="bp-articleHeader_content">
+        <div className="bp-articleHeader_content-info">
           {author && author.name && (
-            <div className={classes.authorInfo}>
+            <div className="bp-articleHeader_author">
               <Link
-                className={classes.link}
+                className="bp-articleHeader_link"
                 to={author.slug ? `/${author.slug.current}` : `/${author.name}`}
               >
                 <span>{author.name}</span>
               </Link>
-
-              <span className={classes.divider}>|</span>
             </div>
           )}
+          <span className="divider">|</span>
           {(article.publishedAt || article._updatedAt) && (
             <span>{article.publishedAt || article._updatedAt}</span>
           )}
@@ -141,9 +157,8 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
         <SocialMenu links={socialLinks} />
       </div>
       {/* TODO: Use generic `Video` component for hero video to avoid duplicate code  */}
-      {/* {renderHeroImage(_rawHeroImage, heroImage.alt)} */}
       {!(_type === 'galleryArticle') && (
-        <div className={classes.heroImage}>
+        <div className="bp-articleHeader_image">
           {!showVideo &&
             !heroVideo &&
             renderVideoThumbnail(_rawHeroImage, heroImage.alt)}
@@ -157,7 +172,7 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
                 : renderVideoThumbnail(_rawHeroImage, heroImage.alt)}
               <button
                 type="button"
-                className={classes.iconVideo}
+                className="icon-video"
                 onClick={playVideo}
                 data-url={heroVideo.url}
               >
@@ -167,13 +182,9 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
             </>
           )}
           {videoLoading && (
-            <Preloader
-              use={Oval}
-              size={60}
-              strokeWidth={11}
-              strokeColor="#000"
-              duration={500}
-            />
+            <div className="bp-preloader">
+              <Loader />
+            </div>
           )}
           {showVideo && (
             <iframe
@@ -189,25 +200,25 @@ const ArticleHeader: FunctionComponent<ArticleHeaderInterface> = ({
         </div>
       )}
       {(skillLevel || time) && (
-        <div className={classes.tutorialInfo}>
+        <div className="bp-articleHeader_tutorial">
           {time && (
-            <div className={classes.tutorialInfoBlock}>
+            <div className="bp-articleHeader_tutorial-info">
               <div>
                 <strong>Time</strong>
                 <span>{time} mins</span>
               </div>
-              <div className={classes.icon}>
-                <IconTime className={'active'} />
+              <div className="icon">
+                <IconTime className="active" />
               </div>
             </div>
           )}
           {skillLevel && (
-            <div className={classes.tutorialInfoBlock}>
+            <div className="bp-articleHeader_tutorial-info">
               <div>
                 <strong>Skill</strong>
                 <span>{skillLevel}</span>
               </div>
-              <div className={classNames('b-skill', classes.icon)}>
+              <div className="icon skill">
                 <Skill
                   className={classNames(skillLevel === 'easy' && 'active')}
                 />

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 import BlockContent from '@sanity/block-content-to-react';
 import { urlFor } from '../../helpers/imageUrl';
-import useStyles from './styles';
+import './styles.scss';
 
 const Steps: FunctionComponent = ({ node }) => {
   const { directions, imageName, instructionName, stepNumber } = node;
@@ -11,11 +11,9 @@ const Steps: FunctionComponent = ({ node }) => {
     triggerOnce: true,
     rootMargin: '200px 0px',
   });
-  const classes = useStyles();
-
   return (
     <div
-      className={classNames(stepNumber ? 'c-step__reset' : 'c-step')}
+      className={classNames(stepNumber ? 'bp-step_reset' : 'bp-step')}
       ref={ref}
       data-inview={inView}
     >

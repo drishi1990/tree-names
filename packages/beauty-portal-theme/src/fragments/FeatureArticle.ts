@@ -30,15 +30,6 @@ export const query1 = graphql`
             width
           }
         }
-        fluid {
-          aspectRatio
-          base64
-          sizes
-          src
-          srcSet
-          srcSetWebp
-          srcWebp
-        }
       }
     }
     headline
@@ -51,20 +42,6 @@ export const query1 = graphql`
       name
       slug {
         current
-      }
-      image {
-        alt
-        asset {
-          fluid(maxWidth: 50, maxHeight: 50) {
-            aspectRatio
-            base64
-            sizes
-            src
-            srcSet
-            srcSetWebp
-            srcWebp
-          }
-        }
       }
     }
     id
@@ -85,19 +62,9 @@ export const query1 = graphql`
           current
         }
         _type
+        _rawHeroImage(resolveReferences: { maxDepth: 10 })
         heroImage {
           alt
-          asset {
-            fluid(maxWidth: 350, maxHeight: 212) {
-              aspectRatio
-              base64
-              sizes
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
-            }
-          }
         }
       }
       ... on SanityFeatureArticle {
@@ -107,19 +74,9 @@ export const query1 = graphql`
           current
         }
         _type
+        _rawHeroImage(resolveReferences: { maxDepth: 10 })
         heroImage {
           alt
-          asset {
-            fluid(maxWidth: 350, maxHeight: 212) {
-              aspectRatio
-              base64
-              sizes
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
-            }
-          }
         }
       }
       ... on SanityHowToArticle {
@@ -129,19 +86,9 @@ export const query1 = graphql`
           current
         }
         _type
+        _rawHeroImage(resolveReferences: { maxDepth: 10 })
         heroImage {
           alt
-          asset {
-            fluid(maxWidth: 350, maxHeight: 212) {
-              aspectRatio
-              base64
-              sizes
-              src
-              srcSet
-              srcSetWebp
-              srcWebp
-            }
-          }
         }
       }
     }
@@ -170,15 +117,6 @@ export const query2 = graphql`
       alt
       asset {
         url
-        fluid(maxWidth: 175, maxHeight: 175) {
-          aspectRatio
-          base64
-          sizes
-          src
-          srcSet
-          srcSetWebp
-          srcWebp
-        }
       }
     }
   }
