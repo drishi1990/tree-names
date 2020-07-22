@@ -56,7 +56,7 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
                 .width(752)
                 .height(422)
                 .quality(80)
-                .fit('max')
+                .fit('crop')
                 .auto('format')
                 .url()
                 .toString()}`}
@@ -76,7 +76,8 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
               src={urlFor(_rawImage)
                 .width(752)
                 .height(422)
-                .fit('max')
+                .fit('crop')
+                .auto('format')
                 .quality(80)
                 .url()}
               alt={_rawImage.alt}
