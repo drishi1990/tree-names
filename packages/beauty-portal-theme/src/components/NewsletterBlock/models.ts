@@ -1,6 +1,6 @@
 export interface NewsletterBlockInterface {
   _rawBody: any;
+  _rawImage: any;
   ctaLabel: string;
-  image: any;
   type: any;
 }

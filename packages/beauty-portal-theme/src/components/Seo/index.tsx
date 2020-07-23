@@ -8,6 +8,9 @@ const detailsQuery = graphql`
       title
       description
       keywords
+      author {
+        name
+      }
     }
   }
 `;
@@ -21,7 +24,7 @@ function Index({ description, lang, keywords, title }: SeoProps) {
           description || (data.site && data.site.description) || '';
         const siteTitle = (data.site && data.site.title) || '';
         const siteAuthor =
-          (data.site && data.site.author && data.site.author.name) || 'beauty-portal';
+          (data.site && data.site.author && data.site.author.name) || '';
 
         return (
           <Helmet

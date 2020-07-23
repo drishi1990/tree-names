@@ -1,60 +1,95 @@
-import React, { FunctionComponent, useState } from 'react';
-import Img from 'gatsby-image';
+import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-
-import Grid from '@material-ui/core/Grid';
 import { TileStackerInterface } from './models';
+import { urlFor } from '../../helpers/imageUrl';
+import { useInView } from 'react-intersection-observer';
 import { ReactComponent as PlayVideo } from '../../images/icons/play.svg';
-import useStyles from './styles';
+import './styles.scss';
 
 const TileStacker: FunctionComponent<TileStackerInterface> = ({
-  name,
   slides,
   headline,
 }) => {
-  const classes = useStyles();
-
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: '5px 0px',
+  });
   const renderer = slide => {
     return (
-      <Grid item xs={12} md={4}>
-        <div key={slide.headline}>
-          <div className={classes.tile}>
-            <span className={classes.slideType}>{slide._type}</span>
-            <Link className={classes.sliderLink} to={slide.path}>
-              {slide.heroImage && (
-                <div className={classes.heroImage}>
-                  <Img
-                    fluid={slide.heroImage.asset.fluid}
-                    alt={slide.heroImage.alt}
-                    style={{ height: '237px' }}
-                    imgStyle={{ objectPosition: 'top center' }}
-                  />
+      <div className="col-container">
+        <div className="col col-4">
+          <div ref={ref} data-inview={inView} key={slide.headline}>
+            <div className="bp-tileStacker-item">
+              <span className="bp-tileStacker_type">{slide._type}</span>
+              <Link className="bp-tileStacker_link" to={slide.path}>
+                <div className="bp-tileStacker_image">
+                  <figure>
+                    {inView ? (
+                      <picture
+                        className="bp-image__placeholder"
+                        style={{
+                          paddingTop: '100%',
+                          background: `url(${slide._rawHeroImage.asset.metadata.lqip})`,
+                          backgroundSize: 'cover',
+                        }}
+                      >
+                        <source
+                          media="screen and (min-width: 560px)"
+                          srcSet={`${urlFor(slide._rawHeroImage)
+                            .width(280)
+                            .height(280)
+                            .fit('max')
+                            .auto('format')
+                            .url()
+                            .toString()}`}
+                        />
+                        <source
+                          media="screen and (min-width: 320px)"
+                          srcSet={`${urlFor(slide._rawHeroImage)
+                            .width(160)
+                            .height(160)
+                            .fit('max')
+                            .auto('format')
+                            .url()
+                            .toString()}`}
+                        />
+                        <img
+                          className="bp-slider_image"
+                          src={urlFor(slide._rawHeroImage)
+                            .width(280)
+                            .height(280)
+                            .fit('max')
+                            .url()}
+                          alt={slide.heroImage.alt}
+                        />
+                      </picture>
+                    ) : null}
+                  </figure>
                   {slide.heroVideo && (
-                    <span className={`icon ${classes.iconPlay}`}>
+                    <span className="icon-play">
                       <PlayVideo />
                       <span hidden>Play Video</span>
                     </span>
                   )}
                 </div>
-              )}
-              <h3 className={classes.sliderItemCaption}>
-                <span>{slide.headline}</span>
-              </h3>
-            </Link>
+
+                <h3 className="bp-tileStacker_headline">
+                  <span>{slide.headline}</span>
+                </h3>
+              </Link>
+            </div>
           </div>
         </div>
-      </Grid>
+      </div>
     );
   };
 
   return (
-    <div className={classes.root}>
-      <div className={classes.sectionTitle}>
-        <h2 className={classes.sliderTitle}>{headline}</h2>
+    <div className="bp-tileStacker">
+      <div className="bp-tileStacker_header">
+        <h2 className="bp-tileStacker_title">{headline}</h2>
       </div>
-      <Grid container spacing={3}>
-        {slides.map(slide => renderer(slide))}
-      </Grid>
+      <div className="col col-3">{slides.map(slide => renderer(slide))}</div>
     </div>
   );
 };

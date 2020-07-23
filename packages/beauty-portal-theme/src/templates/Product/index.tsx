@@ -1,11 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import SEO from '../../components/Seo';
 import Layout from '../../components/Layout';
-import useStyles from './styles';
 
 const ProductPage = (props: ProductPageProps) => {
   const {
@@ -15,7 +11,6 @@ const ProductPage = (props: ProductPageProps) => {
     },
   } = props;
 
-  const classes = useStyles();
   page.seo = page.seo || {};
 
   return (
@@ -26,22 +21,22 @@ const ProductPage = (props: ProductPageProps) => {
         description={page.description}
         keywords={page.keywords}
       />
-      <Grid container spacing={2}>
-        <Grid item xs={9}>
+      <div className="col-container">
+        <div className="col col-7">
           <h2>{page.name}</h2>
           <section>
             <div>{page.subheading}</div>
-            <Img fluid={page.image.asset.fluid} alt={page.image.alt} />
           </section>
-        </Grid>
-        <Grid item xs={3}>
+        </div>
+        <div className="col col-1"></div>
+        <div className="col col-4">
           {productNodes.map(item => (
-            <Paper className={classes.paper} key={item.name + item.id}>
+            <div key={item.name + item.id}>
               <Link to={item.path}>{item.name}</Link>
-            </Paper>
+            </div>
           ))}
-        </Grid>
-      </Grid>
+        </div>
+      </div>
     </Layout>
   );
 };

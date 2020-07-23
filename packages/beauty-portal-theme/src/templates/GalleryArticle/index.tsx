@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Grid from '@material-ui/core/Grid';
 import Layout from '../../components/Layout';
 import SEO from '../../components/Seo';
 import Gallery from '../../components/Gallery';
@@ -48,7 +47,7 @@ const GalleryArticlePage = (props: GalleryArticlePageProps) => {
       />
       <OGTags type={'article'} slug={page.path} data={page} />
       <Breadcrumb tag={page.tags[0]} pageTitle={page.headline} />
-      <div className="container">
+      <div className="bp-container">
         <ArticleHeader
           article={page}
           type={'gallery'}
@@ -62,24 +61,24 @@ const GalleryArticlePage = (props: GalleryArticlePageProps) => {
         />
       </div>
 
-      <div className="container">
-        <Grid container spacing={2}>
-          <Grid xs={12} item sm={7}>
+      <div className="bp-container">
+        <div className="col-container">
+          <div className="col col-7">
             <RichText data={page._rawBody} />
             {page.readnext && (
               <ReadNext data={page} title={sectionTitles.nextRead} />
             )}
-          </Grid>
-          <Grid item xs={12} sm={1}></Grid>
-          <Grid item xs={12} sm={4} style={{ position: 'relative' }}>
+          </div>
+          <div className="col col-1"></div>
+          <div className="col col-4" style={{ position: 'relative' }}>
             {relatedArticles.length !== 0 && (
               <RelatedArticles
                 articles={relatedArticles}
                 title={sectionTitles.relatedArticlesName}
               />
             )}
-          </Grid>
-        </Grid>
+          </div>
+        </div>
         <Tags data={page.tags} title={sectionTitles.relatedTopicsName} />
       </div>
     </Layout>

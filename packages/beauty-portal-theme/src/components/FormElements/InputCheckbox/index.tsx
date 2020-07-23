@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import classNames from 'classnames';
-import useStyles from '../styles';
+import '../styles.scss';
 
 const InputCheckbox: FunctionComponent<InputCheckboxInterface> = ({
   label,
@@ -10,12 +9,8 @@ const InputCheckbox: FunctionComponent<InputCheckboxInterface> = ({
   onChange,
   checked,
 }) => {
-  const classes = useStyles();
-
   return (
-    <div
-      className={classNames('c-form__field', classes.field, classes.checkbox)}
-    >
+    <div className="bp-form_field bp-form_field-checkbox">
       <input
         id={id}
         type="checkbox"

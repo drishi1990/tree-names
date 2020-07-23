@@ -15,18 +15,16 @@ import {
 } from 'react-instantsearch-dom';
 import algoliasearch from 'algoliasearch/lite';
 import qs from 'qs';
-import Grid from '@material-ui/core/Grid';
 import * as hitComps from '../../components/HitComp';
 import classNames from 'classnames';
 import { ReactComponent as IconList } from '../../images/icons/list.svg';
 import { ReactComponent as IconGrid } from '../../images/icons/grid.svg';
-import useStyles from './styles';
+import './styles.scss';
 
 const indices = [
   { name: `howtoArticle`, title: `howtoArticle`, hitComp: `PostHit` },
 ];
 const SearchResults: FunctionComponent = () => {
-  const classes = useStyles();
   const ref = createRef();
   const [focus, setFocus] = useState(false);
   const [viewType, setViewType] = useState('list');
@@ -77,7 +75,7 @@ const SearchResults: FunctionComponent = () => {
   return (
     <Layout>
       <SEO lang={'en-us'} title="Search" description="" keywords="" />
-      <div className="container">
+      <div className="bp-container bp-search">
         <InstantSearch
           searchClient={searchClient}
           indexName={indices[0].name}
@@ -86,22 +84,18 @@ const SearchResults: FunctionComponent = () => {
           createURL={createURL}
           root={{ props: { ref } }}
         >
-          <Grid container spacing={2}>
-            <Grid className={classes.searchControlWrapper} item sm={12}>
-              <SearchBox
-                searchAsYouType={true}
-                autoFocus
-                showLoadingIndicator
-              />
-            </Grid>
-            <Grid className={classes.searchControlWrapper} item sm={12}>
-              <div className={classes.resultsInfo}>
-                <span className={classes.searchQuery}>
+          <div className="col-container">
+            <div className="col bp-search_content">
+              <SearchBox searchAsYouType={true} />
+            </div>
+            <div className="col bp-search_content">
+              <div className="bp-search_results">
+                <span className="bp-search_query">
                   {searchState.query
                     ? `Results for ${searchState.query}`
                     : 'All Results'}
                 </span>
-                <span className={classes.resultsStats}>
+                <span className="bp-search_stats">
                   <Stats
                     translations={{
                       stats(nbHits) {
@@ -111,12 +105,12 @@ const SearchResults: FunctionComponent = () => {
                   />
                 </span>
               </div>
-              <div className={classes.currentRefinements}>
+              <div className="bp-search_refinements">
                 <CurrentRefinements clearsQuery />
               </div>
-            </Grid>
-            <Grid className={classes.filters} item sm={3}>
-              <div className={classes.filterHeader}>
+            </div>
+            <div className="col col-3 bp-search_filters">
+              <div className="bp-search_filters-content">
                 <span>Filter by</span>
                 <ClearRefinements clearsQuery />
               </div>
@@ -179,10 +173,10 @@ const SearchResults: FunctionComponent = () => {
                   </div>
                 </div>
               </div>
-            </Grid>
-            <Grid container item xs={12} sm={9}>
-              <Grid item xs={12}>
-                <div className={classes.actions}>
+            </div>
+            <div className="col-contianer col col-9">
+              <div className="col-xs-12">
+                <div className="bp-search_actions">
                   <SortBy
                     defaultRefinement="howtoArticle_publishedAt_Dsc"
                     items={[
@@ -196,8 +190,8 @@ const SearchResults: FunctionComponent = () => {
                   <button
                     type="button"
                     className={classNames(
-                      classes.icon,
-                      viewType === 'list' ? classes.iconActive : null
+                      'bp-search_icon',
+                      viewType === 'list' ? 'is-active' : null
                     )}
                     data-view="list"
                     onClick={handleViewType}
@@ -207,8 +201,8 @@ const SearchResults: FunctionComponent = () => {
                   <button
                     type="button"
                     className={classNames(
-                      classes.icon,
-                      viewType === 'grid' ? classes.iconActive : null
+                      'bp-search_icon',
+                      viewType === 'grid' ? 'is-active' : null
                     )}
                     data-view="grid"
                     onClick={handleViewType}
@@ -217,7 +211,7 @@ const SearchResults: FunctionComponent = () => {
                   </button>
                 </div>
                 <div
-                  className={classNames(classes.searhResultWrapper, viewType)}
+                  className={classNames('bp-search_wrapper', viewType)}
                   show="true"
                 >
                   {indices.map(({ name, hitComp }) => (
@@ -233,9 +227,9 @@ const SearchResults: FunctionComponent = () => {
                     </Index>
                   ))}
                 </div>
-              </Grid>
-            </Grid>
-          </Grid>
+              </div>
+            </div>
+          </div>
         </InstantSearch>
       </div>
     </Layout>

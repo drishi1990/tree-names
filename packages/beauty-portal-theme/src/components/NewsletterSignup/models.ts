@@ -1,6 +1,6 @@
 export interface NewsletterSignupInterface {
   _rawBody: any;
-  image: any;
+  _rawImage: any;
   onFormSubmission: any;
   isFormSubmitted: boolean;
 }

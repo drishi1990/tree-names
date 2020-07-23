@@ -115,6 +115,14 @@ exports.onCreateWebpackConfig = ({
         ],
       },
     });
+    const config = getConfig();
+    const miniCssExtractPlugin = config.plugins.find(
+      plugin => plugin.constructor.name === 'MiniCssExtractPlugin'
+    );
+    if (miniCssExtractPlugin) {
+      miniCssExtractPlugin.options.ignoreOrder = true;
+    }
+    actions.replaceWebpackConfig(config);
   }
 
   const envKeys = Object.keys(process.env).reduce((prev, next) => {
@@ -138,6 +146,7 @@ exports.onCreateWebpackConfig = ({
   });
 
   const config = getConfig();
+
   config.resolve = {
     ...config.resolve,
     alias: { ...config.resolve.alias, lodash: 'lodash-es' },
@@ -151,6 +160,7 @@ exports.onCreateWebpackConfig = ({
       return rule;
     }
   });
+
   svgLoaderRule &&
     svgLoaderRule.use &&
     (svgLoaderRule.use[0].options.classIdPrefix = true);

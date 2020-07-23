@@ -1,8 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
-import Img from 'gatsby-image';
-import classNames from 'classnames';
 import BlockContent from '@sanity/block-content-to-react';
 import { blockTypeDefaultSerializers } from '../../helpers/sanity';
+import { urlFor } from '../../helpers/imageUrl';
 import { NewsletterSignupInterface } from './models';
 import Form from '../../components/Form';
 import {
@@ -11,15 +10,14 @@ import {
   InputCheckbox,
 } from '../../components/FormElements';
 import { ReactComponent as Bell } from '../../images/icons/bell.svg';
-import useStyles from './styles';
+import './styles.scss';
 
 const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
   _rawBody,
-  image,
+  _rawImage,
   onFormSubmission,
   isFormSubmitted,
 }) => {
-  const classes = useStyles();
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -89,16 +87,68 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
   };
 
   return (
-    <div className={classes.wrapper}>
-      <div className={classes.banner}>
-        <div className={classNames(classes.imageWrapper, classes.container)}>
-          {image && <Img fluid={image.asset.fluid} />}
+    <div className="bp-signup">
+      <div className="bp-signup_hero">
+        <div className="bp-signup_content">
+          <figure>
+            <link
+              rel="preload"
+              as="image"
+              href={`${urlFor(_rawImage)
+                .width(700)
+                .height(392)
+                .quality(80)
+                .fit('max')
+                .auto('format')
+                .url()
+                .toString()}`}
+            />
+            <picture
+              className="bp-image__placeholder"
+              style={{
+                paddingTop: `56.25%`,
+                background: `url(${_rawImage.asset.metadata.lqip})`,
+                backgroundSize: 'cover',
+              }}
+            >
+              <source
+                media="screen and (min-width: 560px)"
+                srcSet={`${urlFor(_rawImage)
+                  .width(700)
+                  .height(392)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <source
+                media="screen and (min-width: 320px)"
+                srcSet={`${urlFor(_rawImage)
+                  .width(559)
+                  .height(314)
+                  .quality(80)
+                  .fit('max')
+                  .auto('format')
+                  .url()
+                  .toString()}`}
+              />
+              <img
+                src={urlFor(_rawImage)
+                  .width(700)
+                  .height(392)
+                  .fit('max')
+                  .url()}
+                alt={_rawImage.alt}
+              />
+            </picture>
+          </figure>
         </div>
       </div>
-      <div className={classNames(classes.heading, classes.container)}>
-        <h1 className={classes.pageTitle}>Subscribe for Email Updates</h1>
+      <div className="bp-signup_content bp-signup_header">
+        <h1 className="bp-signup_title">Subscribe for Email Updates</h1>
         {_rawBody && (
-          <h2 className={classes.pageDescription}>
+          <h2 className="bp-signup_desc">
             <BlockContent
               serializers={blockTypeDefaultSerializers}
               blocks={_rawBody}
@@ -106,9 +156,9 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
           </h2>
         )}
       </div>
-      <div className={classNames(classes.imageWrapper, classes.container)}>
+      <div className="bp-signup_content">
         {isFormSubmitted ? (
-          <div className={classes.thankyou}>
+          <div className="bp-signup_thanks">
             <Bell />
             <h2>Thankyou for signing up!</h2>
             <p>
@@ -203,9 +253,8 @@ const NewsletterSignup: FunctionComponent<NewsletterSignupInterface> = ({
               name="submit"
               value="Subscribe"
               onClick={handleFormSubmit}
-              className={classes.button}
+              className="bp-signup_cta"
             />
-            {/* TODO: Add hidden fields for hard coded values to be passed in payload */}
           </Form>
         )}
       </div>

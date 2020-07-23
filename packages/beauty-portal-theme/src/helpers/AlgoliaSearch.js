@@ -29,7 +29,7 @@ const howToArticleQuery = `{
           srcSetWebp
           srcWebp
         }
-      }    
+      }
           alt
           imageCaption
           imageTabID
@@ -71,7 +71,7 @@ const galleryArticleQuery = `{
           srcSetWebp
           srcWebp
         }
-      }    
+      }
           alt
           imageCaption
           imageTabID
@@ -108,7 +108,7 @@ const featureArticleQuery = `{
           srcSetWebp
           srcWebp
         }
-      }    
+      }
           alt
           imageCaption
           imageTabID
@@ -124,7 +124,7 @@ const featureArticleQuery = `{
 }
 }`;
 const productQuery = `{
-  allSanityProduct(filter: {slug: {current: {ne: null}}}) 
+  allSanityProduct(filter: {slug: {current: {ne: null}}})
     {
     edges
     {
@@ -147,7 +147,7 @@ const productQuery = `{
           srcSetWebp
           srcWebp
         }
-      }    
+      }
           alt
           imageCaption
           imageTabID

@@ -1,24 +1,21 @@
 import React, { FunctionComponent } from 'react';
-import Img from 'gatsby-image';
 import { Link } from 'gatsby';
-import Grid from '@material-ui/core/Grid';
-import useStyles from './styles';
 import { urlFor } from '../../helpers/imageUrl';
+import './styles.scss';
 
 const ProductList: FunctionComponent<ProductListInterface> = ({
   data,
   title,
 }) => {
-  const classes = useStyles();
   return (
-    <section className={classes.section}>
-      <h2 className={classes.sectionTitle}>{title}</h2>
-      <Grid className={classes.gridContainer} container spacing={2}>
+    <section className="bp-productList">
+      <h2 className="bp-productList_title">{title}</h2>
+      <div className="bp-grid col-container">
         {data &&
           data.map(product => (
-            <Grid className={classes.gridItem} item xs={4} key={product.name}>
+            <div className="col col-xs-4 bp-grid_item" key={product.name}>
               <Link
-                className={classes.gridItemLink}
+                className="bp-grid_link"
                 to={product.path || product.slug.current}
               >
                 {product.image && (
@@ -67,13 +64,13 @@ const ProductList: FunctionComponent<ProductListInterface> = ({
                     </picture>
                   </figure>
                 )}
-                <h3 className={classes.productTitle}>
+                <h3 className="bp-productList_subTitle">
                   <span>{product.name}</span>
                 </h3>
               </Link>
-            </Grid>
+            </div>
           ))}
-      </Grid>
+      </div>
     </section>
   );
 };

@@ -1,35 +1,60 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
 import { useInView } from 'react-intersection-observer';
-
-import useStyles from './styles';
+import { urlFor } from '../../helpers/imageUrl';
+import './styles.scss';
 
 const ReadNext: FunctionComponent<ReadNextInterface> = ({ data, title }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     rootMargin: '200px 0px',
   });
-  const classes = useStyles();
+  const {
+    readnext: { path, headline, _type, _rawHeroImage },
+  } = data;
+
   return (
-    <section className={classes.readNext}>
-      <h2 className={classes.readNextTitle}>{title}</h2>
-      <div className={classes.readNextContent}>
-        <Link className={classes.readNextLink} to={data.readnext.path}>
-          <div className={classes.readNextImage} ref={ref} data-inview={inView}>
-            {inView ? (
-              <Img
-                fluid={data.readnext.heroImage.asset.fluid}
-                alt={data.readnext.heroImage.alt}
-              />
-            ) : null}
+    <section className="bp-readNext">
+      <h3 className="bp-readNext_title">{title}</h3>
+      <div className="bp-readNext_content">
+        <Link className="bp-readNext_link" to={path}>
+          <div className="bp-readNext_image" ref={ref} data-inview={inView}>
+            <figure>
+              {inView ? (
+                <picture
+                  className="bp-image__placeholder"
+                  style={{
+                    paddingTop: '56.25%',
+                    background: `url(${_rawHeroImage.asset.metadata.lqip})`,
+                    backgroundSize: 'cover',
+                  }}
+                >
+                  <source
+                    media="screen and (min-width: 320px)"
+                    srcSet={`${urlFor(_rawHeroImage)
+                      .width(436)
+                      .height(245)
+                      .fit('max')
+                      .auto('format')
+                      .url()
+                      .toString()}`}
+                  />
+                  <img
+                    src={urlFor(_rawHeroImage)
+                      .width(436)
+                      .height(245)
+                      .fit('max')
+                      .url()}
+                    alt={_rawHeroImage.alt}
+                  />
+                </picture>
+              ) : null}
+            </figure>
           </div>
-          <div className={classes.readNextCopy}>
-            <span className={classes.readNextCopyType}>
-              {data.readnext._type}
-            </span>
-            <h3 className={classes.readNextCopyTitle}>
-              <span>{data.readnext.headline}</span>
+          <div className="bp-readNext_copy">
+            <span className="bp-readNext_type">{_type}</span>
+            <h3 className="bp-readNext_subTitle">
+              <span>{headline}</span>
             </h3>
           </div>
         </Link>
