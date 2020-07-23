@@ -11,7 +11,6 @@ import './styles.scss';
 
 const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
   name,
-  image,
   _rawTextBlockBody,
   _rawImage,
   url,
@@ -19,7 +18,7 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
 }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    rootMargin: '200px 0px',
+    rootMargin: '0px 0px',
   });
   const getComponentvariant = type => {
     return type
@@ -28,14 +27,43 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
       .toLowerCase();
   };
   const Image = (
-    <div className={'c-image'} ref={ref} data-inview={inView}>
-      <figure>
-        {inView ? (
-          <>
-            <link
-              rel="preload"
-              as="image"
-              href={`${urlFor(_rawImage)
+    <figure ref={ref} data-inview={inView}>
+      {inView ? (
+        <>
+          <link
+            rel="preload"
+            as="image"
+            href={`${urlFor(_rawImage)
+              .width(559)
+              .height(314)
+              .quality(80)
+              .fit('max')
+              .auto('format')
+              .url()
+              .toString()}`}
+          />
+          <picture
+            className="bp-image__placeholder"
+            style={{
+              paddingTop: `56.25%`,
+              background: `url(${_rawImage.asset.metadata.lqip})`,
+              backgroundSize: 'cover',
+            }}
+          >
+            <source
+              media="screen and (min-width: 560px)"
+              srcSet={`${urlFor(_rawImage)
+                .width(752)
+                .height(422)
+                .quality(80)
+                .fit('crop')
+                .auto('format')
+                .url()
+                .toString()}`}
+            />
+            <source
+              media="screen and (min-width: 320px)"
+              srcSet={`${urlFor(_rawImage)
                 .width(559)
                 .height(314)
                 .quality(80)
@@ -44,42 +72,20 @@ const ImageBlock: FunctionComponent<ImageBlockInterface> = ({
                 .url()
                 .toString()}`}
             />
-            <picture>
-              <source
-                media="screen and (min-width: 560px)"
-                srcSet={`${urlFor(_rawImage)
-                  .width(752)
-                  .height(422)
-                  .quality(80)
-                  .fit('max')
-                  .auto('format')
-                  .url()
-                  .toString()}`}
-              />
-              <source
-                media="screen and (min-width: 320px)"
-                srcSet={`${urlFor(_rawImage)
-                  .width(559)
-                  .height(314)
-                  .quality(80)
-                  .fit('max')
-                  .auto('format')
-                  .url()
-                  .toString()}`}
-              />
-              <img
-                src={urlFor(_rawImage)
-                  .width(752)
-                  .height(422)
-                  .fit('max')
-                  .url()}
-                alt={image.alt}
-              />
-            </picture>
-          </>
-        ) : null}
-      </figure>
-    </div>
+            <img
+              src={urlFor(_rawImage)
+                .width(752)
+                .height(422)
+                .fit('crop')
+                .auto('format')
+                .quality(80)
+                .url()}
+              alt={_rawImage.alt}
+            />
+          </picture>
+        </>
+      ) : null}
+    </figure>
   );
 
   return (

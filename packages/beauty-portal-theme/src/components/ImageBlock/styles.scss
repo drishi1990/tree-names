@@ -46,12 +46,15 @@
     @media (min-width: 768px) {
       flex-direction: row;
     }
+
+    min-height: 356px;
   }
 
   &_image {
     margin-left: -16px;
     margin-right: -16px;
     overflow: hidden;
+    flex: 1;
 
     img {
       transition: all 500ms ease 0s !important;
